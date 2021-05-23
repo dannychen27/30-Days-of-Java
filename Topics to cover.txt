@@ -1,0 +1,124 @@
+TO DO LIST OF TOPICS TO COVER
+
+Java clean architecture
+// todo: various software layers
+// todo: Model-View-Controller -- is this a design pattern?
+
+Java concepts
+Easy
+// todo: casting -- DONE
+// todo: primitive types vs. object types -- DONE!
+// todo: declaration vs. initialization -- DONE!
+// todo: scope
+// todo: pre-increment vs. post-increment operators
+// todo: accessibility modifiers (e.g. private, protected, package private, public)
+// todo: recursion
+
+Medium
+// todo: constructors
+// todo: getters and setters
+// todo: instanceof
+// todo: static classes, static methods, static variables
+// todo: lookup rules from csc207h1
+// todo: shallow copy vs. deep copy in terms of value and reference
+// todo: method overloading
+// todo: method overriding
+// todo: variables shadowing
+// todo: unchecked vs. checked exceptions
+// todo: git
+
+Hard
+// todo: autoboxing, unboxing
+// todo: generics
+// todo: iterators
+// todo: what is a spliterator?
+// todo: java threads and "synchronized" keyword
+// todo: floating point arithmetic
+
+
+Java constructs
+Easy
+// todo: hello world, println -- DONE
+// todo: comparison operators (<, <=, >, >=, !=, ==)
+// todo; logical operators (and, or, not)
+// todo: modulus operator (%)
+// todo: final (for constants)
+// todo: if-else if-else statements -- DONE
+// todo: ternary if-statement
+// todo: switch statements -- DONE
+// todo: for loops vs. foreach loops -- DONE
+// todo: while loops -- DONE
+// todo: while loops vs. do while loops -- DONE
+// todo: break
+// todo: continue
+// todo: date library
+// todo: math library
+
+Medium
+// todo: enums
+// todo: inner classes
+// todo: user input -- DONE!
+// todo: string vs. string builder -- DONE FOR NOW
+// todo: string equality vs. string ==  -- DONE FOR NOW
+// todo: try-catch-finally statements
+// todo: this
+// todo: object oriented programming
+
+Hard
+// todo: abstract classes vs. interfaces
+// todo: comparator function
+// todo: regex
+
+Java built-in data structures
+Easy
+// todo: arraylist
+// todo: linkedlist
+
+Medium
+// todo: hashmap
+// todo: stack
+// todo: queue
+// todo: hashset
+// todo: treeset
+
+Java design patterns
+Creational
+// todo: factory
+// todo: abstract factory
+// todo: builder
+// todo: singleton
+
+Structural
+// todo: adapter
+// todo: facade
+
+Behavioural
+// todo: iterator
+// todo: observer
+// todo: strategy
+
+Java OOP design principles
+// todo: abstraction
+// todo: encapsulation
+// todo: inheritance w/ UML diagrams! CRC cards.
+// todo: polymorphism
+
+Java refactoring techniques
+// todo: extract method
+// todo: guard clause
+// todo: polymorphism to replace conditional
+
+Java SOLID principles <-- is SOLID a design pattern?
+// todo: single responsibility principle
+// todo: open closed principle
+// todo: liskov substitution principle
+// todo: interface segregation principle
+// todo: dependency injection principle
+
+Other:
+// todo: GUI design
+// todo: reading CSV files
+// todo: reading txt files
+// todo: writing txt files
+// todo: creating txt files
+// todo: deleting txt files
