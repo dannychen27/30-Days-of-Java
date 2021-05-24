@@ -6,9 +6,9 @@ Java clean architecture
 
 Java concepts
 Easy
-// todo: casting -- DONE
-// todo: primitive types vs. object types -- DONE!
-// todo: declaration vs. initialization -- DONE!
+casting -- DONE
+primitive types vs. object types -- DONE!
+declaration vs. initialization -- DONE!
 // todo: scope
 // todo: pre-increment vs. post-increment operators
 // todo: accessibility modifiers (e.g. private, protected, package private, public)
@@ -21,15 +21,15 @@ Medium
 // todo: static classes, static methods, static variables
 // todo: lookup rules from csc207h1
 // todo: shallow copy vs. deep copy in terms of value and reference
-// todo: method overloading
-// todo: method overriding
-// todo: variables shadowing
+// todo: variable shadowing
 // todo: unchecked vs. checked exceptions
 // todo: git
 
 Hard
 // todo: autoboxing, unboxing
 // todo: generics
+// todo: method overloading
+// todo: method overriding
 // todo: iterators
 // todo: what is a spliterator?
 // todo: java threads and "synchronized" keyword
@@ -38,17 +38,18 @@ Hard
 
 Java constructs
 Easy
-// todo: hello world, println -- DONE
+hello world, println -- DONE
 // todo: comparison operators (<, <=, >, >=, !=, ==)
 // todo; logical operators (and, or, not)
 // todo: modulus operator (%)
 // todo: final (for constants)
-// todo: if-else if-else statements -- DONE
-// todo: ternary if-statement
-// todo: switch statements -- DONE
-// todo: for loops vs. foreach loops -- DONE
-// todo: while loops -- DONE
-// todo: while loops vs. do while loops -- DONE
+conditional (if-elseif-else) statements -- DONE
+ternary if-statements -- DONE
+switch statements -- DONE
+for loops -- DONE
+foreach loops -- DONE
+while loops -- DONE
+do while loops -- DONE
 // todo: break
 // todo: continue
 // todo: date library
@@ -57,12 +58,13 @@ Easy
 Medium
 // todo: enums
 // todo: inner classes
-// todo: user input -- DONE!
+user input -- DONE
 // todo: string vs. string builder -- DONE FOR NOW
 // todo: string equality vs. string ==  -- DONE FOR NOW
 // todo: try-catch-finally statements
 // todo: this
 // todo: object oriented programming
+// todo: super()
 
 Hard
 // todo: abstract classes vs. interfaces
@@ -71,11 +73,12 @@ Hard
 
 Java built-in data structures
 Easy
-// todo: arraylist
-// todo: linkedlist
+arraylist -- DONE
+linkedlist -- DONE
+java built in arrays -- DONE
 
 Medium
-// todo: hashmap
+hashmap -- DONE
 // todo: stack
 // todo: queue
 // todo: hashset
@@ -101,7 +104,7 @@ Java OOP design principles
 // todo: abstraction
 // todo: encapsulation
 // todo: inheritance w/ UML diagrams! CRC cards.
-// todo: polymorphism
+polymorphism -- DONE
 
 Java refactoring techniques
 // todo: extract method
@@ -118,7 +121,7 @@ Java SOLID principles <-- is SOLID a design pattern?
 Other:
 // todo: GUI design
 // todo: reading CSV files
-// todo: reading txt files
+reading txt files -- DONE!
 // todo: writing txt files
 // todo: creating txt files
 // todo: deleting txt files

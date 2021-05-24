@@ -26,3 +26,6 @@ java.iml
 *.kotlin_module
 *.xml
 *.iml
+
+# Output files
+out/production/30-Days-of-Java/
