@@ -51,7 +51,7 @@ public class MazeManager {
         mazes.add(m2);
 
         for (Maze maze : mazes) {
-            if (maze.solveMaze()) {
+            if (maze.hasSolution()) {
                 System.out.println("You won!");
             } else {
                 System.out.println("No path");

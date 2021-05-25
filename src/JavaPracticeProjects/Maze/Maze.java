@@ -14,7 +14,7 @@ class Maze {
         this.currentPosition = startingPosition;
     }
 
-    boolean solveMaze() {
+    boolean hasSolution() {
         Position currentPosition = getCurrentPosition();
         path.push(currentPosition);
         Position newPosition;
