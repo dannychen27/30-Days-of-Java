@@ -12,8 +12,8 @@ public class MazeSolver {
 
     static int[][] maze = {
             {2, 0, 1, 1},
-            {1, 1, 0, 1},
-            {0, 1, 1, 1}
+            {1, 1, 1, 0},
+            {0, 0, 0, 1}
     };
     // 0 = wall
     // 1 = path
@@ -23,7 +23,7 @@ public class MazeSolver {
 
 
     public static void main(String[] args) {
-        Position p = new Position(3, 0);
+        Position p = new Position(0, 3);
         path.push(p);
 
         int x = path.peek().x;
