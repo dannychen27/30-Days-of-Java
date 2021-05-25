@@ -12,13 +12,6 @@ import static JavaPracticeProjects.Maze.MazeConstants.*;
  *      - Source: https://www.youtube.com/playlist?list=PL_c9BZzLwBRJOmvlnRQpnZS7ZpEvtwkXb
  */
 
-// TODO: Maybe create an enum that stores the 4 directions?
-// TODO:    {UP, DOWN, LEFT, RIGHT}
-// TODO: Make sure they translate back to some position. e.g.
-//      - UP    -> (x, y) -> (x, y - 1)
-//      - DOWN  -> (x, y) -> (x, y + 1)
-//      - LEFT  -> (x, y) -> (x - 1, y)
-//      - RIGHT -> (x, y) -> (x + 1, y)
 
 public class MazeManager {
 
