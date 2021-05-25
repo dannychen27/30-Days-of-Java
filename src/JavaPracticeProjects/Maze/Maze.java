@@ -1,6 +1,7 @@
 package JavaPracticeProjects.Maze;
 
 import java.util.LinkedList;
+import static JavaPracticeProjects.Maze.MazeConstants.*;
 
 class Maze {
     private int[][] maze;
@@ -11,6 +12,82 @@ class Maze {
         this.maze = maze;
         this.path = new LinkedList<>();
         this.currentPosition = startingPosition;
+    }
+
+    boolean solveMaze() {
+        Position currentPosition = getCurrentPosition();
+        path.push(currentPosition);
+        Position newPosition;
+
+        while (true) {
+            // TODO: A better strategy might be to store positions,
+            // TODO: you've already visited -- e.g. a hasVisited hashSet.
+            // This essentially marks the currentPosition as already visited...
+            setValueAtPosition(currentPosition, WALL);
+
+            newPosition = tryGoDown(currentPosition);
+            if (isInBounds(newPosition)) {
+                if (getValueAtPosition(newPosition) == GOAL) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved down");
+                    return true;
+                } else if (getValueAtPosition(newPosition) == PATH) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved down");
+                    path.push(newPosition);
+                    continue;
+                }
+            }
+
+            newPosition = tryGoLeft(currentPosition);
+            if (isInBounds(newPosition)) {
+                if (getValueAtPosition(newPosition) == GOAL) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved left");
+                    return true;
+                } else if (getValueAtPosition(newPosition) == PATH) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved left");
+                    path.push(newPosition);
+                    continue;
+                }
+            }
+
+            newPosition = tryGoUp(currentPosition);
+            if (isInBounds(newPosition)) {
+                if (getValueAtPosition(newPosition) == GOAL) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved up");
+                    return true;
+                } else if (getValueAtPosition(newPosition) == PATH) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved up");
+                    path.push(newPosition);
+                    continue;
+                }
+            }
+
+            newPosition = tryGoRight(currentPosition);
+            if (isInBounds(newPosition)) {
+                if (getValueAtPosition(newPosition) == GOAL) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved right");
+                    return true;
+                } else if (getValueAtPosition(newPosition) == PATH) {
+                    currentPosition = newPosition;
+                    System.out.println("Moved right");
+                    path.push(newPosition);
+                    continue;
+                }
+            }
+
+            // backtrack
+            currentPosition = path.pop();
+            System.out.println("Moved back");
+            if (path.isEmpty()) {
+                return false;
+            }
+        }
     }
 
     private int getValueAtPosition(Position position) {
@@ -40,82 +117,6 @@ class Maze {
     private int getMazeWidth() {
         int y = currentPosition.y;
         return maze[y].length;
-    }
-
-    boolean solveMaze() {
-        Position currentPosition = getCurrentPosition();
-        path.push(currentPosition);
-        Position newPosition;
-
-        while (true) {
-            // TODO: A better strategy might be to store positions,
-            // TODO: you've already visited -- e.g. a hasVisited hashSet.
-            // This essentially marks the currentPosition as already visited...
-            setValueAtPosition(currentPosition, 0);
-
-            newPosition = tryGoDown(currentPosition);
-            if (isInBounds(newPosition)) {
-                if (getValueAtPosition(newPosition) == 2) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved down");
-                    return true;
-                } else if (getValueAtPosition(newPosition) == 1) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved down");
-                    path.push(newPosition);
-                    continue;
-                }
-            }
-
-            newPosition = tryGoLeft(currentPosition);
-            if (isInBounds(newPosition)) {
-                if (getValueAtPosition(newPosition) == 2) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved left");
-                    return true;
-                } else if (getValueAtPosition(newPosition) == 1) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved left");
-                    path.push(newPosition);
-                    continue;
-                }
-            }
-
-            newPosition = tryGoUp(currentPosition);
-            if (isInBounds(newPosition)) {
-                if (getValueAtPosition(newPosition) == 2) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved up");
-                    return true;
-                } else if (getValueAtPosition(newPosition) == 1) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved up");
-                    path.push(newPosition);
-                    continue;
-                }
-            }
-
-            newPosition = tryGoRight(currentPosition);
-            if (isInBounds(newPosition)) {
-                if (getValueAtPosition(newPosition) == 2) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved right");
-                    return true;
-                } else if (getValueAtPosition(newPosition) == 1) {
-                    currentPosition = newPosition;
-                    System.out.println("Moved right");
-                    path.push(newPosition);
-                    continue;
-                }
-            }
-
-            // backtrack
-            currentPosition = path.pop();
-            System.out.println("Moved back");
-            if (path.isEmpty()) {
-                return false;
-            }
-        }
     }
 
     private boolean isInBounds(Position position) {

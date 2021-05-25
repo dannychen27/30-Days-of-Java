@@ -1,6 +1,7 @@
 package JavaPracticeProjects.Maze;
 
 import java.util.ArrayList;
+import static JavaPracticeProjects.Maze.MazeConstants.*;
 
 /**
  * I give credit to Caleb Curry for his MazeSolver code from his YouTube series "30 Days of
@@ -19,34 +20,29 @@ import java.util.ArrayList;
 //      - LEFT  -> (x, y) -> (x - 1, y)
 //      - RIGHT -> (x, y) -> (x + 1, y)
 
-// TODO: Maybe create constants for each digit?
-// 0 = wall
-// 1 = path
-// 2 = goal
-
-public class MazeSolver {
+public class MazeManager {
 
     public static void main(String[] args) {
         ArrayList<Maze> mazes = new ArrayList<>();
 
         int[][] maze1 = {
-            {1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0},
-            {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0},
-            {0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1},
-            {1, 1, 1, 2, 0, 1, 0, 1, 0, 1, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1}
+            {PATH, PATH, PATH, PATH, WALL, PATH, PATH, PATH, WALL, PATH, WALL},
+            {WALL, WALL, PATH, PATH, PATH, PATH, WALL, WALL, WALL, PATH, WALL},
+            {WALL, WALL, WALL, PATH, WALL, PATH, PATH, WALL, PATH, PATH, PATH},
+            {PATH, PATH, PATH, GOAL, WALL, PATH, WALL, PATH, WALL, PATH, WALL},
+            {WALL, WALL, WALL, PATH, WALL, WALL, WALL, WALL, WALL, PATH, WALL},
+            {WALL, WALL, WALL, PATH, PATH, PATH, PATH, PATH, PATH, WALL, PATH}
         };
         Position startingPosition1 = new Position(4, 8);
         Maze m1 = new Maze(maze1, startingPosition1);
 
         int[][] maze2 = {
-            {1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0},
-            {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0},
-            {0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1},
-            {1, 1, 1, 2, 0, 1, 0, 1, 0, 1, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1}
+            {PATH, PATH, PATH, PATH, WALL, PATH, PATH, PATH, WALL, PATH, WALL},
+            {WALL, WALL, PATH, PATH, PATH, PATH, WALL, WALL, WALL, PATH, WALL},
+            {WALL, WALL, WALL, PATH, WALL, PATH, PATH, WALL, PATH, PATH, PATH},
+            {PATH, PATH, PATH, GOAL, WALL, PATH, WALL, PATH, WALL, PATH, WALL},
+            {WALL, WALL, WALL, PATH, WALL, WALL, WALL, WALL, WALL, PATH, WALL},
+            {WALL, WALL, WALL, PATH, PATH, PATH, PATH, PATH, PATH, WALL, PATH}
         };
         Position startingPosition2 = new Position(4, 8);
         Maze m2 = new Maze(maze2, startingPosition2);
