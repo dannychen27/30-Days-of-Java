@@ -23,14 +23,14 @@ Medium
 // todo: shallow copy vs. deep copy in terms of value and reference
 // todo: variable shadowing
 // todo: unchecked vs. checked exceptions
-// todo: git
+// todo: git -- IN PROGRESS
 
 Hard
 // todo: autoboxing, unboxing
 // todo: generics
 // todo: method overloading
 // todo: method overriding
-// todo: iterators
+iterators -- DONE FOR NOW
 // todo: what is a spliterator?
 // todo: java threads and "synchronized" keyword
 // todo: floating point arithmetic
@@ -59,8 +59,8 @@ Medium
 // todo: enums
 // todo: inner classes
 user input -- DONE
-// todo: string vs. string builder -- DONE FOR NOW
-// todo: string equality vs. string ==  -- DONE FOR NOW
+string vs. string builder -- DONE FOR NOW
+string equality vs. string ==  -- DONE FOR NOW
 // todo: try-catch-finally statements
 // todo: this
 // todo: object oriented programming
@@ -79,7 +79,7 @@ java built in arrays -- DONE
 
 Medium
 hashmap -- DONE
-// todo: stack
+stack -- DONE FOR NOW
 // todo: queue
 // todo: hashset
 // todo: treeset
@@ -125,3 +125,6 @@ reading txt files -- DONE!
 // todo: writing txt files
 // todo: creating txt files
 // todo: deleting txt files
+
+I added all of my progress from Day 3 (May 24, 2021).
+
