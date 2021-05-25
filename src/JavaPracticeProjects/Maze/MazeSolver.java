@@ -1,6 +1,6 @@
 package JavaPracticeProjects.Maze;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * I give credit to Caleb Curry for his MazeSolver code from his YouTube series "30 Days of
@@ -11,99 +11,56 @@ import java.util.LinkedList;
  *      - Source: https://www.youtube.com/playlist?list=PL_c9BZzLwBRJOmvlnRQpnZS7ZpEvtwkXb
  */
 
+// TODO: Maybe create an enum that stores the 4 directions?
+// TODO:    {UP, DOWN, LEFT, RIGHT}
+// TODO: Make sure they translate back to some position. e.g.
+//      - UP    -> (x, y) -> (x, y - 1)
+//      - DOWN  -> (x, y) -> (x, y + 1)
+//      - LEFT  -> (x, y) -> (x - 1, y)
+//      - RIGHT -> (x, y) -> (x + 1, y)
+
+// TODO: Maybe create constants for each digit?
+// 0 = wall
+// 1 = path
+// 2 = goal
+
 public class MazeSolver {
 
-    static int[][] maze = {
+    public static void main(String[] args) {
+        ArrayList<Maze> mazes = new ArrayList<>();
+
+        int[][] maze1 = {
             {1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0},
             {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0},
             {0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1},
             {1, 1, 1, 2, 0, 1, 0, 1, 0, 1, 0},
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
             {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1}
-    };
-    // 0 = wall
-    // 1 = path
-    // 2 = destination
+        };
+        Position startingPosition1 = new Position(4, 8);
+        Maze m1 = new Maze(maze1, startingPosition1);
 
-    static LinkedList<Position> path = new LinkedList<>();
+        int[][] maze2 = {
+            {1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0},
+            {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0},
+            {0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1},
+            {1, 1, 1, 2, 0, 1, 0, 1, 0, 1, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
+            {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1}
+        };
+        Position startingPosition2 = new Position(4, 8);
+        Maze m2 = new Maze(maze2, startingPosition2);
 
-    public static void main(String[] args) {
-        if (solveMaze(new Position(4, 8))) {
-            System.out.println(" You won!");
-        } else {
-            System.out.println("No path");
-        }
-    }
+        mazes.add(m1);
+        mazes.add(m2);
 
-    private static boolean solveMaze(Position position) {
-        path.push(position);
-
-        while (true) {
-            int x = path.peek().x;
-            int y = path.peek().y;
-
-            maze[y][x] = 0;
-
-            // go down
-            if (isValid(y + 1, x)) {
-                if (maze[y + 1][x] == 2) {
-                    System.out.println("Moved down");
-                    return true;
-                } else if (maze[y + 1][x] == 1) {
-                    System.out.println("Moved down");
-                    path.push(new Position(y + 1, x));
-                    continue;
-                }
-            }
-
-            // go left
-            if (isValid(y, x - 1)) {
-                if (maze[y][x - 1] == 2) {
-                    System.out.println("Moved left");
-                    return true;
-                } else if (maze[y][x - 1] == 1) {
-                    System.out.println("Moved left");
-                    path.push(new Position(y, x - 1));
-                    continue;
-                }
-            }
-
-            // go up
-            if (isValid(y - 1, x)) {
-                if (maze[y - 1][x] == 2) {
-                    System.out.println("Moved up");
-                    return true;
-                } else if (maze[y - 1][x] == 1) {
-                    System.out.println("Moved up");
-                    path.push(new Position(y - 1, x));
-                    continue;
-                }
-            }
-
-            // go right
-            if (isValid(y, x + 1)) {
-                if (maze[y][x + 1] == 2) {
-                    System.out.println("Moved right");
-                    return true;
-                } else if (maze[y][x + 1] == 1) {
-                    System.out.println("Moved right");
-                    path.push(new Position(y, x + 1));
-                    continue;
-                }
-            }
-
-            // backtrack
-            path.pop();
-            System.out.println("Moved back");
-            if (path.size() <= 0) {
-                return false;
+        for (Maze maze : mazes) {
+            if (maze.solveMaze()) {
+                System.out.println("You won!");
+            } else {
+                System.out.println("No path");
             }
         }
-    }
-
-    private static boolean isValid(int y, int x) {
-        return y >= 0 && y < maze.length &&
-               x >= 0 && x < maze[y].length;
     }
 
     // - Everything in Java must belong in a class.
@@ -112,4 +69,13 @@ public class MazeSolver {
     // instead of running the code directly.
     // - leave the work of output to the caller, not to the method
     // being called.
+
+    // - Encapsulate what varies. <--- what does this mean?
+    // - Program to interfaces, not to implementations.
+    // - Depend upon abstractions. Do not depend upon concrete classes.
+
+    // - getters and setters are a more regulated way
+    // to access to instance variables
+    // - since they RESTRICT access to instance variables,
+    // getters and setters promote encapsulation
 }
