@@ -27,10 +27,16 @@ public class MazeSolver {
 
     static LinkedList<Position> path = new LinkedList<>();
 
-
     public static void main(String[] args) {
-        Position p = new Position(4, 8);
-        path.push(p);
+        if (solveMaze(new Position(4, 8))) {
+            System.out.println(" You won!");
+        } else {
+            System.out.println("No path");
+        }
+    }
+
+    private static boolean solveMaze(Position position) {
+        path.push(position);
 
         while (true) {
             int x = path.peek().x;
@@ -41,8 +47,8 @@ public class MazeSolver {
             // go down
             if (isValid(y + 1, x)) {
                 if (maze[y + 1][x] == 2) {
-                    System.out.println("Moved down. You won!");
-                    return;
+                    System.out.println("Moved down");
+                    return true;
                 } else if (maze[y + 1][x] == 1) {
                     System.out.println("Moved down");
                     path.push(new Position(y + 1, x));
@@ -53,8 +59,8 @@ public class MazeSolver {
             // go left
             if (isValid(y, x - 1)) {
                 if (maze[y][x - 1] == 2) {
-                    System.out.println("Moved left. You won!");
-                    return;
+                    System.out.println("Moved left");
+                    return true;
                 } else if (maze[y][x - 1] == 1) {
                     System.out.println("Moved left");
                     path.push(new Position(y, x - 1));
@@ -65,8 +71,8 @@ public class MazeSolver {
             // go up
             if (isValid(y - 1, x)) {
                 if (maze[y - 1][x] == 2) {
-                    System.out.println("Moved up. You won!");
-                    return;
+                    System.out.println("Moved up");
+                    return true;
                 } else if (maze[y - 1][x] == 1) {
                     System.out.println("Moved up");
                     path.push(new Position(y - 1, x));
@@ -77,8 +83,8 @@ public class MazeSolver {
             // go right
             if (isValid(y, x + 1)) {
                 if (maze[y][x + 1] == 2) {
-                    System.out.println("Moved right. You won!");
-                    return;
+                    System.out.println("Moved right");
+                    return true;
                 } else if (maze[y][x + 1] == 1) {
                     System.out.println("Moved right");
                     path.push(new Position(y, x + 1));
@@ -90,8 +96,7 @@ public class MazeSolver {
             path.pop();
             System.out.println("Moved back");
             if (path.size() <= 0) {
-                System.out.println("No path");
-                return;
+                return false;
             }
         }
     }
@@ -100,4 +105,11 @@ public class MazeSolver {
         return y >= 0 && y < maze.length &&
                x >= 0 && x < maze[y].length;
     }
+
+    // - Everything in Java must belong in a class.
+    // - Main should provide an overview of your program,
+    // and it should delegate its work to method calls
+    // instead of running the code directly.
+    // - leave the work of output to the caller, not to the method
+    // being called.
 }
