@@ -22,8 +22,26 @@ class Maze {
         while (true) {
             // TODO: A better strategy might be to store positions,
             // TODO: you've already visited -- e.g. a hasVisited hashSet.
-            // This essentially marks the currentPosition as already visited...
+            // Mark the currentPosition as already visited...
             setValueAtPosition(currentPosition, WALL);
+
+            // TODO: Consider extracting helper functions for trying to
+            // todo: move in each direction. something like:
+            // helper function:
+            // goingDownSolvesMaze(currentPosition) {
+            //      downPosition = tryGoDown(currentPosition);
+            //      if (!isInBounds(downPosition)) {
+            //          return false;
+            //      }
+            //      moveDown();
+            //      // return whether you're at goal
+            //      return getValueAtPosition(newPosition) == GOAL;
+            // }
+
+            // outside of helper function:
+            // if (goingDownSolvesMaze(currentPosition)) {
+            //    break;
+            // }
 
             newPosition = tryGoDown(currentPosition);
             if (isInBounds(newPosition)) {
@@ -106,6 +124,8 @@ class Maze {
         return currentPosition;
     }
 
+    // TODO: If you use a dequeue (double ended queue) where you only enqueue and dequeue
+    // TODO: items from the back of the queue, you could print the path in O(1) time.
     LinkedList<Position> getPath() {
         return path;
     }
