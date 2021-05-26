@@ -1,4 +1,4 @@
-package JavaConstructs.StringBuilders;
+package JavaDataStructures.PrimitiveDataStructures.Object.StringBuilders;
 
 public class StringBuilders {
 

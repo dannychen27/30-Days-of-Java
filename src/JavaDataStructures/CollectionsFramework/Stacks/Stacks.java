@@ -1,4 +1,4 @@
-package JavaDataStructures.Stacks;
+package JavaDataStructures.CollectionsFramework.LinkedList.Stacks;
 
 import java.util.Arrays;
 import java.util.List;

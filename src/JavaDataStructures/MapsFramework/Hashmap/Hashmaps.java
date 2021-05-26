@@ -1,4 +1,4 @@
-package JavaDataStructures.Hashmap;
+package JavaDataStructures.MapsFramework.Hashmap;
 
 import java.util.HashMap;
 
@@ -10,8 +10,10 @@ public class Hashmaps {
         // - Because hashing allows us to store key-value pairs non-contiguously, hashmap key-value
         // pairs are not necessarily sorted.
 
-        // add items to hashmap
+        // creating a new hashmap
         HashMap<String, String> diffusersToPrices = new HashMap<>();
+
+        // add items to hashmap
         diffusersToPrices.put("lavender", "$9.99");
         diffusersToPrices.put("sweet orange", "$12.99");
         diffusersToPrices.put("lemongrass", "$5.99");
@@ -28,6 +30,7 @@ public class Hashmaps {
         System.out.println(diffusersToPrices.keySet()); // [lavender, sweet orange, lemongrass] -- more or less
         System.out.println(diffusersToPrices.values()); // [$9.99, $12.99, $5.99] -- more or less
         System.out.println(diffusersToPrices.get("lavender"));  // $9.99
+        System.out.println(diffusersToPrices.getOrDefault("jasmine", "$3.99")); // $3.99
 
         // set items in hashmap
         diffusersToPrices.replace("lavender", "$4.99");

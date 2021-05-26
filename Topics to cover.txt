@@ -23,6 +23,7 @@ Medium
 // todo: shallow copy vs. deep copy in terms of value and reference
 // todo: variable shadowing
 // todo: unchecked vs. checked exceptions
+// todo: method resolution
 // todo: git -- IN PROGRESS
 
 Hard
@@ -59,11 +60,9 @@ Medium
 // todo: enums
 // todo: inner classes
 user input -- DONE
-string vs. string builder -- DONE FOR NOW
-string equality vs. string ==  -- DONE FOR NOW
 // todo: try-catch-finally statements
 // todo: this
-// todo: object oriented programming
+// todo: object oriented programming -- classes, objects, attributes, methods
 // todo: super()
 
 Hard
@@ -73,9 +72,12 @@ Hard
 
 Java built-in data structures
 Easy
+string vs. string builder -- DONE FOR NOW
+string equality vs. string ==  -- DONE FOR NOW
 arraylist -- DONE
 linkedlist -- DONE
 java built in arrays -- DONE
+object -- DONE FOR NOW
 
 Medium
 hashmap -- DONE
@@ -125,6 +127,4 @@ reading txt files -- DONE!
 // todo: writing txt files
 // todo: creating txt files
 // todo: deleting txt files
-
-I added all of my progress from Day 3 (May 24, 2021).
 

@@ -1,4 +1,4 @@
-package JavaConstructs.Strings;
+package JavaDataStructures.PrimitiveDataStructures.Object.Strings;
 
 public class CompareStrings {
 
