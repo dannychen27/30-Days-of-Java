@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.ConditionalStatements;
+package Constructs.Easy.ConditionalStatements;
 
 public class ConditionalStatements {
 

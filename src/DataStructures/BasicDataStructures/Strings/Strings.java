@@ -1,4 +1,4 @@
-package JavaDataStructures.PrimitiveDataStructures.Object.Strings;
+package DataStructures.BasicDataStructures.Strings;
 
 public class Strings {
 

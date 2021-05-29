@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.SwitchStatements;
+package Constructs.Easy.SwitchStatements;
 
 public class SwitchStatements {
 

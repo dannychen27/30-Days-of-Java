@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package3;
+package Concepts.Easy.AccessModifiers.Package3;
 
 
 class Class8 {

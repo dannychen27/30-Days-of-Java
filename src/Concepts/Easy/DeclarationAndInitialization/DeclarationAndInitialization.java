@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization;
+package Concepts.Easy.DeclarationAndInitialization;
 
 public class DeclarationAndInitialization {
 

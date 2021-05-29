@@ -1,4 +1,4 @@
-package JavaConcepts.Medium.BasicOOP.Exceptions;
+package Concepts.Medium.Exceptions;
 
 import java.io.IOException;
 

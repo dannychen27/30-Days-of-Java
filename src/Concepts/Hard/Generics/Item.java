@@ -1,4 +1,4 @@
-package JavaConcepts.Hard.Generics;
+package Concepts.Hard.Generics;
 
 public class Item <T> {
     private T x;

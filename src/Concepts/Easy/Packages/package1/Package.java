@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.Packages.package1;
+package Concepts.Easy.Packages.package1;
 
 public class Package {
 

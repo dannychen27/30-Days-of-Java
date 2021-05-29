@@ -1,6 +1,6 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package2;
+package Concepts.Easy.AccessModifiers.Package2;
 
-import JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package1.*;
+import Concepts.Easy.AccessModifiers.Package1.Class1;
 
 /**
  * A different class that is a different package non-subclass than another.

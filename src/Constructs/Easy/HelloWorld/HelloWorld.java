@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.HelloWorld;
+package Constructs.Easy.HelloWorld;
 
 public class HelloWorld {
 

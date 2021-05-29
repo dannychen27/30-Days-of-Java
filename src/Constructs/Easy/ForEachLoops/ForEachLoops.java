@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.ForEachLoops;
+package Constructs.Easy.ForEachLoops;
 
 public class ForEachLoops {
 

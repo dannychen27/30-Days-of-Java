@@ -1,7 +1,7 @@
-package JavaPracticeProjects.Maze;
+package PracticeProjects.Maze;
 
 import java.util.LinkedList;
-import static JavaPracticeProjects.Maze.MazeConstants.*;
+import static PracticeProjects.Maze.MazeConstants.*;
 
 class Maze {
     private int[][] maze;

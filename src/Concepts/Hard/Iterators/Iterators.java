@@ -1,4 +1,4 @@
-package JavaConcepts.Hard.Iterators;
+package Concepts.Hard.Iterators;
 
 import java.util.Iterator;
 import java.util.LinkedList;

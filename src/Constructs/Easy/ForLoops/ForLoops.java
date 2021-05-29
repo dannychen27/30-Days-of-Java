@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.ForLoops;
+package Constructs.Easy.ForLoops;
 
 public class ForLoops {
 

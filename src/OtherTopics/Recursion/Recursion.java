@@ -1,4 +1,4 @@
-package JavaOtherTopics.Recursion;
+package OtherTopics.Recursion;
 
 public class Recursion {
 

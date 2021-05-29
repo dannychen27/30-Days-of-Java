@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.Casting;
+package Concepts.Easy.Casting;
 
 public class Casting {
 

@@ -1,4 +1,4 @@
-package JavaPracticeProjects.Maze;
+package PracticeProjects.Maze;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static JavaPracticeProjects.Maze.MazeConstants.*;
+import static PracticeProjects.Maze.MazeConstants.*;
 
 /**
  * I give credit to Caleb Curry for his MazeSolver code from his YouTube series "30 Days of

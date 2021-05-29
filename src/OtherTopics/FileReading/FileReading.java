@@ -1,4 +1,4 @@
-package JavaOtherTopics.FileReading;
+package OtherTopics.FileReading;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList; // implementation

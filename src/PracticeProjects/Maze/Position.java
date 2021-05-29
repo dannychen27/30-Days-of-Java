@@ -1,4 +1,4 @@
-package JavaPracticeProjects.Maze;
+package PracticeProjects.Maze;
 
 public class Position {
     public int x;

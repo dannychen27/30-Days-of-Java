@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package4;
+package Concepts.Easy.AccessModifiers.Package4;
 
 public class Class7 {
 

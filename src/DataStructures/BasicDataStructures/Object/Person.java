@@ -1,4 +1,4 @@
-package JavaDataStructures.PrimitiveDataStructures.Object;
+package DataStructures.BasicDataStructures.Object;
 
 import java.util.Objects;
 

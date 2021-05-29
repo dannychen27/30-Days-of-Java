@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.TernaryIfStatements;
+package Constructs.Easy.TernaryIfStatements;
 
 public class TernaryIfStatements {
 

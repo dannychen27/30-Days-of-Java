@@ -1,6 +1,6 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package3;
+package Concepts.Easy.AccessModifiers.Package3;
 
-import JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package4.Class7;
+import Concepts.Easy.AccessModifiers.Package4.Class7;
 
 public class Class6 {
 

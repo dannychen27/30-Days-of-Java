@@ -1,4 +1,4 @@
-package JavaConcepts.Hard.Generics;
+package Concepts.Hard.Generics;
 
 import java.util.ArrayList;
 import java.util.List;

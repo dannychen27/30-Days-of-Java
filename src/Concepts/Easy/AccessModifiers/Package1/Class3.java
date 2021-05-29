@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package1;
+package Concepts.Easy.AccessModifiers.Package1;
 
 /**
  * A different class that is the same package subclass as the original class.

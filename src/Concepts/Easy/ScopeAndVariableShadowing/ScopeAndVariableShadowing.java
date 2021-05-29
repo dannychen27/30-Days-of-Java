@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.ScopeAndVariableShadowing;
+package Concepts.Easy.ScopeAndVariableShadowing;
 
 public class ScopeAndVariableShadowing {
     int x = 6; // highest scope, since you cannot have code outside of classes

@@ -1,4 +1,4 @@
-package JavaDataStructures.PrimitiveDataStructures.Object.JavaArrays;
+package DataStructures.BasicDataStructures.JavaArrays;
 
 public class Arrays {
 

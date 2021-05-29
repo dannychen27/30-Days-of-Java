@@ -1,4 +1,4 @@
-package JavaOOPDesignPrinciples.Polymorphism;
+package OOPDesignPrinciples.Polymorphism;
 
 import java.util.Arrays;
 import java.util.List;

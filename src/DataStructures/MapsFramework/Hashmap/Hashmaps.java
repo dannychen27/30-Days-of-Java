@@ -1,4 +1,4 @@
-package JavaDataStructures.MapsFramework.Hashmap;
+package DataStructures.MapsFramework.Hashmap;
 
 import java.util.HashMap;
 

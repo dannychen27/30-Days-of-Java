@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.WhileLoops;
+package Constructs.Easy.WhileLoops;
 
 public class WhileLoops {
 

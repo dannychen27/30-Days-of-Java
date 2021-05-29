@@ -1,4 +1,4 @@
-package JavaPracticeProjects.Maze;
+package PracticeProjects.Maze;
 
 class MazeConstants {
     static int WALL = 0;

@@ -1,4 +1,4 @@
-package JavaConcepts.Hard.Generics;
+package Concepts.Hard.Generics;
 
 public class Pair<T, U> {
     private T x;

@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.DoWhileLoops;
+package Constructs.Easy.DoWhileLoops;
 
 public class DoWhileLoops {
 

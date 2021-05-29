@@ -1,4 +1,4 @@
-package JavaConstructs.Easy.PrimitiveAndReferenceTypes;
+package Constructs.Easy.PrimitiveAndReferenceTypes;
 
 public class PrimitiveAndReferenceTypes {
 

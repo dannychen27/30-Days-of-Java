@@ -1,4 +1,4 @@
-package JavaConcepts.Easy.DeclarationAndInitialization.AccessModifiers.Package1;
+package Concepts.Easy.AccessModifiers.Package1;
 
 // Access modifiers allow us to restrict/grant access to certain static/instance variables, methods, and classes:
 // source 1: https://www.geeksforgeeks.org/access-modifiers-java/
