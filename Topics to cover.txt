@@ -1,46 +1,43 @@
-TO DO LIST OF TOPICS TO COVER
+TO DO LIST OF JAVA TOPICS TO COVER
 
-Java clean architecture
+Clean architecture
 // todo: various software layers (database layer, UI layer)
 // todo: Model-View-Controller -- is this a design pattern?
 
-Java concepts
+Concepts
 Easy
-casting -- DONE
-primitive types vs. object types -- DONE
 declaration vs. initialization -- DONE
+scope and variable shadowing -- DONE
+casting -- DONE
 packages -- DONE FOR NOW
-scope -- DONE
-variable shadowing -- DONE
 access modifiers (e.g. private, protected, package private, public) -- DONE
-recursion -- DONE
 
 Medium
-// todo: constructors
-// todo: getters and setters
-// todo: shallow copy vs. deep copy in terms of value and reference
-// todo: lookup rules from csc207h1
-generics -- DONE FOR NOW
-wildcards -- DONE FOR NOW
-// todo: autoboxing, unboxing
+basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE
+constructors -- DONE
+getters and setters -- DONE
 // todo: method overloading
 // todo: method overriding
 // todo: method resolution
 unchecked vs. checked exceptions -- DONE
 // todo: user created exceptions
+// todo: shallow copy vs. deep copy in terms of value and reference
+// todo: lookup rules from csc207h1
 
 Hard
 // todo: git -- IN PROGRESS
+generics -- DONE FOR NOW
+// todo: autoboxing, unboxing
+wildcards -- DONE FOR NOW
 // todo: floating point arithmetic
 iterators -- DONE FOR NOW
 // todo: what is a spliterator?
-// todo: java threads and "synchronized" keyword
-// todo: dynamic programming
 
 
-Java constructs
+Constructs
 Easy
 hello world, println -- DONE
+primitive types vs. object types -- DONE
 // todo: comparison operators (<, <=, >, >=, !=, ==)
 // todo; logical operators (and, or, not)
 // todo: modulus operator (%)
@@ -60,8 +57,6 @@ user input -- DONE
 
 Medium
 // todo: pre-increment vs. post-increment operators
-// todo: object oriented programming -- classes, objects, attributes, methods
-// todo: this
 // todo: super()
 // todo: instanceof
 // todo: try-catch-finally statements
@@ -74,23 +69,26 @@ Hard
 // todo: comparator function
 // todo: regex
 
-Java built-in data structures
-Easy
-string vs. string builder -- DONE FOR NOW
-string equality vs. string ==  -- DONE FOR NOW
-arraylist -- DONE
-linkedlist -- DONE
+(Built-in) data structures
+Basic
 java built in arrays -- DONE
 object -- DONE FOR NOW
+string vs. string builder -- DONE FOR NOW
+string equality vs. string ==  -- DONE FOR NOW
 
-Medium
-hashmap -- DONE
+Collections Framework
+arraylist -- DONE
+linkedlist -- DONE
+hashset -- DONE
 stack -- DONE FOR NOW
 // todo: queue
-hashset -- DONE
 // todo: treeset
 
-Java design patterns
+Maps Framework
+hashmap -- DONE
+// todo: treemap
+
+Design patterns
 Creational
 // todo: factory
 // todo: abstract factory
@@ -106,35 +104,37 @@ Behavioural
 // todo: observer
 // todo: strategy
 
-Java OOP design principles
+OOP design principles
 // todo: abstraction
 // todo: encapsulation
 // todo: inheritance w/ UML diagrams! CRC cards.
 polymorphism -- DONE
 
-Java refactoring techniques
+Refactoring techniques
 // todo: extract method
 // todo: guard clause
 // todo: polymorphism to replace conditional
 
-Java SOLID principles <-- is SOLID a design pattern?
+SOLID principles <-- is SOLID a design pattern?
 // todo: single responsibility principle
 // todo: open closed principle
 // todo: liskov substitution principle
 // todo: interface segregation principle
 // todo: dependency injection principle
 
-Other:
+Other Topics:
 // todo: GUI design
 // todo: reading CSV files
 reading txt files -- DONE
 // todo: writing txt files
 // todo: creating txt files
 // todo: deleting txt files
-// threads (e.g. synchronized keyword)
-// serialization (e.g. transient, volatile keywords)
+// todo: java threads (e.g. "synchronized" keyword)
+// todo: serialization (e.g. transient, volatile keywords)
+recursion -- DONE
+dynamic programming -- DONE FOR NOW
 
-Coding Interview Problems
+Interview Problems
 // todo: sliding window algorithm
 // todo: two converging pointers algorithm
 // todo: floyd's cycle detection algorithm -- fast and slow pointer
@@ -155,6 +155,6 @@ Coding Interview Problems
 // todo: largest subarray sum
 // todo: contiguous subarray sum
 // todo: invert binary tree
-// todo: anagram
+// todo: find anagram
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
