@@ -1,7 +1,7 @@
 TO DO LIST OF TOPICS TO COVER
 
 Java clean architecture
-// todo: various software layers
+// todo: various software layers (database layer, UI layer)
 // todo: Model-View-Controller -- is this a design pattern?
 
 Java concepts
@@ -10,33 +10,32 @@ casting -- DONE
 primitive types vs. object types -- DONE
 declaration vs. initialization -- DONE
 packages -- DONE FOR NOW
-// todo: scope
-// todo: pre-increment vs. post-increment operators
+scope -- DONE
+variable shadowing -- DONE
 access modifiers (e.g. private, protected, package private, public) -- DONE
-// todo: recursion
+recursion -- DONE
 
 Medium
 // todo: constructors
 // todo: getters and setters
-// todo: instanceof
-// todo: static (classes, methods, variables)
-// todo: lookup rules from csc207h1
 // todo: shallow copy vs. deep copy in terms of value and reference
-// todo: variable shadowing
-// todo: unchecked vs. checked exceptions
-// todo: method resolution
-// todo: git -- IN PROGRESS
-
-Hard
-// todo: autoboxing, unboxing
+// todo: lookup rules from csc207h1
 generics -- DONE FOR NOW
 wildcards -- DONE FOR NOW
+// todo: autoboxing, unboxing
 // todo: method overloading
 // todo: method overriding
+// todo: method resolution
+unchecked vs. checked exceptions -- DONE
+// todo: user created exceptions
+
+Hard
+// todo: git -- IN PROGRESS
+// todo: floating point arithmetic
 iterators -- DONE FOR NOW
 // todo: what is a spliterator?
 // todo: java threads and "synchronized" keyword
-// todo: floating point arithmetic
+// todo: dynamic programming
 
 
 Java constructs
@@ -45,7 +44,6 @@ hello world, println -- DONE
 // todo: comparison operators (<, <=, >, >=, !=, ==)
 // todo; logical operators (and, or, not)
 // todo: modulus operator (%)
-// todo: final (classes, methods, variables)
 conditional (if-elseif-else) statements -- DONE
 ternary if-statements -- DONE
 switch statements -- DONE
@@ -55,20 +53,24 @@ while loops -- DONE
 do while loops -- DONE
 // todo: break
 // todo: continue
+// todo: final (classes, methods, variables)
 // todo: date library
 // todo: math library
+user input -- DONE
 
 Medium
-// todo: enums
-// todo: inner classes
-user input -- DONE
-// todo: try-catch-finally statements
-// todo: this
+// todo: pre-increment vs. post-increment operators
 // todo: object oriented programming -- classes, objects, attributes, methods
+// todo: this
 // todo: super()
+// todo: instanceof
+// todo: try-catch-finally statements
 
 Hard
+// todo: enums
+// todo: inner classes
 // todo: abstract classes (classes, methods) vs. interfaces
+// todo: static (classes, methods, variables)
 // todo: comparator function
 // todo: regex
 
@@ -85,7 +87,7 @@ Medium
 hashmap -- DONE
 stack -- DONE FOR NOW
 // todo: queue
-// todo: hashset
+hashset -- DONE
 // todo: treeset
 
 Java design patterns
@@ -131,3 +133,28 @@ reading txt files -- DONE
 // todo: deleting txt files
 // threads (e.g. synchronized keyword)
 // serialization (e.g. transient, volatile keywords)
+
+Coding Interview Problems
+// todo: sliding window algorithm
+// todo: two converging pointers algorithm
+// todo: floyd's cycle detection algorithm -- fast and slow pointer
+// todo: reversing a linked list -- iterative and recursive
+// todo: recursive staircase problem -- iterative, recursive, and DP
+// todo: knapsack problem -- iterative, recursive, and DP
+// todo: lonely integer
+// todo: balanced parentheses using stacks
+// todo: two stacks as a queue problem
+// todo: number of paths in a maze  -- iterative, recursive, and DP -- IN PROGRESS
+// todo: shortest path on a graph -- BFS
+// todo: how to make change -- DP
+// todo: find contacts using a trie
+// todo: connected components on a graph -- DFS
+// todo: sort array with comparator function
+// todo: find sum of two integers in array
+// todo: largest subsequence sum
+// todo: largest subarray sum
+// todo: contiguous subarray sum
+// todo: invert binary tree
+// todo: anagram
+// todo: edit distance -- iterative, recursive, DP
+// todo: running median using heaps/priority queues
