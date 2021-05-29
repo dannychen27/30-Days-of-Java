@@ -7,18 +7,19 @@ Java clean architecture
 Java concepts
 Easy
 casting -- DONE
-primitive types vs. object types -- DONE!
-declaration vs. initialization -- DONE!
+primitive types vs. object types -- DONE
+declaration vs. initialization -- DONE
+packages -- DONE FOR NOW
 // todo: scope
 // todo: pre-increment vs. post-increment operators
-// todo: accessibility modifiers (e.g. private, protected, package private, public)
+access modifiers (e.g. private, protected, package private, public) -- DONE
 // todo: recursion
 
 Medium
 // todo: constructors
 // todo: getters and setters
 // todo: instanceof
-// todo: static classes, static methods, static variables
+// todo: static (classes, methods, variables)
 // todo: lookup rules from csc207h1
 // todo: shallow copy vs. deep copy in terms of value and reference
 // todo: variable shadowing
@@ -28,7 +29,8 @@ Medium
 
 Hard
 // todo: autoboxing, unboxing
-// todo: generics
+generics -- DONE FOR NOW
+wildcards -- DONE FOR NOW
 // todo: method overloading
 // todo: method overriding
 iterators -- DONE FOR NOW
@@ -43,7 +45,7 @@ hello world, println -- DONE
 // todo: comparison operators (<, <=, >, >=, !=, ==)
 // todo; logical operators (and, or, not)
 // todo: modulus operator (%)
-// todo: final (for constants)
+// todo: final (classes, methods, variables)
 conditional (if-elseif-else) statements -- DONE
 ternary if-statements -- DONE
 switch statements -- DONE
@@ -66,7 +68,7 @@ user input -- DONE
 // todo: super()
 
 Hard
-// todo: abstract classes vs. interfaces
+// todo: abstract classes (classes, methods) vs. interfaces
 // todo: comparator function
 // todo: regex
 
@@ -123,8 +125,9 @@ Java SOLID principles <-- is SOLID a design pattern?
 Other:
 // todo: GUI design
 // todo: reading CSV files
-reading txt files -- DONE!
+reading txt files -- DONE
 // todo: writing txt files
 // todo: creating txt files
 // todo: deleting txt files
-
+// threads (e.g. synchronized keyword)
+// serialization (e.g. transient, volatile keywords)

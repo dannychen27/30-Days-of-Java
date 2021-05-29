@@ -5,12 +5,9 @@ import java.util.ArrayList;
 public class Generics {
 
     public static void main(String[] args) {
-        // Generic types let us use general types instead of specific types
-
         // Need to rewatch: https://www.youtube.com/watch?v=fIkJNhi78fc&list=PL_c9BZzLwBRJOmvlnRQpnZS7ZpEvtwkXb&index=25
-
-        // most common letters for generic types:
-        // E e, T t, where their types are unknown
+        // - Generic types let us use general types instead of specific types
+        // - most common letters for generic types: E e, T t, where their types are unknown
 
         // without generics (errors are found in runtime)
         // ArrayList messages = new ArrayList();
@@ -42,16 +39,21 @@ public class Generics {
         people.add(a);
         doSomething(a);  // JavaConcepts.Generics.Admin@3c1
 
-        ArrayList<Admin> admins = new ArrayList<>();
-        // doSomething(admins); // inheritance/polymorphism doesn't work for generics
+        // inheritance/polymorphism doesn't work for generics if
+        // aPublicMethod has signature static void aPublicMethod(ArrayList<Person> peeps)
         // (13:12 type to a derived classes), even if Admin inherits person
+        // ArrayList<Admin> admins = new ArrayList<>();
+        // admins.add(a);
+        // aPublicMethod(admins);
 
-        // Instead:
+        // A temporary fix:
+        ArrayList<Admin> admins = new ArrayList<>();
+        admins.add(a);
         ArrayList<Person> adminsP = new ArrayList<>();
         for (Admin admin : admins) {
-            adminsP.add((Person) admin);
+             adminsP.add((Person) admin);
         }
-        doSomething(adminsP); // []
+        doSomething(adminsP); // [JavaConcepts.Generics.Admin@3c1]
     }
 
     static void doSomething(Person p) {
