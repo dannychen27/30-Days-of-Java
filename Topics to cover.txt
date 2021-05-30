@@ -16,20 +16,20 @@ Medium
 basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE
 constructors -- DONE
 getters and setters -- DONE
+generics -- DONE FOR NOW
+// todo: autoboxing, unboxing
+wildcards -- DONE FOR NOW
 // todo: method overloading
 // todo: method overriding
 // todo: method resolution
 unchecked vs. checked exceptions -- DONE
 // todo: user created exceptions
 // todo: shallow copy vs. deep copy in terms of value and reference
-// todo: lookup rules from csc207h1
 
 Hard
 // todo: git -- IN PROGRESS
-generics -- DONE FOR NOW
-// todo: autoboxing, unboxing
-wildcards -- DONE FOR NOW
-// todo: floating point arithmetic
+// todo: the perils of floating point arithmetic
+// todo: lookup rules from csc207h1
 iterators -- DONE FOR NOW
 // todo: what is a spliterator?
 
@@ -38,35 +38,38 @@ Constructs
 Easy
 hello world, println -- DONE
 primitive types vs. object types -- DONE
-// todo: comparison operators (<, <=, >, >=, !=, ==)
-// todo; logical operators (and, or, not)
-// todo: modulus operator (%)
+arithmetic operations (+, -, *, / which is integer division, %) -- DONE
+augmented assignment (+=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=) -- DONE
+bitwise operations (|, ^, >>, <<) -- DONE FOR NOW
+comparison operators (<, <=, >, >=, !=, ==) -- DONE
+logical operators (&&, ||, !) -- DONE
 conditional (if-elseif-else) statements -- DONE
 ternary if-statements -- DONE
+pre-increment vs. post-increment operators -- DONE
 switch statements -- DONE
 for loops -- DONE
 foreach loops -- DONE
 while loops -- DONE
 do while loops -- DONE
-// todo: break
-// todo: continue
+break -- DONE FOR NOW
+continue -- DONE FOR NOW
 // todo: final (classes, methods, variables)
 // todo: date library
 // todo: math library
 user input -- DONE
 
 Medium
-// todo: pre-increment vs. post-increment operators
 // todo: super()
 // todo: instanceof
-// todo: try-catch-finally statements
+// todo: inner classes
+// todo: enums
+try-catch-finally statements -- DONE
+// todo: comparator function
 
 Hard
-// todo: enums
-// todo: inner classes
-// todo: abstract classes (classes, methods) vs. interfaces
+// todo: abstract classes (deadly diamond of death for multiple inheritance)
+// todo: interfaces
 // todo: static (classes, methods, variables)
-// todo: comparator function
 // todo: regex
 
 (Built-in) data structures
@@ -82,11 +85,26 @@ linkedlist -- DONE
 hashset -- DONE
 stack -- DONE FOR NOW
 // todo: queue
+// todo: priority queue
+// todo: dequeue (double ended queue)
 // todo: treeset
 
 Maps Framework
 hashmap -- DONE
 // todo: treemap
+
+Custom Data Structures
+// todo: graphs
+// todo: tries
+// todo: trees
+// todo: binary trees
+// todo: binary search trees
+// todo: avl trees
+// todo: red black trees
+// todo: b/b+ trees
+// todo: minimum spanning trees
+// todo: doubly linked list
+// todo: circular linked list
 
 Design patterns
 Creational
@@ -131,8 +149,14 @@ reading txt files -- DONE
 // todo: deleting txt files
 // todo: java threads (e.g. "synchronized" keyword)
 // todo: serialization (e.g. transient, volatile keywords)
+// todo: traditional comparison-based sorting algorithms (e.g. bubble, selection, insertion, quicksort, mergesort, timsort, heapsort, treesort)
+// todo: other comparison-based sorting algorithms (e.g. bogosort, 3-way quicksort, cocktailsort, odd-even sort, pancakesort)
+// todo: non-comparison-based sorting algorithms (e.g. radix, counting, bucket, pigeonhole)
+// todo: linear search, binary search, iterative and recursive
 recursion -- DONE
 dynamic programming -- DONE FOR NOW
+// todo: reflections
+// todo: intro to android programming (e.g. event listeners)
 
 Interview Problems
 // todo: sliding window algorithm
@@ -158,3 +182,4 @@ Interview Problems
 // todo: find anagram
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
+// todo: count inversions -- using mergesort

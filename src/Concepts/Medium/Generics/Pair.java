@@ -1,4 +1,4 @@
-package Concepts.Hard.Generics;
+package Concepts.Medium.Generics;
 
 public class Pair<T, U> {
     private T x;

@@ -1,4 +1,4 @@
-package Concepts.Hard.Generics;
+package Concepts.Medium.Generics;
 
 public class Item <T> {
     private T x;

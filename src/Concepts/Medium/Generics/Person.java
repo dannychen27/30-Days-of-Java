@@ -1,4 +1,4 @@
-package Concepts.Hard.Generics;
+package Concepts.Medium.Generics;
 
 import java.util.Objects;
 
