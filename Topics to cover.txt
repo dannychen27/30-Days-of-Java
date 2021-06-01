@@ -9,15 +9,20 @@ Easy
 declaration vs. initialization -- DONE
 scope and variable shadowing -- DONE
 casting -- DONE
+// todo: widening/upcasting, no cast needed (large primitive type value accommodates smaller primitive type value; superclass accommodates subclass)
+// todo: narrowing/downcasting, cast needed (shrinking a large primitive type value into a smaller primitive type value; shrink superclass into subclass)
+// source: https://www.decodejava.com/widening-and-narrowing-in-java.htm#:~:text=Widening%20takes%20place%20when%20a,reference%20variable%20of%20its%20superclass
 packages -- DONE FOR NOW
 access modifiers (e.g. private, protected, package private, public) -- DONE
 
 Medium
 basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE
+// todo: objects determine their own state and behaviour
 constructors -- DONE
 getters and setters -- DONE
 generics -- DONE FOR NOW
-// todo: autoboxing, unboxing
+autoboxing -- DONE
+unboxing -- DONE
 wildcards -- DONE FOR NOW
 // todo: method overloading
 // todo: method overriding
@@ -117,6 +122,7 @@ Creational
 Structural
 // todo: adapter
 // todo: facade
+// todo: dependency injection
 
 Behavioural
 // todo: iterator
@@ -129,7 +135,7 @@ OOP design principles
 // todo: inheritance w/ UML diagrams! CRC cards.
 polymorphism -- DONE
 
-Refactoring techniques
+Refactoring techniques (code craftmanship techniques)
 // todo: extract method
 // todo: guard clause
 // todo: polymorphism to replace conditional
@@ -140,6 +146,17 @@ SOLID principles <-- is SOLID a design pattern?
 // todo: liskov substitution principle
 // todo: interface segregation principle
 // todo: dependency injection principle
+
+Software Testing
+// todo: JUnit basics, importance of testing
+// todo: setUp, tearDown methods
+// todo: mocks, test doubles, stubs, etc.
+// todo: CI/CD
+// todo: unittests
+// todo: UI tests
+// todo: integration tests
+// todo: test driven development
+// todo: behaviour driven development
 
 Other Topics:
 // todo: GUI design
@@ -158,6 +175,8 @@ recursion -- DONE
 dynamic programming -- DONE FOR NOW
 // todo: reflections
 // todo: intro to android programming (e.g. event listeners)
+// todo: database connections
+// todo: REST api, api development
 
 Interview Problems
 // todo: sliding window algorithm
