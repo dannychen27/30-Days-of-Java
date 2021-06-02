@@ -235,8 +235,8 @@ bogosort -- DONE
 // todo: pancakesort
 
 non-comparison-based sorting algorithms
-// todo: radix sort
-// todo: counting sort
+radix sort -- DONE
+counting sort -- DONE
 // todo: bucket sort
 // todo: pigeonhole sort
 

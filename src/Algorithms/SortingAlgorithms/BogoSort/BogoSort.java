@@ -13,6 +13,8 @@ public class BogoSort {
     }
 
     private static void bogoSort(Integer[] array) {
+        // source: https://www.journaldev.com/32661/shuffle-array-java
+
         while (!isSorted(array)) {
             List<Integer> intList = Arrays.asList(array);
             Collections.shuffle(intList);  // apparently int[] has no shuffle method
