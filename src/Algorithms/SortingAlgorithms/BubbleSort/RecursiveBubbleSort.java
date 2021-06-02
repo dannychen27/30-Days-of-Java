@@ -16,7 +16,7 @@ public class RecursiveBubbleSort {
         }
 
         // endIndex is the index of the last unsorted item.
-        // loop invariant: array[endIndex:array.length - 1] is sorted.
+        // loop invariant: array[endIndex:array.length] is sorted.
         for (int startIndex = 0; startIndex < endIndex; startIndex++) {
             if (array[startIndex] > array[startIndex + 1]) {
                 swap(array, startIndex, startIndex + 1);

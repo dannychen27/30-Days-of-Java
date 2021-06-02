@@ -15,7 +15,7 @@ public class IterativeBubbleSort {
      */
     private static void iterativeBubbleSort(int[] array) {
         // endIndex is the index of the last unsorted item.
-        // loop invariant: array[endIndex:array.length - 1] is sorted.
+        // loop invariant: array[endIndex:array.length] is sorted.
         for (int endIndex = array.length - 1; endIndex > 0; endIndex--) {
             for (int startIndex = 0; startIndex < endIndex; startIndex++) {
                 if (array[startIndex] > array[startIndex + 1]) {
