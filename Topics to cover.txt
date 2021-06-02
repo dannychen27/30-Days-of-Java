@@ -24,9 +24,9 @@ generics -- DONE FOR NOW
 autoboxing -- DONE
 unboxing -- DONE
 wildcards -- DONE FOR NOW
-// todo: method overloading
-// todo: method overriding
-// todo: method resolution
+method overloading -- DONE FOR NOW
+method overriding -- DONE FOR NOW
+method resolution -- DONE FOR NOW
 unchecked vs. checked exceptions -- DONE
 // todo: user created exceptions
 // todo: shallow copy vs. deep copy in terms of value and reference
