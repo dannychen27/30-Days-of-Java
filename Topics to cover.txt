@@ -220,9 +220,9 @@ recursive insertion sort -- DONE
 // todo: in-place recursive quicksort
 // todo: out-of-place recursive quicksort
 // todo: iterative quicksort
-// todo: in-place recursive mergesort
-// todo: out-of-place recursive mergesort
-// todo: iterative mergesort
+in-place recursive mergesort -- DONE
+out-of-place recursive mergesort -- DONE
+iterative mergesort -- DONE
 // todo: timsort
 // todo: heapsort
 // todo: treesort
