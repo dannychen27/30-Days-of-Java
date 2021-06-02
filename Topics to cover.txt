@@ -211,12 +211,12 @@ Interview Problems
 Algorithms
 
 Comparison-based sorting algorithms
-// todo: iterative bubble search
-// todo: recursive bubble search
-// todo: iterative selection sort
-// todo: recursive selection sort
-// todo: iterative insertion sort
-// todo: recursive insertion sort
+iterative bubble sort -- DONE
+recursive bubble sort -- DONE
+iterative selection sort -- DONE
+recursive selection sort -- DONE
+iterative insertion sort -- DONE
+recursive insertion sort -- DONE
 // todo: in-place recursive quicksort
 // todo: out-of-place recursive quicksort
 // todo: iterative quicksort
