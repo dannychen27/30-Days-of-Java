@@ -209,16 +209,52 @@ Interview Problems
 // todo: count inversions -- using mergesort
 
 Algorithms
-// todo: linear search, binary search, iterative and recursive
-// todo: traditional comparison-based sorting algorithms (e.g. bubble, selection, insertion, quicksort, mergesort, timsort, heapsort, treesort)
-// todo: other comparison-based sorting algorithms (e.g. bogosort, 3-way quicksort, cocktailsort, odd-even sort, pancakesort)
-// todo: non-comparison-based sorting algorithms (e.g. radix, counting, bucket, pigeonhole)
+
+Comparison-based sorting algorithms
+// todo: iterative bubble search
+// todo: recursive bubble search
+// todo: iterative selection sort
+// todo: recursive selection sort
+// todo: iterative insertion sort
+// todo: recursive insertion sort
+// todo: in-place recursive quicksort
+// todo: out-of-place recursive quicksort
+// todo: iterative quicksort
+// todo: in-place recursive mergesort
+// todo: out-of-place recursive mergesort
+// todo: iterative mergesort
+// todo: timsort
+// todo: heapsort
+// todo: treesort
+
+other comparison-based sorting algorithms
+// todo: bogosort
+// todo: 3-way quicksort
+// todo: cocktailsort
+// todo: odd-even sort
+// todo: pancakesort
+
+non-comparison-based sorting algorithms
+// todo: radix sort
+// todo: counting sort
+// todo: bucket sort
+// todo: pigeonhole sort
+
+array search algorithms
+iterative linear search -- DONE
+recursive linear search -- DONE
+iterative binary search -- DONE
+recursive binary search -- DONE
+
+graph algorithms
 // todo: bfs
 // todo: dfs
 // todo: depth limited dfs
 // todo: uniform cost search
 // todo: best first search
-// todo: djistrka's algorithm
+// todo: dijkstra's algorithm
+// todo: topological sort
+
+mst algorithms
 // todo: prim's mst algorithm
 // todo: kruskal's mst algorithm
-// todo: topological sort
