@@ -219,7 +219,7 @@ iterative insertion sort -- DONE
 recursive insertion sort -- DONE
 in-place recursive quicksort -- DONE
 out-of-place recursive quicksort -- DONE
-// todo: iterative quicksort
+iterative quicksort -- DONE
 in-place recursive mergesort -- DONE
 out-of-place recursive mergesort -- DONE
 iterative mergesort -- DONE
@@ -228,7 +228,7 @@ iterative mergesort -- DONE
 // todo: treesort
 
 other comparison-based sorting algorithms
-// todo: bogosort
+bogosort -- DONE
 // todo: 3-way quicksort
 // todo: cocktailsort
 // todo: odd-even sort
