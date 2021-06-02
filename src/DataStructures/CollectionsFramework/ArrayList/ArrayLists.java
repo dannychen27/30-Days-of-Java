@@ -1,13 +1,18 @@
 package DataStructures.CollectionsFramework.ArrayList;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class ArrayLists {
 
     public static void main(String[] args) {
-        // add items to arraylist
-        ArrayList<String> array = new ArrayList<>();
+        // - An ArrayList is a dynamically resizable array
+        // - Similar to a C++ vector
+
+        // add items to ArrayList
+        List<String> array = new ArrayList<>(); // we're using the List interface to achieve abstraction
         array.add("Hello");
         array.add(0, "L");
         array.add(2, "P");
@@ -19,6 +24,13 @@ public class ArrayLists {
 
         ArrayList<String> clonedArray = (ArrayList<String>) array2.clone();
         System.out.println(clonedArray);  // [Hello]
+
+        List<Integer> scores = Arrays.asList(5, 4, 3, 2, 1);
+        System.out.println(scores); // [5, 4, 3, 2, 1]
+        // TODO: - Arrays.parallelSort()
+        // TODO: - Arrays.equals()
+        // TODO: - Arrays.deepEquals() <- for nested arrays
+        // TODO: - Arrays.fill() <- replace all entries in array with specified value
 
         // check membership in arraylist
         System.out.println(array.isEmpty());            // false
@@ -38,9 +50,15 @@ public class ArrayLists {
             System.out.println(s);   // Helium, Hello, P
         }
 
+        // search for items in an arraylist
+        System.out.println(array.indexOf("Hello")); // 1
+        System.out.println(array.indexOf("Goodbye")); // -1
+
         // sort items in arraylist
-        Collections.sort(array);
-        System.out.println(array);                      // [Helium, Hello, P]
+        Arrays.sort(array.toArray());
+        System.out.println(array);  // [Helium, Hello, P]
+        scores.sort(Comparator.naturalOrder());
+        System.out.println(scores); // [1, 2, 3, 4, 5]
 
         // remove items from arraylist
         System.out.println(array.remove("Helium"));  // true

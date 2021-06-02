@@ -25,7 +25,28 @@ public class PrimitiveAndReferenceTypes {
         //      -     long                     0L          -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807      8 bytes = 32 bits
         //                                                      (-2^63 to 2^63 - 1)
         //      -    double                    0.0d                  unlimited                                          8 bytes = 32 bits
+        demonstrateIntegerLimits();
+        demonstrateDoubleLimits();
+        questions();
+    }
 
+    private static void demonstrateIntegerLimits() {
+        System.out.println(Integer.MIN_VALUE); // -2147483648
+        System.out.println(Integer.MAX_VALUE); // 2147483647
+        System.out.println(Integer.SIZE); // 32
+        System.out.println(Integer.TYPE); // int
+    }
+
+    private static void demonstrateDoubleLimits() {
+        System.out.println(Double.POSITIVE_INFINITY); // Infinity
+        System.out.println(Double.NEGATIVE_INFINITY); // -Infinity
+        System.out.println(Double.NaN); // NaN
+        System.out.println(Double.isFinite(5)); // true
+        System.out.println(Double.isInfinite(Double.NEGATIVE_INFINITY)); // true
+        System.out.println(Double.isNaN(Double.NaN)); // true
+    }
+
+    private static void questions() {
         // Q1: Why does char use 2 bytes in java?
         // A1: char uses 2 bytes in java because it uses the unicode system, not ascii
 

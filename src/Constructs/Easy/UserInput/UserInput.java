@@ -6,7 +6,7 @@ public class UserInput {
 
     public static void main(String[] args) {
         // setting up the scanner
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // System.in == standard in (the console)
         System.out.println("Enter a diffuser scent: ");
 
         // accepting user input
