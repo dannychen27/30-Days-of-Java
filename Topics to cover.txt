@@ -217,8 +217,8 @@ iterative selection sort -- DONE
 recursive selection sort -- DONE
 iterative insertion sort -- DONE
 recursive insertion sort -- DONE
-// todo: in-place recursive quicksort
-// todo: out-of-place recursive quicksort
+in-place recursive quicksort -- DONE
+out-of-place recursive quicksort -- DONE
 // todo: iterative quicksort
 in-place recursive mergesort -- DONE
 out-of-place recursive mergesort -- DONE
