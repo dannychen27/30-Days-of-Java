@@ -27,7 +27,7 @@ public class OutOfPlaceQuickSort {
         int[] smallerSortedArray = outOfPlaceQuickSort(smallerArray);
         int[] biggerSortedArray = outOfPlaceQuickSort(biggerArray);
 
-        // Combine smallerSortedArray and biggerSortedArray
+        // Combine smallerSortedArray, biggerSortedArray, and pivot
         int mergedArrayIndex = 0;
         int[] mergedArray = new int[smallerArray.length + biggerArray.length + 1];
 
@@ -76,8 +76,11 @@ public class OutOfPlaceQuickSort {
     }
 
 
-    // source: https://www.geeksforgeeks.org/how-to-get-slice-of-a-primitive-array-in-java/
+    /**
+     * Return the subarray array[startIndex:endIndex].
+     */
     private static int[] substring(int[] array, int startIndex, int endIndex) {
+        // source: https://www.geeksforgeeks.org/how-to-get-slice-of-a-primitive-array-in-java/
         int[] slicedArray = new int[endIndex - startIndex];
         for (int i = 0; i < slicedArray.length; i++) {
             slicedArray[i] = array[startIndex + i];

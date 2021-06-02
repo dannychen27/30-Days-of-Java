@@ -19,6 +19,8 @@ public class InPlaceQuicksort {
 
     /**
      * Sort this array.
+     *
+     * Precondition: startIndex >= 0 and endIndex >= 0.
      */
     private static void inPlaceQuickSortHelper(int[] array, int startIndex, int endIndex) {
         // source: https://www.google.com/search?q=quicksort+in+place+algorithm&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjIhN7guvjwAhVFGs0KHZfOBOoQ_AUoAnoECAEQBA&biw=945&bih=596#imgrc=pk3qCk0Q1TnVbM
@@ -29,13 +31,17 @@ public class InPlaceQuicksort {
         }
     }
 
+    /**
+     * Return the partition index after performing in place partition on the subarray
+     * array[startIndex:endIndex].
+     */
     private static int partition(int[] array, int startIndex, int endIndex) {
         int initialPivotIndex = startIndex; // the pivot doesn't matter
         swap(array, initialPivotIndex, endIndex);
         int pivotIndex = startIndex;
-        for (int i = startIndex; i < endIndex; i++) {
-            if (array[i] <= array[endIndex]) {
-                swap(array, i, pivotIndex);
+        for (int currentIndex = startIndex; currentIndex < endIndex; currentIndex++) {
+            if (array[currentIndex] <= array[endIndex]) {
+                swap(array, currentIndex, pivotIndex);
                 pivotIndex++;
             }
         }
