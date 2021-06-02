@@ -10,6 +10,16 @@ public class RecursiveBubbleSort {
         System.out.println(Arrays.toString(numbers)); // [1, 2, 3, 4, 5]
     }
 
+    /**
+     * Sort this array.
+     */
+    private static void recursiveBubbleSort(int[] array) {
+        recursiveBubbleSortHelper(array, array.length - 1);
+    }
+
+    /**
+     * Sort the subarray array[0:endIndex].
+     */
     private static void recursiveBubbleSortHelper(int[] array, int endIndex) {
         if (endIndex <= 0) {
             return;
@@ -24,13 +34,6 @@ public class RecursiveBubbleSort {
         }
 
         recursiveBubbleSortHelper(array, endIndex - 1);
-    }
-
-    /**
-     * Sort this array.
-     */
-    private static void recursiveBubbleSort(int[] array) {
-        recursiveBubbleSortHelper(array, array.length - 1);
     }
 
     /**

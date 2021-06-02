@@ -10,6 +10,9 @@ public class IterativeMergeSort {
         System.out.println(Arrays.toString(numbers)); // [1, 2, 3, 4, 5]
     }
 
+    /**
+     * Sort this array.
+     */
     private static void iterativeMergeSort(int[] array) {
         // source: https://www.geeksforgeeks.org/iterative-merge-sort/
 

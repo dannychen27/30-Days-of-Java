@@ -12,6 +12,13 @@ public class RecursiveSelectionSort {
 
     /**
      * Sort this array.
+     */
+    private static void recursiveSelectionSort(int[] array) {
+        recursiveSelectionSortHelper(array, 0);
+    }
+
+    /**
+     * Sort this array.
      *
      * Precondition: startIndex >= 0.
      */
@@ -28,20 +35,13 @@ public class RecursiveSelectionSort {
     }
 
     /**
-     * Sort this array.
-     */
-    private static void recursiveSelectionSort(int[] array) {
-        recursiveSelectionSortHelper(array, 0);
-    }
-
-    /**
-     * Return the index of the smallest value in the subarray array[startIndex:array.length].
+     * Return the index of the smallest value in the subarray array[startIndex + 1:array.length].
      */
     private static int getIndexOfSmallestValue(int[] array, int startIndex) {
         int indexOfSmallestValue = startIndex;
-        for (int i = startIndex + 1; i < array.length; i++) {
-            if (array[i] < array[indexOfSmallestValue]) {
-                indexOfSmallestValue = i;
+        for (int currentIndex = startIndex + 1; currentIndex < array.length; currentIndex++) {
+            if (array[currentIndex] < array[indexOfSmallestValue]) {
+                indexOfSmallestValue = currentIndex;
             }
         }
         return indexOfSmallestValue;

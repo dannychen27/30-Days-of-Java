@@ -12,6 +12,13 @@ public class RecursiveInsertionSort {
 
     /**
      * Sort this array.
+     */
+    private static void iterativeRecursiveSort(int[] array) {
+        iterativeRecursiveSortHelper(array, 0);
+    }
+
+    /**
+     * Sort this array.
      *
      * Precondition: startIndex >= 0.
      */
@@ -23,13 +30,6 @@ public class RecursiveInsertionSort {
         // loop invariant: The subarray array[0:startIndex] is sorted.
         insertIntoCorrectPosition(array, startIndex);
         iterativeRecursiveSortHelper(array, startIndex + 1);
-    }
-
-    /**
-     * Sort this array.
-     */
-    private static void iterativeRecursiveSort(int[] array) {
-        iterativeRecursiveSortHelper(array, 0);
     }
 
     /**

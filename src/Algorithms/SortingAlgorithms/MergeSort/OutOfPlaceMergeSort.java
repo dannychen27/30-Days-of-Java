@@ -10,9 +10,11 @@ public class OutOfPlaceMergeSort {
         System.out.println(Arrays.toString(sortedArray)); // [1, 2, 3, 4, 5]
     }
 
+    /**
+     * Sort this array.
+     */
     private static int[] outOfPlaceMergeSort(int[] array) {
         // source: https://www.teach.cs.toronto.edu/~csc148h/winter/notes/recursive-sorting/recursive_sorting.html
-
         if (array.length < 2) {
             return array;
         }
@@ -62,8 +64,11 @@ public class OutOfPlaceMergeSort {
         return mergedArray;
     }
 
-    // source: https://www.geeksforgeeks.org/how-to-get-slice-of-a-primitive-array-in-java/
+    /**
+     * Return the subarray array[startIndex:endIndex].
+     */
     private static int[] substring(int[] array, int startIndex, int endIndex) {
+        // source: https://www.geeksforgeeks.org/how-to-get-slice-of-a-primitive-array-in-java/
         int[] slicedArray = new int[endIndex - startIndex];
         for (int i = 0; i < slicedArray.length; i++) {
             slicedArray[i] = array[startIndex + i];

@@ -10,10 +10,18 @@ public class InPlaceMergeSort {
         System.out.println(Arrays.toString(numbers)); // [1, 2, 3, 4, 5]
     }
 
+    /**
+     * Sort this array.
+     */
     private static void inPlaceMergeSort(int[] array) {
         inPlaceMergeSortHelper(array, 0, array.length - 1);
     }
 
+    /**
+     * Sort the subarray array[startIndex:endIndex].
+     *
+     * Precondition: startIndex >= 0 and endIndex >= 0.
+     */
     private static void inPlaceMergeSortHelper(int[] array, int startIndex, int endIndex) {
         // source: https://www.google.com/search?q=mergesort+algorithm&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjkzY3fkfjwAhVPZ80KHevJBVkQ_AUoAnoECAEQBA&biw=1092&bih=596#imgrc=PVD6Uf387cTWOM&imgdii=LiVqsX6lVRpuKM
         if (startIndex < endIndex) {
