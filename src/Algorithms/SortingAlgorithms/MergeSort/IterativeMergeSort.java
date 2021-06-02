@@ -33,6 +33,8 @@ public class IterativeMergeSort {
      * Precondition: startIndex <= middleIndex <= endIndex.
      */
     private static void merge(int[] array, int startIndex, int middleIndex, int endIndex) {
+        // source: https://www.geeksforgeeks.org/iterative-merge-sort/
+
         // Create a temporary array for the subarray array[startIndex:middleIndex].
         int lengthOfLeftArray = middleIndex - startIndex + 1;
         int[] leftArray = new int[lengthOfLeftArray];
