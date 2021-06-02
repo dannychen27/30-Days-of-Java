@@ -31,6 +31,7 @@ public class ArrayLists {
         // TODO: - Arrays.equals()
         // TODO: - Arrays.deepEquals() <- for nested arrays
         // TODO: - Arrays.fill() <- replace all entries in array with specified value
+        // TODO: - Arrays.reverse()
 
         // check membership in arraylist
         System.out.println(array.isEmpty());            // false
