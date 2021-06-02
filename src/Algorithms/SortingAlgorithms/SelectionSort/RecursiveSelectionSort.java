@@ -20,7 +20,7 @@ public class RecursiveSelectionSort {
             return;
         }
 
-        // loop invariant: array[0:startIndex] is sorted.
+        // loop invariant: The subarray array[0:startIndex] is sorted.
         int indexOfSmallestValue = getIndexOfSmallestValue(array, startIndex);
         swap(array, startIndex, indexOfSmallestValue);
 

@@ -14,7 +14,7 @@ public class IterativeSelectionSort {
      * Sort this array.
      */
     private static void iterativeSelectionSort(int[] array) {
-        // loop invariant: array[0:startIndex] is sorted.
+        // loop invariant: The subarray array[0:startIndex] is sorted.
         for (int startIndex = 0; startIndex < array.length; startIndex++) {
             int indexOfSmallestValue = getIndexOfSmallestValue(array, startIndex);
             swap(array, startIndex, indexOfSmallestValue);
