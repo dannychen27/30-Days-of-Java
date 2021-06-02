@@ -60,8 +60,8 @@ do while loops -- DONE
 break -- DONE FOR NOW
 continue -- DONE FOR NOW
 final (classes, methods, variables, has no effect on static, conflicts with interface and abstract) -- DONE
-- date library -- DONE
-- math library -- DONE
+date library -- DONE
+math library -- DONE
 user input -- DONE
 
 Medium
@@ -111,6 +111,10 @@ Custom Data Structures
 // todo: minimum spanning trees
 // todo: doubly linked list
 // todo: circular linked list
+// todo: hashtables
+// todo: priority queues, heaps
+// todo: binomial heaps
+// todo: fibonacci heaps
 
 Design patterns
 Creational
@@ -149,6 +153,7 @@ SOLID principles <-- is SOLID a design pattern?
 
 Software Testing
 // todo: JUnit basics, importance of testing
+// todo: development environment vs. production environment
 // todo: setUp, tearDown methods
 // todo: mocks, test doubles, stubs, etc.
 // todo: CI/CD
@@ -165,12 +170,10 @@ reading txt files -- DONE
 // todo: writing txt files
 // todo: creating txt files
 // todo: deleting txt files
+// todo: reading excel files
+// todo: xml, json
 // todo: java threads (e.g. "synchronized" keyword)
 // todo: serialization (e.g. transient, volatile keywords)
-// todo: traditional comparison-based sorting algorithms (e.g. bubble, selection, insertion, quicksort, mergesort, timsort, heapsort, treesort)
-// todo: other comparison-based sorting algorithms (e.g. bogosort, 3-way quicksort, cocktailsort, odd-even sort, pancakesort)
-// todo: non-comparison-based sorting algorithms (e.g. radix, counting, bucket, pigeonhole)
-// todo: linear search, binary search, iterative and recursive
 recursion -- DONE
 dynamic programming -- DONE FOR NOW
 // todo: reflections
@@ -179,6 +182,7 @@ dynamic programming -- DONE FOR NOW
 // todo: REST api, api development
 
 Interview Problems
+// todo: preorder, inorder, postorder tree traversal
 // todo: sliding window algorithm
 // todo: two converging pointers algorithm
 // todo: floyd's cycle detection algorithm -- fast and slow pointer
@@ -203,3 +207,18 @@ Interview Problems
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
 // todo: count inversions -- using mergesort
+
+Algorithms
+// todo: linear search, binary search, iterative and recursive
+// todo: traditional comparison-based sorting algorithms (e.g. bubble, selection, insertion, quicksort, mergesort, timsort, heapsort, treesort)
+// todo: other comparison-based sorting algorithms (e.g. bogosort, 3-way quicksort, cocktailsort, odd-even sort, pancakesort)
+// todo: non-comparison-based sorting algorithms (e.g. radix, counting, bucket, pigeonhole)
+// todo: bfs
+// todo: dfs
+// todo: depth limited dfs
+// todo: uniform cost search
+// todo: best first search
+// todo: djistrka's algorithm
+// todo: prim's mst algorithm
+// todo: kruskal's mst algorithm
+// todo: topological sort
