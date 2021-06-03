@@ -34,9 +34,10 @@ try-catch-finally statements -- DONE
 // todo: comparator function
 
 Hard
+static (methods, variables) -- DONE
+// todo: virtual
 // todo: abstract classes (deadly diamond of death for multiple inheritance)
 // todo: interfaces (a workaround for lack of multiple inheritance)
-// todo: static (classes, methods, variables)
 // todo: regex
 
 
@@ -118,6 +119,7 @@ Custom Data Structures
 OOP design principles
 // todo: abstraction
 encapsulation -- DONE FOR NOW
+inheritance -- DONE FOR NOW
 // todo: inheritance w/ UML diagrams! CRC cards.
 // todo: composition (objects inside other objects, possibly themselves)
 polymorphism -- DONE
@@ -267,5 +269,11 @@ recursion -- DONE
 dynamic programming -- DONE FOR NOW
 // todo: reflections
 // todo: intro to android programming (e.g. event listeners)
-// todo: database connections
+// todo: intro to kotlin
 // todo: REST api, api development
+
+
+Java Libraries
+// todo: intro to java machine learning libraries
+// todo: intro to java ai libraries
+// todo: intro to JDBC library (e.g. database connections)
