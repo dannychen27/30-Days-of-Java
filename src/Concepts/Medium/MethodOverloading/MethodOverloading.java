@@ -9,11 +9,11 @@ public class MethodOverloading {
         // - Method overloading is when you implement methods within the same class with the same function name,
         // same return type, but with different method signature (number or types of parameters).
         // e.g. System.out.println(int i), System.out.println(String s), System.out.println(List items), etc.
-        // - Depending on the arguments passed in, Java will find the method with the exact method signature and
+        // - Depending on the arguments passed in, the Java compile will find the method with the exact method signature and
         // call that method, or throw a compile time error if it can't find that method:
         //          cannot resolve method
         // - Method overloading lets us use the same method name instead of using two different method names
-        // that do the same thing.
+        // that do the same thing. The compiler can distinguish between the methods by their method signatures.
         // - overloading achieves compile time polymorphism
         demonstrateMethodOverloading();
 
