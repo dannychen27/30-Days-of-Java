@@ -116,7 +116,7 @@ Custom Data Structures
 
 OOP design principles
 // todo: abstraction
-// todo: encapsulation
+encapsulation -- DONE FOR NOW
 // todo: inheritance w/ UML diagrams! CRC cards.
 polymorphism -- DONE
 
