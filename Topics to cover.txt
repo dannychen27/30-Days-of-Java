@@ -63,10 +63,10 @@ final (classes, methods, variables, has no effect on static, conflicts with inte
 date library -- DONE
 math library -- DONE
 user input -- DONE
+// todo: instanceof
 
 Medium
 // todo: super()
-// todo: instanceof
 // todo: inner classes
 // todo: enums
 try-catch-finally statements -- DONE

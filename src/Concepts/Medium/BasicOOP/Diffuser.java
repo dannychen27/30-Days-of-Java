@@ -12,8 +12,8 @@ class Diffuser {
     // We want to assign access modifiers based on the principle of least privilege:
     // only provide the least amount of access necessary for the object to do its job
     // properly.
-    private String name;
-    private boolean onStatus;
+    String name;
+    boolean onStatus;
 
     // The default constructor is used if a more specific constructor
     // is not already defined.
