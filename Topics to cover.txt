@@ -1,46 +1,7 @@
-TO DO LIST OF JAVA TOPICS TO COVER
-
-Clean architecture
-// todo: various software layers (database layer, UI layer)
-// todo: Model-View-Controller -- is this a design pattern?
-
-Concepts
-Easy
-declaration vs. initialization -- DONE
-scope and variable shadowing -- DONE
-casting -- DONE
-// todo: widening/upcasting, no cast needed (large primitive type value accommodates smaller primitive type value; superclass accommodates subclass)
-// todo: narrowing/downcasting, cast needed (shrinking a large primitive type value into a smaller primitive type value; shrink superclass into subclass)
-// source: https://www.decodejava.com/widening-and-narrowing-in-java.htm#:~:text=Widening%20takes%20place%20when%20a,reference%20variable%20of%20its%20superclass
-packages -- DONE FOR NOW
-access modifiers (e.g. private, protected, package private, public) -- DONE
-
-Medium
-basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE
-// todo: objects determine their own state and behaviour
-constructors -- DONE
-getters and setters -- DONE
-generics -- DONE FOR NOW
-autoboxing -- DONE
-unboxing -- DONE
-wildcards -- DONE FOR NOW
-method overloading -- DONE FOR NOW
-method overriding -- DONE FOR NOW
-method resolution -- DONE FOR NOW
-unchecked vs. checked exceptions -- DONE
-// todo: user created exceptions
-shallow copy vs. deep copy in terms of value and reference -- DONE FOR NOW
-// todo: coupling vs. cohesion
-
-Hard
-// todo: git -- IN PROGRESS
-// todo: the perils of floating point arithmetic
-// todo: lookup rules from csc207h1
-iterators -- DONE FOR NOW
-// todo: what is a spliterator?
-
+JAVA SYLLABUS
 
 Constructs
+
 Easy
 hello world, println -- DONE
 primitive types vs. object types -- DONE
@@ -78,8 +39,43 @@ Hard
 // todo: static (classes, methods, variables)
 // todo: regex
 
-(Built-in) data structures
-Basic
+
+Concepts
+Easy
+declaration vs. initialization -- DONE
+scope and variable shadowing -- DONE
+casting -- DONE
+// todo: widening/upcasting, no cast needed (large primitive type value accommodates smaller primitive type value; superclass accommodates subclass)
+// todo: narrowing/downcasting, cast needed (shrinking a large primitive type value into a smaller primitive type value; shrink superclass into subclass) // source: https://www.decodejava.com/widening-and-narrowing-in-java.htm#:~:text=Widening%20takes%20place%20when%20a,reference%20variable%20of%20its%20superclass
+packages -- DONE FOR NOW
+access modifiers (e.g. private, protected, package private, public) -- DONE
+
+Medium
+basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE  // todo: objects determine their own state and behaviour
+constructors -- DONE
+getters and setters -- DONE
+generics -- DONE FOR NOW
+autoboxing -- DONE
+unboxing -- DONE
+wildcards -- DONE FOR NOW
+method overloading -- DONE FOR NOW
+method overriding -- DONE FOR NOW
+method resolution -- DONE FOR NOW
+unchecked vs. checked exceptions -- DONE
+// todo: user created exceptions
+shallow copy vs. deep copy in terms of value and reference -- DONE FOR NOW
+
+Hard
+// todo: git -- IN PROGRESS
+// todo: the perils of floating point arithmetic
+// todo: lookup rules from csc207h1
+iterators -- DONE FOR NOW
+// todo: what is a spliterator?
+// todo: coupling vs. cohesion
+
+
+Data Structures
+Built in Data Structures
 java built in arrays -- DONE
 object -- DONE FOR NOW
 string vs. string builder -- DONE FOR NOW
@@ -100,21 +96,42 @@ hashmap -- DONE
 // todo: treemap
 
 Custom Data Structures
-// todo: graphs
-// todo: tries
 // todo: trees
 // todo: binary trees
 // todo: binary search trees
-// todo: avl trees
-// todo: red black trees
-// todo: b/b+ trees
+// todo: tries
+// todo: graphs
 // todo: minimum spanning trees
+// todo: priority queues
+// todo: heaps
 // todo: doubly linked list
 // todo: circular linked list
 // todo: hashtables
-// todo: priority queues, heaps
 // todo: binomial heaps
 // todo: fibonacci heaps
+// todo: avl trees
+// todo: red black trees
+// todo: b/b+ trees
+
+
+OOP design principles
+// todo: abstraction
+// todo: encapsulation
+// todo: inheritance w/ UML diagrams! CRC cards.
+polymorphism -- DONE
+
+
+SOLID principles <-- is SOLID a design pattern?
+// todo: single responsibility principle
+// todo: open closed principle
+// todo: liskov substitution principle
+// todo: interface segregation principle
+// todo: dependency injection principle
+
+Clean architecture
+// todo: various software layers (database layer, UI layer)
+// todo: Model-View-Controller -- is this a design pattern?
+
 
 Design patterns
 Creational
@@ -133,23 +150,12 @@ Behavioural
 // todo: observer
 // todo: strategy
 
-OOP design principles
-// todo: abstraction
-// todo: encapsulation
-// todo: inheritance w/ UML diagrams! CRC cards.
-polymorphism -- DONE
 
 Refactoring techniques (code craftmanship techniques)
 // todo: extract method
 // todo: guard clause
 // todo: polymorphism to replace conditional
 
-SOLID principles <-- is SOLID a design pattern?
-// todo: single responsibility principle
-// todo: open closed principle
-// todo: liskov substitution principle
-// todo: interface segregation principle
-// todo: dependency injection principle
 
 Software Testing
 // todo: JUnit basics, importance of testing
@@ -163,23 +169,58 @@ Software Testing
 // todo: test driven development
 // todo: behaviour driven development
 
-Other Topics:
-// todo: GUI design
-// todo: reading CSV files
-reading txt files -- DONE
-// todo: writing txt files
-// todo: creating txt files
-// todo: deleting txt files
-// todo: reading excel files
-// todo: xml, json
-// todo: java threads (e.g. "synchronized" keyword)
-// todo: serialization (e.g. transient, volatile keywords)
-recursion -- DONE
-dynamic programming -- DONE FOR NOW
-// todo: reflections
-// todo: intro to android programming (e.g. event listeners)
-// todo: database connections
-// todo: REST api, api development
+
+Algorithms
+
+Comparison-Based Sorting Algorithms
+iterative bubble sort -- DONE
+recursive bubble sort -- DONE
+iterative selection sort -- DONE
+recursive selection sort -- DONE
+iterative insertion sort -- DONE
+recursive insertion sort -- DONE
+in-place recursive quicksort -- DONE
+out-of-place recursive quicksort -- DONE
+iterative quicksort -- DONE
+in-place recursive mergesort -- DONE
+out-of-place recursive mergesort -- DONE
+iterative mergesort -- DONE
+// todo: timsort
+// todo: heapsort
+// todo: treesort
+
+Other Comparison-Based Sorting Algorithms
+bogosort -- DONE
+// todo: 3-way quicksort
+// todo: cocktailsort
+// todo: odd-even sort
+// todo: pancakesort
+
+Non-Comparison-Based Sorting Algorithms
+radix sort -- DONE
+counting sort -- DONE
+// todo: bucket sort
+// todo: pigeonhole sort
+
+Array Search Algorithms
+iterative linear search -- DONE
+recursive linear search -- DONE
+iterative binary search -- DONE
+recursive binary search -- DONE
+
+Graph Algorithms
+// todo: bfs
+// todo: dfs
+// todo: depth limited dfs
+// todo: uniform cost search
+// todo: best first search
+// todo: dijkstra's algorithm
+// todo: topological sort
+
+MST Algorithms
+// todo: prim's mst algorithm
+// todo: kruskal's mst algorithm
+
 
 Interview Problems
 // todo: preorder, inorder, postorder tree traversal
@@ -208,53 +249,21 @@ Interview Problems
 // todo: running median using heaps/priority queues
 // todo: count inversions -- using mergesort
 
-Algorithms
 
-Comparison-based sorting algorithms
-iterative bubble sort -- DONE
-recursive bubble sort -- DONE
-iterative selection sort -- DONE
-recursive selection sort -- DONE
-iterative insertion sort -- DONE
-recursive insertion sort -- DONE
-in-place recursive quicksort -- DONE
-out-of-place recursive quicksort -- DONE
-iterative quicksort -- DONE
-in-place recursive mergesort -- DONE
-out-of-place recursive mergesort -- DONE
-iterative mergesort -- DONE
-// todo: timsort
-// todo: heapsort
-// todo: treesort
-
-other comparison-based sorting algorithms
-bogosort -- DONE
-// todo: 3-way quicksort
-// todo: cocktailsort
-// todo: odd-even sort
-// todo: pancakesort
-
-non-comparison-based sorting algorithms
-radix sort -- DONE
-counting sort -- DONE
-// todo: bucket sort
-// todo: pigeonhole sort
-
-array search algorithms
-iterative linear search -- DONE
-recursive linear search -- DONE
-iterative binary search -- DONE
-recursive binary search -- DONE
-
-graph algorithms
-// todo: bfs
-// todo: dfs
-// todo: depth limited dfs
-// todo: uniform cost search
-// todo: best first search
-// todo: dijkstra's algorithm
-// todo: topological sort
-
-mst algorithms
-// todo: prim's mst algorithm
-// todo: kruskal's mst algorithm
+Other Topics:
+// todo: GUI design
+// todo: reading CSV files
+reading txt files -- DONE
+// todo: writing txt files
+// todo: creating txt files
+// todo: deleting txt files
+// todo: reading excel files
+// todo: xml, json
+// todo: java threads (e.g. "synchronized" keyword)
+// todo: serialization (e.g. transient, volatile keywords)
+recursion -- DONE
+dynamic programming -- DONE FOR NOW
+// todo: reflections
+// todo: intro to android programming (e.g. event listeners)
+// todo: database connections
+// todo: REST api, api development
