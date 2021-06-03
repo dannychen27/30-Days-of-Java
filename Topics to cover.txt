@@ -127,7 +127,7 @@ SOLID principles <-- is SOLID a design pattern?
 // todo: open closed principle
 // todo: liskov substitution principle
 // todo: interface segregation principle
-// todo: dependency injection principle
+// todo: dependency inversion principle
 
 Clean architecture
 // todo: various software layers (database layer, UI layer)
@@ -156,6 +156,7 @@ Refactoring techniques (code craftmanship techniques)
 // todo: extract method
 // todo: guard clause
 // todo: polymorphism to replace conditional
+// todo: polymorphism to replace switch statement
 
 
 Software Testing
