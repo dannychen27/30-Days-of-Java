@@ -61,6 +61,7 @@ wildcards -- DONE FOR NOW
 method overloading -- DONE FOR NOW
 method overriding -- DONE FOR NOW
 method resolution -- DONE FOR NOW
+pass by value vs. pass by reference -- DONE
 unchecked vs. checked exceptions -- DONE
 // todo: user created exceptions
 shallow copy vs. deep copy in terms of value and reference -- DONE FOR NOW
@@ -118,6 +119,7 @@ OOP design principles
 // todo: abstraction
 encapsulation -- DONE FOR NOW
 // todo: inheritance w/ UML diagrams! CRC cards.
+// todo: composition (objects inside other objects, possibly themselves)
 polymorphism -- DONE
 
 
