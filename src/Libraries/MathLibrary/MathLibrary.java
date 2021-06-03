@@ -1,4 +1,4 @@
-package Constructs.Easy.MathLibrary;
+package Libraries.MathLibrary;
 
 public class MathLibrary {
 

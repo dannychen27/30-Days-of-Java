@@ -1,4 +1,4 @@
-package Constructs.Easy.DateLibrary;
+package Libraries.DateLibrary;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

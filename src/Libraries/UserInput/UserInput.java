@@ -1,4 +1,4 @@
-package Constructs.Easy.UserInput;
+package Libraries.UserInput;
 
 import java.util.Scanner;
 

@@ -21,9 +21,6 @@ do while loops -- DONE
 break -- DONE FOR NOW
 continue -- DONE FOR NOW
 final (classes, methods, variables, has no effect on static, conflicts with interface and abstract) -- DONE
-date library -- DONE
-math library -- DONE
-user input -- DONE
 // todo: instanceof
 
 Medium
@@ -274,6 +271,9 @@ dynamic programming -- DONE FOR NOW
 
 
 Java Libraries
+date library -- DONE
+math library -- DONE
+user input (scanner) -- DONE
 // todo: intro to java machine learning libraries
 // todo: intro to java ai libraries
 // todo: intro to JDBC library (e.g. database connections)
