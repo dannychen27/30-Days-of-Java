@@ -20,8 +20,8 @@ while loops -- DONE
 do while loops -- DONE
 break -- DONE FOR NOW
 continue -- DONE FOR NOW
-final (classes, methods, variables, has no effect on static, conflicts with interface and abstract) -- DONE
 // todo: instanceof
+final -- DONE
 
 Medium
 // todo: super()

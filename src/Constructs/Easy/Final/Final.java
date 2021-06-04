@@ -2,20 +2,20 @@ package Constructs.Easy.Final;
 
 public class Final {
 
-    final static int NUM_HOURS_IN_DAY = 24;
+    private final static int NUM_HOURS_IN_DAY = 24;
 
     void changeNumHoursInDay(int newNumHours) {
         // NUM_HOURS_IN_DAY = newNumHours;  // This variable cannot be changed!
     }
 
     // This method cannot be overridden!
-    public final void sayHi() {
+    private final void sayHi() {
         System.out.println("Hello!");
     }
 
     // final has no effect on static methods, since subclasses of Final
     // can still call sayDiffuser() with this exact signature.
-    public final static void sayDiffuser() {
+    final static void sayDiffuser() {
         System.out.println("Diffuser");
     }
 
@@ -66,8 +66,15 @@ final class NewFinal extends Final {
 //
 // Source: https://www.geeksforgeeks.org/interfaces-in-java/#:~:text=Why%20do%20we%20use%20interface,it%20can%20achieve%20multiple%20inheritance%20.&text=The%20reason%20is%2C%20abstract%20classes,are%20final%2C%20public%20and%20static.
 
+// Similarly, abstract classes cannot be final.
 
+// This is not allowed!
 // final interface Animal {
+//
+// }
+
+// This is not allowed either!
+// final abstract class Animal {
 //
 // }
 
