@@ -43,8 +43,8 @@ Easy
 declaration vs. initialization -- DONE
 scope and variable shadowing -- DONE
 casting -- DONE
-// todo: widening/upcasting, no cast needed (large primitive type value accommodates smaller primitive type value; superclass accommodates subclass)
-// todo: narrowing/downcasting, cast needed (shrinking a large primitive type value into a smaller primitive type value; shrink superclass into subclass) // source: https://www.decodejava.com/widening-and-narrowing-in-java.htm#:~:text=Widening%20takes%20place%20when%20a,reference%20variable%20of%20its%20superclass
+widening/upcasting, no cast needed
+narrowing/downcasting, cast needed
 packages -- DONE FOR NOW
 access modifiers (e.g. private, protected, package private, public) -- DONE
 
