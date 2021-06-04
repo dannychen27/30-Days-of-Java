@@ -24,7 +24,7 @@ public class Inheritance {
         //      - private methods
 
         User rossLynch = new User("Ross", "Lynch");
-        Student nolanFunk = new Student("Nolan", "Gould", "Kinesiology");
+        Student nolanFunk = new Student("Nolan", "Funk", "Kinesiology");
         rossLynch.speak();
         nolanFunk.speak();
     }
