@@ -28,7 +28,7 @@ inner classes -- DONE
 enums -- DONE FOR NOW
 static (methods, variables) -- DONE
 final -- DONE
-// todo: virtual
+virtual -- DONE FOR NOW
 try-catch-finally statements -- DONE
 // todo: comparator function
 
