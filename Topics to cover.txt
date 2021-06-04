@@ -85,9 +85,9 @@ arraylist -- DONE
 linkedlist -- DONE
 hashset -- DONE
 stack -- DONE FOR NOW
-// todo: queue
-// todo: priority queue
-// todo: dequeue (double ended queue)
+queue -- DONE FOR NOW
+priority queue -- DONE FOR NOW
+dequeue (double ended queue) -- DONE FOR NOW
 // todo: treeset
 
 Maps Framework
@@ -101,8 +101,7 @@ Custom Data Structures
 // todo: tries
 // todo: graphs
 // todo: minimum spanning trees
-// todo: priority queues
-// todo: heaps
+heaps -- DONE FOR NOW
 // todo: doubly linked list
 // todo: circular linked list
 // todo: hashtables
@@ -269,6 +268,8 @@ dynamic programming -- DONE FOR NOW
 // todo: intro to android programming (e.g. event listeners)
 // todo: intro to kotlin
 // todo: REST api, api development
+// todo: java streams API
+// todo: string pool
 
 
 Java Libraries
@@ -276,5 +277,5 @@ date library -- DONE
 math library -- DONE
 user input (scanner) -- DONE
 // todo: intro to java machine learning libraries
-// todo: intro to java ai libraries
+// todo: intro to java AI libraries
 // todo: intro to JDBC library (e.g. database connections)
