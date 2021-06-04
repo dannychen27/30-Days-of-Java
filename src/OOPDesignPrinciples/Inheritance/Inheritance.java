@@ -3,10 +3,13 @@ package OOPDesignPrinciples.Inheritance;
 public class Inheritance {
 
     public static void main(String[] args) {
-        // source: http://tutorials.jenkov.com/java/inheritance.html#:~:text=When%20a%20subclass%20extends%20a,are%20inherited%20by%20the%20subclass.&text=Fields%20and%20methods%20with%20default,same%20package%20as%20the%20superclass.
+        // sources:
+        // - http://tutorials.jenkov.com/java/inheritance.html#:~:text=When%20a%20subclass%20extends%20a,are%20inherited%20by%20the%20subclass.&text=Fields%20and%20methods%20with%20default,same%20package%20as%20the%20superclass.
+        // - https://www.codecademy.com/articles/cpp-object-oriented-programming
+        // - https://stackoverflow.blog/2020/09/02/if-everyone-hates-it-why-is-oop-still-so-widely-spread/
 
-        // - Inheritance is the ability to create subclasses (aka derived methods) that reuse
-        // code from a superclass.
+        // - Inheritance is when a class (subclass) can inherit attributes and behaviors from another class (superclass)
+        // - Inheritance lets you reuse code from a superclass.
         // - All public and protected fields can be inherited in java
         // - All public and protected methods can be inherited in java
 
