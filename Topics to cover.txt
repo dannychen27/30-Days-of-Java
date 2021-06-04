@@ -20,8 +20,8 @@ while loops -- DONE
 do while loops -- DONE
 break -- DONE FOR NOW
 continue -- DONE FOR NOW
-// todo: instanceof
 final -- DONE
+instanceof -- DONE
 
 Medium
 // todo: super()
