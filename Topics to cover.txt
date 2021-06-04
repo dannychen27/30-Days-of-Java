@@ -24,8 +24,8 @@ final -- DONE
 instanceof -- DONE
 
 Medium
-// todo: super()
-// todo: inner classes
+super() -- DONE
+inner classes -- DONE
 // todo: enums
 try-catch-finally statements -- DONE
 // todo: comparator function
@@ -70,7 +70,8 @@ Hard
 // todo: lookup rules from csc207h1
 iterators -- DONE FOR NOW
 // todo: what is a spliterator?
-// todo: coupling vs. cohesion
+// todo: coupling
+// todo: cohesion
 
 
 Data Structures
