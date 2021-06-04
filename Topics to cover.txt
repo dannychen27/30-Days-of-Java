@@ -61,7 +61,7 @@ method overriding -- DONE FOR NOW
 method resolution -- DONE FOR NOW
 pass by value vs. pass by reference -- DONE
 unchecked vs. checked exceptions -- DONE
-// todo: user created exceptions
+user created exceptions -- DONE
 shallow copy vs. deep copy in terms of value and reference -- DONE FOR NOW
 
 Hard
