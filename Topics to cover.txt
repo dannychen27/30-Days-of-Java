@@ -20,18 +20,18 @@ while loops -- DONE
 do while loops -- DONE
 break -- DONE FOR NOW
 continue -- DONE FOR NOW
-final -- DONE
 instanceof -- DONE
 
 Medium
 super() -- DONE
 inner classes -- DONE
 // todo: enums
+static (methods, variables) -- DONE
+final -- DONE
 try-catch-finally statements -- DONE
 // todo: comparator function
 
 Hard
-static (methods, variables) -- DONE
 // todo: virtual
 // todo: abstract classes (deadly diamond of death for multiple inheritance)
 // todo: interfaces (a workaround for lack of multiple inheritance)

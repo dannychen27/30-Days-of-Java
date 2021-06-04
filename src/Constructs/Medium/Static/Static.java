@@ -1,4 +1,4 @@
-package Constructs.Hard;
+package Constructs.Medium.Static;
 
 public class Static {
 
@@ -18,12 +18,12 @@ public class Static {
         // instance
         // - must create new object to access instance variables and instances methods.
         A a = new A();
-        a.speak();
+        a.speak(); // I am a static method.
         System.out.println(a.value); // 5
 
         // static
         // - no need to create a new object from scratch to access static variables and static methods.
-        Static.speak();
+        Static.speak(); // I am an instance method.
         System.out.println(Static.value); // 6
     }
 

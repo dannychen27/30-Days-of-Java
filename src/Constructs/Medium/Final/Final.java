@@ -1,4 +1,4 @@
-package Constructs.Easy.Final;
+package Constructs.Medium.Final;
 
 public class Final {
 
