@@ -28,11 +28,11 @@ inner classes -- DONE
 // todo: enums
 static (methods, variables) -- DONE
 final -- DONE
+// todo: virtual
 try-catch-finally statements -- DONE
 // todo: comparator function
 
 Hard
-// todo: virtual
 // todo: abstract classes (deadly diamond of death for multiple inheritance)
 // todo: interfaces (a workaround for lack of multiple inheritance)
 // todo: regex
