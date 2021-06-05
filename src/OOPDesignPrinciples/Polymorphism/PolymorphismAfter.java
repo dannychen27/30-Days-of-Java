@@ -29,7 +29,7 @@ public class PolymorphismAfter {
         // (in this case introduceSelf()) depending on the class used in the inheritance hierarchy.
         // - This lets us eliminate switch statements and if-else classes that perform code depending on which class
         // is calling it, which obeys the Open Closed Principle.
-        // - TODO: objects determine their own behaviour! we don't to use a switch statement/if statements to figure out
+        // - TODO: objects determine their own state and behaviour! we don't to use a switch statement/if statements to figure out
         //  todo: what type this object is to then determine its behaviour
 
         // Here we declare subclasses of Person abstractly -- all of them as Persons.

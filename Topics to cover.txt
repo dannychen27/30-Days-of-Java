@@ -50,7 +50,7 @@ packages -- DONE FOR NOW
 access modifiers (e.g. private, protected, package private, public) -- DONE
 
 Medium
-basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE  // todo: objects determine their own state and behaviour
+basic object oriented programming (e.g. classes, objects, attributes, methods, this, etc.) -- DONE
 constructors -- DONE
 getters and setters -- DONE
 generics -- DONE FOR NOW
