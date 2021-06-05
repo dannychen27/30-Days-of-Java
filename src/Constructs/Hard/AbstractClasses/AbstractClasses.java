@@ -17,7 +17,7 @@ abstract class User {
     String firstName;
     String lastName;
 
-    // You canoot declare abstract instance variables,
+    // You cannot declare abstract instance variables,
     // even if you do eventually initialize them.
     // abstract int x;
 
@@ -41,3 +41,10 @@ class Person extends User {
         System.out.println("Hello, my name is " + firstName + " " + lastName + ".");
     }
 }
+
+// Similar to interfaces, abstract classes cannot be final.
+
+// This is not allowed!
+// final abstract class Animal {
+//
+// }

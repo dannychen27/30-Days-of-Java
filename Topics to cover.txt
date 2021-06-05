@@ -35,7 +35,7 @@ try-catch-finally statements -- DONE
 Hard
 abstract classes -- DONE FOR NOW
 deadly diamond of death for multiple inheritance -- DONE FOR NOW
-// todo: interfaces
+interfaces -- DONE FOR NOW
 // todo: regex
 
 
