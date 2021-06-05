@@ -5,7 +5,7 @@ import java.util.TreeSet;
 public class TreeSets {
 
     public static void main(String[] args) {
-        // - a treeset uses a balanced search tree to
+        // - a treeset uses a balanced search tree to store elements in a set
         // - insert, delete, search, contains uses O(logn) time
 
         // creating a new tree set
