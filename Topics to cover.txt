@@ -33,8 +33,9 @@ try-catch-finally statements -- DONE
 // todo: comparator function
 
 Hard
-// todo: abstract classes (deadly diamond of death for multiple inheritance)
-// todo: interfaces (a workaround for lack of multiple inheritance)
+abstract classes -- DONE FOR NOW
+deadly diamond of death for multiple inheritance -- DONE FOR NOW
+// todo: interfaces
 // todo: regex
 
 
