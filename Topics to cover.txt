@@ -94,7 +94,7 @@ treeset -- DONE FOR NOW
 
 Maps Framework
 hashmap -- DONE
-// todo: treemap
+treemap -- DONE FOR NOW
 
 Custom Data Structures
 // todo: trees
