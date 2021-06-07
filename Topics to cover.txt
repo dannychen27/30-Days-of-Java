@@ -30,7 +30,7 @@ static (methods, variables) -- DONE
 final -- DONE
 virtual -- DONE FOR NOW
 try-catch-finally statements -- DONE
-// todo: comparator function
+comparator class -- DONE
 
 Hard
 abstract classes -- DONE FOR NOW
