@@ -68,9 +68,9 @@ shallow copy vs. deep copy in terms of value and reference -- DONE FOR NOW
 Hard
 // todo: git -- IN PROGRESS
 // todo: the perils of floating point arithmetic
-// todo: lookup rules from csc207h1
+lookup rules -- DONE
 iterators -- DONE FOR NOW
-// todo: what is a spliterator?
+// todo: spliterators
 // todo: coupling
 // todo: cohesion
 
