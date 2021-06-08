@@ -71,7 +71,7 @@ Hard
 lookup rules -- DONE
 iterators -- DONE FOR NOW
 // todo: spliterators
-// todo: coupling
+coupling -- DONE FOR NOW
 // todo: cohesion
 
 
