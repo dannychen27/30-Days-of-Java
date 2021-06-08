@@ -161,8 +161,14 @@ Creation Problems
 replacing constructors with creation methods -- DONE
 eliminating duplicate constructors by chaining constructors -- DONE
 
+Composing Methods
+extract method -- DONE
+make method inline -- DONE
+// todo: eliminate unnecessary local variables
+// todo: remove temporary variable
+// todo: replace temporary variable with query
+
 Other
-// todo: extract method
 // todo: guard clause
 // todo: polymorphism to replace conditional
 // todo: polymorphism to replace switch statement
