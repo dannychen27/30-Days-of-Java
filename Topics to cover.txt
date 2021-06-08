@@ -154,6 +154,13 @@ Behavioural
 
 
 Refactoring techniques (code craftmanship techniques)
+refactoring -- DONE
+code smells -- DONE
+
+Creation Problems
+replacing constructors with creation methods -- DONE
+
+Other
 // todo: extract method
 // todo: guard clause
 // todo: polymorphism to replace conditional
