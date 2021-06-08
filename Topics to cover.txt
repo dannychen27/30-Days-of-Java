@@ -164,7 +164,7 @@ eliminating duplicate constructors by chaining constructors -- DONE
 Composing Methods
 extract method -- DONE
 make method inline -- DONE
-// todo: eliminate unnecessary local variables
+eliminate unnecessary local variables -- DONE
 // todo: remove temporary variable
 // todo: replace temporary variable with query
 
