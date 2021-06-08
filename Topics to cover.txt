@@ -166,7 +166,7 @@ extract method -- DONE
 make method inline -- DONE
 eliminate unnecessary local variables -- DONE
 remove temporary variable -- DONE
-// todo: replace temporary variable with query
+replace temporary variable with query -- DONE
 
 Other
 // todo: guard clause
