@@ -165,7 +165,7 @@ Composing Methods
 extract method -- DONE
 make method inline -- DONE
 eliminate unnecessary local variables -- DONE
-// todo: remove temporary variable
+remove temporary variable -- DONE
 // todo: replace temporary variable with query
 
 Other
