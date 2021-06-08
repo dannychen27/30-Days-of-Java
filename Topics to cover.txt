@@ -168,6 +168,7 @@ eliminate unnecessary local variables -- DONE
 remove temporary variable -- DONE
 replace temporary variable with query -- DONE
 use explaining variables -- DONE
+extract class -- DONE
 
 Other
 // todo: guard clause
