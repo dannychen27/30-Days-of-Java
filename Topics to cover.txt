@@ -159,6 +159,7 @@ code smells -- DONE
 
 Creation Problems
 replacing constructors with creation methods -- DONE
+eliminating duplicate constructors by chaining constructors -- DONE
 
 Other
 // todo: extract method
