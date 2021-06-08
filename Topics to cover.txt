@@ -167,6 +167,7 @@ make method inline -- DONE
 eliminate unnecessary local variables -- DONE
 remove temporary variable -- DONE
 replace temporary variable with query -- DONE
+use explaining variables -- DONE
 
 Other
 // todo: guard clause
