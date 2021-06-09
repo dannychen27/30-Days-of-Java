@@ -172,6 +172,7 @@ extract class -- DONE
 
 Other
 replacing constructors with factory methods -- DONE FOR NOW
+replacing constructors with singletons -- DONE FOR NOW
 // todo: guard clause
 // todo: polymorphism to replace conditional
 // todo: polymorphism to replace switch statement
