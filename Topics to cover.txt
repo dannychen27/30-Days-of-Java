@@ -176,6 +176,7 @@ replacing constructors with singletons -- DONE FOR NOW
 guard clause -- DONE
 // TODO: polymorphism to replace conditional
 polymorphism to replace switch statement -- DONE
+replacing constructors with strategy pattern -- DONE FOR NOW
 
 
 Software Testing

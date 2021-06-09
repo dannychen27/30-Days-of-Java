@@ -5,9 +5,13 @@ class ReplaceConditionalWithMethods {
     public static void main(String[] args) {
         // - With if/else if/else statements, we assume that each conditional is equally likely.
         // - But that's not always true. Some if-statements are more likely to be true than others.
-        // so we want to put the if-statements that are more likely first, and least likely at the bottom.
-        // - Guard clauses are a bunch of consecutive if-statements that are often used to create
-        // multiple exit points from a method -- remember: fail fast!
+        // so we want to put the if-statements that are more likely first, and less likely statements
+        // towards the bottom.
+        // - Guard clauses make the normal path of execution more explicit than
+        // if-then-else statements
+        // - Guard clauses aren't used the way it's shown here: they're most often used to
+        // create multiple exit points from a method
+        // -- remember: if an input doesn't match precondition, return as soon as possible!
         // - Guard clauses can also eliminate the need for if/else statements.
         int[] bagWeights = {25, 55, 75};
         int bagFees = 0;
