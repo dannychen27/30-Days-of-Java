@@ -14,6 +14,8 @@ public class Interfaces {
         // be instantiated.
         // - a class can implement more than one interface
         // - purpose of interfaces is for abstract (loose coupling), and is a workaround for lack of multiple inheritance
+        // - use abstract classes to subclass necessary methods for related classes
+        // - use interfaces to implement necessary methods for unrelated classes
 
         Smellable chocolateScent = new DiffuserScent();
         System.out.println(Smellable.isSmellable); // true
