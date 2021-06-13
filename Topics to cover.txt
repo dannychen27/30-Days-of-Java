@@ -104,6 +104,7 @@ Custom Data Structures
 // todo: graphs
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
+// todo: singly linked list
 // todo: doubly linked list
 // todo: circular linked list
 // todo: hashtables
@@ -112,6 +113,9 @@ heaps -- DONE FOR NOW
 // todo: avl trees
 // todo: red black trees
 // todo: b/b+ trees
+// todo: splay trees
+// todo: dynamic array
+// todo: skip list
 
 
 OOP design principles
@@ -223,6 +227,8 @@ radix sort -- DONE
 counting sort -- DONE
 // todo: bucket sort
 // todo: pigeonhole sort
+// todo: bead sort
+// todo: cube sort
 
 Array Search Algorithms
 iterative linear search -- DONE
@@ -236,8 +242,15 @@ Graph Algorithms
 // todo: depth limited dfs
 // todo: uniform cost search
 // todo: best first search
+// todo: bidirectional search
 // todo: dijkstra's algorithm
+// todo: bellman-ford algorithm
+// todo: floyd-warshall algorithm
 // todo: topological sort
+// todo: minimax algorithm
+// todo: alpha beta pruning
+// todo: A* algorithm
+// todo: backtracking search
 
 MST Algorithms
 // todo: prim's mst algorithm
