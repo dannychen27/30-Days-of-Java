@@ -178,8 +178,8 @@ extract class -- DONE
 Other
 replacing constructors with factory methods -- DONE FOR NOW
 replacing constructors with singletons -- DONE FOR NOW
-guard clause -- DONE
-// TODO: polymorphism to replace conditional
+replacing conditional statements with guard clause -- DONE
+using polymorphism to replace if-statement -- DONE
 polymorphism to replace switch statement -- DONE
 replacing constructors with strategy pattern -- DONE FOR NOW
 
@@ -263,26 +263,35 @@ Interview Problems
 // todo: sliding window algorithm
 // todo: two converging pointers algorithm
 // todo: floyd's cycle detection algorithm -- fast and slow pointer
-// todo: reversing a linked list -- iterative and recursive
-// todo: recursive staircase problem -- iterative, recursive, and DP
-// todo: knapsack problem -- iterative, recursive, and DP
-lonely integer -- bit manipulation -- DONE!
-balanced parentheses using stacks -- DONE!
+// todo: reversing a linked list -- iterative
+// todo: reversing a linked list -- recursive
+// todo: recursive staircase problem -- recursive
+// todo: recursive staircase problem -- using DP
+// todo: recursive staircase problem -- iterative
+// todo: knapsack problem -- recursive
+// todo: knapsack problem -- using DP
+// todo: knapsack problem -- iterative
+lonely integer -- using bit manipulation -- DONE!
+balanced parentheses -- using stacks -- DONE!
 // todo: two stacks as a queue problem
-// todo: number of paths in a maze  -- iterative, recursive, and DP -- IN PROGRESS
-// todo: shortest path on a graph -- BFS
-// todo: how to make change -- DP
+number of paths in a maze -- recursive -- DONE!
+// todo: number of paths in a maze -- using DP
+// todo: number of paths in a maze -- iterative
+// todo: shortest path on a graph -- using BFS
+// todo: how to make change -- using DP
 // todo: find contacts -- using a trie
-// todo: connected components on a graph -- DFS
-// todo: sort array with comparator function
+// todo: connected components on a graph -- using DFS
+// todo: sort array -- using a comparator function
 // todo: find sum of two integers in array
 // todo: largest subsequence sum
 // todo: largest subarray sum
 // todo: contiguous subarray sum
 // todo: invert binary tree
 find anagram -- using hashtable -- DONE!
-// todo: edit distance -- iterative, recursive, DP
-// todo: running median using heaps/priority queues
+// todo: edit distance -- recursive
+// todo: edit distance -- using DP
+// todo: edit distance -- iterative
+// todo: running median -- using heaps/priority queues
 // todo: count inversions -- using mergesort
 // todo: lossless file compression/decompression -- using huffman trees
 
