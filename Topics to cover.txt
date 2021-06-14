@@ -116,6 +116,7 @@ heaps -- DONE FOR NOW
 // todo: splay trees
 // todo: dynamic array
 // todo: skip list
+// todo: huffman trees
 
 
 OOP design principles
@@ -283,6 +284,7 @@ Interview Problems
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
 // todo: count inversions -- using mergesort
+// todo: lossless file compression/decompression -- using huffman trees
 
 
 Other Topics:
