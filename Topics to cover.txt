@@ -266,13 +266,13 @@ Interview Problems
 // todo: reversing a linked list -- iterative and recursive
 // todo: recursive staircase problem -- iterative, recursive, and DP
 // todo: knapsack problem -- iterative, recursive, and DP
-// todo: lonely integer
-// todo: balanced parentheses using stacks
+// todo: lonely integer problem -- using bit manipulation
+// todo: balanced parentheses -- using stacks
 // todo: two stacks as a queue problem
 // todo: number of paths in a maze  -- iterative, recursive, and DP -- IN PROGRESS
 // todo: shortest path on a graph -- BFS
 // todo: how to make change -- DP
-// todo: find contacts using a trie
+// todo: find contacts -- using a trie
 // todo: connected components on a graph -- DFS
 // todo: sort array with comparator function
 // todo: find sum of two integers in array
@@ -280,7 +280,8 @@ Interview Problems
 // todo: largest subarray sum
 // todo: contiguous subarray sum
 // todo: invert binary tree
-// todo: find anagram
+// todo: verify if word is an anagram of another word
+// todo: find anagrams of a word <---- difficult without a list of dictionary words
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
 // todo: count inversions -- using mergesort
