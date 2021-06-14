@@ -3,6 +3,8 @@ package InterviewProblems.BitManipulationProblems.LonelyInteger;
 class LonelyInteger {
 
     public static void main(String[] args) {
+        // source: https://www.youtube.com/watch?v=eXWjCgbL01U&t=136s
+
         // of course you can use a HashMap for simplicity.
         // the best time complexity is O(n) since you have to touch every int
         // time: O(n), space: O(n)
