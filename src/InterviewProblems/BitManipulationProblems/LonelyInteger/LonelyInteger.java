@@ -11,6 +11,7 @@ class LonelyInteger {
 
         // however, bit manipulation allows us to save space, no need to
         // store additional data structures.
+        // time: O(n), space: O(1)
         int[] nums = {9, 1, 2, 3, 2, 9, 1, 7, 7};
         System.out.println(findLonelyInteger(nums)); // 3
 
