@@ -99,8 +99,8 @@ treemap -- DONE FOR NOW
 Custom Data Structures
 // todo: trees
 // todo: binary trees
-// todo: binary search trees
-// todo: tries
+binary search trees -- DONE FOR NOW
+tries -- DONE!
 // todo: graphs
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
@@ -266,8 +266,8 @@ Interview Problems
 // todo: reversing a linked list -- iterative and recursive
 // todo: recursive staircase problem -- iterative, recursive, and DP
 // todo: knapsack problem -- iterative, recursive, and DP
-// todo: lonely integer problem -- using bit manipulation
-// todo: balanced parentheses -- using stacks
+lonely integer -- bit manipulation -- DONE!
+balanced parentheses using stacks -- DONE!
 // todo: two stacks as a queue problem
 // todo: number of paths in a maze  -- iterative, recursive, and DP -- IN PROGRESS
 // todo: shortest path on a graph -- BFS
@@ -280,8 +280,7 @@ Interview Problems
 // todo: largest subarray sum
 // todo: contiguous subarray sum
 // todo: invert binary tree
-// todo: verify if word is an anagram of another word
-// todo: find anagrams of a word <---- difficult without a list of dictionary words
+find anagram -- using hashtable -- DONE!
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
 // todo: count inversions -- using mergesort
