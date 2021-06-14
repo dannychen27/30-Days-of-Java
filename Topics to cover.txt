@@ -104,6 +104,7 @@ tries -- DONE!
 // todo: graphs
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
+// todo: singly linked list
 // todo: doubly linked list
 // todo: circular linked list
 // todo: hashtables
@@ -112,6 +113,10 @@ heaps -- DONE FOR NOW
 // todo: avl trees
 // todo: red black trees
 // todo: b/b+ trees
+// todo: splay trees
+// todo: dynamic array
+// todo: skip list
+// todo: huffman trees
 
 
 OOP design principles
@@ -154,10 +159,29 @@ Behavioural
 
 
 Refactoring techniques (code craftmanship techniques)
-// todo: extract method
-// todo: guard clause
-// todo: polymorphism to replace conditional
-// todo: polymorphism to replace switch statement
+refactoring -- DONE
+code smells -- DONE
+
+Creation Problems
+replacing constructors with creation methods -- DONE
+eliminating duplicate constructors by chaining constructors -- DONE
+
+Composing Methods
+extract method -- DONE
+make method inline -- DONE
+eliminate unnecessary local variables -- DONE
+remove temporary variable -- DONE
+replace temporary variable with query -- DONE
+use explaining variables -- DONE
+extract class -- DONE
+
+Other
+replacing constructors with factory methods -- DONE FOR NOW
+replacing constructors with singletons -- DONE FOR NOW
+guard clause -- DONE
+// TODO: polymorphism to replace conditional
+polymorphism to replace switch statement -- DONE
+replacing constructors with strategy pattern -- DONE FOR NOW
 
 
 Software Testing
@@ -204,6 +228,8 @@ radix sort -- DONE
 counting sort -- DONE
 // todo: bucket sort
 // todo: pigeonhole sort
+// todo: bead sort
+// todo: cube sort
 
 Array Search Algorithms
 iterative linear search -- DONE
@@ -217,8 +243,15 @@ Graph Algorithms
 // todo: depth limited dfs
 // todo: uniform cost search
 // todo: best first search
+// todo: bidirectional search
 // todo: dijkstra's algorithm
+// todo: bellman-ford algorithm
+// todo: floyd-warshall algorithm
 // todo: topological sort
+// todo: minimax algorithm
+// todo: alpha beta pruning
+// todo: A* algorithm
+// todo: backtracking search
 
 MST Algorithms
 // todo: prim's mst algorithm
@@ -239,7 +272,7 @@ balanced parentheses using stacks -- DONE!
 // todo: number of paths in a maze  -- iterative, recursive, and DP -- IN PROGRESS
 // todo: shortest path on a graph -- BFS
 // todo: how to make change -- DP
-// todo: find contacts using a trie
+// todo: find contacts -- using a trie
 // todo: connected components on a graph -- DFS
 // todo: sort array with comparator function
 // todo: find sum of two integers in array
@@ -251,6 +284,7 @@ find anagram -- using hashtable -- DONE!
 // todo: edit distance -- iterative, recursive, DP
 // todo: running median using heaps/priority queues
 // todo: count inversions -- using mergesort
+// todo: lossless file compression/decompression -- using huffman trees
 
 
 Other Topics:
