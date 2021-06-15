@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Stacks;
+package DataStructures.CustomDataStructures.Stack;
 
 class Stack<T> {
 

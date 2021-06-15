@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Queues;
+package DataStructures.CustomDataStructures.Queue;
 
 class Queue<T> {
 

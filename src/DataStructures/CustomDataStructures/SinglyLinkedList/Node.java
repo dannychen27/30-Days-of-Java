@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.LinkedList;
+package DataStructures.CustomDataStructures.SinglyLinkedList;
 
 public class Node {
     public int value;
