@@ -271,6 +271,7 @@ recursive staircase problem -- iterative -- DONE!
 // todo: knapsack problem -- recursive
 // todo: knapsack problem -- using DP
 // todo: knapsack problem -- iterative
+ice cream parlour problem -- using hashtable -- DONE!
 lonely integer -- using bit manipulation -- DONE!
 balanced parentheses -- using stacks -- DONE!
 // todo: two stacks as a queue problem
