@@ -262,7 +262,8 @@ Interview Problems
 // todo: preorder, inorder, postorder tree traversal
 // todo: sliding window algorithm
 // todo: two converging pointers algorithm
-// todo: floyd's cycle detection algorithm -- fast and slow pointer
+cycle detection -- fast and slow pointer/floyd's algorithm -- DONE!
+cycle detection -- hashset -- DONE!
 // todo: reversing a linked list -- iterative
 // todo: reversing a linked list -- recursive
 recursive staircase problem -- recursive -- DONE!
