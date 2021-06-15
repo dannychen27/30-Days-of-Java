@@ -265,9 +265,9 @@ Interview Problems
 // todo: floyd's cycle detection algorithm -- fast and slow pointer
 // todo: reversing a linked list -- iterative
 // todo: reversing a linked list -- recursive
-// todo: recursive staircase problem -- recursive
-// todo: recursive staircase problem -- using DP
-// todo: recursive staircase problem -- iterative
+recursive staircase problem -- recursive -- DONE!
+recursive staircase problem -- using DP -- DONE!
+recursive staircase problem -- iterative -- DONE!
 // todo: knapsack problem -- recursive
 // todo: knapsack problem -- using DP
 // todo: knapsack problem -- iterative
