@@ -282,7 +282,7 @@ number of paths in a maze -- recursive -- DONE!
 // todo: find contacts -- using a trie
 // todo: connected components on a graph -- using DFS
 // todo: sort array -- using a comparator function
-// todo: find sum of two integers in array
+find sum of two integers in array with target sum -- DONE!
 // todo: largest subsequence sum
 // todo: largest subarray sum
 // todo: contiguous subarray sum
