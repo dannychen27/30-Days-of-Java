@@ -274,7 +274,7 @@ recursive staircase problem -- iterative -- DONE!
 ice cream parlour problem -- using hashtable -- DONE!
 lonely integer -- using bit manipulation -- DONE!
 balanced parentheses -- using stacks -- DONE!
-// todo: two stacks as a queue problem
+queue using two stacks problem -- DONE!
 number of paths in a maze -- recursive -- DONE!
 // todo: number of paths in a maze -- using DP
 // todo: number of paths in a maze -- iterative
