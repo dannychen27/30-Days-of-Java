@@ -278,7 +278,9 @@ number of paths in a maze -- recursive -- DONE!
 // todo: number of paths in a maze -- using DP
 // todo: number of paths in a maze -- iterative
 // todo: shortest path on a graph -- using BFS
-// todo: how to make change -- using DP
+how to make change -- recursive -- DONE!
+how to make change -- using DP -- DONE!
+// todo: how to make change  -- iterative
 // todo: find contacts -- using a trie
 // todo: connected components on a graph -- using DFS
 // todo: sort array -- using a comparator function
