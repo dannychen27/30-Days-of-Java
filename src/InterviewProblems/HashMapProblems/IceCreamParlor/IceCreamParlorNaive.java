@@ -1,6 +1,7 @@
 package InterviewProblems.HashMapProblems.IceCreamParlor;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class IceCreamParlorNaive {
 
@@ -18,6 +19,17 @@ public class IceCreamParlorNaive {
         // space O(1)
         int[] menuPrices = {2, 7, 13, 5, 4, 13, 5};
         System.out.println(Arrays.toString(findChoices(menuPrices, 10))); // [3, 6]
+
+        // TODO: Maybe try this problem again, but represent the menu using a HashMap like this one:
+        // TODO: Then return a list of Strings for ice cream flavours instead of list of indices in an int array.
+//        HashMap<String, Integer> iceCreamFlavoursToPrices = new HashMap<>();
+//        iceCreamFlavoursToPrices.put("Strawberry", 2);
+//        iceCreamFlavoursToPrices.put("Blueberry", 7);
+//        iceCreamFlavoursToPrices.put("Nutella", 13);
+//        iceCreamFlavoursToPrices.put("Vanilla", 5);
+//        iceCreamFlavoursToPrices.put("Banana", 5);
+//        iceCreamFlavoursToPrices.put("Bubblegum", 5);
+//        iceCreamFlavoursToPrices.put("Chocolate", 5);
     }
 
     private static int[] findChoices(int[] menuPrices, int budget) {
