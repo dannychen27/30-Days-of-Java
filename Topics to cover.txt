@@ -284,7 +284,7 @@ how to make change -- using DP -- DONE!
 // todo: how to make change  -- iterative
 // todo: find contacts -- using a trie
 // todo: connected components on a graph -- using DFS
-// todo: sort array -- using a comparator function
+sort array -- using a comparator function -- DONE!
 find sum of two integers in array with target sum -- DONE!
 // todo: largest subsequence sum
 // todo: largest subarray sum
