@@ -97,6 +97,8 @@ hashmap -- DONE
 treemap -- DONE FOR NOW
 
 Custom Data Structures
+stacks -- DONE
+queues -- DONE
 // todo: trees
 // todo: binary trees
 binary search trees -- DONE FOR NOW
@@ -104,7 +106,7 @@ tries -- DONE!
 // todo: graphs
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
-// todo: singly linked list
+singly linked list -- DONE FOR NOW
 // todo: doubly linked list
 // todo: circular linked list
 // todo: hashtables
