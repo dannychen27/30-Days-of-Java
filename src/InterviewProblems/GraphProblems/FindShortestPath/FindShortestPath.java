@@ -50,10 +50,10 @@ class FindShortestPath {
     }
 
     private static Deque<Vertex> getShortestPath(Graph graph, Vertex sourceVertex, Vertex destinationVertex) {
-        HashMap<Vertex, String> verticesToColors = new HashMap<>();
-        HashMap<Vertex, Integer> verticesToDistances = new HashMap<>();
-        HashMap<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
-        for (Vertex vertex : graph.vertices) {
+        Map<Vertex, String> verticesToColors = new HashMap<>();
+        Map<Vertex, Integer> verticesToDistances = new HashMap<>();
+        Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
+        for (Vertex vertex : graph.getVertices()) {
             verticesToColors.put(vertex, "white");
             verticesToDistances.put(vertex, Integer.MAX_VALUE);
             verticesToPredecessors.put(vertex, null);
@@ -70,7 +70,7 @@ class FindShortestPath {
                 return buildShortestPath(destinationVertex, verticesToPredecessors);
             }
 
-            for (Vertex neighbor : currentVertex.neighbors) {
+            for (Vertex neighbor : currentVertex.getNeighbors()) {
                 if (verticesToColors.get(neighbor).equals("white")) {
                     verticesToColors.replace(neighbor, "gray");
                     verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);
@@ -84,7 +84,7 @@ class FindShortestPath {
     }
 
     private static Deque<Vertex> buildShortestPath(Vertex destinationVertex,
-                                                   HashMap<Vertex, Vertex> verticesToPredecessors) {
+                                                   Map<Vertex, Vertex> verticesToPredecessors) {
         Deque<Vertex> shortestPath = new ArrayDeque<>();
         Vertex currentVertex = destinationVertex;
         while (currentVertex != null) {

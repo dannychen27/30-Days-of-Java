@@ -6,6 +6,7 @@ import DataStructures.CustomDataStructures.Graph.Vertex;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 class DepthFirstSearch {
 
@@ -43,15 +44,15 @@ class DepthFirstSearch {
     }
 
     private static List<Vertex> depthFirstSearch(Graph graph) {
-        HashMap<Vertex, String> verticesToColors = new HashMap<>();
-        HashMap<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
-        for (Vertex vertex : graph.vertices) {
+        Map<Vertex, String> verticesToColors = new HashMap<>();
+        Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
+        for (Vertex vertex : graph.getVertices()) {
             verticesToColors.put(vertex, "white");
             verticesToPredecessors.put(vertex, null);
         }
 
         List<Vertex> verticesVisited = new LinkedList<>();
-        for (Vertex vertex : graph.vertices) {
+        for (Vertex vertex : graph.getVertices()) {
             if (verticesToColors.get(vertex).equals("white")) {
                 depthFirstSearch(vertex, verticesVisited, verticesToColors, verticesToPredecessors);
             }
@@ -60,11 +61,11 @@ class DepthFirstSearch {
     }
 
     private static void depthFirstSearch(Vertex vertex, List<Vertex> verticesVisited,
-                                         HashMap<Vertex, String> verticesToColors,
-                                         HashMap<Vertex, Vertex> verticesToPredecessors) {
+                                         Map<Vertex, String> verticesToColors,
+                                         Map<Vertex, Vertex> verticesToPredecessors) {
         verticesVisited.add(vertex);
         verticesToColors.replace(vertex, "gray");
-        for (Vertex neighbor : vertex.neighbors) {
+        for (Vertex neighbor : vertex.getNeighbors()) {
             if (verticesToColors.get(neighbor).equals("white")) {
                 verticesToPredecessors.replace(neighbor, vertex);
                 depthFirstSearch(neighbor, verticesVisited, verticesToColors, verticesToPredecessors);

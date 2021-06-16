@@ -6,6 +6,7 @@ import DataStructures.CustomDataStructures.Graph.Vertex;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import static DataStructures.CustomDataStructures.Graph.Graph.EDGE_DISTANCE;
 
@@ -46,9 +47,9 @@ class BreadthFirstSearch {
     }
 
     private static List<Vertex> breadthFirstSearch(Graph graph, Vertex sourceVertex) {
-        HashMap<Vertex, String> verticesToColors = new HashMap<>();
-        HashMap<Vertex, Integer> verticesToDistances = new HashMap<>();
-        for (Vertex vertex : graph.vertices) {
+        Map<Vertex, String> verticesToColors = new HashMap<>();
+        Map<Vertex, Integer> verticesToDistances = new HashMap<>();
+        for (Vertex vertex : graph.getVertices()) {
             verticesToColors.put(vertex, "white");
             verticesToDistances.put(vertex, Integer.MAX_VALUE);
         }
@@ -62,7 +63,7 @@ class BreadthFirstSearch {
         while (!verticesToVisit.isEmpty()) {
             Vertex currentVertex = verticesToVisit.poll();
             verticesVisited.add(currentVertex);
-            for (Vertex neighbor : currentVertex.neighbors) {
+            for (Vertex neighbor : currentVertex.getNeighbors()) {
                 if (verticesToColors.get(neighbor).equals("white")) {
                     verticesToColors.replace(neighbor, "gray");
                     verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);

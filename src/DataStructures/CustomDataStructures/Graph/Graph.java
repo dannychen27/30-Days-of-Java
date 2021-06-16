@@ -1,11 +1,11 @@
 package DataStructures.CustomDataStructures.Graph;
 
 import java.util.LinkedList;
-
+import java.util.List;
 
 public class Graph {
 
-    public LinkedList<Vertex> vertices;
+    private List<Vertex> vertices;
     public static int EDGE_DISTANCE = 1;
 
     public Graph() {
@@ -17,8 +17,12 @@ public class Graph {
     }
 
     public void addEdge(Vertex vertex1, Vertex vertex2) {
-        vertex1.neighbors.add(vertex2);
-        vertex2.neighbors.add(vertex1);
+        vertex1.addNeighbour(vertex2);
+        vertex2.addNeighbour(vertex1);
+    }
+
+    public List<Vertex> getVertices() {
+        return vertices;
     }
 
     public static void main(String[] args) {
@@ -46,6 +50,6 @@ public class Graph {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
-        System.out.println(graph.vertices);  // [1, 2, 3, 4, 5, 6, 7]
+        System.out.println(graph.getVertices());  // [1, 2, 3, 4, 5, 6, 7]
     }
 }
