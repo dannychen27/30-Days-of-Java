@@ -10,6 +10,11 @@ import java.util.List;
 class DepthFirstSearch {
 
     public static void main(String[] args) {
+        // DFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
+
+        // time: Theta(|V| + |E|)
+        // space: Theta(longest path in graph)
+
         Graph graph = new Graph();
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
@@ -34,7 +39,6 @@ class DepthFirstSearch {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
-        // DFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
         System.out.println(depthFirstSearch(graph));  // [1, 2, 4, 5, 3, 6, 7]
     }
 

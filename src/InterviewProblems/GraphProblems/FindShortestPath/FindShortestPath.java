@@ -14,6 +14,10 @@ class FindShortestPath {
 
     public static void main(String[] args) {
         // find the shortest path from a source vertex to a destination vertex
+
+        // time: Theta(|V| + |E|)
+        // space: Theta(|V| + |E|)
+
         Graph graph = new Graph();
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);

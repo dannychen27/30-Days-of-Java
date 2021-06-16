@@ -12,7 +12,12 @@ import static DataStructures.CustomDataStructures.Graph.Graph.EDGE_DISTANCE;
 class BreadthFirstSearch {
 
     public static void main(String[] args) {
+        // BFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
         // source: https://www.youtube.com/watch?v=0XgVhsMOcQM&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&index=4&t=53s
+
+        // time: Theta(|V| + |E|)
+        // space: Theta(|V| + |E|)
+
         Graph graph = new Graph();
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
@@ -37,7 +42,6 @@ class BreadthFirstSearch {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
-        // BFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
         System.out.println(breadthFirstSearch(graph, vertex1));  // [1, 2, 3, 4, 5, 6, 7]
     }
 
