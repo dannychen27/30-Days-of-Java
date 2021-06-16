@@ -1,4 +1,4 @@
-package Algorithms.BinarySearch;
+package Algorithms.SearchAlgorithms.BinarySearch;
 
 public class RecursiveBinarySearch {
 
