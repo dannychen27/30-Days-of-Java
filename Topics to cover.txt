@@ -280,7 +280,7 @@ lonely integer -- using bit manipulation -- DONE!
 balanced parentheses -- using stacks -- DONE!
 queue using two stacks problem -- DONE!
 number of paths in a maze -- recursive -- DONE!
-// todo: number of paths in a maze -- using DP
+number of paths in a maze -- using DP -- DONE!
 // todo: number of paths in a maze -- iterative
 // todo: shortest path on a graph -- using BFS
 how to make change -- recursive -- DONE!
