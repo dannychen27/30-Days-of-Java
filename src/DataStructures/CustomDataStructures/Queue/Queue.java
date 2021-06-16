@@ -1,6 +1,6 @@
 package DataStructures.CustomDataStructures.Queue;
 
-class Queue<T> {
+public class Queue<T> {
 
     private class Node {
         private T value;
@@ -26,11 +26,11 @@ class Queue<T> {
         System.out.println(queue.isEmpty());  // true
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return head == null;
     }
 
-    private void enqueue(T newValue) {
+    public void enqueue(T newValue) {
         Node newNode = new Node(newValue);
         if (tail != null) {
             tail.next = newNode;
@@ -41,12 +41,12 @@ class Queue<T> {
         }
     }
 
-    private T peek() {
+    public T peek() {
         // This may throw an exception if the queue is empty.
         return head.value;
     }
 
-    private T dequeue() {
+    public T dequeue() {
         T oldValue = head.value;
         head = head.next;
         if (head == null) {

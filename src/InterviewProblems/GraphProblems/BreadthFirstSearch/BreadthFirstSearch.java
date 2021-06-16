@@ -2,6 +2,7 @@ package InterviewProblems.GraphProblems.BreadthFirstSearch;
 
 import DataStructures.CustomDataStructures.Graph.Graph;
 import DataStructures.CustomDataStructures.Graph.Vertex;
+import DataStructures.CustomDataStructures.Queue.Queue;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -54,20 +55,20 @@ class BreadthFirstSearch {
             verticesToDistances.put(vertex, Integer.MAX_VALUE);
         }
 
-        LinkedList<Vertex> verticesToVisit = new LinkedList<>();
-        verticesToVisit.add(sourceVertex);
+        Queue<Vertex> verticesToVisit = new Queue<>();
+        verticesToVisit.enqueue(sourceVertex);
         verticesToColors.replace(sourceVertex, "gray");
         verticesToDistances.replace(sourceVertex, 0);
 
         List<Vertex> verticesVisited = new LinkedList<>();
         while (!verticesToVisit.isEmpty()) {
-            Vertex currentVertex = verticesToVisit.poll();
+            Vertex currentVertex = verticesToVisit.dequeue();
             verticesVisited.add(currentVertex);
             for (Vertex neighbor : currentVertex.getNeighbors()) {
                 if (verticesToColors.get(neighbor).equals("white")) {
                     verticesToColors.replace(neighbor, "gray");
                     verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);
-                    verticesToVisit.add(neighbor);
+                    verticesToVisit.enqueue(neighbor);
                 }
             }
             verticesToColors.replace(currentVertex, "black");

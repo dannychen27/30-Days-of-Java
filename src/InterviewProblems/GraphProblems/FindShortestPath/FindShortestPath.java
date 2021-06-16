@@ -2,11 +2,11 @@ package InterviewProblems.GraphProblems.FindShortestPath;
 
 import DataStructures.CustomDataStructures.Graph.Graph;
 import DataStructures.CustomDataStructures.Graph.Vertex;
+import DataStructures.CustomDataStructures.Queue.Queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 import static DataStructures.CustomDataStructures.Graph.Graph.EDGE_DISTANCE;
@@ -60,13 +60,13 @@ class FindShortestPath {
             verticesToPredecessors.put(vertex, null);
         }
 
-        LinkedList<Vertex> verticesToVisit = new LinkedList<>();
-        verticesToVisit.add(sourceVertex);
+        Queue<Vertex> verticesToVisit = new Queue<>();
+        verticesToVisit.enqueue(sourceVertex);
         verticesToColors.replace(sourceVertex, "gray");
         verticesToDistances.replace(sourceVertex, 0);
 
         while (!verticesToVisit.isEmpty()) {
-            Vertex currentVertex = verticesToVisit.poll();
+            Vertex currentVertex = verticesToVisit.dequeue();
             if (currentVertex == destinationVertex) {
                 return buildShortestPath(destinationVertex, verticesToPredecessors);
             }
@@ -76,7 +76,7 @@ class FindShortestPath {
                     verticesToColors.replace(neighbor, "gray");
                     verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);
                     verticesToPredecessors.replace(neighbor, currentVertex);
-                    verticesToVisit.add(neighbor);
+                    verticesToVisit.enqueue(neighbor);
                 }
             }
             verticesToColors.replace(currentVertex, "black");
