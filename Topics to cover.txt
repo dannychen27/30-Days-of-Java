@@ -282,7 +282,7 @@ queue using two stacks problem -- DONE!
 number of paths in a maze -- recursive -- DONE!
 number of paths in a maze -- using DP -- DONE!
 // todo: number of paths in a maze -- iterative
-// todo: shortest path on a graph -- using BFS
+shortest path between two vertices in a graph -- using BFS -- DONE!
 how to make change -- recursive -- DONE!
 how to make change -- using DP -- DONE!
 // todo: how to make change  -- iterative
