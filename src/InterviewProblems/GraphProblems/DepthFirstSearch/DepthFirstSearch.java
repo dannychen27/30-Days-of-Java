@@ -4,6 +4,8 @@ import DataStructures.CustomDataStructures.Graph.Graph;
 import DataStructures.CustomDataStructures.Graph.Vertex;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 class DepthFirstSearch {
 
@@ -33,10 +35,10 @@ class DepthFirstSearch {
         graph.addEdge(vertex3, vertex7);
 
         // DFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
-        depthFirstSearch(graph);  // 1 2 4 5 3 6 7
+        System.out.println(depthFirstSearch(graph));  // [1, 2, 4, 5, 3, 6, 7]
     }
 
-    private static void depthFirstSearch(Graph graph) {
+    private static List<Vertex> depthFirstSearch(Graph graph) {
         HashMap<Vertex, String> verticesToColors = new HashMap<>();
         HashMap<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
         for (Vertex vertex : graph.vertices) {
@@ -44,22 +46,24 @@ class DepthFirstSearch {
             verticesToPredecessors.put(vertex, null);
         }
 
+        List<Vertex> verticesVisited = new LinkedList<>();
         for (Vertex vertex : graph.vertices) {
             if (verticesToColors.get(vertex).equals("white")) {
-                depthFirstSearch(vertex, verticesToColors, verticesToPredecessors);
+                depthFirstSearch(vertex, verticesVisited, verticesToColors, verticesToPredecessors);
             }
         }
-        System.out.print("\n");
+        return verticesVisited;
     }
 
-    private static void depthFirstSearch(Vertex vertex, HashMap<Vertex, String> verticesToColors,
+    private static void depthFirstSearch(Vertex vertex, List<Vertex> verticesVisited,
+                                         HashMap<Vertex, String> verticesToColors,
                                          HashMap<Vertex, Vertex> verticesToPredecessors) {
-        System.out.print(vertex + " ");
+        verticesVisited.add(vertex);
         verticesToColors.replace(vertex, "gray");
         for (Vertex neighbor : vertex.neighbors) {
             if (verticesToColors.get(neighbor).equals("white")) {
                 verticesToPredecessors.replace(neighbor, vertex);
-                depthFirstSearch(neighbor, verticesToColors, verticesToPredecessors);
+                depthFirstSearch(neighbor, verticesVisited, verticesToColors, verticesToPredecessors);
             }
             verticesToColors.replace(vertex, "black");
         }

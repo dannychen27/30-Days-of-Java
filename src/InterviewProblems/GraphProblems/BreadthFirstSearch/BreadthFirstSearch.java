@@ -5,6 +5,9 @@ import DataStructures.CustomDataStructures.Graph.Vertex;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+
+import static DataStructures.CustomDataStructures.Graph.Graph.EDGE_DISTANCE;
 
 class BreadthFirstSearch {
 
@@ -35,10 +38,10 @@ class BreadthFirstSearch {
         graph.addEdge(vertex3, vertex7);
 
         // BFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
-        breadthFirstSearch(graph, vertex1);  // 1 2 3 4 5 6 7
+        System.out.println(breadthFirstSearch(graph, vertex1));  // [1, 2, 3, 4, 5, 6, 7]
     }
 
-    private static void breadthFirstSearch(Graph graph, Vertex sourceVertex) {
+    private static List<Vertex> breadthFirstSearch(Graph graph, Vertex sourceVertex) {
         HashMap<Vertex, String> verticesToColors = new HashMap<>();
         HashMap<Vertex, Integer> verticesToDistances = new HashMap<>();
         for (Vertex vertex : graph.vertices) {
@@ -51,18 +54,19 @@ class BreadthFirstSearch {
         verticesToColors.replace(sourceVertex, "gray");
         verticesToDistances.replace(sourceVertex, 0);
 
+        List<Vertex> verticesVisited = new LinkedList<>();
         while (!verticesToVisit.isEmpty()) {
             Vertex currentVertex = verticesToVisit.poll();
-            System.out.print(currentVertex + " ");
+            verticesVisited.add(currentVertex);
             for (Vertex neighbor : currentVertex.neighbors) {
                 if (verticesToColors.get(neighbor).equals("white")) {
                     verticesToColors.replace(neighbor, "gray");
-                    verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + 1);
+                    verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);
                     verticesToVisit.add(neighbor);
                 }
             }
             verticesToColors.replace(currentVertex, "black");
         }
-        System.out.print("\n");
+        return verticesVisited;
     }
 }
