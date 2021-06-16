@@ -1,6 +1,6 @@
 package InterviewProblems.RecursionProblems.CountMazePaths;
 
-class CountMazePaths {
+class CountMazePathsNaive {
 
     public static void main(String[] args) {
         // you can only move in two directions: right or down
