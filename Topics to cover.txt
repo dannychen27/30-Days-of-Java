@@ -299,7 +299,7 @@ find anagram -- using hashtable -- DONE!
 // todo: edit distance -- recursive
 // todo: edit distance -- using DP
 // todo: edit distance -- iterative
-// todo: running median -- using heaps/priority queues
+running median -- using heaps/priority queues -- DONE!
 // todo: count inversions -- using mergesort
 // todo: lossless file compression/decompression -- using huffman trees
 
