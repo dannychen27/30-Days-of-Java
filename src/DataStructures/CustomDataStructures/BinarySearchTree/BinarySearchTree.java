@@ -2,9 +2,9 @@ package DataStructures.CustomDataStructures.BinarySearchTree;
 
 public class BinarySearchTree {
 
-    private BinarySearchTree leftChild;
-    private BinarySearchTree rightChild;
-    private Integer value;
+    public BinarySearchTree leftChild;
+    public BinarySearchTree rightChild;
+    public Integer value;
 
     // source:
     // - https://www.teach.cs.toronto.edu/~csc148h/winter/notes/ chapter 6
