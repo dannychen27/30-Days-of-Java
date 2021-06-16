@@ -103,7 +103,7 @@ queues -- DONE
 // todo: binary trees
 binary search trees -- DONE FOR NOW
 tries -- DONE!
-// todo: graphs
+graphs -- DONE FOR NOW
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
