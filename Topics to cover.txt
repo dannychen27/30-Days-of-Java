@@ -109,7 +109,8 @@ heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
 // todo: doubly linked list
 // todo: circular linked list
-// todo: hashtables
+// todo: hashtables with closed addressing -- chaining
+// todo: hashtables with open addressing -- linear probing, quadratic probing, double hashing
 // todo: binomial heaps
 // todo: fibonacci heaps
 // todo: avl trees
