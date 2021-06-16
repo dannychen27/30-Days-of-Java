@@ -12,13 +12,13 @@ public class Graph {
         vertices = new LinkedList<>();
     }
 
+    public void addVertex(Vertex newVertex) {
+        vertices.add(newVertex);
+    }
+
     public void addEdge(Vertex vertex1, Vertex vertex2) {
         vertex1.neighbors.add(vertex2);
         vertex2.neighbors.add(vertex1);
-    }
-
-    public void addVertex(Vertex newVertex) {
-        vertices.add(newVertex);
     }
 
     public static void main(String[] args) {
@@ -46,6 +46,6 @@ public class Graph {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
-        System.out.println(graph.vertices);
+        System.out.println(graph.vertices);  // [1, 2, 3, 4, 5, 6, 7]
     }
 }
