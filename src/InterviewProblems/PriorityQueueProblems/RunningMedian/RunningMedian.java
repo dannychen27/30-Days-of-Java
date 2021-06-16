@@ -7,7 +7,9 @@ import java.util.PriorityQueue;
 class RunningMedian {
 
     public static void main(String[] args) {
-        // find the running median of an array of numbers
+        // source: https://www.youtube.com/watch?v=VmogG01IjYc&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=12&t=6s
+
+        // Find the running median of an array of numbers
 
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         System.out.println(Arrays.toString(getRunningMedians(array)));
@@ -31,7 +33,8 @@ class RunningMedian {
         return medians;
     }
 
-    private static void addNumber(int number, PriorityQueue<Integer> lowerHalf,
+    private static void addNumber(int number,
+                                  PriorityQueue<Integer> lowerHalf,
                                   PriorityQueue<Integer> upperHalf) {
         if (lowerHalf.isEmpty() || number < lowerHalf.peek()) {
             lowerHalf.add(number);
@@ -79,7 +82,7 @@ class RunningMedian {
         }
 
         if (biggerHeap.size() == smallerHeap.size()) {
-            return (biggerHeap.peek() + smallerHeap.peek()) / (double) 2;
+            return (biggerHeap.peek() + smallerHeap.peek()) / 2.0;
         } else {
             return biggerHeap.peek();
         }
