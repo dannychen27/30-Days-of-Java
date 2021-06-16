@@ -240,8 +240,8 @@ iterative binary search -- DONE
 recursive binary search -- DONE
 
 Graph Algorithms
-// todo: bfs
 // todo: dfs
+breadth first search -- DONE!
 // todo: depth limited dfs
 // todo: uniform cost search
 // todo: best first search
