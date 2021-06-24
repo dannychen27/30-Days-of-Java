@@ -186,6 +186,8 @@ using polymorphism to replace if-statement -- DONE
 polymorphism to replace switch statement -- DONE
 replacing constructors with strategy pattern -- DONE FOR NOW
 
+eliminating duplicate code with the template pattern -- DONE FOR NOW
+replacing implied primitive trees with the composite pattern -- DONE FOR NOW
 
 Software Testing
 // todo: JUnit basics, importance of testing
