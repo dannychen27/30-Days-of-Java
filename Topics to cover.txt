@@ -189,6 +189,9 @@ replacing constructors with strategy pattern -- DONE FOR NOW
 eliminating duplicate code with the template pattern -- DONE FOR NOW
 replacing implied primitive trees with the composite pattern -- DONE FOR NOW
 
+using the builder pattern to build composite objects -- DONE FOR NOW
+eliminating large accumulation methods by extracting methods and using a collecting parameter -- DONE FOR NOW
+
 Software Testing
 // todo: JUnit basics, importance of testing
 // todo: development environment vs. production environment
