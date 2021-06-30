@@ -192,6 +192,8 @@ replacing implied primitive trees with the composite pattern -- DONE FOR NOW
 using the builder pattern to build composite objects -- DONE FOR NOW
 eliminating large accumulation methods by extracting methods and using a collecting parameter -- DONE FOR NOW
 
+using the adapter pattern to match incompatible interfaces
+
 Software Testing
 // todo: JUnit basics, importance of testing
 // todo: development environment vs. production environment
