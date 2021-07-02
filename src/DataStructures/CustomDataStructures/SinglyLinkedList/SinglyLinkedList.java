@@ -196,12 +196,13 @@ public class SinglyLinkedList {
             return;
         }
 
-        Node current = head;
-        while (current.next != null) {
-            current = current.next;
+        Node currentNode = head;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
         }
 
-        current.next = new Node(newValue);
+        Node newNode = new Node(newValue);
+        currentNode.next = newNode;
         size++;
     }
 
@@ -212,9 +213,10 @@ public class SinglyLinkedList {
         return oldValue;
     }
 
-    private int removeFromMiddle(Node previous, Node currentNode) {
+    private int removeFromMiddle(Node previousNode, Node currentNode) {
         int oldValue = currentNode.value;
-        previous.next = currentNode.next;
+        Node nextNode = currentNode.next;
+        previousNode.next = nextNode;
         size--;
         return oldValue;
     }
