@@ -43,6 +43,27 @@ class Graph {
     }
 
     /**
+     * Remove the given vertex from this graph.
+     *
+     * Precondition: oldVertex is an existing vertex in this graph.
+     */
+    public void removeVertex(Vertex oldVertex) {
+        int indexOfOldVertex = verticesToIndices.get(oldVertex);
+
+        verticesToIndices.remove(oldVertex);
+        adjustIndicesOfRemainingVertices(indexOfOldVertex);
+
+        fillCurrentRowWithValue(indexOfOldVertex,-1);
+        fillCurrentColumnWithValue(indexOfOldVertex,-1);
+
+        int firstEmptyRowIndex = removeRowGaps(indexOfOldVertex);
+        removeColumnGaps(indexOfOldVertex, firstEmptyRowIndex);
+
+        numVertices--;
+        ensureSmallEnoughCapacity();
+    }
+
+    /**
      * Return a string representation of this graph.
      */
     public String toString() {
@@ -85,6 +106,21 @@ class Graph {
         Vertex vertex7 = new Vertex(7);
         graph.addVertex(vertex7);
         System.out.println(graph);
+
+        graph.removeVertex(vertex1);
+        System.out.println(graph);
+        graph.removeVertex(vertex2);
+        System.out.println(graph);
+        graph.removeVertex(vertex3);
+        System.out.println(graph);
+        graph.removeVertex(vertex4);
+        System.out.println(graph);
+        graph.removeVertex(vertex5);
+        System.out.println(graph);
+        graph.removeVertex(vertex6);
+        System.out.println(graph);
+        graph.removeVertex(vertex7);
+        System.out.println(graph);
     }
 
     private void ensureLargeEnoughCapacity() {
@@ -108,6 +144,26 @@ class Graph {
         capacity *= 2;
     }
 
+    private void ensureSmallEnoughCapacity() {
+        if (capacity < 4) {
+            return;  // the matrix is too small to shrink; it'll simply disappear.
+        }
+
+        if (numVertices > capacity / 4) {
+            return;  // the matrix isn't small enough to shrink. we want to shrink when load factor = 1/4.
+        }
+
+        // shrink rows
+        adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity / 4);
+
+        // shrink columns
+        for (int rowNum = 0; rowNum < adjacencyMatrix.length; rowNum++) {
+            adjacencyMatrix[rowNum] = Arrays.copyOf(adjacencyMatrix[rowNum], capacity / 4);
+        }
+
+        capacity /= 4;
+    }
+
     private void fillCurrentRowWithValue(int columnNumToFill, int newValue) {
         for (int columnNum = 0; columnNum < numVertices; columnNum++) {
             adjacencyMatrix[columnNumToFill][columnNum] = newValue;
@@ -118,5 +174,85 @@ class Graph {
         for (int rowNum = 0; rowNum < numVertices; rowNum++) {
             adjacencyMatrix[rowNum][rowNumToFill] = newValue;
         }
+    }
+
+    private void adjustIndicesOfRemainingVertices(int indexOfOldVertex) {
+        for (Map.Entry<Vertex, Integer> entry: verticesToIndices.entrySet()) {
+            if (entry.getValue() > indexOfOldVertex) {
+                verticesToIndices.replace(entry.getKey(), entry.getValue(), entry.getValue() - 1);
+            }
+        }
+    }
+
+    private int removeRowGaps(int indexOfOldVertex) {
+        swapRow(adjacencyMatrix, indexOfOldVertex, adjacencyMatrix.length - 1);
+        int firstEmptyRowIndex = getFirstEmptyRowIndex(indexOfOldVertex);
+        shiftRowsUp(adjacencyMatrix, indexOfOldVertex, firstEmptyRowIndex);
+        return firstEmptyRowIndex;
+    }
+
+    private void removeColumnGaps(int indexOfOldVertex, int firstEmptyRowIndex) {
+        int firstEmptyColumnIndex = getFirstEmptyColumnIndex(indexOfOldVertex);
+        for (int rowNum = 0; rowNum < firstEmptyRowIndex; rowNum++) {
+            swapColumn(adjacencyMatrix[rowNum], indexOfOldVertex, firstEmptyColumnIndex);
+            shiftColumnsLeft(adjacencyMatrix[rowNum], indexOfOldVertex, firstEmptyColumnIndex);
+        }
+    }
+
+    private void shiftRowsUp(int[][] array, int startingFromRowIndex, int endingAtRowIndex) {
+        for (int rowIndex = startingFromRowIndex + 1; rowIndex < endingAtRowIndex; rowIndex++) {
+            swapRow(array, rowIndex - 1, rowIndex);
+        }
+    }
+
+    private void shiftColumnsLeft(int[] array, int startingFromColumnIndex, int endingAtColumnIndex) {
+        for (int columnIndex = startingFromColumnIndex + 1; columnIndex < endingAtColumnIndex; columnIndex++) {
+            swapColumn(array, columnIndex - 1, columnIndex);
+        }
+    }
+
+    // return the first empty row after the indexOfOldVertex-th row.
+    private int getFirstEmptyRowIndex(int indexOfOldVertex) {
+        int firstEmptyRowIndex = indexOfOldVertex;
+        for (int rowNum = indexOfOldVertex + 1; rowNum < adjacencyMatrix.length; rowNum++) {
+            firstEmptyRowIndex++;
+            if (containsAllDuplicateValues(adjacencyMatrix[rowNum], -1)) {
+                break;
+            }
+        }
+        return firstEmptyRowIndex;
+    }
+
+    // return the first empty column after the indexOfOldVertex-th column.
+    private int getFirstEmptyColumnIndex(int indexOfOldVertex) {
+        int firstEmptyColumnIndex = indexOfOldVertex;
+        for (int columnNum = indexOfOldVertex + 1; columnNum < adjacencyMatrix.length; columnNum++) {
+            firstEmptyColumnIndex++;
+            if (adjacencyMatrix[indexOfOldVertex][columnNum] == -1) {
+                break;
+            }
+        }
+        return firstEmptyColumnIndex;
+    }
+
+    private void swapRow(int[][] array, int index1, int index2) {
+        int[] temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
+    private void swapColumn(int[] array, int index1, int index2) {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
+    private boolean containsAllDuplicateValues(int[] row, int targetValue) {
+        for (int entry : row) {
+            if (entry != targetValue) {
+                return false;
+            }
+        }
+        return true;
     }
 }
