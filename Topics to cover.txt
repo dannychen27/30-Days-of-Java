@@ -122,6 +122,7 @@ doubly linked list -- DONE FOR NOW
 dynamic arrays -- DONE
 // todo: skip list
 // todo: huffman trees
+// todo: disjoint sets
 
 
 OOP design principles
