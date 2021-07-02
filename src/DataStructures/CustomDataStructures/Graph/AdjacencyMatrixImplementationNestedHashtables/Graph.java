@@ -47,6 +47,16 @@ class Graph {
     }
 
     /**
+     * Remove an edge between the given vertices.
+     *
+     * Precondition: vertex1 and vertex2 are existing vertices in this graph.
+     */
+    public void removeEdge(Vertex vertex1, Vertex vertex2) {
+        vertices.get(vertex1).remove(vertex2);
+        vertices.get(vertex2).remove(vertex1);
+    }
+
+    /**
      * Return a list of all vertices of this graph.
      */
     public List<Vertex> getVertices() {
