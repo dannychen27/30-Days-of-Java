@@ -82,6 +82,13 @@ class Graph {
     }
 
     /**
+     * Return a list of all vertices of this graph.
+     */
+    public List<Vertex> getVertices() {
+        return new ArrayList<>(verticesToIndices.keySet());
+    }
+
+    /**
      * Return a string representation of this graph.
      */
     public String toString() {
@@ -131,6 +138,9 @@ class Graph {
         System.out.println(graph);
         graph.addEdge(vertex2, vertex3);
         System.out.println(graph);
+
+        System.out.println("Vertices: " + graph.getVertices() + "\n");
+        // [1, 2, 3, 4, 5, 6, 7] more or less...
 
         graph.removeEdge(vertex1, vertex2);
         System.out.println(graph);
