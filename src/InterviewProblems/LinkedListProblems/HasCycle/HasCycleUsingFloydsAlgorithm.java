@@ -1,6 +1,6 @@
 package InterviewProblems.LinkedListProblems.HasCycle;
 
-import DataStructures.CustomDataStructures.SinglyLinkedList.LinkedList;
+import DataStructures.CustomDataStructures.SinglyLinkedList.SinglyLinkedList;
 import DataStructures.CustomDataStructures.SinglyLinkedList.Node;
 
 /**
@@ -32,16 +32,16 @@ class HasCycleUsingFloydsAlgorithm {
         // space: O(1)
 
         // A linked list without a cycle.
-        LinkedList linkedList = new LinkedList();
-        linkedList.append(1);
-        linkedList.append(2);
-        linkedList.append(3);
-        linkedList.append(4);
-        linkedList.append(5);
-        System.out.println(hasCycle(linkedList.head)); // false
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        singlyLinkedList.append(1);
+        singlyLinkedList.append(2);
+        singlyLinkedList.append(3);
+        singlyLinkedList.append(4);
+        singlyLinkedList.append(5);
+        System.out.println(hasCycle(singlyLinkedList.head)); // false
 
         // A linked list with a cycle.
-        LinkedList linkedList2 = new LinkedList();
+        SinglyLinkedList singlyLinkedList2 = new SinglyLinkedList();
 
         Node node1 = new Node(1);
         Node node2 = new Node(2);
@@ -53,7 +53,7 @@ class HasCycleUsingFloydsAlgorithm {
         Node node8 = new Node(8);
         Node node9 = new Node(9);
 
-        linkedList2.head = node1;
+        singlyLinkedList2.head = node1;
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
@@ -63,7 +63,7 @@ class HasCycleUsingFloydsAlgorithm {
         node7.next = node8;
         node8.next = node9;
         node9.next = node4;
-        System.out.println(hasCycle(linkedList2.head)); // true
+        System.out.println(hasCycle(singlyLinkedList2.head)); // true
     }
 
     private static boolean hasCycle(Node head) {

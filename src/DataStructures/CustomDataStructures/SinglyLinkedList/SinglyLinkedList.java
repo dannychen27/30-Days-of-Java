@@ -1,10 +1,10 @@
 package DataStructures.CustomDataStructures.SinglyLinkedList;
 
-public class LinkedList {
+public class SinglyLinkedList {
 
     public Node head;
 
-    public LinkedList() {
+    public SinglyLinkedList() {
         head = null;
     }
 
@@ -78,30 +78,30 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.append(1);
-        linkedList.append(2);
-        linkedList.append(3);
-        linkedList.append(4);
-        linkedList.append(5);
-        linkedList.print();  // 1 2 3 4 5
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        singlyLinkedList.append(1);
+        singlyLinkedList.append(2);
+        singlyLinkedList.append(3);
+        singlyLinkedList.append(4);
+        singlyLinkedList.append(5);
+        singlyLinkedList.print();  // 1 2 3 4 5
 
-        linkedList.insert(6, 0);
-        linkedList.print();  // 6 1 2 3 4 5
+        singlyLinkedList.insert(6, 0);
+        singlyLinkedList.print();  // 6 1 2 3 4 5
 
-        linkedList.insert(7, 3);
-        linkedList.print();  // 6 1 2 7 3 4 5
+        singlyLinkedList.insert(7, 3);
+        singlyLinkedList.print();  // 6 1 2 7 3 4 5
 
-        linkedList.insert(8, 7);
-        linkedList.print();  // 6 1 2 7 3 4 5 8
+        singlyLinkedList.insert(8, 7);
+        singlyLinkedList.print();  // 6 1 2 7 3 4 5 8
 
-        linkedList.delete(6);
-        linkedList.print();  // 1 2 7 3 4 5 8
+        singlyLinkedList.delete(6);
+        singlyLinkedList.print();  // 1 2 7 3 4 5 8
 
-        linkedList.delete(7);
-        linkedList.print();  // 1 2 3 4 5 8
+        singlyLinkedList.delete(7);
+        singlyLinkedList.print();  // 1 2 3 4 5 8
 
-        linkedList.delete(8);
-        linkedList.print();  // 1 2 3 4 5
+        singlyLinkedList.delete(8);
+        singlyLinkedList.print();  // 1 2 3 4 5
     }
 }
