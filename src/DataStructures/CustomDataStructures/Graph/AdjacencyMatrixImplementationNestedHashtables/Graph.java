@@ -3,6 +3,7 @@ package DataStructures.CustomDataStructures.Graph.AdjacencyMatrixImplementationN
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +62,22 @@ class Graph {
      */
     public List<Vertex> getVertices() {
         return new ArrayList<>(vertices.keySet());
+    }
+
+    /**
+     * Return a list of all edges of this graph.
+     */
+    public List<List<Vertex>> getEdges() {
+        List<List<Vertex>> edgeList = new LinkedList<>();
+        for (Vertex startVertex : getVertices()) {
+            for (Vertex endVertex : vertices.get(startVertex)) {
+                List<Vertex> edge = new LinkedList<>();
+                edge.add(startVertex);
+                edge.add(endVertex);
+                edgeList.add(edge);
+            }
+        }
+        return edgeList;
     }
 
     /**
