@@ -17,6 +17,13 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Return the number of items in this singly linked list.
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
      * Insert newValue at index targetIndex of this linked list.
      *
      * Precondition: 0 <= targetIndex <= length of linked list - 1.
@@ -81,21 +88,14 @@ public class SinglyLinkedList {
         }
 
         int currentIndex = 0;
-        Node current = head;
         Node previous = null;
+        Node current = head;
         while (currentIndex < targetIndex) {
             previous = current;
             current = current.next;
             currentIndex++;
         }
         return removeFromMiddle(previous, current);
-    }
-
-    /**
-     * Return the number of items in this singly linked list.
-     */
-    public int getSize() {
-        return size;
     }
 
     /**
