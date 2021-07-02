@@ -104,8 +104,8 @@ queues -- DONE
 binary search trees -- DONE FOR NOW
 tries -- DONE!
 graphs with adjacency list -- DONE FOR NOW
-// todo: graphs with adjacency matrix (2d array)
-graphs with adjacency matrix (nested hashtable) -- DONE FOR NOW
+graphs with adjacency matrix with 2d array -- DONE FOR NOW
+graphs with adjacency matrix with nested hashtable -- DONE FOR NOW
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
