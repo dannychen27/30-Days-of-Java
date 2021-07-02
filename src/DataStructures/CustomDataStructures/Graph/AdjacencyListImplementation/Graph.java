@@ -44,6 +44,16 @@ public class Graph {
     }
 
     /**
+     * Remove an edge between the given vertices.
+     *
+     * Precondition: vertex1 and vertex2 are existing vertices in this graph.
+     */
+    public void removeEdge(Vertex vertex1, Vertex vertex2) {
+        vertex1.removeNeighbour(vertex2);
+        vertex2.removeNeighbour(vertex1);
+    }
+
+    /**
      * Return a list of all vertices of this graph.
      */
     public List<Vertex> getVertices() {

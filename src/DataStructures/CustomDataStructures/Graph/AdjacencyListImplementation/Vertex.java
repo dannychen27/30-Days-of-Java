@@ -21,6 +21,10 @@ public class Vertex {
         neighbors.add(otherVertex);
     }
 
+    void removeNeighbour(Vertex otherVertex) {
+        neighbors.remove(otherVertex);
+    }
+
     public String toString() {
         return String.valueOf(value);
     }
