@@ -33,11 +33,11 @@ class HasCycleUsingFloydsAlgorithm {
 
         // A linked list without a cycle.
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        singlyLinkedList.append(1);
-        singlyLinkedList.append(2);
-        singlyLinkedList.append(3);
-        singlyLinkedList.append(4);
-        singlyLinkedList.append(5);
+        singlyLinkedList.insert(10, 0);
+        singlyLinkedList.insert(20, 1);
+        singlyLinkedList.insert(30, 2);
+        singlyLinkedList.insert(40, 3);
+        singlyLinkedList.insert(50, 4);
         System.out.println(hasCycle(singlyLinkedList.head)); // false
 
         // A linked list with a cycle.

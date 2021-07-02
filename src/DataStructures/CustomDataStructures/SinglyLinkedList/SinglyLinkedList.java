@@ -174,7 +174,7 @@ public class SinglyLinkedList {
         System.out.println(singlyLinkedList.isEmpty());  // true
     }
 
-    public void prepend(int newValue) {
+    private void prepend(int newValue) {
         Node newHead = new Node(newValue);
         newHead.next = head;
         head = newHead;
@@ -189,7 +189,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public void append(int newValue) {
+    private void append(int newValue) {
         if (isEmpty()) {
             head = new Node(newValue);
             size++;
