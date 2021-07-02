@@ -150,11 +150,11 @@ public class SinglyLinkedList {
         System.out.println(singlyLinkedList);  // 1 2 3 4 5
         System.out.println("Size: " + singlyLinkedList.getSize());  // 5
 
+//        System.out.println(singlyLinkedList.pop(4));  // 5
 //        System.out.println(singlyLinkedList.pop(0));  // 1
+//        System.out.println(singlyLinkedList.pop(2));  // 4
+//        System.out.println(singlyLinkedList.pop(1));  // 3
 //        System.out.println(singlyLinkedList.pop(0));  // 2
-//        System.out.println(singlyLinkedList.pop(0));  // 3
-//        System.out.println(singlyLinkedList.pop(0));  // 4
-//        System.out.println(singlyLinkedList.pop(0));  // 5
 
         singlyLinkedList.delete(5);
         System.out.println(singlyLinkedList);  // 1 2 3 4
