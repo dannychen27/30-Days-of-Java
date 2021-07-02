@@ -61,6 +61,22 @@ public class Graph {
     }
 
     /**
+     * Return a list of all edges of this graph.
+     */
+    public List<List<Vertex>> getEdges() {
+        List<List<Vertex>> edgeList = new LinkedList<>();
+        for (Vertex startVertex : getVertices()) {
+            for (Vertex endVertex : startVertex.getNeighbors()) {
+                List<Vertex> edge = new LinkedList<>();
+                edge.add(startVertex);
+                edge.add(endVertex);
+                edgeList.add(edge);
+            }
+        }
+        return edgeList;
+    }
+
+    /**
      * Return a string representation of this graph.
      */
     public String toString() {
