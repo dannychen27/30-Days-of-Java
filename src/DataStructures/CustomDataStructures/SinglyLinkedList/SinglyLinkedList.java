@@ -8,44 +8,6 @@ public class SinglyLinkedList {
         head = null;
     }
 
-    public void append(int newValue) {
-        if (head == null) {
-            head = new Node(newValue);
-            return;
-        }
-
-        Node current = head;
-        while (current.next != null) {
-            current = current.next;
-        }
-        current.next = new Node(newValue);
-    }
-
-    private void insertInMiddle(int newValue, Node current) {
-        Node newNode = new Node(newValue);
-        Node oldNode = current.next;
-        current.next = newNode;
-        newNode.next = oldNode;
-    }
-
-    public void prepend(int newValue) {
-        Node newHead = new Node(newValue);
-        newHead.next = head;
-        head = newHead;
-    }
-
-    private int removeFromBeginning() {
-        int oldValue = head.value;
-        head = head.next;
-        return oldValue;
-    }
-
-    private int removeFromMiddle(Node previous, Node current) {
-        int oldValue = current.value;
-        previous.next = current.next;
-        return oldValue;
-    }
-
     /**
      * Insert newValue at index targetIndex of this linked list.
      *
@@ -154,5 +116,43 @@ public class SinglyLinkedList {
         System.out.println(singlyLinkedList.pop(0));  // 3
         System.out.println(singlyLinkedList.pop(0));  // 4
         System.out.println(singlyLinkedList.pop(0));  // 5
+    }
+
+    public void append(int newValue) {
+        if (head == null) {
+            head = new Node(newValue);
+            return;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = new Node(newValue);
+    }
+
+    private void insertInMiddle(int newValue, Node current) {
+        Node newNode = new Node(newValue);
+        Node oldNode = current.next;
+        current.next = newNode;
+        newNode.next = oldNode;
+    }
+
+    public void prepend(int newValue) {
+        Node newHead = new Node(newValue);
+        newHead.next = head;
+        head = newHead;
+    }
+
+    private int removeFromBeginning() {
+        int oldValue = head.value;
+        head = head.next;
+        return oldValue;
+    }
+
+    private int removeFromMiddle(Node previous, Node current) {
+        int oldValue = current.value;
+        previous.next = current.next;
+        return oldValue;
     }
 }
