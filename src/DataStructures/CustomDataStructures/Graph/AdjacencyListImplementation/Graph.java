@@ -8,23 +8,42 @@ public class Graph {
     private List<Vertex> vertices;
     public static int EDGE_DISTANCE = 1;
 
+    /**
+     * Create a new graph.
+     */
     public Graph() {
         vertices = new LinkedList<>();
     }
 
+    /**
+     * Add the given vertex to this graph.
+     *
+     * Precondition: newVertex is not an existing vertex in this graph.
+     */
     public void addVertex(Vertex newVertex) {
         vertices.add(newVertex);
     }
 
+    /**
+     * Add an edge between the given vertices.
+     *
+     * Precondition: vertex1 and vertex2 are existing vertices in this graph.
+     */
     public void addEdge(Vertex vertex1, Vertex vertex2) {
         vertex1.addNeighbour(vertex2);
         vertex2.addNeighbour(vertex1);
     }
 
+    /**
+     * Return a list of all vertices of this graph.
+     */
     public List<Vertex> getVertices() {
         return vertices;
     }
 
+    /**
+     * Return a string representation of this graph.
+     */
     public String toString() {
         StringBuilder graphString = new StringBuilder();
         for (Vertex vertex : vertices) {

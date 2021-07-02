@@ -11,16 +11,24 @@ class Graph {
     private Map<Vertex, HashSet<Vertex>> vertices;
     public static int EDGE_DISTANCE = 1;
 
+    /**
+     * Create a new graph.
+     */
     public Graph() {
         vertices = new HashMap<>();
     }
 
+    /**
+     * Add the given vertex to this graph.
+     *
+     * Precondition: newVertex is not an existing vertex in this graph.
+     */
     public void addVertex(Vertex newVertex) {
         vertices.put(newVertex, new HashSet<>());
     }
 
     /**
-     * Add an edge between vertex1 and vertex2.
+     * Add an edge between the given vertices.
      *
      * Precondition: vertex1 and vertex2 are existing vertices in this graph.
      */
@@ -29,10 +37,16 @@ class Graph {
         vertices.get(vertex2).add(vertex1);
     }
 
+    /**
+     * Return a list of all vertices of this graph.
+     */
     public List<Vertex> getVertices() {
         return new ArrayList<>(vertices.keySet());
     }
 
+    /**
+     * Return a string representation of this graph.
+     */
     public String toString() {
         StringBuilder graphString = new StringBuilder();
         for (Vertex vertex : getVertices()) {
