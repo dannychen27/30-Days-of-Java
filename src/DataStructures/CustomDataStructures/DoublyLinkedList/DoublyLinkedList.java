@@ -72,6 +72,27 @@ public class DoublyLinkedList {
     }
 
     /**
+     * Remove and return the item at targetIndex of this linked list.
+     */
+    public int pop(int targetIndex) {
+        if (isEmpty() || targetIndex >= size) {
+            throw new IndexOutOfBoundsException("This index is out of bounds");
+        }
+
+        if (targetIndex == 0) {
+            return removeFromBeginning();
+        }
+
+        int currentIndex = 0;
+        Node currentNode = head;
+        while (currentIndex < targetIndex) {
+            currentNode = currentNode.next;
+            currentIndex++;
+        }
+        return removeFromMiddle(currentNode);
+    }
+
+    /**
      * Return the string representation of this singly linked list.
      */
     public String toString() {
@@ -172,8 +193,11 @@ public class DoublyLinkedList {
 
     private int removeFromBeginning() {
         int oldValue = head.value;
-        head.previous = null;
-        head = head.next;
+        Node nextNode = head.next;
+        if (nextNode != null) {
+            nextNode.previous = null;
+        }
+        head = nextNode;
         size--;
         return oldValue;
     }
