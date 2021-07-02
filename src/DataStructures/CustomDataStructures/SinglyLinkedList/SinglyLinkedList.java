@@ -21,6 +21,13 @@ public class SinglyLinkedList {
         current.next = new Node(newValue);
     }
 
+    private void insertInMiddle(int newValue, Node current) {
+        Node newNode = new Node(newValue);
+        Node oldNode = current.next;
+        current.next = newNode;
+        newNode.next = oldNode;
+    }
+
     public void prepend(int newValue) {
         Node newHead = new Node(newValue);
         newHead.next = head;
@@ -57,10 +64,7 @@ public class SinglyLinkedList {
             currentIndex++;
         }
 
-        Node newNode = new Node(newValue);
-        Node oldNode = current.next;
-        current.next = newNode;
-        newNode.next = oldNode;
+        insertInMiddle(newValue, current);
     }
 
     /**
