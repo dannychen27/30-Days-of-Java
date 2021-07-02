@@ -33,7 +33,7 @@ public class SinglyLinkedList {
 
         int currentIndex = 0;
         Node current = head;
-        while (current.next != null && currentIndex < targetIndex - 1) {
+        while (current != null && currentIndex < targetIndex - 1) {
             current = current.next;
             currentIndex++;
         }
@@ -200,6 +200,7 @@ public class SinglyLinkedList {
         while (current.next != null) {
             current = current.next;
         }
+
         current.next = new Node(newValue);
         size++;
     }
