@@ -76,18 +76,17 @@ public class DoublyLinkedList {
      */
     public String toString() {
         StringBuilder doublyLinkedListString = new StringBuilder();
-        Node current = head;
-        while (current != null) {
-            if (current.previous != null) {
+        Node currentNode = head;
+        while (currentNode != null) {
+            if (currentNode.previous != null) {
                 doublyLinkedListString.append("Previous ");
             }
-
-            doublyLinkedListString.append(current.value);
-
-            if (current.next != null) {
+            doublyLinkedListString.append(currentNode.value);
+            if (currentNode.next != null) {
                 doublyLinkedListString.append(" Next ");
             }
-            current = current.next;
+
+            currentNode = currentNode.next;
         }
         return doublyLinkedListString.toString();
     }
@@ -125,6 +124,12 @@ public class DoublyLinkedList {
         doublyLinkedList.delete(8);
         System.out.println(doublyLinkedList);  // 1 2 3 4 5
         System.out.println("Size: " + doublyLinkedList.getSize());  // 5
+
+        System.out.println(doublyLinkedList.pop(4));  // 5
+        System.out.println(doublyLinkedList.pop(0));  // 1
+        System.out.println(doublyLinkedList.pop(2));  // 4
+        System.out.println(doublyLinkedList.pop(1));  // 3
+        System.out.println(doublyLinkedList.pop(0));  // 2
     }
 
     private void prepend(int newValue) {
