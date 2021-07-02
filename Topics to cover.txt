@@ -107,7 +107,7 @@ graphs -- DONE FOR NOW
 // todo: minimum spanning trees
 heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
-// todo: doubly linked list
+doubly linked list -- DONE FOR NOW
 // todo: circular linked list
 // todo: hashtables with closed addressing -- chaining
 // todo: hashtables with open addressing -- linear probing, quadratic probing, double hashing
