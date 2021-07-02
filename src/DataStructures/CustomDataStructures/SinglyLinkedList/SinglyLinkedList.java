@@ -77,6 +77,7 @@ public class SinglyLinkedList {
 
         if (head.value == oldValue) {
             removeFromBeginning();
+            return;
         }
 
         Node current = head;
