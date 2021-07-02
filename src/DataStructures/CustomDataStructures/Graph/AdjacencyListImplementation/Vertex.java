@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Graph;
+package DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation;
 
 import java.util.LinkedList;
 import java.util.List;

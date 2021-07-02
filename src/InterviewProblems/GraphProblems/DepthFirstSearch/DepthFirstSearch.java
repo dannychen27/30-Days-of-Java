@@ -1,7 +1,7 @@
 package InterviewProblems.GraphProblems.DepthFirstSearch;
 
-import DataStructures.CustomDataStructures.Graph.Graph;
-import DataStructures.CustomDataStructures.Graph.Vertex;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Vertex;
 
 import java.util.HashMap;
 import java.util.LinkedList;

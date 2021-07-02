@@ -1,7 +1,7 @@
 package InterviewProblems.GraphProblems.FindShortestPath;
 
-import DataStructures.CustomDataStructures.Graph.Graph;
-import DataStructures.CustomDataStructures.Graph.Vertex;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Vertex;
 import DataStructures.CustomDataStructures.Queue.Queue;
 
 import java.util.ArrayDeque;
@@ -9,7 +9,7 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
 
-import static DataStructures.CustomDataStructures.Graph.Graph.EDGE_DISTANCE;
+import static DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph.EDGE_DISTANCE;
 
 class FindShortestPath {
 

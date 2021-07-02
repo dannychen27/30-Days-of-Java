@@ -1,7 +1,7 @@
 package InterviewProblems.GraphProblems.BreadthFirstSearch;
 
-import DataStructures.CustomDataStructures.Graph.Graph;
-import DataStructures.CustomDataStructures.Graph.Vertex;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Vertex;
 import DataStructures.CustomDataStructures.Queue.Queue;
 
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static DataStructures.CustomDataStructures.Graph.Graph.EDGE_DISTANCE;
+import static DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph.EDGE_DISTANCE;
 
 class BreadthFirstSearch {
 
