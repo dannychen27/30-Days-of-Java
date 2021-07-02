@@ -64,6 +64,15 @@ class Graph {
     }
 
     /**
+     * Add an edge between the given adjacencyMatrix.
+     *
+     * Precondition: vertex1 and vertex2 are existing adjacencyMatrix in this graph.
+     */
+    public void addEdge(Vertex vertex1, Vertex vertex2) {
+        setEntry(vertex1, vertex2, 1);
+    }
+
+    /**
      * Return a string representation of this graph.
      */
     public String toString() {
@@ -105,6 +114,13 @@ class Graph {
 
         Vertex vertex7 = new Vertex(7);
         graph.addVertex(vertex7);
+        System.out.println(graph);
+
+        graph.addEdge(vertex1, vertex2);
+        System.out.println(graph);
+        graph.addEdge(vertex1, vertex3);
+        System.out.println(graph);
+        graph.addEdge(vertex2, vertex3);
         System.out.println(graph);
 
         graph.removeVertex(vertex1);
@@ -254,5 +270,12 @@ class Graph {
             }
         }
         return true;
+    }
+
+    private void setEntry(Vertex vertex1, Vertex vertex2, int newValue) {
+        int indexOfVertex1 = verticesToIndices.get(vertex1);
+        int indexOfVertex2 = verticesToIndices.get(vertex2);
+        adjacencyMatrix[indexOfVertex1][indexOfVertex2] = newValue;
+        adjacencyMatrix[indexOfVertex2][indexOfVertex1] = newValue;
     }
 }
