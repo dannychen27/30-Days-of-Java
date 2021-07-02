@@ -109,13 +109,17 @@ public class SinglyLinkedList {
         return removeFromMiddle(previous, current);
     }
 
-    public void print() {
+    /**
+     * Return the string representation of this singly linked list.
+     */
+    public String toString() {
+        StringBuilder singlyLinkedListString = new StringBuilder();
         Node current = head;
         while (current != null) {
-            System.out.print(current.value + " ");
+            singlyLinkedListString.append(current.value).append(" ");
             current = current.next;
         }
-        System.out.print("\n");
+        return singlyLinkedListString.toString();
     }
 
     public static void main(String[] args) {
@@ -125,25 +129,25 @@ public class SinglyLinkedList {
         singlyLinkedList.append(3);
         singlyLinkedList.append(4);
         singlyLinkedList.append(5);
-        singlyLinkedList.print();  // 1 2 3 4 5
+        System.out.println(singlyLinkedList);  // 1 2 3 4 5
 
         singlyLinkedList.insert(6, 0);
-        singlyLinkedList.print();  // 6 1 2 3 4 5
+        System.out.println(singlyLinkedList);  // 6 1 2 3 4 5
 
         singlyLinkedList.insert(7, 3);
-        singlyLinkedList.print();  // 6 1 2 7 3 4 5
+        System.out.println(singlyLinkedList);  // 6 1 2 7 3 4 5
 
         singlyLinkedList.insert(8, 7);
-        singlyLinkedList.print();  // 6 1 2 7 3 4 5 8
+        System.out.println(singlyLinkedList);  // 6 1 2 7 3 4 5 8
 
         singlyLinkedList.delete(6);
-        singlyLinkedList.print();  // 1 2 7 3 4 5 8
+        System.out.println(singlyLinkedList);  // 1 2 7 3 4 5 8
 
         singlyLinkedList.delete(7);
-        singlyLinkedList.print();  // 1 2 3 4 5 8
+        System.out.println(singlyLinkedList);  // 1 2 3 4 5 8
 
         singlyLinkedList.delete(8);
-        singlyLinkedList.print();  // 1 2 3 4 5
+        System.out.println(singlyLinkedList);  // 1 2 3 4 5
 
         System.out.println(singlyLinkedList.pop(0));  // 1
         System.out.println(singlyLinkedList.pop(0));  // 2
