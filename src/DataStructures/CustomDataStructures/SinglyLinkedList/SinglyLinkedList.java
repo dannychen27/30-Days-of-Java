@@ -27,6 +27,18 @@ public class SinglyLinkedList {
         head = newHead;
     }
 
+    private int removeFromBeginning() {
+        int oldValue = head.value;
+        head = head.next;
+        return oldValue;
+    }
+
+    private int removeFromMiddle(Node previous, Node current) {
+        int oldValue = current.value;
+        previous.next = current.next;
+        return oldValue;
+    }
+
     /**
      * Precondition: 0 <= targetIndex <= length of linked list - 1.
      */
@@ -55,7 +67,7 @@ public class SinglyLinkedList {
         }
 
         if (head.value == oldValue) {
-            head = head.next;
+            removeFromBeginning();
         }
 
         Node current = head;
@@ -66,6 +78,22 @@ public class SinglyLinkedList {
             }
             current = current.next;
         }
+    }
+
+    public int pop(int targetIndex) throws IllegalStateException {
+        if (targetIndex == 0) {
+            return removeFromBeginning();
+        }
+
+        int index = 0;
+        Node current = head;
+        Node previous = null;
+        while (index < targetIndex) {
+            previous = current;
+            current = current.next;
+            index++;
+        }
+        return removeFromMiddle(previous, current);
     }
 
     public void print() {
@@ -103,5 +131,11 @@ public class SinglyLinkedList {
 
         singlyLinkedList.delete(8);
         singlyLinkedList.print();  // 1 2 3 4 5
+
+        System.out.println(singlyLinkedList.pop(0));  // 1
+        System.out.println(singlyLinkedList.pop(0));  // 2
+        System.out.println(singlyLinkedList.pop(0));  // 3
+        System.out.println(singlyLinkedList.pop(0));  // 4
+        System.out.println(singlyLinkedList.pop(0));  // 5
     }
 }
