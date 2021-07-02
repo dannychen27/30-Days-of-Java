@@ -119,7 +119,7 @@ doubly linked list -- DONE FOR NOW
 // todo: red black trees
 // todo: b/b+ trees
 // todo: splay trees
-// todo: dynamic array
+dynamic arrays -- DONE
 // todo: skip list
 // todo: huffman trees
 
