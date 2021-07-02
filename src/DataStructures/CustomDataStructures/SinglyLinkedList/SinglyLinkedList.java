@@ -118,6 +118,19 @@ public class SinglyLinkedList {
         System.out.println(singlyLinkedList.pop(0));  // 5
     }
 
+    public void prepend(int newValue) {
+        Node newHead = new Node(newValue);
+        newHead.next = head;
+        head = newHead;
+    }
+
+    private void insertInMiddle(int newValue, Node current) {
+        Node newNode = new Node(newValue);
+        Node oldNode = current.next;
+        current.next = newNode;
+        newNode.next = oldNode;
+    }
+
     public void append(int newValue) {
         if (head == null) {
             head = new Node(newValue);
@@ -129,19 +142,6 @@ public class SinglyLinkedList {
             current = current.next;
         }
         current.next = new Node(newValue);
-    }
-
-    private void insertInMiddle(int newValue, Node current) {
-        Node newNode = new Node(newValue);
-        Node oldNode = current.next;
-        current.next = newNode;
-        newNode.next = oldNode;
-    }
-
-    public void prepend(int newValue) {
-        Node newHead = new Node(newValue);
-        newHead.next = head;
-        head = newHead;
     }
 
     private int removeFromBeginning() {
