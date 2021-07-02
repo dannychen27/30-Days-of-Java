@@ -39,13 +39,13 @@ public class SinglyLinkedList {
         }
 
         int currentIndex = 0;
-        Node current = head;
-        while (current != null && currentIndex < targetIndex - 1) {
-            current = current.next;
+        Node currentNode = head;
+        while (currentNode != null && currentIndex < targetIndex - 1) {
+            currentNode = currentNode.next;
             currentIndex++;
         }
 
-        insertInMiddle(current, newValue);
+        insertInMiddle(currentNode, newValue);
     }
 
     /**
@@ -61,17 +61,17 @@ public class SinglyLinkedList {
             return;
         }
 
-        Node previous = null;
-        Node current = head;
-        while (current != null && current.value != oldValue) {
-            previous = current;
-            current = current.next;
+        Node previousNode = null;
+        Node currentNode = head;
+        while (currentNode != null && currentNode.value != oldValue) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
         }
 
-        if (current == null) {
+        if (currentNode == null) {
             throw new IllegalStateException("This value does not exist.");
         } else {
-            removeFromMiddle(previous, current);
+            removeFromMiddle(previousNode, currentNode);
         }
     }
 
@@ -88,14 +88,14 @@ public class SinglyLinkedList {
         }
 
         int currentIndex = 0;
-        Node previous = null;
-        Node current = head;
+        Node previousNode = null;
+        Node currentNode = head;
         while (currentIndex < targetIndex) {
-            previous = current;
-            current = current.next;
+            previousNode = currentNode;
+            currentNode = currentNode.next;
             currentIndex++;
         }
-        return removeFromMiddle(previous, current);
+        return removeFromMiddle(previousNode, currentNode);
     }
 
     /**
@@ -181,10 +181,10 @@ public class SinglyLinkedList {
         size++;
     }
 
-    private void insertInMiddle(Node current, int newValue) {
+    private void insertInMiddle(Node currentNode, int newValue) {
         Node newNode = new Node(newValue);
-        Node oldNode = current.next;
-        current.next = newNode;
+        Node oldNode = currentNode.next;
+        currentNode.next = newNode;
         newNode.next = oldNode;
         size++;
     }
@@ -212,9 +212,9 @@ public class SinglyLinkedList {
         return oldValue;
     }
 
-    private int removeFromMiddle(Node previous, Node current) {
-        int oldValue = current.value;
-        previous.next = current.next;
+    private int removeFromMiddle(Node previous, Node currentNode) {
+        int oldValue = currentNode.value;
+        previous.next = currentNode.next;
         size--;
         return oldValue;
     }
