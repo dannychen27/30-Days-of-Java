@@ -40,6 +40,8 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Insert newValue at index targetIndex of this linked list.
+     *
      * Precondition: 0 <= targetIndex <= length of linked list - 1.
      */
     public void insert(int newValue, int targetIndex) {
@@ -61,6 +63,9 @@ public class SinglyLinkedList {
         newNode.next = oldNode;
     }
 
+    /**
+     * Delete the first occurrence of oldValue from this linked list.
+     */
     public void delete(int oldValue) {
         if (head == null) {
             return;
@@ -80,7 +85,10 @@ public class SinglyLinkedList {
         }
     }
 
-    public int pop(int targetIndex) throws IllegalStateException {
+    /**
+     * Remove and return the item at targetIndex of this linked list.
+     */
+    public int pop(int targetIndex) {
         if (targetIndex == 0) {
             return removeFromBeginning();
         }
