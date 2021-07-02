@@ -28,6 +28,15 @@ class Graph {
     }
 
     /**
+     * Remove the given vertex from this graph.
+     *
+     * Precondition: oldVertex is an existing vertex in this graph.
+     */
+    public void removeVertex(Vertex oldVertex) {
+        vertices.remove(oldVertex);
+    }
+
+    /**
      * Add an edge between the given vertices.
      *
      * Precondition: vertex1 and vertex2 are existing vertices in this graph.
