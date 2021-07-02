@@ -146,11 +146,33 @@ public class DoublyLinkedList {
         System.out.println(doublyLinkedList);  // 1 2 3 4 5
         System.out.println("Size: " + doublyLinkedList.getSize());  // 5
 
-        System.out.println(doublyLinkedList.pop(4));  // 5
-        System.out.println(doublyLinkedList.pop(0));  // 1
-        System.out.println(doublyLinkedList.pop(2));  // 4
-        System.out.println(doublyLinkedList.pop(1));  // 3
-        System.out.println(doublyLinkedList.pop(0));  // 2
+        // System.out.println(doublyLinkedList.pop(4));  // 5
+        // System.out.println(doublyLinkedList.pop(0));  // 1
+        // System.out.println(doublyLinkedList.pop(2));  // 4
+        // System.out.println(doublyLinkedList.pop(1));  // 3
+        // System.out.println(doublyLinkedList.pop(0));  // 2
+
+        doublyLinkedList.delete(5);
+        System.out.println(doublyLinkedList);  // 1 2 3 4
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 4
+
+        doublyLinkedList.delete(1);
+        System.out.println(doublyLinkedList);  // 2 3 4
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 3
+
+        doublyLinkedList.delete(3);
+        System.out.println(doublyLinkedList);  // 2 4
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 2
+
+        doublyLinkedList.delete(4);
+        System.out.println(doublyLinkedList);  // 2
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 1
+
+        doublyLinkedList.delete(2);
+        System.out.println(doublyLinkedList);  // empty string
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 0
+
+        System.out.println(doublyLinkedList.isEmpty());  // true
     }
 
     private void prepend(int newValue) {
