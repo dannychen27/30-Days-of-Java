@@ -9,12 +9,19 @@ public class SinglyLinkedList {
     }
 
     /**
+     * Return true iff this singly linked list contains no elements.
+     */
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    /**
      * Insert newValue at index targetIndex of this linked list.
      *
      * Precondition: 0 <= targetIndex <= length of linked list - 1.
      */
     public void insert(int newValue, int targetIndex) {
-        if (head == null || targetIndex == 0) {
+        if (isEmpty() || targetIndex == 0) {
             prepend(newValue);
             return;
         }
@@ -33,7 +40,7 @@ public class SinglyLinkedList {
      * Delete the first occurrence of oldValue from this linked list.
      */
     public void delete(int oldValue) {
-        if (head == null) {
+        if (isEmpty()) {
             return;
         }
 
@@ -132,7 +139,7 @@ public class SinglyLinkedList {
     }
 
     public void append(int newValue) {
-        if (head == null) {
+        if (isEmpty()) {
             head = new Node(newValue);
             return;
         }
