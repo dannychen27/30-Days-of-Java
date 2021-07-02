@@ -67,7 +67,7 @@ public class DoublyLinkedList {
         if (currentNode == null) {
             throw new IllegalStateException("This value does not exist.");
         } else {
-            removeFromMiddle(currentNode);
+            removeFromMiddle(currentNode.previous, currentNode);
         }
     }
 
@@ -89,7 +89,7 @@ public class DoublyLinkedList {
             currentNode = currentNode.next;
             currentIndex++;
         }
-        return removeFromMiddle(currentNode);
+        return removeFromMiddle(currentNode.previous, currentNode);
     }
 
     /**
@@ -224,9 +224,8 @@ public class DoublyLinkedList {
         return oldValue;
     }
 
-    private int removeFromMiddle(Node currentNode) {
+    private int removeFromMiddle(Node previousNode, Node currentNode) {
         int oldValue = currentNode.value;
-        Node previousNode = currentNode.previous;
         Node nextNode = currentNode.next;
         previousNode.next = nextNode;
         if (nextNode != null) {
