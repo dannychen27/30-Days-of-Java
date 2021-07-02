@@ -105,7 +105,12 @@ public class SinglyLinkedList {
         StringBuilder singlyLinkedListString = new StringBuilder();
         Node current = head;
         while (current != null) {
-            singlyLinkedListString.append(current.value).append(" ");
+            singlyLinkedListString.append(current.value);
+
+            if (current.next != null) {
+                singlyLinkedListString.append(" Next ");
+            }
+
             current = current.next;
         }
         return singlyLinkedListString.toString();
