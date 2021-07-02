@@ -54,14 +54,17 @@ public class SinglyLinkedList {
             return;
         }
 
+        Node previous = null;
         Node current = head;
-        while (current.next != null) {
-            if (current.next.value == oldValue) {
-                current.next = current.next.next;
-                size--;
-                return;
-            }
+        while (current != null && current.value != oldValue) {
+            previous = current;
             current = current.next;
+        }
+
+        if (current == null) {
+            throw new IllegalStateException("This value does not exist.");
+        } else {
+            removeFromMiddle(previous, current);
         }
     }
 
@@ -142,11 +145,32 @@ public class SinglyLinkedList {
         System.out.println(singlyLinkedList);  // 1 2 3 4 5
         System.out.println("Size: " + singlyLinkedList.getSize());  // 5
 
-        System.out.println(singlyLinkedList.pop(0));  // 1
-        System.out.println(singlyLinkedList.pop(0));  // 2
-        System.out.println(singlyLinkedList.pop(0));  // 3
-        System.out.println(singlyLinkedList.pop(0));  // 4
-        System.out.println(singlyLinkedList.pop(0));  // 5
+//        System.out.println(singlyLinkedList.pop(0));  // 1
+//        System.out.println(singlyLinkedList.pop(0));  // 2
+//        System.out.println(singlyLinkedList.pop(0));  // 3
+//        System.out.println(singlyLinkedList.pop(0));  // 4
+//        System.out.println(singlyLinkedList.pop(0));  // 5
+
+        singlyLinkedList.delete(5);
+        System.out.println(singlyLinkedList);  // 1 2 3 4
+        System.out.println("Size: " + singlyLinkedList.getSize());  // 4
+
+        singlyLinkedList.delete(1);
+        System.out.println(singlyLinkedList);  // 2 3 4
+        System.out.println("Size: " + singlyLinkedList.getSize());  // 3
+
+        singlyLinkedList.delete(3);
+        System.out.println(singlyLinkedList);  // 2 4
+        System.out.println("Size: " + singlyLinkedList.getSize());  // 2
+
+        singlyLinkedList.delete(4);
+        System.out.println(singlyLinkedList);  // 2
+        System.out.println("Size: " + singlyLinkedList.getSize());  // 1
+
+        singlyLinkedList.delete(2);
+        System.out.println(singlyLinkedList);  // empty string
+        System.out.println("Size: " + singlyLinkedList.getSize());  // 0
+
         System.out.println(singlyLinkedList.isEmpty());  // true
     }
 
