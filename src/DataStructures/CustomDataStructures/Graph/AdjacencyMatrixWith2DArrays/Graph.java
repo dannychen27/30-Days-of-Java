@@ -73,6 +73,15 @@ class Graph {
     }
 
     /**
+     * Remove an edge between the given adjacencyMatrix.
+     *
+     * Precondition: vertex1 and vertex2 are existing adjacencyMatrix in this graph.
+     */
+    public void removeEdge(Vertex vertex1, Vertex vertex2) {
+        setEntry(vertex1, vertex2, 0);
+    }
+
+    /**
      * Return a string representation of this graph.
      */
     public String toString() {
@@ -121,6 +130,13 @@ class Graph {
         graph.addEdge(vertex1, vertex3);
         System.out.println(graph);
         graph.addEdge(vertex2, vertex3);
+        System.out.println(graph);
+
+        graph.removeEdge(vertex1, vertex2);
+        System.out.println(graph);
+        graph.removeEdge(vertex1, vertex3);
+        System.out.println(graph);
+        graph.removeEdge(vertex2, vertex3);
         System.out.println(graph);
 
         graph.removeVertex(vertex1);
