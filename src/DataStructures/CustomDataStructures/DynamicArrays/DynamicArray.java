@@ -29,7 +29,7 @@ public class DynamicArray {
      * Add this item to the end of the dynamic array.
      */
     public void append(int newItem) {
-        ensureLargeEnoughArray();
+        ensureLargeEnoughCapacity();
         array[size] = newItem;
         size++;
     }
@@ -38,7 +38,7 @@ public class DynamicArray {
      * Delete the item at the end of the dynamic array.
      */
     public int delete() {
-        ensureSmallEnoughArray();
+        ensureSmallEnoughCapacity();
         if (isEmpty()) {
             throw new IllegalStateException("You cannot delete from an empty dynamic array.");
         }
@@ -88,18 +88,26 @@ public class DynamicArray {
         // System.out.println("Popped: " + dynamicArray.delete());  // this throws an IllegalStateException
     }
 
-    private void ensureSmallEnoughArray() {
-        if (size == Math.ceil(capacity / 4)) {
-            array = Arrays.copyOf(array, capacity / 4);
-            capacity /= 4;
+    private void ensureSmallEnoughCapacity() {
+        if (capacity < 4) {
+            return;  // The dynamic array is too small to shrink any further.
         }
+
+        if (size > Math.ceil(capacity / 4)) {
+            return;  // The dynamic array isn't small enough to shrink. we want to shrink when load factor = 1/4.
+        }
+
+        array = Arrays.copyOf(array, capacity / 4);
+        capacity /= 4;
     }
 
-    private void ensureLargeEnoughArray() {
-        if (size == capacity) {
-            array = Arrays.copyOf(array, capacity * 2);
-            Arrays.fill(array, capacity + 1, 2 * capacity, -1);
-            capacity *= 2;
+    private void ensureLargeEnoughCapacity() {
+        if (size < capacity) {
+            return;  // the dynamic array isn't big enough to expand. we want to grow when load factor = 1.
         }
+
+        array = Arrays.copyOf(array, capacity * 2);
+        Arrays.fill(array, capacity + 1, 2 * capacity, -1);
+        capacity *= 2;
     }
 }
