@@ -89,6 +89,25 @@ class Graph {
     }
 
     /**
+     * Return a list of all edges of this graph.
+     */
+    public List<List<Vertex>> getEdges() {
+        List<List<Vertex>> edgeList = new LinkedList<>();
+        for (Vertex startVertex : getVertices()) {
+            int indexOfStartVertex = verticesToIndices.get(startVertex);
+            for (int indexOfEndVertex = 0; indexOfEndVertex < numVertices; indexOfEndVertex++) {
+                if (adjacencyMatrix[indexOfStartVertex][indexOfEndVertex] == 0) {
+                    continue;
+                }
+
+                List<Vertex> edge = getEdge(startVertex, indexOfEndVertex);
+                edgeList.add(edge);
+            }
+        }
+        return edgeList;
+    }
+
+    /**
      * Return a string representation of this graph.
      */
     public String toString() {
@@ -139,8 +158,10 @@ class Graph {
         graph.addEdge(vertex2, vertex3);
         System.out.println(graph);
 
-        System.out.println("Vertices: " + graph.getVertices() + "\n");
+        System.out.println("Vertices: " + graph.getVertices());
         // [1, 2, 3, 4, 5, 6, 7] more or less...
+        System.out.println("Edges: " + graph.getEdges() + "\n");
+        // [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]] more or less...
 
         graph.removeEdge(vertex1, vertex2);
         System.out.println(graph);
@@ -303,5 +324,24 @@ class Graph {
         int indexOfVertex2 = verticesToIndices.get(vertex2);
         adjacencyMatrix[indexOfVertex1][indexOfVertex2] = newValue;
         adjacencyMatrix[indexOfVertex2][indexOfVertex1] = newValue;
+    }
+
+    // find vertex with this index.
+    private Vertex findEndVertex(int indexOfEndVertex) {
+        for (Map.Entry<Vertex, Integer> entry : verticesToIndices.entrySet()) {
+            if (entry.getValue() == indexOfEndVertex) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+
+    // return an edge between startVertex and endVertex.
+    private List<Vertex> getEdge(Vertex startVertex, int indexOfEndVertex) {
+        List<Vertex> edge = new LinkedList<>();
+        edge.add(startVertex);  // find corresponding vertex in verticesToIndices
+        Vertex endVertex = findEndVertex(indexOfEndVertex);
+        edge.add(endVertex);
+        return edge;
     }
 }
