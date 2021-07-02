@@ -50,11 +50,11 @@ public class SinglyLinkedList {
             return;
         }
 
-        int i = 0;
+        int currentIndex = 0;
         Node current = head;
-        while (current.next != null && i < targetIndex - 1) {
+        while (current.next != null && currentIndex < targetIndex - 1) {
             current = current.next;
-            i++;
+            currentIndex++;
         }
 
         Node newNode = new Node(newValue);
@@ -93,13 +93,13 @@ public class SinglyLinkedList {
             return removeFromBeginning();
         }
 
-        int index = 0;
+        int currentIndex = 0;
         Node current = head;
         Node previous = null;
-        while (index < targetIndex) {
+        while (currentIndex < targetIndex) {
             previous = current;
             current = current.next;
-            index++;
+            currentIndex++;
         }
         return removeFromMiddle(previous, current);
     }
