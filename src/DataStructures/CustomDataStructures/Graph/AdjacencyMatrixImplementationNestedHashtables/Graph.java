@@ -118,8 +118,10 @@ class Graph {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
-        System.out.println(graph.getEdges());  // [[1, 2], [1, 3], [2, 1], [2, 4], [2, 5], [3, 1], [3, 6], [3, 7], [4, 2], [5, 2], [6, 3], [7, 3]]
-        System.out.println(graph.getVertices());  // [1, 2, 3, 4, 5, 6, 7]
+        System.out.println(graph.getEdges());
+        // [[1, 2], [1, 3], [2, 1], [2, 4], [2, 5], [3, 1], [3, 6], [3, 7], [4, 2], [5, 2], [6, 3], [7, 3]]
+        // more or less...
+        System.out.println(graph.getVertices());  // [1, 2, 3, 4, 5, 6, 7] more or less...
         System.out.println(graph);
         // Vertex: 1 Neighbours: [2, 3]
         // Vertex: 2 Neighbours: [1, 4, 5]
