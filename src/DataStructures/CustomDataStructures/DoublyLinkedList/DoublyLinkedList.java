@@ -47,6 +47,31 @@ public class DoublyLinkedList {
     }
 
     /**
+     * Delete the first occurrence of oldValue from this linked list.
+     */
+    private void delete(int oldValue) {
+        if (isEmpty()) {
+            throw new IllegalStateException("This value does not exist.");
+        }
+
+        if (head.value == oldValue) {
+            removeFromBeginning();
+            return;
+        }
+
+        Node currentNode = head;
+        while (currentNode != null && currentNode.value != oldValue) {
+            currentNode = currentNode.next;
+        }
+
+        if (currentNode == null) {
+            throw new IllegalStateException("This value does not exist.");
+        } else {
+            removeFromMiddle(currentNode);
+        }
+    }
+
+    /**
      * Return the string representation of this singly linked list.
      */
     public String toString() {
@@ -88,6 +113,18 @@ public class DoublyLinkedList {
         doublyLinkedList.insert(8, 7);
         System.out.println(doublyLinkedList);  // 6 1 2 7 3 4 5 8
         System.out.println("Size: " + doublyLinkedList.getSize());  // 8
+
+        doublyLinkedList.delete(6);
+        System.out.println(doublyLinkedList);  // 1 2 7 3 4 5 8
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 7
+
+        doublyLinkedList.delete(7);
+        System.out.println(doublyLinkedList);  // 1 2 3 4 5 8
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 6
+
+        doublyLinkedList.delete(8);
+        System.out.println(doublyLinkedList);  // 1 2 3 4 5
+        System.out.println("Size: " + doublyLinkedList.getSize());  // 5
     }
 
     private void prepend(int newValue) {
@@ -141,7 +178,9 @@ public class DoublyLinkedList {
         Node previousNode = currentNode.previous;
         Node nextNode = currentNode.next;
         previousNode.next = nextNode;
-        nextNode.previous = previousNode;
+        if (nextNode != null) {
+            nextNode.previous = previousNode;
+        }
         // currentNode.previous = null;
         // currentNode.next = null;
         size--;
