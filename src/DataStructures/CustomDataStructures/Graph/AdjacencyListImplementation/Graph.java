@@ -25,6 +25,16 @@ public class Graph {
         return vertices;
     }
 
+    public String toString() {
+        StringBuilder graphString = new StringBuilder();
+        for (Vertex vertex : vertices) {
+            graphString.append("Vertex: ").append(vertex).append(" ");
+            graphString.append("Neighbours: ").append(vertex.getNeighbors());
+            graphString.append("\n");
+        }
+        return graphString.toString();
+    }
+
     public static void main(String[] args) {
         Graph graph = new Graph();
         Vertex vertex1 = new Vertex(1);
@@ -50,6 +60,13 @@ public class Graph {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
-        System.out.println(graph.getVertices());  // [1, 2, 3, 4, 5, 6, 7]
+        System.out.println(graph);
+        // Vertex: 1 Neighbours: [2, 3]
+        // Vertex: 2 Neighbours: [1, 4, 5]
+        // Vertex: 3 Neighbours: [1, 6, 7]
+        // Vertex: 4 Neighbours: [2]
+        // Vertex: 5 Neighbours: [2]
+        // Vertex: 6 Neighbours: [3]
+        // Vertex: 7 Neighbours: [3]
     }
 }
