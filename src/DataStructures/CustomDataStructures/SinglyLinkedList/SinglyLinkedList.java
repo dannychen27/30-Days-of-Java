@@ -103,15 +103,14 @@ public class SinglyLinkedList {
      */
     public String toString() {
         StringBuilder singlyLinkedListString = new StringBuilder();
-        Node current = head;
-        while (current != null) {
-            singlyLinkedListString.append(current.value);
-
-            if (current.next != null) {
+        Node currentNode = head;
+        while (currentNode != null) {
+            singlyLinkedListString.append(currentNode.value);
+            if (currentNode.next != null) {
                 singlyLinkedListString.append(" Next ");
             }
 
-            current = current.next;
+            currentNode = currentNode.next;
         }
         return singlyLinkedListString.toString();
     }
@@ -150,11 +149,11 @@ public class SinglyLinkedList {
         System.out.println(singlyLinkedList);  // 1 2 3 4 5
         System.out.println("Size: " + singlyLinkedList.getSize());  // 5
 
-//        System.out.println(singlyLinkedList.pop(4));  // 5
-//        System.out.println(singlyLinkedList.pop(0));  // 1
-//        System.out.println(singlyLinkedList.pop(2));  // 4
-//        System.out.println(singlyLinkedList.pop(1));  // 3
-//        System.out.println(singlyLinkedList.pop(0));  // 2
+        // System.out.println(singlyLinkedList.pop(4));  // 5
+        // System.out.println(singlyLinkedList.pop(0));  // 1
+        // System.out.println(singlyLinkedList.pop(2));  // 4
+        // System.out.println(singlyLinkedList.pop(1));  // 3
+        // System.out.println(singlyLinkedList.pop(0));  // 2
 
         singlyLinkedList.delete(5);
         System.out.println(singlyLinkedList);  // 1 2 3 4
