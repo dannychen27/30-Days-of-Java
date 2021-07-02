@@ -114,6 +114,8 @@ public class Graph {
         graph.addEdge(vertex3, vertex6);
         graph.addEdge(vertex3, vertex7);
 
+        System.out.println(graph.getEdges());  // [[1, 2], [1, 3], [2, 1], [2, 4], [2, 5], [3, 1], [3, 6], [3, 7], [4, 2], [5, 2], [6, 3], [7, 3]]
+        System.out.println(graph.getVertices());  // [1, 2, 3, 4, 5, 6, 7]
         System.out.println(graph);
         // Vertex: 1 Neighbours: [2, 3]
         // Vertex: 2 Neighbours: [1, 4, 5]
@@ -122,5 +124,27 @@ public class Graph {
         // Vertex: 5 Neighbours: [2]
         // Vertex: 6 Neighbours: [3]
         // Vertex: 7 Neighbours: [3]
+
+        Graph graph2 = new Graph();
+        Vertex vertex8 = new Vertex(8);
+        Vertex vertex9 = new Vertex(9);
+
+        graph2.addVertex(vertex8);
+        graph2.addVertex(vertex9);
+
+        graph2.addEdge(vertex8, vertex9);
+        graph2.removeEdge(vertex8, vertex9);
+
+        System.out.println(graph2);
+        // Vertex: 8 Neighbours: []
+        // Vertex: 9 Neighbours: []
+
+        graph2.removeVertex(vertex8);
+        System.out.println(graph2);
+        // Vertex: 9 Neighbours: []
+
+        graph2.removeVertex(vertex9);
+        System.out.println(graph2);
+        // empty string
     }
 }
