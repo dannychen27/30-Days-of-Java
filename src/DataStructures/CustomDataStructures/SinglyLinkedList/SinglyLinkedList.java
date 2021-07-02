@@ -212,7 +212,8 @@ public class SinglyLinkedList {
 
     private int removeFromBeginning() {
         int oldValue = head.value;
-        head = head.next;
+        Node nextNode = head.next;
+        head = nextNode;
         size--;
         return oldValue;
     }
