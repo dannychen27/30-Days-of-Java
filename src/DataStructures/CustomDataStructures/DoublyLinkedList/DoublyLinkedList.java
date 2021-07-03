@@ -177,7 +177,9 @@ public class DoublyLinkedList {
 
     private void prepend(int newValue) {
         Node newHead = new Node(newValue);
-        head.previous = newHead;
+        if (head != null) {
+            head.previous = newHead;
+        }
         newHead.next = head;
         head = newHead;
         size++;
@@ -197,8 +199,7 @@ public class DoublyLinkedList {
 
     private void append(int newValue) {
         if (isEmpty()) {
-            head = new Node(newValue);
-            size++;
+            prepend(newValue);
             return;
         }
 
