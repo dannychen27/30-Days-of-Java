@@ -288,9 +288,12 @@ cycle detection -- hashset -- DONE!
 recursive staircase problem -- recursive -- DONE!
 recursive staircase problem -- using DP -- DONE!
 recursive staircase problem -- iterative -- DONE!
-// todo: knapsack problem -- recursive
-// todo: knapsack problem -- using DP
-// todo: knapsack problem -- iterative
+// todo: integer knapsack problem -- recursive
+// todo: integer knapsack problem -- using DP
+// todo: integer knapsack problem -- iterative
+// todo: fractional knapsack problem -- recursive
+// todo: fractional knapsack problem -- using DP
+// todo: fractional knapsack problem -- iterative
 ice cream parlour problem -- using hashtable -- DONE!
 lonely integer -- using bit manipulation -- DONE!
 balanced parentheses -- using stacks -- DONE!
