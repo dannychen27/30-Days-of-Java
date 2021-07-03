@@ -127,29 +127,65 @@ public class SinglyCircularLinkedList {
 
     public static void main(String[] args) {
         SinglyCircularLinkedList circularLinkedList = new SinglyCircularLinkedList();
+        circularLinkedList.append(1);
+        circularLinkedList.append(2);
+        circularLinkedList.append(3);
+        circularLinkedList.append(4);
+        circularLinkedList.append(5);
+        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Back to 1
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 5
+
+        circularLinkedList.insert(6, 0);
+        System.out.println(circularLinkedList);  // 6 Next 1 Next 2 Next 3 Next 4 Next 5 Back to 6
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 6
+
+        circularLinkedList.insert(7, 3);
+        System.out.println(circularLinkedList);  // 6 Next 1 Next 2 Next 7 Next 3 Next 4 Next 5 Back to 6
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 7
+
+        circularLinkedList.insert(8, 7);
+        System.out.println(circularLinkedList);  // 6 Next 1 Next 2 Next 7 Next 3 Next 4 Next 5 Next 8 Back to 6
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 8
+
+        circularLinkedList.delete(6);
+        System.out.println(circularLinkedList);  // 1 Next 2 Next 7 Next 3 Next 4 Next 5 Next 8 Back to 1
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 7
+
+        circularLinkedList.delete(7);
+        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Next 8 Back to 1
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 6
+
+        circularLinkedList.delete(8);
+        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Back to 1
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 5
+
+        //System.out.println(circularLinkedList.pop(4));  // 5
+        //System.out.println(circularLinkedList.pop(0));  // 1
+        //System.out.println(circularLinkedList.pop(2));  // 4
+        //System.out.println(circularLinkedList.pop(1));  // 3
+        //System.out.println(circularLinkedList.pop(0));  // 2
+
+        circularLinkedList.delete(5);
+        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Back to 1
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 4
+
+        circularLinkedList.delete(1);
+        System.out.println(circularLinkedList);  // 2 Next 3 Next 4 Back to 2
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 3
+
+        circularLinkedList.delete(3);
+        System.out.println(circularLinkedList);  // 2 Next 4 Back to 2
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 2
+
+        circularLinkedList.delete(4);
+        System.out.println(circularLinkedList);  // 2 Back to 2
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 1
+
+        circularLinkedList.delete(2);
         System.out.println(circularLinkedList);  // empty string
-        circularLinkedList.insert(100, 0);
-        System.out.println(circularLinkedList);  // 100 Back to 100
-        circularLinkedList.insert(300, 0);
-        System.out.println(circularLinkedList);  // 300 Next 100 Back to 300
-        circularLinkedList.insert(200, 1);
-        System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Back to 300
-        circularLinkedList.insert( 400, 3);
-        System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Next 400 Back to 300
+        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 0
 
-        //circularLinkedList.delete(400);
-        //System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Back to 300
-        //circularLinkedList.delete(200);
-        //System.out.println(circularLinkedList);  // 300 Next 100 Back to 300
-        //circularLinkedList.delete(300);
-        //System.out.println(circularLinkedList);  // 100 Back to 100
-        //circularLinkedList.delete(100);
-        //System.out.println(circularLinkedList);  // empty string
-
-        System.out.println(circularLinkedList.pop(3));  // 400
-        System.out.println(circularLinkedList.pop(1));  // 200
-        System.out.println(circularLinkedList.pop(0));  // 300
-        System.out.println(circularLinkedList.pop(0));  // 100
+        System.out.println(circularLinkedList.isEmpty());  // true
     }
 
     private void prepend(int newValue) {
@@ -158,10 +194,12 @@ public class SinglyCircularLinkedList {
             head = newHead;
         }
         newHead.next = head;
-        if (head.next == head) {
-            head.next = newHead;  // add cycle at the end
-        }
 
+        Node currentNode = head;
+        while (currentNode.next != head) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newHead;
         head = newHead;
         size++;
     }
@@ -185,14 +223,38 @@ public class SinglyCircularLinkedList {
         size++;
     }
 
+    private void append(int newValue) {
+        if (isEmpty()) {
+            prepend(newValue);
+            return;
+        }
+
+        Node currentNode = head;
+        while (currentNode.next != head) {
+            currentNode = currentNode.next;
+        }
+
+        Node newNode = new Node(newValue);
+        currentNode.next = newNode;
+        newNode.next = head;
+        size++;
+    }
+
     private int removeFromBeginning() {
         int oldValue = head.value;
 
+        Node oldHead = head;
         head = head.next;
         if (head.next == head) {
             head = null;
-        } else if (head.next.next == head) {
-            head.next = head;
+        } else {
+            Node currentNode = head;
+            while (currentNode != null && currentNode.next != oldHead) {
+                currentNode = currentNode.next;
+            }
+            if (currentNode != null) {
+                currentNode.next = head;
+            }
         }
 
         size--;
