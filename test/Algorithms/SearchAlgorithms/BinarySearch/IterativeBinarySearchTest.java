@@ -11,16 +11,14 @@ class IterativeBinarySearchTest {
 
     private IterativeBinarySearch binarySearch;
 
-    private int[] emptyArray;
-    private int[] oneElementArray;
-    private int[] smallSortedArray;
+    private int[] emptyArray = new int[0];
+    private int[] oneElementArray = new int[] {1};
+    private int[] smallSortedArray = new int[] {1, 2, 3, 4, 5};
+    private int[] sortedArrayWithDuplicateItems = new int[] {1, 1, 2, 2, 3, 3};
 
     @BeforeEach
     void setUp() {
         binarySearch = new IterativeBinarySearch();
-        emptyArray = new int[0];
-        oneElementArray = new int[] {1};
-        smallSortedArray = new int[] {1, 2, 3, 4, 5};
     }
 
     @AfterEach
@@ -57,5 +55,10 @@ class IterativeBinarySearchTest {
     @Test
     void testItemIsFoundAtEndOfArray() {
         assertTrue(binarySearch.iterativeBinarySearch(smallSortedArray, 1));
+    }
+
+    @Test
+    void testItemIsFoundInArrayWithDuplicates() {
+        assertTrue(binarySearch.iterativeBinarySearch(sortedArrayWithDuplicateItems, 2));
     }
 }
