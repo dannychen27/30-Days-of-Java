@@ -245,7 +245,8 @@ public class SinglyCircularLinkedList {
         int oldValue = head.value;
 
         Node oldHead = head;
-        head = head.next;
+        Node nextNode = head.next;
+        head = nextNode;
         if (head.next == head) {
             head = null;
         } else {
