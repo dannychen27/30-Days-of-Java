@@ -76,6 +76,29 @@ public class SinglyCircularLinkedList {
     }
 
     /**
+     * Remove and return the item at targetIndex of this linked list.
+     */
+    public int pop(int targetIndex) {
+        if (isEmpty() || targetIndex >= size) {
+            throw new IndexOutOfBoundsException("This index is out of bounds");
+        }
+
+        if (targetIndex == 0) {
+            return removeFromBeginning();
+        }
+
+        int currentIndex = 0;
+        Node previousNode = null;
+        Node currentNode = head;
+        while (currentIndex < targetIndex) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+            currentIndex++;
+        }
+        return removeFromMiddle(previousNode, currentNode);
+    }
+
+    /**
      * Return the string representation of this singly circular linked list.
      */
     public String toString() {
@@ -114,14 +137,19 @@ public class SinglyCircularLinkedList {
         circularLinkedList.insert( 400, 3);
         System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Next 400 Back to 300
 
-        circularLinkedList.delete(400);
-        System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Back to 300
-        circularLinkedList.delete(200);
-        System.out.println(circularLinkedList);  // 300 Next 100 Back to 300
-        circularLinkedList.delete(300);
-        System.out.println(circularLinkedList);  // 100 Back to 100
-        circularLinkedList.delete(100);
-        System.out.println(circularLinkedList);  // empty string
+        //circularLinkedList.delete(400);
+        //System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Back to 300
+        //circularLinkedList.delete(200);
+        //System.out.println(circularLinkedList);  // 300 Next 100 Back to 300
+        //circularLinkedList.delete(300);
+        //System.out.println(circularLinkedList);  // 100 Back to 100
+        //circularLinkedList.delete(100);
+        //System.out.println(circularLinkedList);  // empty string
+
+        System.out.println(circularLinkedList.pop(3));  // 400
+        System.out.println(circularLinkedList.pop(1));  // 200
+        System.out.println(circularLinkedList.pop(0));  // 300
+        System.out.println(circularLinkedList.pop(0));  // 100
     }
 
     private void prepend(int newValue) {
