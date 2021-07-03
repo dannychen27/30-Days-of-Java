@@ -7,6 +7,8 @@ class BalancedParentheses {
 
     private static HashMap<Character, Character> tokens;
 
+    // source: https://www.youtube.com/watch?v=IhJGJG-9Dx8&t=7s
+
     BalancedParentheses() {
         tokens = new HashMap<>();
         tokens.put('{', '}');
@@ -14,19 +16,11 @@ class BalancedParentheses {
         tokens.put('(', ')');
     }
 
-    public static void main(String[] args) {
-        // source: https://www.youtube.com/watch?v=IhJGJG-9Dx8&t=7s
-
-        // a big and generic example
-        BalancedParentheses bp = new BalancedParentheses();
-        System.out.println(bp.isBalanced("{()[{({})[]()}]}([])")); // true
-    }
-
     /**
      * Return true iff all terms in this expression are balanced.
      * That is, every open term has a corresponding closed term.
      */
-    static boolean isBalanced(String expression) {
+    boolean isBalanced(String expression) {
         Stack<Character> stack = new Stack<>();
         for (char currentCharacter : expression.toCharArray()) {
             if (isOpenTerm(currentCharacter)) {
