@@ -195,8 +195,7 @@ public class SinglyLinkedList {
 
     private void append(int newValue) {
         if (isEmpty()) {
-            head = new Node(newValue);
-            size++;
+            prepend(newValue);
             return;
         }
 
