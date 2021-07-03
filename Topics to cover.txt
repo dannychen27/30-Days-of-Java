@@ -111,6 +111,7 @@ heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
 doubly linked list -- DONE FOR NOW
 singly circular linked list -- DONE FOR NOW
+// todo: doubly circular linked list
 // todo: hashtables with closed addressing -- chaining
 // todo: hashtables with open addressing -- linear probing, quadratic probing, double hashing
 // todo: binomial heaps
