@@ -110,7 +110,7 @@ graphs with adjacency matrix with nested hashtable -- DONE FOR NOW
 heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
 doubly linked list -- DONE FOR NOW
-// todo: circular linked list
+singly circular linked list -- DONE FOR NOW
 // todo: hashtables with closed addressing -- chaining
 // todo: hashtables with open addressing -- linear probing, quadratic probing, double hashing
 // todo: binomial heaps
