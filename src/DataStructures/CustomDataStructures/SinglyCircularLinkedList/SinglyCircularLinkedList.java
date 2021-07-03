@@ -207,12 +207,13 @@ public class SinglyCircularLinkedList {
     private void insertInMiddle(Node currentNode, int newValue) {
         Node newNode = new Node(newValue);
         Node oldNode = currentNode.next;
+
         currentNode.next = newNode;
-        newNode.next = oldNode;
         if (currentNode.next == null) {
             currentNode.next = head;  // this case is impossible.
         }
 
+        newNode.next = oldNode;
         if (newNode.next == null) {
             newNode.next = head;
         }
