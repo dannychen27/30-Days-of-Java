@@ -119,32 +119,32 @@ public class DoublyLinkedList {
         doublyLinkedList.append(3);
         doublyLinkedList.append(4);
         doublyLinkedList.append(5);
-        System.out.println(doublyLinkedList);  // 1 2 3 4 5
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 5
+        System.out.println(doublyLinkedList);  // 1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 5
 
         doublyLinkedList.insert(6, 0);
-        System.out.println(doublyLinkedList);  // 6 1 2 3 4 5
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 6
+        System.out.println(doublyLinkedList);  // 6 Next Previous 1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 6
 
         doublyLinkedList.insert(7, 3);
-        System.out.println(doublyLinkedList);  // 6 1 2 7 3 4 5
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 7
+        System.out.println(doublyLinkedList);  // 6 Next Previous 1 Next Previous 2 Next Previous 7 Next Previous 3 Next Previous 4 Next Previous 5
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 7
 
         doublyLinkedList.insert(8, 7);
-        System.out.println(doublyLinkedList);  // 6 1 2 7 3 4 5 8
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 8
+        System.out.println(doublyLinkedList);  // 6 Next Previous 1 Next Previous 2 Next Previous 7 Next Previous 3 Next Previous 4 Next Previous 5 Next Previous 8
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 8
 
         doublyLinkedList.delete(6);
-        System.out.println(doublyLinkedList);  // 1 2 7 3 4 5 8
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 7
+        System.out.println(doublyLinkedList);  // 1 Next Previous 2 Next Previous 7 Next Previous 3 Next Previous 4 Next Previous 5 Next Previous 8
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 7
 
         doublyLinkedList.delete(7);
-        System.out.println(doublyLinkedList);  // 1 2 3 4 5 8
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 6
+        System.out.println(doublyLinkedList);  // 1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5 Next Previous 8
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 6
 
         doublyLinkedList.delete(8);
-        System.out.println(doublyLinkedList);  // 1 2 3 4 5
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 5
+        System.out.println(doublyLinkedList);  // 1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 5
 
         // System.out.println(doublyLinkedList.pop(4));  // 5
         // System.out.println(doublyLinkedList.pop(0));  // 1
@@ -153,20 +153,20 @@ public class DoublyLinkedList {
         // System.out.println(doublyLinkedList.pop(0));  // 2
 
         doublyLinkedList.delete(5);
-        System.out.println(doublyLinkedList);  // 1 2 3 4
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 4
+        System.out.println(doublyLinkedList);  // 1 Next Previous 2 Next Previous 3 Next Previous 4
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 4
 
         doublyLinkedList.delete(1);
-        System.out.println(doublyLinkedList);  // 2 3 4
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 3
+        System.out.println(doublyLinkedList);  // 2 Next Previous 3 Next Previous 4
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 3
 
         doublyLinkedList.delete(3);
-        System.out.println(doublyLinkedList);  // 2 4
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 2
+        System.out.println(doublyLinkedList);  // 2 Next Previous 4
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 2
 
         doublyLinkedList.delete(4);
         System.out.println(doublyLinkedList);  // 2
-        System.out.println("Size: " + doublyLinkedList.getSize());  // 1
+        System.out.println("Size: " + doublyLinkedList.getSize());  // Size: 1
 
         doublyLinkedList.delete(2);
         System.out.println(doublyLinkedList);  // empty string
