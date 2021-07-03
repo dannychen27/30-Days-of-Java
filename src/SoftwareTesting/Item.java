@@ -10,11 +10,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public int getQuantity() {
-        return quantity;
+    public double getSubtotal() {
+        return unitPrice * quantity;
     }
 }
