@@ -49,6 +49,33 @@ public class SinglyCircularLinkedList {
     }
 
     /**
+     * Delete the first occurrence of oldValue from this linked list.
+     */
+    public void delete(int oldValue) {
+        if (isEmpty()) {
+            throw new IllegalStateException("This value does not exist.");
+        }
+
+        if (head.value == oldValue) {
+            removeFromBeginning();
+            return;
+        }
+
+        Node previousNode = null;
+        Node currentNode = head;
+        while (currentNode != null && currentNode.value != oldValue) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        if (currentNode == head) {
+            throw new IllegalStateException("This value does not exist.");
+        } else {
+            removeFromMiddle(previousNode, currentNode);
+        }
+    }
+
+    /**
      * Return the string representation of this singly circular linked list.
      */
     public String toString() {
@@ -79,13 +106,22 @@ public class SinglyCircularLinkedList {
         SinglyCircularLinkedList circularLinkedList = new SinglyCircularLinkedList();
         System.out.println(circularLinkedList);  // empty string
         circularLinkedList.insert(100, 0);
-        System.out.println(circularLinkedList);  // 100
+        System.out.println(circularLinkedList);  // 100 Back to 100
         circularLinkedList.insert(300, 0);
-        System.out.println(circularLinkedList);  // 300 100
+        System.out.println(circularLinkedList);  // 300 Next 100 Back to 300
         circularLinkedList.insert(200, 1);
-        System.out.println(circularLinkedList);  // 300 200 100
+        System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Back to 300
         circularLinkedList.insert( 400, 3);
-        System.out.println(circularLinkedList);  // 300 200 100 400
+        System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Next 400 Back to 300
+
+        circularLinkedList.delete(400);
+        System.out.println(circularLinkedList);  // 300 Next 200 Next 100 Back to 300
+        circularLinkedList.delete(200);
+        System.out.println(circularLinkedList);  // 300 Next 100 Back to 300
+        circularLinkedList.delete(300);
+        System.out.println(circularLinkedList);  // 100 Back to 100
+        circularLinkedList.delete(100);
+        System.out.println(circularLinkedList);  // empty string
     }
 
     private void prepend(int newValue) {
@@ -119,5 +155,32 @@ public class SinglyCircularLinkedList {
             oldNode.next = head;
         }
         size++;
+    }
+
+    private int removeFromBeginning() {
+        int oldValue = head.value;
+
+        head = head.next;
+        if (head.next == head) {
+            head = null;
+        } else if (head.next.next == head) {
+            head.next = head;
+        }
+
+        size--;
+        return oldValue;
+    }
+
+    private int removeFromMiddle(Node previousNode, Node currentNode) {
+        int oldValue = currentNode.value;
+
+        Node nextNode = currentNode.next;
+        if (nextNode.next == null) {
+            nextNode.next = head;
+        }
+
+        previousNode.next = nextNode;
+        size--;
+        return oldValue;
     }
 }
