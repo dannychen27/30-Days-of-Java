@@ -42,4 +42,11 @@ public class ShoppingBasketTest {
         ));
         assertEquals(300.0, basket.getTotal(), 0.0);
     }
+
+    // refactoring should make subsequent test cases and source code easier to write
+    @Test
+    public void totalOfItemWithQuantityTwo() {
+        ShoppingBasket basket = buildBasketWithItems(Arrays.asList(new Item(100.0, 2)));
+        assertEquals(200.0, basket.getTotal(), 0.0);
+    }
 }

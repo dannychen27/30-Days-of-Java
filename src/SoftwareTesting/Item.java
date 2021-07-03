@@ -13,4 +13,8 @@ public class Item {
     public double getUnitPrice() {
         return unitPrice;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }
