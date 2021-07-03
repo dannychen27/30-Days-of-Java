@@ -25,4 +25,13 @@ public class ShoppingBasketTest {
         ShoppingBasket basket = new ShoppingBasket(Arrays.asList(new Item(100.0, 1)));
         assertEquals(100.0, basket.getTotal(), 0.0);
     }
+
+    @Test
+    public void totalOfTwoItems() {
+        ShoppingBasket basket = new ShoppingBasket(Arrays.asList(
+                new Item(100.0, 1),
+                new Item(200.0, 1)
+        ));
+        assertEquals(300.0, basket.getTotal(), 0.0);
+    }
 }

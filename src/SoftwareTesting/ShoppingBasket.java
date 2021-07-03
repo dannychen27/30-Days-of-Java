@@ -11,9 +11,10 @@ public class ShoppingBasket {
     }
 
     public double getTotal() {
-        if (shoppingBasketItems.isEmpty()) {
-            return 0.0;
+        double sum = 0.0;
+        for (Item shoppingBasketItem : shoppingBasketItems) {
+            sum += shoppingBasketItem.getUnitPrice();
         }
-        return shoppingBasketItems.get(0).getUnitPrice();
+        return sum;
     }
 }
