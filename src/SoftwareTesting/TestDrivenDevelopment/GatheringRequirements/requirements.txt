@@ -15,7 +15,7 @@ X buy 0 copies of a single CD -- skip over it?? -- it's fine if this is a no-op.
 * buy negative CDs in stock -- throw BuyNegativeStockException
 X buy multiple CDs in stock successfully -- update stock counts of all CDs bought
 X buy multiple CDs in stock unsuccessfully because there's not enough of at least one CD -- throw CDNotInCatalogueException
-* buy multiple CDs in stock unsuccessfully because CD is not in catalogue -- throw InsufficientStock exception
+X buy multiple CDs in stock unsuccessfully because CD is not in catalogue -- throw InsufficientStock exception
 * buy all single CD remaining stock becomes 0 -- remove item from catalogue?? -- it's fine to just leave its stock at 0.
 
 - Search for CD
