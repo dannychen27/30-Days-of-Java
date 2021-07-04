@@ -1,0 +1,67 @@
+The following code demonstrates a code smell called the "message chain."
+
+public class DonateMovieTest {
+
+    public final Library library;
+    public final Movie movie;
+
+    public DonateMovieTest() {
+        library = new Library();
+        movie = new Movie();
+    }
+
+    @Test
+    public void movieAddedToCatalogue() {
+        library.donate(movie);
+        assertTrue(library.getCatalogue().contains(movie));
+    }
+}
+
+WHAT DOES THE MESSAGE CHAIN LOOK LIKE?
+
+- it follows the pattern A().B().C().D() ... etc., where a client asks for a chain of DEPENDENT object requests
+- this requires navigating through a relationship to one object to the next object in the chain.
+- a change to one of these relationships requires modifying client code
+
+WHY IT'S A PROBLEM
+
+- the message chain code smell violates encapsulation: implementation details are visible to client
+- e.g., the list part (e.g., the contains() method) is unencapsulated, so client
+knows the getCatalogue() method uses some kind of list/collection.
+
+HOW TO RESOLVE A MESSAGE CHAIN
+
+- to resolve this message chain code smell, encapsulate it in a method, ideally in another class.
+- in this case, we can delegate this contains() functionality to the Library class.
+
+public class DonateMovieTest {
+
+    public final Library library;
+    public final Movie movie;
+
+    public DonateMovieTest() {
+        library = new Library();
+        movie = new Movie();
+    }
+
+    @Test
+    public void movieAddedToCatalogue() {
+        library.donate(movie);
+        assertTrue(library.contains(movie));
+    }
+}
+
+
+public class Library {
+
+    private Collection<Movie> catalogue = new ArrayList<>();
+
+    public void donate(Movie movie) {
+        catalogue.add(movie);
+        movie.addCopy();
+    }
+
+    public boolean contains(Movie movie) {
+        return catalogue.contains(movie);
+    }
+}

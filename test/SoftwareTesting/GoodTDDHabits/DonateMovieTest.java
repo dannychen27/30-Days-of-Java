@@ -20,16 +20,8 @@ public class DonateMovieTest {
     @Test
     public void movieAddedToCatalogue() {
         library.donate(movie);
-        // vvvv this is called a message chain
-        // assertTrue(library.getCatalogue().contains(movie));
-        // ^^ to resolve this message chain code smell, encapsulate it in a method.
         assertTrue(library.contains(movie));
     }
-
-    // a message chain is when you navigating through a relationship to one object
-    // to the next object in the chain.
-    // the list part (e.g., the contains() method) is unencapsulated, so client
-    // knows the getCatalogue is some kind of list/collection.
 
     @Test
     public void rentalCopyAdded() {
