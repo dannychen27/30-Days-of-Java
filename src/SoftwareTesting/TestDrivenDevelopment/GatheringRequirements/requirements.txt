@@ -10,9 +10,11 @@ Test cases, sorted by decreasing priority
 X (happy path) sufficient CD stock -- subtract quantity bought from stock count
 X insufficient stock because try to buy more stock than you have -- throw InsufficientStock exception
 X insufficient stock because CD not in catalogue -- throw CDNotInCatalogueException
-* buy 0 CDs in stock -- skip over it?? -- it's fine if this is a no-op.
+* buy no CDs at all -- no-op
+* buy 0 copies of a single CD -- skip over it?? -- it's fine if this is a no-op.
 * buy negative CDs in stock -- throw BuyNegativeStockException
-* buy multiple CDs in stock -- try to buy it, if there's not enough of at least one CD, throw
+X buy multiple CDs in stock successfully -- update stock counts of all CDs bought
+* buy multiple CDs in stock unsuccessfully -- there's not enough of at least one CD, throw
 CDNotInCatalogueException or InsufficientStock exception
 * stock becomes 0 -- remove item from catalogue?? -- it's fine to just leave its stock at 0.
 

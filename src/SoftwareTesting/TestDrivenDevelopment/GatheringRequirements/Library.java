@@ -15,17 +15,23 @@ public class Library {
         return catalogue.get(targetCD);
     }
 
-    public void buy(CompactDisc targetCD, int quantity) throws CDNotInCatalogueException, InsufficientStockException {
-        if (!catalogue.containsKey(targetCD)) {
-            throw new CDNotInCatalogueException();
-        }
+    public void buy(Map<CompactDisc, Integer> shoppingCartItems) throws CDNotInCatalogueException, InsufficientStockException {
+        for (Map.Entry<CompactDisc, Integer> shoppingCartEntry : shoppingCartItems.entrySet()) {
+            CompactDisc cd = shoppingCartEntry.getKey();
+            int quantity = shoppingCartEntry.getValue();
 
-        int stock = getStock(targetCD);
-        if (stock < quantity) {
-            throw new InsufficientStockException();
+            if (!catalogue.containsKey(cd)) {
+                throw new CDNotInCatalogueException();
+            }
+
+            int stock = getStock(cd);
+            if (stock < quantity) {
+                throw new InsufficientStockException();
+            }
+
+            catalogue.replace(cd, stock - quantity);
+            // TODO: what happens if a customer buys out your entire stock of targetCD?
         }
-        catalogue.replace(targetCD, stock - quantity);
-        // TODO: what happens if a customer buys out your entire stock of targetCD?
     }
 
     public HashMap<CompactDisc, Integer> searchCatalogue(String targetName, String targetArtist) {
