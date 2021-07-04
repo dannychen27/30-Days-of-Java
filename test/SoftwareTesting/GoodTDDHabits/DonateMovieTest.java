@@ -26,10 +26,6 @@ public class DonateMovieTest {
     @Test
     public void rentalCopyAdded() {
         library.donate(movie);
-
-        // when we add movies to library, we add a single rental copy.
-        // we track number of available copies,
-        // then give the catalogue a default copy.
         assertEquals(1, movie.getCopies());
     }
 }
