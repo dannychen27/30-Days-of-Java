@@ -15,7 +15,11 @@ public class Library {
         return catalogue.get(targetCD);
     }
 
-    public void buy(CompactDisc targetCD, int quantity) throws InsufficientStockException {
+    public void buy(CompactDisc targetCD, int quantity) throws CDNotInCatalogueException, InsufficientStockException {
+        if (!catalogue.containsKey(targetCD)) {
+            throw new CDNotInCatalogueException();
+        }
+
         int stock = getStock(targetCD);
         if (stock < quantity) {
             throw new InsufficientStockException();
