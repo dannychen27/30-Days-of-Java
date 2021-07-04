@@ -45,10 +45,16 @@ public class DonateMovieTest {
 
     // TDD habit 3: write the simplest code that makes all test cases pass
 
+    public final Library library;
+    public final Movie movie;
+
+    public DonateMovieTest() {
+        library = new Library();
+        movie = new Movie();
+    }
+
     @Test
     public void movieAddedToCatalogue() {
-        Library library = new Library();
-        Movie movie = new Movie();
         library.donate(movie);
         // vvvv this is called a message chain
         // assertTrue(library.getCatalogue().contains(movie));
@@ -71,8 +77,6 @@ public class DonateMovieTest {
 
     @Test
     public void rentalCopyAdded() {
-        Library library = new Library();
-        Movie movie = new Movie();
         library.donate(movie);
 
         // when we add movies to library, we add a single rental copy.
