@@ -7,15 +7,25 @@ Customer Requirements -- Sample Use Cases
 Test cases, sorted by decreasing priority
 
 - Buy/order a CD
-X (happy path) CD is in stock -- subtract quantity bought from stock count
-X insufficient stock -- throw InsufficientStock exception
+X (happy path) sufficient CD stock -- subtract quantity bought from stock count
+X insufficient stock because try to buy more stock than you have -- throw InsufficientStock exception
+* insufficient stock because CD not in catalogue -- throw CDNotInCatalogueException
+* buy 0 CDs in stock -- skip over it?? -- it's fine if this is a no-op.
+* buy negative CDs in stock -- throw BuyNegativeStockException
+* buy multiple CDs in stock -- try to buy it, if there's not enough of at least one CD, throw
+CDNotInCatalogueException or InsufficientStock exception
+* stock becomes 0 -- remove item from catalogue?? -- it's fine to just leave its stock at 0.
 
 - Search for CD
 X (happy path) one match in catalogue -- return a list of single match, and its CD info
 X no match - return empty list of matches
-X multiple matches - return list of matches, and their CD info
+* multiple matches if I match on CD name only - return list of all matches, and their CD info
+X multiple matches if I match on CD artist only - return list of all matches, and their CD info
+* select all CDs - return list of all CDs in catalogue, and their CD info
 
 - Receive stock from a CD label
 X (happy path) single title in catalogue - add copies received to that CD's stock
 X single title not in the catalogue -- add it to catalogue, and then add copies to stock
+* single title, try to add 0 stock -- skip over it?? -- it's fine if this is a no-op.
+* single title, try to add negative stock -- throw RestockNegativeStockException
 X multiple CDs - any new CDs added to catalogue, and any stock added to each CD.
