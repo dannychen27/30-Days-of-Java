@@ -45,8 +45,11 @@ public class DonateMovieTest {
         Library library = new Library();
         Movie movie = new Movie();
         library.donate(movie);
-        assertTrue(library.getCatalogue().contains(movie));
-        // ^^ this is called a message chain
+        assertTrue(library.contains(movie));
+        // vvvv this is called a message chain
+        // assertTrue(library.getCatalogue().contains(movie));
+        // ^^ to resolve this message chain code smell, encapsulate it in a method.
+        assertTrue(library.contains(movie));
     }
 
     // a message chain is when you navigating through a relationship to one object
