@@ -12,7 +12,10 @@ public class CompactDisc {
         return stock;
     }
 
-    public void buy(int quantity) {
+    public void buy(int quantity) throws InsufficientStockException {
+        if (stock < quantity) {
+            throw new InsufficientStockException();
+        }
         stock -= quantity;
     }
 }
