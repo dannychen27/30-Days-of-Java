@@ -26,9 +26,18 @@ aren't meaningful.
 --> test cases are more effective when they only have a single responsibility, because you can
 easily and quickly isolate why the test case fails.
 
+- make your tests specific -- and singly responsible. avoid overloading your tests!
+--> this means now each test case has only 1 reasons to fail.
+--> e.g., in the DonateMovieTest file, when a library tries to receive a donated movie, either:
+--> the library catalogue doesn't contain the movie -- 1st test case fails OR
+--> the movie doesn't increment its copies count in the catalogue -- 2nd test case fails
+
 - if you're stuck with trying to make a test case fail, you can do this by deliberately choosing a
 placeholder value that fails the unittest.
---> sometimes the implementation is easy or obvious and it's not worth your time "triangulating" and
-taking extra steps on purpose.
 
 TDD habit 3: write the simplest code that makes all test cases pass
+
+--> sometimes the implementation is easy or obvious, and it's not worth your time purposefully
+"triangulating" your code and taking extra steps to write simple code
+--> writing the simplest possible implementation should come naturally if your test cases and the
+resulting methods you come up with are specific enough

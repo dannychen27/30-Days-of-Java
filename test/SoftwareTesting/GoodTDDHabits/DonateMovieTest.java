@@ -31,14 +31,6 @@ public class DonateMovieTest {
     // the list part (e.g., the contains() method) is unencapsulated, so client
     // knows the getCatalogue is some kind of list/collection.
 
-    // avoid overloading your tests! make your tests specific -- and singly
-    // responsible.
-
-    // now each test case has only 1 reasons to fail.
-    // when a library tries to receive a donated movie, either:
-    // - the library catalogue doesn't contain the movie -- 1st test case fails OR
-    // - the movie doesn't increment its copies count in the catalogue -- 2nd test case fails
-
     @Test
     public void rentalCopyAdded() {
         library.donate(movie);
