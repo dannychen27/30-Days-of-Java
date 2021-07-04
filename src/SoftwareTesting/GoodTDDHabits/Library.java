@@ -14,6 +14,7 @@ public class Library {
 
     public void donate(Movie movie) {
         catalogue.add(movie);
+        movie.addCopy();
     }
 
     public boolean contains(Movie movie) {

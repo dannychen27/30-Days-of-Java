@@ -4,6 +4,7 @@ import SoftwareTesting.GoodTDDHabits.Library;
 import SoftwareTesting.GoodTDDHabits.Movie;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DonateMovieTest {
@@ -31,6 +32,10 @@ public class DonateMovieTest {
     // is incomplete, not because of some unhandled exception (which hides the fact
     // that your code is incomplete).
 
+    // if you're stuck, you can do this by deliberately choosing a placeholder value that fails the unittest.
+    // sometimes the solution is easy or obvious and it's not worth your time "triangulating" and
+    // taking extra steps on purpose.
+
     // because, we want confidence that if we change our code break our code, that our
     // code is actually broken and the unittests catch it.
     // you don't want all of the tests to pass, but have hopelessly broken code
@@ -50,6 +55,19 @@ public class DonateMovieTest {
         // assertTrue(library.getCatalogue().contains(movie));
         // ^^ to resolve this message chain code smell, encapsulate it in a method.
         assertTrue(library.contains(movie));
+
+        // when we add movies to library, we add a single rental copy.
+        // we track number of available copies,
+        // then give the catalogue a default copy.
+        assertEquals(1, movie.getCopies());
+
+        // avoid overloading your tests! make your tests specific -- and singly
+        // responsible.
+
+        // now this test case has 2 reasons to fail.
+        // when a library tries to receive a donated movie, either:
+        // - the library catalogue doesn't contain the movie OR
+        // - the movie doesn't increment its copies count in the catalogue
     }
 
     // a message chain is when you navigating through a relationship to one object
