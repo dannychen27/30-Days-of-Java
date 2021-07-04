@@ -33,8 +33,8 @@ public class Library {
                 throw new InsufficientStockException();
             }
 
+            // It's okay if a customer buys out all remaining copies of targetCD.
             catalogue.replace(cd, stock - quantity);
-            // TODO: what happens if a customer buys out your entire stock of targetCD?
         }
     }
 
