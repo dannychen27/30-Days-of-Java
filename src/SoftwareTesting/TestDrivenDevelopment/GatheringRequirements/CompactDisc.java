@@ -2,20 +2,15 @@ package SoftwareTesting.TestDrivenDevelopment.GatheringRequirements;
 
 public class CompactDisc {
 
-    private int stock;
+    private String name;
+    private String artist;
 
-    public CompactDisc(int initialStock) {
-        this.stock = initialStock;
+    public CompactDisc(String name, String artist) {
+        this.name = name;
+        this.artist = artist;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void buy(int quantity) throws InsufficientStockException {
-        if (stock < quantity) {
-            throw new InsufficientStockException();
-        }
-        stock -= quantity;
+    public boolean equals(CompactDisc otherCD) {
+        return name.equals(otherCD.name) && artist.equals(otherCD.artist);
     }
 }

@@ -11,7 +11,7 @@ X (happy path) CD is in stock -- subtract quantity bought from stock count
 X insufficient stock -- throw InsufficientStock exception
 
 - Search for CD
-* (happy path) one match in catalogue -- return a list of single match, and its CD info
+X (happy path) one match in catalogue -- return a list of single match, and its CD info
 * no match - return empty list of matches
 * multiple matches - return list of matches, and their CD info
 
