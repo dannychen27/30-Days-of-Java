@@ -21,7 +21,7 @@ X buy multiple CDs in stock unsuccessfully because CD is not in catalogue -- thr
 - Search for CD
 X (happy path) one match in catalogue -- return a list of single match, and its CD info
 X no match - return empty list of matches
-* multiple matches if I match on CD name only - return list of all matches, and their CD info
+X multiple matches if I match on CD name only - return list of all matches, and their CD info
 X multiple matches if I match on CD artist only - return list of all matches, and their CD info
 * select all CDs - return list of all CDs in catalogue, and their CD info
 

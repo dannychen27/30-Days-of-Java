@@ -39,7 +39,26 @@ public class SearchCDTest {
     }
 
     @Test
-    public void multipleMatchesInCatalogue() {
+    public void multipleMatchesInCatalogueWhenMatchOnCDNameOnly() {
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+        CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
+        CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
+        Library library = new Library();
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        newStock.put(soulManDrake, 10);
+        newStock.put(soulManCody, 10);
+        library.receiveCDStock(newStock);
+
+        HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
+        searchResults.put(soulManDrake, 10);
+        searchResults.put(soulManCody, 10);
+        assertEquals(searchResults, library.searchCatalogue("Soul Man", null));
+    }
+
+    @Test
+    public void multipleMatchesInCatalogueWhenMatchOnCDArtistOnly() {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         Library library = new Library();
