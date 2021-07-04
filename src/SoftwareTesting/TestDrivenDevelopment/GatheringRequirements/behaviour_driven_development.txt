@@ -1,0 +1,19 @@
+What test cases should I write?
+
+1. every method, constructor, class, module, function, getter, setter? -- details of the design
+-- This describes design-driven tests, which are rigid tests! the opposite of TDD!
+-- The point of TDD is to discover the best design for passing tests, rather than coming up with
+tests based on design
+-- Lots of detailed tests that are closely coupled with your implementation details -- so if I change
+any of the methods I have to update my tests
+
+2. meaningful tests that verify required functionality.
+-- create tests based on the requirements, outcomes that your end users want
+e.g. a test case about whether customers can actually buy CDs.
+-- spend some time sketching out a UML diagram of the main methods involved in your software,
+but don't get too attached to your design -- this creates a roadmap for you.
+
+- This is essentially what behaviour driven development is.
+-- given software requirements, create tests
+-- Patent from Kent Beck's TDD by example book
+-- Below you see a "test list" -- a set of use cases that form your list of test cases
