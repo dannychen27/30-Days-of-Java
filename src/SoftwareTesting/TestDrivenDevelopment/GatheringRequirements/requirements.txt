@@ -29,5 +29,5 @@ X select all CDs - return list of all CDs in catalogue, and their CD info
 X (happy path) single title in catalogue - add copies received to that CD's stock
 X single title not in the catalogue -- add it to catalogue, and then add copies to stock
 X single title, try to add 0 stock -- skip over it?? -- it's fine if this is a no-op.
-* single title, try to add negative stock -- throw RestockNegativeStockException
+X single title, try to add negative stock -- throw RestockNegativeStockException
 X multiple CDs - any new CDs added to catalogue, and any stock added to each CD.

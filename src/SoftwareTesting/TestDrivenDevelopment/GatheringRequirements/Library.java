@@ -73,11 +73,15 @@ public class Library {
         return matchingCDsToStock;
     }
 
-    public void receiveCDStock(Map<CompactDisc, Integer> newStock) {
+    public void receiveCDStock(Map<CompactDisc, Integer> newStock)
+            throws RestockNegativeStockException {
         for (Map.Entry<CompactDisc, Integer> stock : newStock.entrySet()) {
-            CompactDisc cd = stock.getKey();
             int quantity = stock.getValue();
+            if (quantity < 0) {
+                throw new RestockNegativeStockException();
+            }
 
+            CompactDisc cd = stock.getKey();
             if (!catalogue.containsKey(cd)) {
                 catalogue.put(cd, quantity);
             } else {  // catalogue.containsKey(targetCD)
@@ -87,7 +91,7 @@ public class Library {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         Library library = new Library();

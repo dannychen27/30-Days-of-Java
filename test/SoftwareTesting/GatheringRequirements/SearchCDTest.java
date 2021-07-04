@@ -3,6 +3,7 @@ package SoftwareTesting.GatheringRequirements;
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CompactDisc;
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.Library;
 
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.RestockNegativeStockException;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SearchCDTest {
 
     @Test
-    public void oneMatchInCatalogue() {
+    public void oneMatchInCatalogue() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -26,7 +27,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void noMatchesInCatalogue() {
+    public void noMatchesInCatalogue() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -39,7 +40,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void multipleMatchesInCatalogueWhenMatchOnCDNameOnly() {
+    public void multipleMatchesInCatalogueWhenMatchOnCDNameOnly() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
         CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
@@ -58,7 +59,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void multipleMatchesInCatalogueWhenMatchOnCDArtistOnly() {
+    public void multipleMatchesInCatalogueWhenMatchOnCDArtistOnly() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         Library library = new Library();
@@ -75,7 +76,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void allMatchesInCatalogueWhenMatchOnNothing() {
+    public void allMatchesInCatalogueWhenMatchOnNothing() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
         CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");

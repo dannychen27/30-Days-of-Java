@@ -3,16 +3,18 @@ package SoftwareTesting.GatheringRequirements;
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CompactDisc;
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.Library;
 
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.RestockNegativeStockException;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReceiveCDStockTest {
 
     @Test
-    public void addSingleCopyToCDTitleAlreadyInCatalogue() {
+    public void addSingleCopyToCDTitleAlreadyInCatalogue() throws RestockNegativeStockException {
         Library library = new Library();
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
 
@@ -27,7 +29,7 @@ public class ReceiveCDStockTest {
     }
 
     @Test
-    public void addSingleCopyToCDTitleNotAlreadyInCatalogue() {
+    public void addSingleCopyToCDTitleNotAlreadyInCatalogue() throws RestockNegativeStockException {
         Library library = new Library();
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
 
@@ -38,7 +40,7 @@ public class ReceiveCDStockTest {
     }
 
     @Test
-    public void add0CopiesOfASingleCDToCatalogue() {
+    public void add0CopiesOfASingleCDToCatalogue() throws RestockNegativeStockException {
         Library library = new Library();
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
 
@@ -49,7 +51,17 @@ public class ReceiveCDStockTest {
     }
 
     @Test
-    public void addMultipleCopiesToCatalogue() {
+    public void addNegativeCopiesOfASingleCDToCatalogue() {
+        Library library = new Library();
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, -2);
+        assertThrows(RestockNegativeStockException.class, () -> library.receiveCDStock(newStock));
+    }
+
+    @Test
+    public void addMultipleCopiesToCatalogue() throws RestockNegativeStockException {
         Library library = new Library();
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");

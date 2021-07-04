@@ -13,7 +13,8 @@ public class BuyCDTest {
 
     @Test
     public void buySingleCDWithSufficientStock()
-            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
+            throws CDNotInCatalogueException, InsufficientStockException,
+            BuyNegativeStockException, RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -28,7 +29,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyInsufficientStockBecauseQuantityExceedsStock() {
+    public void buyInsufficientStockBecauseQuantityExceedsStock() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -42,7 +43,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyInsufficientStockBecauseCDIsNotInCatalogue() {
+    public void buyInsufficientStockBecauseCDIsNotInCatalogue() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
         Library library = new Library();
@@ -58,7 +59,8 @@ public class BuyCDTest {
 
     @Test
     public void buyNoCDs()
-            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
+            throws CDNotInCatalogueException, InsufficientStockException,
+            BuyNegativeStockException, RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -73,7 +75,8 @@ public class BuyCDTest {
 
     @Test
     public void buy0CopiesOfASingleCD()
-            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
+            throws CDNotInCatalogueException, InsufficientStockException,
+            BuyNegativeStockException, RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -88,7 +91,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyNegativeCopiesOfASingleCD() {
+    public void buyNegativeCopiesOfASingleCD() throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -103,7 +106,8 @@ public class BuyCDTest {
 
     @Test
     public void buyRemainingCopiesOfASingleCD()
-            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
+            throws CDNotInCatalogueException, InsufficientStockException,
+            BuyNegativeStockException, RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -119,7 +123,8 @@ public class BuyCDTest {
 
     @Test
     public void buyMultipleCDsSuccessfully()
-            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
+            throws CDNotInCatalogueException, InsufficientStockException,
+            BuyNegativeStockException, RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
@@ -143,7 +148,8 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyMultipleCDsUnsuccessfullyBecauseOneOfTheCDsHasInsufficientStock() {
+    public void buyMultipleCDsUnsuccessfullyBecauseOneOfTheCDsHasInsufficientStock()
+            throws RestockNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
