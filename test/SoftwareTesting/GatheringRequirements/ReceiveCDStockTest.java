@@ -38,6 +38,17 @@ public class ReceiveCDStockTest {
     }
 
     @Test
+    public void add0CopiesOfASingleCDToCatalogue() {
+        Library library = new Library();
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 0);
+        library.receiveCDStock(newStock);
+        assertEquals(0, library.getStock(highwayToNowhere));
+    }
+
+    @Test
     public void addMultipleCopiesToCatalogue() {
         Library library = new Library();
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
