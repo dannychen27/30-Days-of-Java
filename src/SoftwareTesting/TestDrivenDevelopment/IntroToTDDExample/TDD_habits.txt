@@ -40,12 +40,16 @@ placeholder or hardcoded value that will definitely fail the unittest.
 
 TDD habit 3: write the simplest code that makes all test cases pass
 
---> sometimes the implementation is easy or obvious, and it's not worth your time purposefully
+--> if the implementation is easy or obvious, and it's not worth your time purposefully
 "triangulating" your code and taking extra baby steps to write simple code
+--> as you add more tests, your implementation becomes more general
+--> the more complex the requirement, the more test cases are required for thorough coverage
+e.g., a requirement that is simple to implement (uses mostly basic operations) requires only 1 - 2 tests
+whereas a more complex requirement may require several test cases for completion
 --> writing the simplest possible implementation should come naturally if your test cases and the
 resulting methods you come up with are specific enough
 - golden rule of TDD: we don't write source code, unless a test requires it
 
-(bonus) TDD habit 4: refactor along the way
+(bonus) TDD habit 4: refactor frequently along the way
 
 - a proper refactoring should make subsequent test cases and source code easier to write
