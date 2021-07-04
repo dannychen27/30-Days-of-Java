@@ -6,9 +6,12 @@ case tests what it does
 
 - we could start with the set up and then work our way down to our assertion,
 --> but the problem is that we may miss some details or include extra steps.
+--> e.g. we don't declare a ShoppingBasket, and then write tests for it
+we write a test that uses a ShoppingBasket, then implement it to pass the tests
 
 - it's okay to reference objects that don't exist yet,
---> IDE's can help you fill in the gaps for you by creating objects for you.
+--> IDE will tell you which classes you need to create to pass the tests,
+and can help you create missing classes for you.
 
 - ultimately, a unittest answers the question of whether an object does a specific task correctly.
 --> e.g. if a library receives a donated movie, does the movie appear in the library's catalogue?
@@ -41,3 +44,8 @@ TDD habit 3: write the simplest code that makes all test cases pass
 "triangulating" your code and taking extra steps to write simple code
 --> writing the simplest possible implementation should come naturally if your test cases and the
 resulting methods you come up with are specific enough
+- golden rule of TDD: we don't write source code, unless a test requires it
+
+(bonus) TDD habit 4: refactor along the way
+
+- a proper refactoring should make subsequent test cases and source code easier to write
