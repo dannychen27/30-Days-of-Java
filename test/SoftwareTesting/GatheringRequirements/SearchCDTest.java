@@ -5,8 +5,7 @@ import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.Library;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,17 +16,30 @@ public class SearchCDTest {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
         library.addToCatalogue(highwayToNowhere, 10);
-        List<CompactDisc> searchResults = Arrays.asList(highwayToNowhere);
-        assertEquals(searchResults, library.searchCatalogue(highwayToNowhere));
+        HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
+        searchResults.put(highwayToNowhere, 10);
+        assertEquals(searchResults, library.searchCatalogue("Highway to Nowhere", "Drake Bell"));
     }
 
     @Test
     public void noMatchesInCatalogue() {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
         Library library = new Library();
         library.addToCatalogue(highwayToNowhere, 10);
-        List<CompactDisc> searchResults = Arrays.asList();
-        assertEquals(searchResults, library.searchCatalogue(laDaDee));
+        HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
+        assertEquals(searchResults, library.searchCatalogue("La Da Dee", "Cody Simpson"));
+    }
+
+    @Test
+    public void multipleMatchesInCatalogue() {
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+        CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
+        Library library = new Library();
+        library.addToCatalogue(highwayToNowhere, 10);
+        library.addToCatalogue(soulMan, 10);
+        HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
+        searchResults.put(highwayToNowhere, 10);
+        searchResults.put(soulMan, 10);
+        assertEquals(searchResults, library.searchCatalogue(null, "Drake Bell"));
     }
 }

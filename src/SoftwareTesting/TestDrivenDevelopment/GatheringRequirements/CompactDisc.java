@@ -10,7 +10,19 @@ public class CompactDisc {
         this.artist = artist;
     }
 
-    public boolean equals(CompactDisc otherCD) {
-        return name.equals(otherCD.name) && artist.equals(otherCD.artist);
+    public boolean equals(String targetCDName, String targetCDArtist) {
+        return name.equals(targetCDName) && artist.equals(targetCDArtist);
+    }
+
+    public boolean equalsCDName(String targetCDName) {
+        return name.equals(targetCDName);
+    }
+
+    public boolean equalsCDArtist(String targetCDArtist) {
+        return artist.equals(targetCDArtist);
+    }
+
+    public String toString() {
+        return "\"" + name + "\"" + " by " + artist;
     }
 }
