@@ -11,15 +11,31 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BuyCDTest {
 
+    private Library library = new Library();
+
+    private CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+    private CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
+    private CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
+
+    private HashMap<CompactDisc, Integer> singleCD() {
+        HashMap<CompactDisc, Integer> cdsToStock = new HashMap<>();
+        cdsToStock.put(highwayToNowhere, 10);
+        return cdsToStock;
+    }
+
+    private HashMap<CompactDisc, Integer> multipleCDs() {
+        HashMap<CompactDisc, Integer> cdsToStock = new HashMap<>();
+        cdsToStock.put(highwayToNowhere, 10);
+        cdsToStock.put(soulMan, 10);
+        cdsToStock.put(laDaDee, 10);
+        return cdsToStock;
+    }
+
     @Test
     public void buySingleCDWithSufficientStock()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
@@ -30,26 +46,17 @@ public class BuyCDTest {
 
     @Test
     public void buyInsufficientStockBecauseQuantityExceedsStock() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 1);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
-        shoppingCartItems.put(highwayToNowhere, 2);
+        shoppingCartItems.put(highwayToNowhere, 11);
         assertThrows(InsufficientStockException.class, () -> library.buy(shoppingCartItems));
     }
 
     @Test
     public void buyInsufficientStockBecauseCDIsNotInCatalogue() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 1);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
@@ -61,27 +68,19 @@ public class BuyCDTest {
     public void buyNoCDs()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 1);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         library.buy(shoppingCartItems);
-        assertEquals(1, library.getStock(highwayToNowhere));
+        assertEquals(10, library.getStock(highwayToNowhere));
     }
 
     @Test
     public void buy0CopiesOfASingleCD()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
@@ -92,11 +91,7 @@ public class BuyCDTest {
 
     @Test
     public void buyNegativeCopiesOfASingleCD() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
@@ -108,11 +103,7 @@ public class BuyCDTest {
     public void buyRemainingCopiesOfASingleCD()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
@@ -125,15 +116,7 @@ public class BuyCDTest {
     public void buyMultipleCDsSuccessfully()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
-        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
-        newStock.put(soulMan, 10);
-        newStock.put(laDaDee, 10);
+        HashMap<CompactDisc, Integer> newStock = multipleCDs();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
@@ -141,7 +124,6 @@ public class BuyCDTest {
         shoppingCartItems.put(soulMan, 5);
         shoppingCartItems.put(laDaDee, 5);
         library.buy(shoppingCartItems);
-
         assertEquals(5, library.getStock(highwayToNowhere));
         assertEquals(5, library.getStock(soulMan));
         assertEquals(5, library.getStock(laDaDee));
@@ -150,15 +132,7 @@ public class BuyCDTest {
     @Test
     public void buyMultipleCDsUnsuccessfullyBecauseOneOfTheCDsHasInsufficientStock()
             throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
-        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
-        newStock.put(soulMan, 10);
-        newStock.put(laDaDee, 10);
+        HashMap<CompactDisc, Integer> newStock = multipleCDs();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
