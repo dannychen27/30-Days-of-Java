@@ -1,4 +1,4 @@
-package SoftwareTesting;
+package SoftwareTesting.GoodTDDHabits;
 
 import SoftwareTesting.TestDrivenDevelopment.GoodTDDHabits.Library;
 import SoftwareTesting.TestDrivenDevelopment.GoodTDDHabits.Movie;

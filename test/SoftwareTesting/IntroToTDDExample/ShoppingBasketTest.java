@@ -1,4 +1,4 @@
-package SoftwareTesting;
+package SoftwareTesting.IntroToTDDExample;
 
 import SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample.Item;
 import SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample.ShoppingBasket;
