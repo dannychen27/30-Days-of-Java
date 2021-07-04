@@ -1,0 +1,80 @@
+The following code below demonstrates a code smell called "feature envy."
+
+- the Item class has envy over the features of Item methods: getUnitPrice() and getQuantity()
+- the getTotal() method in ShoppingBasket uses the Item objects (i.e., getUnitPrice() and getQuantity() methods)
+inside Item MORE OFTEN than the ShoppingBasket objects.
+- therefore, the expression shoppingBasketItem.getUnitPrice() * shoppingBasketItem.getQuantity()
+is in the wrong class! it actually belongs inside of Item instead of ShoppingBasket!
+
+public class ShoppingBasket {
+
+    private final List<Item> shoppingBasketItems;
+
+    public ShoppingBasket(List<Item> shoppingBasketItems) {
+        this.shoppingBasketItems = shoppingBasketItems;
+    }
+
+    public double getTotal() {
+        double sum = 0.0;
+        for (Item shoppingBasketItem : shoppingBasketItems) {
+            sum += shoppingBasketItem.getUnitPrice() * shoppingBesketItem.getQuantity();
+        }
+        return sum;
+    }
+}
+
+public class Item {
+
+    private double unitPrice;
+    private int quantity;
+
+    public Item(double unitPrice, int quantity) {
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+}
+
+good tip: put the work where the data is.
+- if Item is the object that contains unit price and quantity information, then the Item class should
+be the object responsible for calculating the subtotal instead of the ShoppingBasket class.
+- put the getSubtotal() method in the Item class instead of in ShoppingBasket class.
+
+public class ShoppingBasket {
+
+    private final List<Item> shoppingBasketItems;
+
+    public ShoppingBasket(List<Item> shoppingBasketItems) {
+        this.shoppingBasketItems = shoppingBasketItems;
+    }
+
+    public double getTotal() {
+        double sum = 0.0;
+        for (Item shoppingBasketItem : shoppingBasketItems) {
+            sum += shoppingBasketItem.getSubtotal();
+        }
+        return sum;
+    }
+}
+
+public class Item {
+
+    private double unitPrice;
+    private int quantity;
+
+    public Item(double unitPrice, int quantity) {
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+    }
+
+    public double getSubtotal() {
+        return unitPrice * quantity;
+    }
+}
