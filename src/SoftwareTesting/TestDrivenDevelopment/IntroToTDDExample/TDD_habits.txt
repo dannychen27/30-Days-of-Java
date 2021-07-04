@@ -36,12 +36,12 @@ easily and quickly isolate why the test case fails.
 --> the movie doesn't increment its copies count in the catalogue -- 2nd test case fails
 
 - if you're stuck with trying to make a test case fail, you can do this by deliberately choosing a
-placeholder value that fails the unittest.
+placeholder or hardcoded value that will definitely fail the unittest.
 
 TDD habit 3: write the simplest code that makes all test cases pass
 
 --> sometimes the implementation is easy or obvious, and it's not worth your time purposefully
-"triangulating" your code and taking extra steps to write simple code
+"triangulating" your code and taking extra baby steps to write simple code
 --> writing the simplest possible implementation should come naturally if your test cases and the
 resulting methods you come up with are specific enough
 - golden rule of TDD: we don't write source code, unless a test requires it
