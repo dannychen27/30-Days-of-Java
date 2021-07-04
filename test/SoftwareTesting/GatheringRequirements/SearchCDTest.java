@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SearchCDTest {
+class SearchCDTest {
 
     private Library library = new Library();
 
@@ -35,7 +35,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void oneMatchInCatalogue() throws RestockNegativeStockException {
+    void oneMatchInCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
@@ -45,7 +45,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void noMatchesInCatalogue() throws RestockNegativeStockException {
+    void noMatchesInCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
@@ -54,7 +54,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void multipleMatchesInCatalogueWhenMatchOnCDNameOnly() throws RestockNegativeStockException {
+    void multipleMatchesInCatalogueWhenMatchOnCDNameOnly() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = allCDs();
         library.receiveCDStock(newStock);
 
@@ -65,7 +65,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void multipleMatchesInCatalogueWhenMatchOnCDArtistOnly() throws RestockNegativeStockException {
+    void multipleMatchesInCatalogueWhenMatchOnCDArtistOnly() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = allCDs();
         library.receiveCDStock(newStock);
 
@@ -76,7 +76,7 @@ public class SearchCDTest {
     }
 
     @Test
-    public void allMatchesInCatalogueWhenMatchOnNothing() throws RestockNegativeStockException {
+    void allMatchesInCatalogueWhenMatchOnNothing() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = allCDs();
         library.receiveCDStock(newStock);
 

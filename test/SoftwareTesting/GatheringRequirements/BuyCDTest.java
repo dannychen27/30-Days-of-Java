@@ -9,7 +9,7 @@ import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class BuyCDTest {
+class BuyCDTest {
 
     private Library library = new Library();
 
@@ -32,7 +32,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buySingleCDWithSufficientStock()
+    void buySingleCDWithSufficientStock()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
@@ -45,7 +45,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyInsufficientStockBecauseQuantityExceedsStock() throws RestockNegativeStockException {
+    void buyInsufficientStockBecauseQuantityExceedsStock() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
@@ -55,7 +55,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyInsufficientStockBecauseCDIsNotInCatalogue() throws RestockNegativeStockException {
+    void buyInsufficientStockBecauseCDIsNotInCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
@@ -65,7 +65,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyNoCDs()
+    void buyNoCDs()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
@@ -77,7 +77,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buy0CopiesOfASingleCD()
+    void buy0CopiesOfASingleCD()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
@@ -90,7 +90,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyNegativeCopiesOfASingleCD() throws RestockNegativeStockException {
+    void buyNegativeCopiesOfASingleCD() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
@@ -100,7 +100,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyRemainingCopiesOfASingleCD()
+    void buyRemainingCopiesOfASingleCD()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD();
@@ -113,7 +113,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyMultipleCDsSuccessfully()
+    void buyMultipleCDsSuccessfully()
             throws CDNotInCatalogueException, InsufficientStockException,
             BuyNegativeStockException, RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = multipleCDs();
@@ -130,7 +130,7 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyMultipleCDsUnsuccessfullyBecauseOneOfTheCDsHasInsufficientStock()
+    void buyMultipleCDsUnsuccessfullyBecauseOneOfTheCDsHasInsufficientStock()
             throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = multipleCDs();
         library.receiveCDStock(newStock);

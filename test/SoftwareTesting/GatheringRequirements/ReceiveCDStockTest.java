@@ -11,7 +11,7 @@ import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ReceiveCDStockTest {
+class ReceiveCDStockTest {
 
     private Library library = new Library();
 
@@ -34,7 +34,7 @@ public class ReceiveCDStockTest {
     }
 
     @Test
-    public void addSingleCopyToCDTitleAlreadyInCatalogue() throws RestockNegativeStockException {
+    void addSingleCopyToCDTitleAlreadyInCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD(10);
         library.receiveCDStock(newStock);
         assertEquals(10, library.getStock(highwayToNowhere));
@@ -45,27 +45,27 @@ public class ReceiveCDStockTest {
     }
 
     @Test
-    public void addSingleCopyToCDTitleNotAlreadyInCatalogue() throws RestockNegativeStockException {
+    void addSingleCopyToCDTitleNotAlreadyInCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD(10);
         library.receiveCDStock(newStock);
         assertEquals(10, library.getStock(highwayToNowhere));
     }
 
     @Test
-    public void add0CopiesOfASingleCDToCatalogue() throws RestockNegativeStockException {
+    void add0CopiesOfASingleCDToCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = singleCD(0);
         library.receiveCDStock(newStock);
         assertEquals(0, library.getStock(highwayToNowhere));
     }
 
     @Test
-    public void addNegativeCopiesOfASingleCDToCatalogue() {
+    void addNegativeCopiesOfASingleCDToCatalogue() {
         HashMap<CompactDisc, Integer> newStock = singleCD(-2);
         assertThrows(RestockNegativeStockException.class, () -> library.receiveCDStock(newStock));
     }
 
     @Test
-    public void addMultipleCopiesToCatalogue() throws RestockNegativeStockException {
+    void addMultipleCopiesToCatalogue() throws RestockNegativeStockException {
         HashMap<CompactDisc, Integer> newStock = multipleCDs();
         library.receiveCDStock(newStock);
         assertEquals(10, library.getStock(highwayToNowhere));
