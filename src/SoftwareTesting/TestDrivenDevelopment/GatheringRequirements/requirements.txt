@@ -8,7 +8,7 @@ Test cases, sorted by decreasing priority
 
 - Buy/order a CD
 X (happy path) CD is in stock -- subtract quantity bought from stock count
-* insufficient stock -- throw InsufficientStock exception
+X insufficient stock -- throw InsufficientStock exception
 
 - Search for CD
 * (happy path) one match in catalogue -- return a list of single match, and its CD info
