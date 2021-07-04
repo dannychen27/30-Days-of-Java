@@ -2,8 +2,8 @@ What test cases should I write?
 
 1. every method, constructor, class, module, function, getter, setter? -- details of the design
 -- This describes design-driven tests, which are rigid tests! the opposite of TDD!
--- The point of TDD is to discover the best design for passing tests, rather than coming up with
-tests based on design
+-- The point of TDD is to discover the best design for passing tests as you write your BDD test,
+rather than coming up with tests based on design
 -- Lots of detailed tests that are closely coupled with your implementation details -- so if I change
 any of the methods I have to update my tests
 
