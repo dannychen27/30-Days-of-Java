@@ -17,5 +17,5 @@ X multiple matches - return list of matches, and their CD info
 
 - Receive stock from a CD label
 X (happy path) single title in catalogue - add copies received to that CD's stock
-* single title not in the catalogue -- add it to catalogue, and then add copies to stock
+X single title not in the catalogue -- add it to catalogue, and then add copies to stock
 * multiple CDs - any new CDs added to catalogue, and any stock added to each CD.

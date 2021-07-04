@@ -21,6 +21,7 @@ public class Library {
             throw new InsufficientStockException();
         }
         catalogue.replace(targetCD, stock - quantity);
+        // TODO: what happens if a customer buys out your entire stock of targetCD?
     }
 
     public HashMap<CompactDisc, Integer> searchCatalogue(String targetName, String targetArtist) {
@@ -73,6 +74,7 @@ public class Library {
         Library library = new Library();
         library.receiveCDStock(highwayToNowhere, 10);
         library.receiveCDStock(soulMan, 10);
+        System.out.println(library.getStock(highwayToNowhere));  // 10
         System.out.println(library.searchCatalogue(null, "Drake Bell"));  // {"Soul Man" by Drake Bell=10, "Highway to Nowhere" by Drake Bell=10}
 
         library.receiveCDStock(highwayToNowhere, 5);
