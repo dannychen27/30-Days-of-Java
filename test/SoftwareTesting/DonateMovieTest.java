@@ -1,7 +1,7 @@
 package SoftwareTesting;
 
-import SoftwareTesting.GoodTDDHabits.Library;
-import SoftwareTesting.GoodTDDHabits.Movie;
+import SoftwareTesting.TestDrivenDevelopment.GoodTDDHabits.Library;
+import SoftwareTesting.TestDrivenDevelopment.GoodTDDHabits.Movie;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

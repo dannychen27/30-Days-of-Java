@@ -1,4 +1,4 @@
-package SoftwareTesting;
+package SoftwareTesting.TestDrivenDevelopment;
 
 public class TestDrivenDevelopment {
     // source: https://www.youtube.com/watch?v=eMU_hninZAs

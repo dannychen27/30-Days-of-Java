@@ -1,4 +1,4 @@
-package SoftwareTesting;
+package SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample;
 
 public class Item {
 

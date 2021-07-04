@@ -1,4 +1,4 @@
-package SoftwareTesting.GoodTDDHabits;
+package SoftwareTesting.TestDrivenDevelopment.GoodTDDHabits;
 
 public class Movie {
 

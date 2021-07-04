@@ -1,5 +1,7 @@
 package SoftwareTesting;
 
+import SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample.Item;
+import SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample.ShoppingBasket;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

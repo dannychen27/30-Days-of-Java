@@ -1,4 +1,4 @@
-package SoftwareTesting.GoodTDDHabits;
+package SoftwareTesting.TestDrivenDevelopment.GoodTDDHabits;
 
 import java.util.ArrayList;
 import java.util.Collection;
