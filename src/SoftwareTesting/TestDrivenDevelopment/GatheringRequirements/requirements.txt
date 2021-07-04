@@ -12,7 +12,7 @@ X insufficient stock -- throw InsufficientStock exception
 
 - Search for CD
 X (happy path) one match in catalogue -- return a list of single match, and its CD info
-* no match - return empty list of matches
+X no match - return empty list of matches
 * multiple matches - return list of matches, and their CD info
 
 - Receive stock from a CD label
