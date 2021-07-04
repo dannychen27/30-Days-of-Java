@@ -12,13 +12,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SearchCDTest {
 
+    private Library library = new Library();
+
+    private CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+    private CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
+    private CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
+    private CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
+
+    private HashMap<CompactDisc, Integer> singleCD() {
+        HashMap<CompactDisc, Integer> cdsToStock = new HashMap<>();
+        cdsToStock.put(highwayToNowhere, 10);
+        return cdsToStock;
+    }
+
+    private HashMap<CompactDisc, Integer> allCDs() {
+        HashMap<CompactDisc, Integer> cdsToStock = new HashMap<>();
+        cdsToStock.put(highwayToNowhere, 10);
+        cdsToStock.put(soulManDrake, 10);
+        cdsToStock.put(soulManCody, 10);
+        cdsToStock.put(laDaDee, 10);
+        return cdsToStock;
+    }
+
     @Test
     public void oneMatchInCatalogue() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
@@ -28,11 +46,7 @@ public class SearchCDTest {
 
     @Test
     public void noMatchesInCatalogue() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
+        HashMap<CompactDisc, Integer> newStock = singleCD();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
@@ -41,15 +55,7 @@ public class SearchCDTest {
 
     @Test
     public void multipleMatchesInCatalogueWhenMatchOnCDNameOnly() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
-        CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
-        newStock.put(soulManDrake, 10);
-        newStock.put(soulManCody, 10);
+        HashMap<CompactDisc, Integer> newStock = allCDs();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
@@ -60,34 +66,18 @@ public class SearchCDTest {
 
     @Test
     public void multipleMatchesInCatalogueWhenMatchOnCDArtistOnly() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
-        newStock.put(soulMan, 10);
+        HashMap<CompactDisc, Integer> newStock = allCDs();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         searchResults.put(highwayToNowhere, 10);
-        searchResults.put(soulMan, 10);
+        searchResults.put(soulManDrake, 10);
         assertEquals(searchResults, library.searchCatalogue(null, "Drake Bell"));
     }
 
     @Test
     public void allMatchesInCatalogueWhenMatchOnNothing() throws RestockNegativeStockException {
-        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-        CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
-        CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
-        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
-        Library library = new Library();
-
-        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
-        newStock.put(highwayToNowhere, 10);
-        newStock.put(soulManDrake, 10);
-        newStock.put(soulManCody, 10);
-        newStock.put(laDaDee, 10);
+        HashMap<CompactDisc, Integer> newStock = allCDs();
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
