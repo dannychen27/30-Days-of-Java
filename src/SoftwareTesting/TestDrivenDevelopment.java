@@ -7,9 +7,9 @@ public class TestDrivenDevelopment {
 
     // 3 steps in TDD:
     //
-    // 1. Start by writing a test that initially fails that is required functionality.
-    // 2. Write the simplest code you can think of to pass the unittests.
-    // 3. If necessary, refactor code to make future changes easy.
+    // 1. Red Light: Start by writing a test that initially fails that describes required (but absent) functionality.
+    // 2. Green Light: Write the simplest code you can think of to pass the unittests.
+    // 3. Yellow Light: If necessary, refactor code to make future changes easy.
     // look for difficult to understand code, complexity, duplication, dependencies,
     // code smells.
 }
