@@ -10,27 +10,27 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class ShoppingBasketTest {
+class ShoppingBasketTest {
 
-    public ShoppingBasket buildBasketWithItems(List<Item> shoppingBasketItems) {
+    ShoppingBasket buildBasketWithItems(List<Item> shoppingBasketItems) {
         return new ShoppingBasket(shoppingBasketItems);
     }
 
     // These are the simplest test cases I could come up with...
     @Test
-    public void totalOfEmptyBasket() {
+    void totalOfEmptyBasket() {
         ShoppingBasket basket = buildBasketWithItems(new ArrayList<>());
         assertEquals(0.0, basket.getTotal(), 0.0);
     }
 
     @Test
-    public void totalOfSingleItem() {
+    void totalOfSingleItem() {
         ShoppingBasket basket = buildBasketWithItems(Arrays.asList(new Item(100.0, 1)));
         assertEquals(100.0, basket.getTotal(), 0.0);
     }
 
     @Test
-    public void totalOfTwoItems() {
+    void totalOfTwoItems() {
         ShoppingBasket basket = buildBasketWithItems(Arrays.asList(
                 new Item(100.0, 1),
                 new Item(200.0, 1)
@@ -39,7 +39,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void totalOfItemWithQuantityTwo() {
+    void totalOfItemWithQuantityTwo() {
         ShoppingBasket basket = buildBasketWithItems(Arrays.asList(new Item(100.0, 2)));
         assertEquals(200.0, basket.getTotal(), 0.0);
     }

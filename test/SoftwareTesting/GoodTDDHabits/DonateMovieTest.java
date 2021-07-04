@@ -7,24 +7,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class DonateMovieTest {
+class DonateMovieTest {
 
-    public final Library library;
-    public final Movie movie;
+    private final Library library;
+    private final Movie movie;
 
-    public DonateMovieTest() {
+    DonateMovieTest() {
         library = new Library();
         movie = new Movie();
     }
 
     @Test
-    public void movieAddedToCatalogue() {
+    void movieAddedToCatalogue() {
         library.donate(movie);
         assertTrue(library.contains(movie));
     }
 
     @Test
-    public void rentalCopyAdded() {
+    void rentalCopyAdded() {
         library.donate(movie);
         assertEquals(1, movie.getCopies());
     }
