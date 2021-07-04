@@ -23,7 +23,7 @@ X (happy path) one match in catalogue -- return a list of single match, and its 
 X no match - return empty list of matches
 X multiple matches if I match on CD name only - return list of all matches, and their CD info
 X multiple matches if I match on CD artist only - return list of all matches, and their CD info
-* select all CDs - return list of all CDs in catalogue, and their CD info
+X select all CDs - return list of all CDs in catalogue, and their CD info
 
 - Receive stock from a CD label
 X (happy path) single title in catalogue - add copies received to that CD's stock

@@ -73,4 +73,27 @@ public class SearchCDTest {
         searchResults.put(soulMan, 10);
         assertEquals(searchResults, library.searchCatalogue(null, "Drake Bell"));
     }
+
+    @Test
+    public void allMatchesInCatalogueWhenMatchOnNothing() {
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+        CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
+        CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
+        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
+        Library library = new Library();
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        newStock.put(soulManDrake, 10);
+        newStock.put(soulManCody, 10);
+        newStock.put(laDaDee, 10);
+        library.receiveCDStock(newStock);
+
+        HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
+        searchResults.put(highwayToNowhere, 10);
+        searchResults.put(soulManDrake, 10);
+        searchResults.put(soulManCody, 10);
+        searchResults.put(laDaDee, 10);
+        assertEquals(searchResults, library.searchCatalogue(null, null));
+    }
 }
