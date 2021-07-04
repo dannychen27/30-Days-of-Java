@@ -12,9 +12,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ShoppingBasketTest {
 
-    // Let's create a shared factory method to construct ShoppingBaskets -- more formally, it's a builder.
-    // We want to avoid duplicating dependencies between the test code and the class under test.
-    // Essentially, this factory method DECOUPLES the test code from my ShoppingBasket constructor.
     public ShoppingBasket buildBasketWithItems(List<Item> shoppingBasketItems) {
         return new ShoppingBasket(shoppingBasketItems);
     }
