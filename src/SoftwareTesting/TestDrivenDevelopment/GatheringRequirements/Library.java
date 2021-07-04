@@ -59,12 +59,17 @@ public class Library {
         return matchingCDsToStock;
     }
 
-    public void receiveCDStock(CompactDisc targetCD, int quantity) {
-        if (!catalogue.containsKey(targetCD)) {
-            catalogue.put(targetCD, quantity);
-        } else {  // catalogue.containsKey(targetCD)
-            int stock = getStock(targetCD);
-            catalogue.replace(targetCD, stock + quantity);
+    public void receiveCDStock(Map<CompactDisc, Integer> newStock) {
+        for (Map.Entry<CompactDisc, Integer> stock : newStock.entrySet()) {
+            CompactDisc cd = stock.getKey();
+            int quantity = stock.getValue();
+
+            if (!catalogue.containsKey(cd)) {
+                catalogue.put(cd, quantity);
+            } else {  // catalogue.containsKey(targetCD)
+                int oldStock = getStock(cd);
+                catalogue.replace(cd, oldStock + quantity);
+            }
         }
     }
 
@@ -72,12 +77,17 @@ public class Library {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         Library library = new Library();
-        library.receiveCDStock(highwayToNowhere, 10);
-        library.receiveCDStock(soulMan, 10);
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        newStock.put(soulMan, 10);
+        library.receiveCDStock(newStock);
         System.out.println(library.getStock(highwayToNowhere));  // 10
         System.out.println(library.searchCatalogue(null, "Drake Bell"));  // {"Soul Man" by Drake Bell=10, "Highway to Nowhere" by Drake Bell=10}
 
-        library.receiveCDStock(highwayToNowhere, 5);
+        HashMap<CompactDisc, Integer> evenMoreNewStock = new HashMap<>();
+        evenMoreNewStock.put(highwayToNowhere, 5);
+        library.receiveCDStock(evenMoreNewStock);
         System.out.println(library.getStock(highwayToNowhere));  // 15
         System.out.println(library.searchCatalogue(null, "Drake Bell"));  // {"Soul Man" by Drake Bell=10, "Highway to Nowhere" by Drake Bell=15}
     }

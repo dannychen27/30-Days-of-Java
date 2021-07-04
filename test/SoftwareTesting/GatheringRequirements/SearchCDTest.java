@@ -15,7 +15,11 @@ public class SearchCDTest {
     public void oneMatchInCatalogue() {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
-        library.receiveCDStock(highwayToNowhere, 10);
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        library.receiveCDStock(newStock);
+
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         searchResults.put(highwayToNowhere, 10);
         assertEquals(searchResults, library.searchCatalogue("Highway to Nowhere", "Drake Bell"));
@@ -25,7 +29,11 @@ public class SearchCDTest {
     public void noMatchesInCatalogue() {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
-        library.receiveCDStock(highwayToNowhere, 10);
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        library.receiveCDStock(newStock);
+
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         assertEquals(searchResults, library.searchCatalogue("La Da Dee", "Cody Simpson"));
     }
@@ -35,8 +43,12 @@ public class SearchCDTest {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         Library library = new Library();
-        library.receiveCDStock(highwayToNowhere, 10);
-        library.receiveCDStock(soulMan, 10);
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        newStock.put(soulMan, 10);
+        library.receiveCDStock(newStock);
+
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         searchResults.put(highwayToNowhere, 10);
         searchResults.put(soulMan, 10);
