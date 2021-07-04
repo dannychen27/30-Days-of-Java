@@ -17,7 +17,17 @@ public class SearchCDTest {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
         library.addToCatalogue(highwayToNowhere, 10);
-        List<CompactDisc> smallCDLibrary = Arrays.asList(highwayToNowhere);
-        assertEquals(smallCDLibrary, library.searchCatalogue(highwayToNowhere));
+        List<CompactDisc> searchResults = Arrays.asList(highwayToNowhere);
+        assertEquals(searchResults, library.searchCatalogue(highwayToNowhere));
+    }
+
+    @Test
+    public void noMatchesInCatalogue() {
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+        CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
+        Library library = new Library();
+        library.addToCatalogue(highwayToNowhere, 10);
+        List<CompactDisc> searchResults = Arrays.asList();
+        assertEquals(searchResults, library.searchCatalogue(laDaDee));
     }
 }
