@@ -14,7 +14,7 @@ public class BuyCDTest {
     public void cdIsInStock() throws InsufficientStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
-        library.addToCatalogue(highwayToNowhere, 10);
+        library.receiveCDStock(highwayToNowhere, 10);
         library.buy(highwayToNowhere, 1);
         assertEquals(9, library.getStock(highwayToNowhere));
     }
@@ -23,7 +23,7 @@ public class BuyCDTest {
     public void insufficientStock() {
         CompactDisc cd = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
-        library.addToCatalogue(cd, 1);
+        library.receiveCDStock(cd, 1);
         assertThrows(InsufficientStockException.class, () -> library.buy(cd, 2));
     }
 }

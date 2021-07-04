@@ -58,7 +58,7 @@ public class Library {
         return matchingCDsToStock;
     }
 
-    public void addToCatalogue(CompactDisc targetCD, int quantity) {
+    public void receiveCDStock(CompactDisc targetCD, int quantity) {
         if (!catalogue.containsKey(targetCD)) {
             catalogue.put(targetCD, quantity);
         } else {  // catalogue.containsKey(targetCD)
@@ -71,8 +71,12 @@ public class Library {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         Library library = new Library();
-        library.addToCatalogue(highwayToNowhere, 10);
-        library.addToCatalogue(soulMan, 10);
-        System.out.println(library.searchCatalogue(null, "Drake Bell"));
+        library.receiveCDStock(highwayToNowhere, 10);
+        library.receiveCDStock(soulMan, 10);
+        System.out.println(library.searchCatalogue(null, "Drake Bell"));  // {"Soul Man" by Drake Bell=10, "Highway to Nowhere" by Drake Bell=10}
+
+        library.receiveCDStock(highwayToNowhere, 5);
+        System.out.println(library.getStock(highwayToNowhere));  // 15
+        System.out.println(library.searchCatalogue(null, "Drake Bell"));  // {"Soul Man" by Drake Bell=10, "Highway to Nowhere" by Drake Bell=15}
     }
 }
