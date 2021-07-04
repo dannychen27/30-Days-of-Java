@@ -12,7 +12,7 @@ X insufficient stock because try to buy more stock than you have -- throw Insuff
 X insufficient stock because CD not in catalogue -- throw CDNotInCatalogueException
 X buy no CDs at all -- no-op
 X buy 0 copies of a single CD -- skip over it?? -- it's fine if this is a no-op.
-* buy negative CDs in stock -- throw BuyNegativeStockException
+X buy negative CDs in stock -- throw BuyNegativeStockException
 X buy multiple CDs in stock successfully -- update stock counts of all CDs bought
 X buy multiple CDs in stock unsuccessfully because there's not enough of at least one CD -- throw CDNotInCatalogueException
 X buy multiple CDs in stock unsuccessfully because CD is not in catalogue -- throw InsufficientStock exception

@@ -15,13 +15,17 @@ public class Library {
         return catalogue.get(targetCD);
     }
 
-    public void buy(Map<CompactDisc, Integer> shoppingCartItems) throws CDNotInCatalogueException, InsufficientStockException {
+    public void buy(Map<CompactDisc, Integer> shoppingCartItems)
+            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
         for (Map.Entry<CompactDisc, Integer> shoppingCartEntry : shoppingCartItems.entrySet()) {
             CompactDisc cd = shoppingCartEntry.getKey();
-            int quantity = shoppingCartEntry.getValue();
-
             if (!catalogue.containsKey(cd)) {
                 throw new CDNotInCatalogueException();
+            }
+
+            int quantity = shoppingCartEntry.getValue();
+            if (quantity < 0) {
+                throw new BuyNegativeStockException();
             }
 
             int stock = getStock(cd);

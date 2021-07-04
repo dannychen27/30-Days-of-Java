@@ -1,9 +1,6 @@
 package SoftwareTesting.GatheringRequirements;
 
-import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CDNotInCatalogueException;
-import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CompactDisc;
-import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.InsufficientStockException;
-import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.Library;
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class BuyCDTest {
 
     @Test
-    public void buySingleCDWithSufficientStock() throws CDNotInCatalogueException, InsufficientStockException {
+    public void buySingleCDWithSufficientStock()
+            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -59,7 +57,8 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyNoCDs() throws CDNotInCatalogueException, InsufficientStockException {
+    public void buyNoCDs()
+            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -73,7 +72,8 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buy0CopiesOfASingleCD() throws CDNotInCatalogueException, InsufficientStockException {
+    public void buy0CopiesOfASingleCD()
+            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         Library library = new Library();
 
@@ -88,7 +88,22 @@ public class BuyCDTest {
     }
 
     @Test
-    public void buyMultipleCDsSuccessfully() throws CDNotInCatalogueException, InsufficientStockException {
+    public void buyNegativeCopiesOfASingleCD() {
+        CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+        Library library = new Library();
+
+        HashMap<CompactDisc, Integer> newStock = new HashMap<>();
+        newStock.put(highwayToNowhere, 10);
+        library.receiveCDStock(newStock);
+
+        HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
+        shoppingCartItems.put(highwayToNowhere, -2);
+        assertThrows(BuyNegativeStockException.class, () -> library.buy(shoppingCartItems));
+    }
+
+    @Test
+    public void buyMultipleCDsSuccessfully()
+            throws CDNotInCatalogueException, InsufficientStockException, BuyNegativeStockException {
         CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
         CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
         CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
