@@ -39,28 +39,28 @@ class RoverTest {
     }
 
     @Test
-    public void turnsLeftNorthToWest() {
+    void turnsLeftNorthToWest() {
         Rover rover = new Rover("N");
         rover.go("L");
         assertEquals("W", rover.getFacing());
     }
 
     @Test
-    public void turnsLeftEastToWest() {
+    void turnsLeftEastToWest() {
         Rover rover = new Rover("E");
         rover.go("L");
         assertEquals("N", rover.getFacing());
     }
 
     @Test
-    public void turnsLeftSouthToEast() {
+    void turnsLeftSouthToEast() {
         Rover rover = new Rover("S");
         rover.go("L");
         assertEquals("E", rover.getFacing());
     }
 
     @Test
-    public void turnsLeftWestToSouth() {
+    void turnsLeftWestToSouth() {
         Rover rover = new Rover("W");
         rover.go("L");
         assertEquals("S", rover.getFacing());
