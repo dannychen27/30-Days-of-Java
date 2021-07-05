@@ -15,4 +15,8 @@
     - sometimes the pattern is obvious, if you're beginning TDD, err on the side of
     caution
 
-
+- use parameterized tests -- test methods that accepts parameters
+    -- reuse parameters with different test cases, extract out common logic
+    - use Junit params library
+    -- sometimes not removing duplicates makes our code easier to understand
+    -- since easy to understand code > no repeat code
