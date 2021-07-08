@@ -306,6 +306,9 @@ shortest path between two vertices in a graph -- using BFS -- DONE!
 how to make change -- recursive -- DONE!
 how to make change -- using DP -- DONE!
 // todo: how to make change  -- iterative
+// todo: viterbi's algorithm -- recursive
+// todo: viterbi's algorithm -- using DP
+// todo: viterbi's algorithm -- iterative?
 // todo: find contacts -- using a trie
 // todo: connected components on a graph -- using DFS
 sort array -- using a comparator function -- DONE!
