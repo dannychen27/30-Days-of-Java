@@ -14,8 +14,10 @@ class IterativeLinearSearchTest {
     private int[] emptyArray = new int[0];
     private int[] oneElementArray = new int[] {1};
     private int[] sortedArray = new int[] {1, 2, 3, 4, 5};
+    private int[] almostSortedArray = new int[] {1, 2, 3, 5, 4};
     private int[] unsortedArray = new int[] {3, 2, 5, 4, 1};
-    private int[] sortedArrayWithDuplicateItems = new int[] {1, 1, 2, 2, 3, 3};
+    private int[] reversedArray = new int[] {5, 4, 3, 2, 1};
+    private int[] sortedArrayWithDuplicates = new int[] {1, 1, 2, 2, 3, 3};
 
     @BeforeEach
     void setUp() {
@@ -49,12 +51,22 @@ class IterativeLinearSearchTest {
     }
 
     @Test
+    void testItemIsFoundInAlmostSortedArray() {
+        assertTrue(linearSearch.iterativeLinearSearch(almostSortedArray, 3));
+    }
+
+    @Test
     void testItemIsFoundInUnsortedArray() {
         assertTrue(linearSearch.iterativeLinearSearch(unsortedArray, 3));
     }
 
     @Test
+    void testItemIsFoundInReversedArray() {
+        assertTrue(linearSearch.iterativeLinearSearch(reversedArray, 3));
+    }
+
+    @Test
     void testItemIsFoundInArrayWithDuplicates() {
-        assertTrue(linearSearch.iterativeLinearSearch(sortedArrayWithDuplicateItems, 2));
+        assertTrue(linearSearch.iterativeLinearSearch(sortedArrayWithDuplicates, 2));
     }
 }
