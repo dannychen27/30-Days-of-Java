@@ -1,21 +1,13 @@
 package Algorithms.SortingAlgorithms.QuickSort;
 
-import java.util.Arrays;
 import java.util.Stack;
 
-public class IterativeQuickSort {
-
-    public static void main(String[] args) {
-        // source: https://www.geeksforgeeks.org/iterative-quick-sort/
-        int[] numbers = {5, 4, 3, 2, 1};
-        iterativeQuickSort(numbers);
-        System.out.println(Arrays.toString(numbers)); // [1, 2, 3, 4, 5]
-    }
+class IterativeQuickSort {
 
     /**
      * Sort this array.
      */
-    private static void iterativeQuickSort(int[] array) {
+    void iterativeQuickSort(int[] array) {
         Stack<Integer> stack = new Stack<>();
 
         int startIndex = 0;
@@ -50,7 +42,7 @@ public class IterativeQuickSort {
      * Return the partition index after performing in place partition on the subarray
      * array[startIndex:endIndex].
      */
-    private static int partition(int[] array, int startIndex, int endIndex) {
+    private int partition(int[] array, int startIndex, int endIndex) {
         int initialPivotIndex = startIndex; // the pivot doesn't matter
         swap(array, initialPivotIndex, endIndex);
         int pivotIndex = startIndex;
@@ -67,7 +59,7 @@ public class IterativeQuickSort {
     /**
      * Swap the elements at index1 and index2.
      */
-    private static void swap(int[] array, int index1, int index2) {
+    private void swap(int[] array, int index1, int index2) {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
