@@ -17,7 +17,7 @@ class RecursiveLinearSearchTest {
     private int[] almostSortedArray = new int[] {1, 2, 3, 5, 4};
     private int[] unsortedArray = new int[] {3, 2, 5, 4, 1};
     private int[] reversedArray = new int[] {5, 4, 3, 2, 1};
-    private int[] sortedArrayWithDuplicates = new int[] {1, 1, 2, 2, 3, 3};
+    private int[] duplicatesArray = new int[] {2, 2, 1, 1, 3, 3};
 
     @BeforeEach
     void setUp() {
@@ -66,7 +66,7 @@ class RecursiveLinearSearchTest {
     }
 
     @Test
-    void testItemIsFoundInArrayWithDuplicates() {
-        assertTrue(linearSearch.recursiveLinearSearch(sortedArrayWithDuplicates, 2));
+    void testItemIsFoundInDuplicatesArray() {
+        assertTrue(linearSearch.recursiveLinearSearch(duplicatesArray, 2));
     }
 }
