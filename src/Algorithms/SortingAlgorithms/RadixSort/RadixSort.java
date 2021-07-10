@@ -36,7 +36,7 @@ class RadixSort {
 
         // Perform counting sort on each digit.
         for (int currentDigit = 0; Math.pow(BASE, currentDigit) <= largestNumber; currentDigit++) {
-            countingSort(array, currentDigit, BASE);
+            countingSort(array, currentDigit);
         }
     }
 

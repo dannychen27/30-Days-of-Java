@@ -1,41 +1,32 @@
 package Algorithms.SortingAlgorithms.CountingSort;
 
-import java.util.Arrays;
-
 public class CountingSort {
 
     private static final int BASE = 10;
 
-    public static void main(String[] args) {
-        // Source: https://www.youtube.com/watch?v=OKd534EWcdk Counting Sort
-        // let n = length of array
-        // let d = max number of digits needed to represent each number.
-        // let b = the base you're using, range of keys. e.g. base 10 -> b = 10
+    // Source: https://www.youtube.com/watch?v=OKd534EWcdk Counting Sort
+    // let n = length of array
+    // let d = max number of digits needed to represent each number.
+    // let b = the base you're using, range of keys. e.g. base 10 -> b = 10
 
-        // counting sort has time O(n + b) and space O(n + b).
-        // counting sort is linear time iff b < n.
-        // counting sort is a tradeoff between time and space.
-        // larger b = more space required for counting sort
-        // smaller d = fewer digits
-
-        long[] numbers = {5000, 1000, 500, 100, 50, 10, 5, 1};
-        countingSort(numbers, 0, BASE);
-        System.out.println(Arrays.toString(numbers)); // [5000, 1000, 500, 100, 50, 10, 1, 5]
-
-    }
+    // counting sort has time O(n + b) and space O(n + b).
+    // counting sort is linear time iff b < n.
+    // counting sort is a tradeoff between time and space.
+    // larger b = more space required for counting sort
+    // smaller d = fewer digits
 
     /**
      * Perform counting sort on array based on the currentDigit-th digit starting from the right.
      */
-    public static void countingSort(long[] array, int currentDigit, int base) {
-        int[] digitCounts = new int[base];
-        int[] digitStartIndex = new int[base];
+     public static void countingSort(long[] array, int currentDigit) {
+        int[] digitCounts = new int[BASE];
+        int[] digitStartIndex = new int[BASE];
         long[] sortedArray = new long[array.length];
 
         // Store the occurrence of each digit in digitCounts.
         int digit;
         for (long value : array) {
-            digit = (int) ((value / Math.pow(base, currentDigit)) % base);
+            digit = (int) ((value / Math.pow(BASE, currentDigit)) % BASE);
             digitCounts[digit]++;
         }
 
@@ -48,7 +39,7 @@ public class CountingSort {
         // Insert values in sortedArray at the specified indices in digitStartIndex.
         int[] shiftedDigitStartIndex = shiftArrayRight(digitStartIndex);
         for (long value : array) {
-            digit = (int) ((value / Math.pow(base, currentDigit)) % base);
+            digit = (int) ((value / Math.pow(BASE, currentDigit)) % BASE);
             int indexToInsert = shiftedDigitStartIndex[digit];
             sortedArray[indexToInsert] = value;
             shiftedDigitStartIndex[digit]++;
