@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class InPlaceQuickSortTest {
 
-    private InPlaceQuicksort mergeSort;
+    private InPlaceQuicksort quickSort;
 
     private int[] emptyArray = new int[0];
     private int[] oneElementArray = new int[] {1};
@@ -20,7 +20,7 @@ class InPlaceQuickSortTest {
 
     @BeforeEach
     void setUp() {
-        mergeSort = new InPlaceQuicksort();
+        quickSort = new InPlaceQuicksort();
     }
 
     @AfterEach
@@ -39,43 +39,43 @@ class InPlaceQuickSortTest {
 
     @Test
     void testIsSortedOnEmptyArray() {
-        mergeSort.inPlaceQuickSort(emptyArray);
+        quickSort.inPlaceQuickSort(emptyArray);
         assertTrue(isSorted(emptyArray));
     }
 
     @Test
     void testIsSortedOnOneElementArray() {
-        mergeSort.inPlaceQuickSort(oneElementArray);
+        quickSort.inPlaceQuickSort(oneElementArray);
         assertTrue(isSorted(oneElementArray));
     }
 
     @Test
     void testIsSortedOnAlreadySortedArray() {
-        mergeSort.inPlaceQuickSort(sortedArray);
+        quickSort.inPlaceQuickSort(sortedArray);
         assertTrue(isSorted(sortedArray));
     }
 
     @Test
     void testIsSortedOnAlmostSortedArray() {
-        mergeSort.inPlaceQuickSort(almostSortedArray);
+        quickSort.inPlaceQuickSort(almostSortedArray);
         assertTrue(isSorted(almostSortedArray));
     }
 
     @Test
     void testIsSortedOnUnsortedArray() {
-        mergeSort.inPlaceQuickSort(unsortedArray);
+        quickSort.inPlaceQuickSort(unsortedArray);
         assertTrue(isSorted(unsortedArray));
     }
 
     @Test
     void testIsSortedOnArrayWithDuplicates() {
-        mergeSort.inPlaceQuickSort(duplicatesArray);
+        quickSort.inPlaceQuickSort(duplicatesArray);
         assertTrue(isSorted(duplicatesArray));
     }
 
     @Test
     void testIsSortedOnReversedArray() {
-        mergeSort.inPlaceQuickSort(reversedArray);
+        quickSort.inPlaceQuickSort(reversedArray);
         assertTrue(isSorted(reversedArray));
     }
 }
