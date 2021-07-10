@@ -277,7 +277,7 @@ MST Algorithms
 
 
 Interview Problems
-// todo: fizzfuzz
+fizzfuzz -- DONE
 // todo: preorder, inorder, postorder tree traversal
 // todo: sliding window algorithm
 // todo: two converging pointers algorithm
