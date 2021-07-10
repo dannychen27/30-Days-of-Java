@@ -1,19 +1,11 @@
 package Algorithms.SortingAlgorithms.MergeSort;
 
-import java.util.Arrays;
-
-public class InPlaceMergeSort {
-
-    public static void main(String[] args) {
-        int[] numbers = {5, 4, 3, 2, 1};
-        inPlaceMergeSort(numbers);
-        System.out.println(Arrays.toString(numbers)); // [1, 2, 3, 4, 5]
-    }
+class InPlaceMergeSort {
 
     /**
      * Sort this array.
      */
-    private static void inPlaceMergeSort(int[] array) {
+    void inPlaceMergeSort(int[] array) {
         inPlaceMergeSortHelper(array, 0, array.length - 1);
     }
 
@@ -22,7 +14,7 @@ public class InPlaceMergeSort {
      *
      * Precondition: startIndex >= 0 and endIndex >= 0.
      */
-    private static void inPlaceMergeSortHelper(int[] array, int startIndex, int endIndex) {
+    private void inPlaceMergeSortHelper(int[] array, int startIndex, int endIndex) {
         // source: https://www.google.com/search?q=mergesort+algorithm&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjkzY3fkfjwAhVPZ80KHevJBVkQ_AUoAnoECAEQBA&biw=1092&bih=596#imgrc=PVD6Uf387cTWOM&imgdii=LiVqsX6lVRpuKM
         if (startIndex < endIndex) {
             int middleIndex = (startIndex + endIndex) / 2;
@@ -37,7 +29,7 @@ public class InPlaceMergeSort {
      *
      * Precondition: startIndex <= middleIndex <= endIndex.
      */
-    private static void merge(int[] array, int startIndex, int middleIndex, int endIndex) {
+    private void merge(int[] array, int startIndex, int middleIndex, int endIndex) {
         // source: https://www.geeksforgeeks.org/iterative-merge-sort/
 
         // Create a temporary array for the subarray array[startIndex:middleIndex].
