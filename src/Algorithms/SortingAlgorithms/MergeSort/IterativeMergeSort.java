@@ -1,19 +1,11 @@
 package Algorithms.SortingAlgorithms.MergeSort;
 
-import java.util.Arrays;
-
-public class IterativeMergeSort {
-
-    public static void main(String[] args) {
-        int[] numbers = {5, 4, 3, 2, 1};
-        iterativeMergeSort(numbers);
-        System.out.println(Arrays.toString(numbers)); // [1, 2, 3, 4, 5]
-    }
+class IterativeMergeSort {
 
     /**
      * Sort this array.
      */
-    private static void iterativeMergeSort(int[] array) {
+    void iterativeMergeSort(int[] array) {
         // source: https://www.geeksforgeeks.org/iterative-merge-sort/
 
         // Merge arrays from the bottom up.
@@ -32,7 +24,7 @@ public class IterativeMergeSort {
      *
      * Precondition: startIndex <= middleIndex <= endIndex.
      */
-    private static void merge(int[] array, int startIndex, int middleIndex, int endIndex) {
+    private void merge(int[] array, int startIndex, int middleIndex, int endIndex) {
         // source: https://www.geeksforgeeks.org/iterative-merge-sort/
 
         // Create a temporary array for the subarray array[startIndex:middleIndex].
