@@ -1,19 +1,11 @@
 package Algorithms.SortingAlgorithms.QuickSort;
 
-import java.util.Arrays;
-
-public class OutOfPlaceQuickSort {
-
-    public static void main(String[] args) {
-        int[] numbers = {5, 4, 3, 2, 1};
-        int[] sortedArray = outOfPlaceQuickSort(numbers);
-        System.out.println(Arrays.toString(sortedArray)); // [1, 2, 3, 4, 5]
-    }
+class OutOfPlaceQuickSort {
 
     /**
      * Sort this array.
      */
-    private static int[] outOfPlaceQuickSort(int[] array) {
+    int[] outOfPlaceQuickSort(int[] array) {
         // source: https://www.teach.cs.toronto.edu/~csc148h/winter/notes/recursive-sorting/recursive_sorting.html
         if (array.length < 2) {
             return array;
@@ -63,7 +55,7 @@ public class OutOfPlaceQuickSort {
         return smallerArray;
     }
 
-    private static int[] partitionBiggerArray(int[] subarray, int[] smallerArray, int pivot) {
+    private int[] partitionBiggerArray(int[] subarray, int[] smallerArray, int pivot) {
         int[] biggerArray = new int[subarray.length - smallerArray.length];
         int biggerArrayIndex = 0;
         for (int value : subarray) {
@@ -79,7 +71,7 @@ public class OutOfPlaceQuickSort {
     /**
      * Return the subarray array[startIndex:endIndex].
      */
-    private static int[] substring(int[] array, int startIndex, int endIndex) {
+    private int[] substring(int[] array, int startIndex, int endIndex) {
         // source: https://www.geeksforgeeks.org/how-to-get-slice-of-a-primitive-array-in-java/
         int[] slicedArray = new int[endIndex - startIndex];
         for (int i = 0; i < slicedArray.length; i++) {
