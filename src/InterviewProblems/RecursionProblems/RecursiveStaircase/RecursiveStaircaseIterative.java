@@ -1,15 +1,12 @@
 package InterviewProblems.RecursionProblems.RecursiveStaircase;
 
-public class RecursiveStaircaseIterative {
+class RecursiveStaircaseIterative {
 
-    public static void main(String[] args) {
-        // With dynamic programming approach:
-        // time: O(n) since we only compute each value once
-        // space: O(1) since we only store the last two values we found so far.
-        System.out.println(countPaths(3)); // 4
-    }
+    // With dynamic programming approach:
+    // time: O(n) since we only compute each value once
+    // space: O(1) since we only store the last two values we found so far.
 
-    private static int countPaths(int numSteps) {
+    int countPaths(int numSteps) {
         if (numSteps < 0) {
             return 0;
         } else if (numSteps <= 1) {
