@@ -4,6 +4,10 @@ import java.util.Stack;
 
 class MyQueue<T> {
 
+    // source: https://www.youtube.com/watch?v=7ArHz8jPglw&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=2
+
+    // Tip: for challenging problems: make sure you understand the problem specifications
+
     private Stack<T> stackNewestOnTop;
     private Stack<T> stackOldestOnTop;
 
