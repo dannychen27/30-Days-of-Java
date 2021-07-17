@@ -1,26 +1,14 @@
 package InterviewProblems.PriorityQueueProblems.RunningMedian;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class RunningMedian {
+public class RunningMedian {
 
-    public static void main(String[] args) {
-        // source: https://www.youtube.com/watch?v=VmogG01IjYc&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=12&t=6s
+    // source: https://www.youtube.com/watch?v=VmogG01IjYc&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=12&t=6s
 
-        // Find the running median of an array of numbers
+    // Find the running median of an array of numbers
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        System.out.println(Arrays.toString(getRunningMedians(array)));
-        // [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5]
-
-        int[] array2 = {1, 2, 1, 2, 1, 2, 1, 2, 1, 2};
-        System.out.println(Arrays.toString(getRunningMedians(array2)));
-        // [1.0, 1.5, 1.0, 1.5, 1.0, 1.5, 1.0, 1.5, 1.0, 1.5]
-    }
-
-    private static double[] getRunningMedians(int[] array) {
+    public double[] getRunningMedians(int[] array) {
         PriorityQueue<Integer> lowerHalf = new PriorityQueue<>(new SortByDescendingOrder());  // max heap
         PriorityQueue<Integer> upperHalf = new PriorityQueue<>();  // min heap
         double[] medians = new double[array.length];
@@ -33,9 +21,9 @@ class RunningMedian {
         return medians;
     }
 
-    private static void addNumber(int number,
-                                  PriorityQueue<Integer> lowerHalf,
-                                  PriorityQueue<Integer> upperHalf) {
+    private void addNumber(int number,
+                           PriorityQueue<Integer> lowerHalf,
+                           PriorityQueue<Integer> upperHalf) {
         if (lowerHalf.isEmpty() || number < lowerHalf.peek()) {
             lowerHalf.add(number);
         } else {
@@ -43,8 +31,8 @@ class RunningMedian {
         }
     }
 
-    private static void rebalanceHeaps(PriorityQueue<Integer> lowerHalf,
-                                       PriorityQueue<Integer> upperHalf) {
+    private void rebalanceHeaps(PriorityQueue<Integer> lowerHalf,
+                                PriorityQueue<Integer> upperHalf) {
         PriorityQueue<Integer> biggerHeap;
         if (lowerHalf.size() > upperHalf.size()) {
             biggerHeap = lowerHalf;
@@ -65,8 +53,8 @@ class RunningMedian {
         }
     }
 
-    private static double getMedian(PriorityQueue<Integer> lowerHalf,
-                                    PriorityQueue<Integer> upperHalf) {
+    private double getMedian(PriorityQueue<Integer> lowerHalf,
+                             PriorityQueue<Integer> upperHalf) {
         PriorityQueue<Integer> biggerHeap;
         if (lowerHalf.size() > upperHalf.size()) {
             biggerHeap = lowerHalf;
@@ -86,11 +74,5 @@ class RunningMedian {
         } else {
             return biggerHeap.peek();
         }
-    }
-}
-
-class SortByDescendingOrder implements Comparator<Integer> {
-    public int compare(Integer a, Integer b) {
-        return b.compareTo(a);
     }
 }
