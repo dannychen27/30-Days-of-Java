@@ -2,7 +2,7 @@ package InterviewProblems.HashMapProblems.LonelyInteger;
 
 import java.util.HashMap;
 
-public class LonelyInteger {
+public class LonelyIntegerHashmap {
 
     public int findLonelyInteger(int[] array) {
         HashMap<Integer, Integer> integersToNumOccurrences = new HashMap<>();

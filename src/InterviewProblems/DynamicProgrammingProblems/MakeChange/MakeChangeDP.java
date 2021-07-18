@@ -1,4 +1,4 @@
-package InterviewProblems.DynamicProgrammingProblems.FindChange;
+package InterviewProblems.DynamicProgrammingProblems.MakeChange;
 
 import java.util.HashMap;
 

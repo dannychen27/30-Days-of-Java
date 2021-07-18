@@ -1,6 +1,6 @@
 package InterviewProblems.HashmapProblems.IsAnagram;
 
-import InterviewProblems.HashMapProblems.IsAnagram.IsAnagram;
+import InterviewProblems.HashMapProblems.IsAnagram.IsAnagramHashmap;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 
 class IsAnagramTest {
 
-    private IsAnagram isAnagram;
+    private IsAnagramHashmap isAnagram;
 
     @BeforeEach
     void setUp() {
-        isAnagram = new IsAnagram();
+        isAnagram = new IsAnagramHashmap();
     }
 
     @AfterEach

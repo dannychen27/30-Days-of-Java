@@ -1,6 +1,6 @@
-package InterviewProblems.RecursionProblems.CountMazePaths;
+package InterviewProblems.DynamicProgrammingProblems.CountMazePaths;
 
-class CountMazePathsDP {
+public class CountMazePathsDP {
 
     // you can only move in two directions: right or down
     //
@@ -16,7 +16,7 @@ class CountMazePathsDP {
     //         {true,  true,  true,  true,  true,  true,  true,  true}
     // };
 
-    int countPaths(boolean[][] grid, int row, int column) {
+    public int countPaths(boolean[][] grid, int row, int column) {
         // assume that the 2d array paths is not jagged.
         return countPaths(grid, row, column, new int[grid.length][grid[0].length]);
     }

@@ -1,4 +1,4 @@
-package InterviewProblems.DynamicProgrammingProblems.FindChange;
+package InterviewProblems.RecursionProblems.MakeChange;
 
 public class MakeChangeNaive {
 

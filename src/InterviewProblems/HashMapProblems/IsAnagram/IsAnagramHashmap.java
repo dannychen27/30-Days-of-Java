@@ -2,7 +2,7 @@ package InterviewProblems.HashMapProblems.IsAnagram;
 
 import java.util.HashMap;
 
-public class IsAnagram {
+public class IsAnagramHashmap {
 
     /**
      * Return true iff word1 is an anagram of word2.

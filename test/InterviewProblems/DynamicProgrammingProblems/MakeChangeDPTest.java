@@ -1,6 +1,6 @@
 package InterviewProblems.DynamicProgrammingProblems;
 
-import InterviewProblems.DynamicProgrammingProblems.FindChange.MakeChangeDP;
+import InterviewProblems.DynamicProgrammingProblems.MakeChange.MakeChangeDP;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,12 +1,12 @@
-package InterviewProblems.RecursionProblems.RecursiveStaircase;
+package InterviewProblems.MemoizationProblems.RecursiveStaircase;
 
-class RecursiveStaircaseMemoization {
+public class RecursiveStaircaseMemoization {
 
     // With memoization approach:
     // time: O(n) since we only compute each value once
     // space: O(n) for the call stack and the memo table
 
-    int countPaths(int numSteps) {
+    public int countPaths(int numSteps) {
         // the array size is numSteps + 1 because
         // we want all of the entries from 0 to numSteps.
         return countPaths(numSteps, new int[numSteps + 1]);

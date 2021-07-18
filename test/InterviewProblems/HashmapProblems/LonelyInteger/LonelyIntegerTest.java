@@ -1,6 +1,6 @@
 package InterviewProblems.HashmapProblems.LonelyInteger;
 
-import InterviewProblems.HashMapProblems.LonelyInteger.LonelyInteger;
+import InterviewProblems.HashMapProblems.LonelyInteger.LonelyIntegerHashmap;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,11 +11,11 @@ class LonelyIntegerTest {
     private int[] unsortedArray = {9, 1, 2, 3, 2, 9, 1, 7, 7};
     private int[] sortedArray = {1, 1, 2, 2, 3, 3, 9};
 
-    private LonelyInteger lonelyInteger;
+    private LonelyIntegerHashmap lonelyInteger;
 
     @BeforeEach
     void setUp() {
-        lonelyInteger = new LonelyInteger();
+        lonelyInteger = new LonelyIntegerHashmap();
     }
 
     @AfterEach

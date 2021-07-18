@@ -1,5 +1,6 @@
 package InterviewProblems.RecursionProblems.RecursiveStaircase;
 
+import InterviewProblems.IterativeSolutionsToProblems.RecursiveStaircase.RecursiveStaircaseIterative;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

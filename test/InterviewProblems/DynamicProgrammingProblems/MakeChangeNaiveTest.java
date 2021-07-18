@@ -1,6 +1,6 @@
 package InterviewProblems.DynamicProgrammingProblems;
 
-import InterviewProblems.DynamicProgrammingProblems.FindChange.MakeChangeNaive;
+import InterviewProblems.RecursionProblems.MakeChange.MakeChangeNaive;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

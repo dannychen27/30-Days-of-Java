@@ -1,12 +1,12 @@
-package InterviewProblems.RecursionProblems.RecursiveStaircase;
+package InterviewProblems.DynamicProgrammingProblems.RecursiveStaircase;
 
-class RecursiveStaircaseDP {
+public class RecursiveStaircaseDP {
 
     // With dynamic programming approach:
     // time: O(n) since we only compute each value once
     // space: O(n) for the paths array
 
-    int countPaths(int numSteps) {
+    public int countPaths(int numSteps) {
         if (numSteps < 0) {
             return 0;
         } else if (numSteps <= 1) {
