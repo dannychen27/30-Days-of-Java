@@ -2,7 +2,7 @@ package InterviewProblems.HashMapProblems.CharsAwayFromAnagram;
 
 import java.util.*;
 
-public class CharsAwayFromAnagram {
+public class CharactersAwayFromAnagram {
 
     // Given two strings (lowercase a->z), how many characters do we need to remove from
     // either string to make them anagrams?
