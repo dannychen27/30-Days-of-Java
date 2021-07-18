@@ -2,29 +2,22 @@ package InterviewProblems.HashMapProblems.CharsAwayFromAnagram;
 
 import java.util.*;
 
-class CharsAwayFromAnagram {
+public class CharsAwayFromAnagram {
 
-    public static void main(String[] args) {
-        // Given two strings (lowercase a->z), how many characters do we need to remove from
-        // either string to make them anagrams?
+    // Given two strings (lowercase a->z), how many characters do we need to remove from
+    // either string to make them anagrams?
 
-        // time: O(n)
-        // space: O(n) because of hashmap
-        System.out.println(charsAwayFromAnagram("hello", "billion")); // 6
-        // he from hello, and biin from billion.
+    // time: O(n)
+    // space: O(n) because of the hashmaps
 
-        System.out.println(charsAwayFromAnagram("car", "care")); // 1
-        // e from care.
-    }
-
-    private static int charsAwayFromAnagram(String word1, String word2) {
+    public int charsAwayFromAnagram(String word1, String word2) {
         HashMap<Character, Integer> charCountsOfFirstWord = getCharCounts(word1);
         HashMap<Character, Integer> charCountsOfSecondWord = getCharCounts(word2);
         return getDelta(charCountsOfFirstWord, charCountsOfSecondWord);
 
     }
 
-    private static HashMap<Character, Integer> getCharCounts(String word) {
+    private HashMap<Character, Integer> getCharCounts(String word) {
         HashMap<Character, Integer> charCounts = new HashMap<>();
         for (int i = 0; i < word.length(); i++) {
             char currentCharacter = word.charAt(i);
@@ -38,8 +31,8 @@ class CharsAwayFromAnagram {
     }
 
 
-    private static int getDelta(HashMap<Character, Integer> charCountsOfWord1,
-                                HashMap<Character, Integer> charCountsOfWord2) {
+    private int getDelta(HashMap<Character, Integer> charCountsOfWord1,
+                         HashMap<Character, Integer> charCountsOfWord2) {
         Set<Character> lettersInBothWords = new HashSet<>();
         lettersInBothWords.addAll(charCountsOfWord1.keySet());
         lettersInBothWords.addAll(charCountsOfWord2.keySet());
