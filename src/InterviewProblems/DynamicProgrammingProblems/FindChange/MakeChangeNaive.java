@@ -1,25 +1,21 @@
 package InterviewProblems.DynamicProgrammingProblems.FindChange;
 
-class MakeChangeNaive {
+public class MakeChangeNaive {
 
-    public static void main(String[] args) {
-        // source: https://www.youtube.com/watch?v=sn0DWI-JdNA&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&index=10
+    // source: https://www.youtube.com/watch?v=sn0DWI-JdNA&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&index=10
 
-        // How many ways are there to make change for a certain amount, given a
-        // denomination of coins?
+    // How many ways are there to make change for a certain amount, given a
+    // denomination of coins?
 
-        // naive approach:
-        // time: ???
-        // space: O(1)
-        int[] coins = {25, 10, 5, 1};
-        System.out.println(makeChange(27, coins)); // 13
-    }
+    // naive approach:
+    // time: O(n), where n = number of denominations
+    // space: O(1)
 
-    private static long makeChange(int targetChange, int[] coins) {
+    public long makeChange(int targetChange, int[] coins) {
         return makeChange(targetChange, coins, 0);
     }
 
-    private static long makeChange(int targetChange, int[] coins, int index) {
+    private long makeChange(int targetChange, int[] coins, int index) {
         if (targetChange == 0) {
             return 1; // out of money
         }

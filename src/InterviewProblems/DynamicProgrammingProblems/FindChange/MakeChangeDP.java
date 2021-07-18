@@ -4,24 +4,19 @@ import java.util.HashMap;
 
 public class MakeChangeDP {
 
-    public static void main(String[] args) {
-        // dynamic programming approach:
-        // time: ??? but faster than naive
-        // space: O(n) because of the memo table
+    // dynamic programming approach:
+    // time: O(n), where n = number of denominations, but slightly faster than naive
+    // space: O(n) because of the memo table
 
-        int[] coins = {25, 10, 5, 1};
-        System.out.println(makeChange(27, coins));
+    // TODO: Extra challenging: implement this iteratively.
+    // What's the last entry in the memo table, and how can we backtrack from there?
+    // It tests your understanding of this problem.
 
-        // TODO: Extra challenging: implement this iteratively.
-        // What's the last entry in the memo table, and how can we backtrack from there?
-        // It tests your understanding of this problem.
-    }
-
-    private static long makeChange(int targetChange, int[] coins) {
+    public long makeChange(int targetChange, int[] coins) {
         return makeChange(targetChange, coins, 0, new HashMap<>());
     }
 
-    private static long makeChange(int targetChange, int[] coins, int index, HashMap<String, Long> memo) {
+    private long makeChange(int targetChange, int[] coins, int index, HashMap<String, Long> memo) {
         if (targetChange == 0) {
             return 1; // out of money
         }
