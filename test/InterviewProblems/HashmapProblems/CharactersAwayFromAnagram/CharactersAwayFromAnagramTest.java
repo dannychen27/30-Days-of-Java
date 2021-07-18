@@ -1,6 +1,6 @@
-package InterviewProblems.HashmapProblems.CharsAwayFromAnagram;
+package InterviewProblems.HashmapProblems.CharactersAwayFromAnagram;
 
-import InterviewProblems.HashMapProblems.CharsAwayFromAnagram.CharactersAwayFromAnagram;
+import InterviewProblems.HashMapProblems.CharactersAwayFromAnagram.CharactersAwayFromAnagram;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

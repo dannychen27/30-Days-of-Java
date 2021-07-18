@@ -1,4 +1,4 @@
-package InterviewProblems.HashMapProblems.CharsAwayFromAnagram;
+package InterviewProblems.HashMapProblems.CharactersAwayFromAnagram;
 
 import java.util.*;
 
