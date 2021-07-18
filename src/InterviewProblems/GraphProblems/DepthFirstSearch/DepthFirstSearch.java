@@ -10,40 +10,12 @@ import java.util.Map;
 
 class DepthFirstSearch {
 
-    public static void main(String[] args) {
-        // DFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
+    // DFS source code: https://mcsapps.utm.utoronto.ca/slidechat/5f49771dd89c8059833766fc/24
 
-        // time: Theta(|V| + |E|)
-        // space: Theta(longest path in graph)
+    // time: Theta(|V| + |E|)
+    // space: Theta(longest path in graph)
 
-        Graph graph = new Graph();
-        Vertex vertex1 = new Vertex(1);
-        Vertex vertex2 = new Vertex(2);
-        Vertex vertex3 = new Vertex(3);
-        Vertex vertex4 = new Vertex(4);
-        Vertex vertex5 = new Vertex(5);
-        Vertex vertex6 = new Vertex(6);
-        Vertex vertex7 = new Vertex(7);
-
-        graph.addVertex(vertex1);
-        graph.addVertex(vertex2);
-        graph.addVertex(vertex3);
-        graph.addVertex(vertex4);
-        graph.addVertex(vertex5);
-        graph.addVertex(vertex6);
-        graph.addVertex(vertex7);
-
-        graph.addEdge(vertex1, vertex2);
-        graph.addEdge(vertex1, vertex3);
-        graph.addEdge(vertex2, vertex4);
-        graph.addEdge(vertex2, vertex5);
-        graph.addEdge(vertex3, vertex6);
-        graph.addEdge(vertex3, vertex7);
-
-        System.out.println(depthFirstSearch(graph));  // [1, 2, 4, 5, 3, 6, 7]
-    }
-
-    private static List<Vertex> depthFirstSearch(Graph graph) {
+    List<Vertex> depthFirstSearch(Graph graph) {
         Map<Vertex, String> verticesToColors = new HashMap<>();
         Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
         for (Vertex vertex : graph.getVertices()) {
@@ -60,9 +32,9 @@ class DepthFirstSearch {
         return verticesVisited;
     }
 
-    private static void depthFirstSearch(Vertex vertex, List<Vertex> verticesVisited,
-                                         Map<Vertex, String> verticesToColors,
-                                         Map<Vertex, Vertex> verticesToPredecessors) {
+    private void depthFirstSearch(Vertex vertex, List<Vertex> verticesVisited,
+                                  Map<Vertex, String> verticesToColors,
+                                  Map<Vertex, Vertex> verticesToPredecessors) {
         verticesVisited.add(vertex);
         verticesToColors.replace(vertex, "gray");
         for (Vertex neighbor : vertex.getNeighbors()) {
