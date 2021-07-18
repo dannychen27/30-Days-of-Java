@@ -1,0 +1,10 @@
+drive TDD through an external interface/api from the highest level -- through entry point.
+discover internal parts of system through refactoring
+
+Advantages:
+- pieces are guaranteed to fit
+- test code is less coupled with design
+
+Disadvantages:
+- with complex multi-layered application, harder to pinpoint where the problem lies and where to look
+so you have to spend a lot of time in the debugger to figure out the problem
