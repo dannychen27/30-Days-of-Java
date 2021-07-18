@@ -4,25 +4,21 @@ import java.util.Arrays;
 
 public class IceCreamParlorBinarySearch {
 
-    public static void main(String[] args) {
-        // binary search: sort menu, and find ice cream flavours using binary search
-        // we can either...
-        // - create a MenuItem struct:
-        // class MenuItem {
-        //      int cost;
-        //      int index;
-        // }
-        // - create copy of menu <-- easier
+    // binary search: sort menu, and find ice cream flavours using binary search
+    // we can either...
+    // - create a MenuItem struct:
+    // class MenuItem {
+    //      int cost;
+    //      int index;
+    // }
+    // - create copy of menu <-- easier
 
-        // binary search approach:
-        // time O(n log n)
-        // space O(n)
-        int[] menuPrices = {2, 7, 13, 5, 4, 13, 5};
-        System.out.println(Arrays.toString(findChoices(menuPrices, 10))); // [3, 6]
-    }
+    // binary search approach:
+    // time O(n log n)
+    // space O(n)
 
     // Finds the indices of two items on the menu that allow us to spend all our money.
-    private static int[] findChoices(int[] menuPrices, int budget) {
+    public int[] findChoices(int[] menuPrices, int budget) {
         int[] sortedMenuPrices = menuPrices.clone();
         Arrays.sort(sortedMenuPrices);
 
@@ -35,17 +31,16 @@ public class IceCreamParlorBinarySearch {
                 return getIndicesFromValues(menuPrices, sortedMenuPrices[i], complement);
             }
         }
-        return null;
+        return new int[] {-1, -1};
     }
 
-    private static int[] getIndicesFromValues(int[] menuPrices, int value1, int value2) {
+    private int[] getIndicesFromValues(int[] menuPrices, int value1, int value2) {
         int index1 = indexOf(menuPrices, value1, -1);
         int index2 = indexOf(menuPrices, value2, index1);
-        int[] indices = {Math.min(index1, index2), Math.max(index1, index2)};
-        return indices;
+        return new int[] {Math.min(index1, index2), Math.max(index1, index2)};
     }
 
-    private static int indexOf(int[] menuPrices, int value, int excludeThis) {
+    private int indexOf(int[] menuPrices, int value, int excludeThis) {
         for (int i = 0; i < menuPrices.length; i++) {
             if (menuPrices[i] == value && i != excludeThis) {
                 return i;
