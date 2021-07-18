@@ -1,0 +1,11 @@
+
+Advantages:
+- easy to pinpoint the reason why unittests fail more readily, and where to look to fix the problem --
+especially useful for a multi-layer design
+- promotes frequent use of debugger
+
+Disadvantages:
+- unencapsulates internal design details, so tests are more tightly coupled with code --
+therefore, refactoring code results in modifying the tests to fit the code.
+- in trying to build up the smaller pieces from the bottom up, we fail the integration tests
+because pieces don't fit together, thereby failing to satisfy customer requirements
