@@ -3,7 +3,7 @@ package InterviewProblems.HashMapProblems.CanBuildRansomNote;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CanBuildRansomNote {
+public class CanBuildRansomNoteWithTwoHashmaps {
 
     // source: https://www.youtube.com/watch?v=1uIwiIjw1fw&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=14&t=20s
 
