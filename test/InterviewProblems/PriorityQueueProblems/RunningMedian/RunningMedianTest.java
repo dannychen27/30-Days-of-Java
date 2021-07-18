@@ -1,6 +1,5 @@
-package InterviewProblems.PriorityQueueProblems;
+package InterviewProblems.PriorityQueueProblems.RunningMedian;
 
-import InterviewProblems.PriorityQueueProblems.RunningMedian.RunningMedian;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
