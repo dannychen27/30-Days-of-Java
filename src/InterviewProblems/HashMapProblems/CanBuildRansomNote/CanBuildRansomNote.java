@@ -3,29 +3,19 @@ package InterviewProblems.HashMapProblems.CanBuildRansomNote;
 import java.util.HashMap;
 import java.util.Map;
 
-class CanBuildRansomNote {
+public class CanBuildRansomNote {
 
-    public static void main(String[] args) {
-        // source: https://www.youtube.com/watch?v=1uIwiIjw1fw&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=14&t=20s
+    // source: https://www.youtube.com/watch?v=1uIwiIjw1fw&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX&index=14&t=20s
 
-        String[] wordsInMagazine = {"hello", "world", "blah"};
-        String[] wordsInRansomNote = {"hello", "world", "world"};
-        System.out.println(canBuildRansomNote(wordsInMagazine, wordsInRansomNote));  // false
+    // What if you tried this problem with just one hashmap instead of 2 hashmaps?
 
-        String[] wordsInMagazine2 = {"hello", "world", "world", "hi"};
-        String[] wordsInRansomNote2 = {"hello", "world", "world"};
-        System.out.println(canBuildRansomNote(wordsInMagazine2, wordsInRansomNote2));  // true
-
-        // What if you tried this problem with just one hashmap instead of 2 hashmaps?
-    }
-
-    private static boolean canBuildRansomNote(String[] wordsInMagazine, String[] wordsInRansomNote) {
+    public boolean canBuildRansomNote(String[] wordsInMagazine, String[] wordsInRansomNote) {
         HashMap<String, Integer> magazineWordCounts = getWordCounts(wordsInMagazine);
         HashMap<String, Integer> ransomNoteWordCounts = getWordCounts(wordsInRansomNote);
         return hasEnoughWords(magazineWordCounts, ransomNoteWordCounts);
     }
 
-    private static HashMap<String, Integer> getWordCounts(String[] words) {
+    private HashMap<String, Integer> getWordCounts(String[] words) {
         HashMap<String, Integer> wordCounts = new HashMap<>();
         for (String word : words) {
             if (!wordCounts.containsKey(word)) {
@@ -38,8 +28,8 @@ class CanBuildRansomNote {
         return wordCounts;
     }
 
-    private static boolean hasEnoughWords(HashMap<String, Integer> magazineWordCounts,
-                                          HashMap<String, Integer> ransomNoteWordCounts) {
+    private boolean hasEnoughWords(HashMap<String, Integer> magazineWordCounts,
+                                   HashMap<String, Integer> ransomNoteWordCounts) {
         for (Map.Entry<String, Integer> entry : ransomNoteWordCounts.entrySet()) {
             String word = entry.getKey();
             int wordCount = entry.getValue();
