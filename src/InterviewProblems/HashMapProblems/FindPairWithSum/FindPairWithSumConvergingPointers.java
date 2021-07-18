@@ -1,29 +1,23 @@
 package InterviewProblems.HashMapProblems.FindPairWithSum;
 
+import java.util.Arrays;
+
 public class FindPairWithSumConvergingPointers {
 
-    public static void main(String[] args) {
-        int[] emptyArray = {};
-        int[] shortArray = {1};
-        int[] nums = {1, 2, 3, 9};
-        int[] nums2 = {1, 2, 4, 4};
-
-        // time: O(n) if presorted, O(n log n) if unsorted
-        // space: O(1)
-        System.out.println(findPairWithSum(emptyArray, 8));  // false
-        System.out.println(findPairWithSum(shortArray, 8));  // false
-        System.out.println(findPairWithSum(nums, 8));  // false
-        System.out.println(findPairWithSum(nums2, 8));  // true
-    }
+    // time: O(n) if presorted, O(n log n) if unsorted
+    // space: O(1)
 
     /**
      * Return true iff there exist two integers whose sum is targetSum.
-     *
-     * Precondition: array is sorted.
      */
-    private static boolean findPairWithSum(int[] array, int targetSum) {
+    public boolean findPairWithSum(int[] array, int targetSum) {
         int start = 0;
         int end = array.length - 1;
+
+        if (!isSorted(array)) {
+            Arrays.sort(array);
+        }
+
         while (start < end) {  // this while loop condition is immediately false for empty or 1-element arrays.
             int sum = array[start] + array[end];
             if (sum == targetSum) {
@@ -35,5 +29,14 @@ public class FindPairWithSumConvergingPointers {
             }
         }
         return false;
+    }
+
+    private boolean isSorted(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i - 1] > array[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
