@@ -2,17 +2,9 @@ package InterviewProblems.HashMapProblems.LonelyInteger;
 
 import java.util.HashMap;
 
-class LonelyInteger {
+public class LonelyInteger {
 
-    public static void main(String[] args) {
-        int[] nums = {9, 1, 2, 3, 2, 9, 1, 7, 7};
-        System.out.println(findLonelyIntegerHashmap(nums)); // 3
-
-        int[] nums2 = {1, 1, 2, 2, 3, 3, 9};
-        System.out.println(findLonelyIntegerHashmap(nums2)); // 9
-    }
-
-    private static int findLonelyIntegerHashmap(int[] array) {
+    public int findLonelyInteger(int[] array) {
         HashMap<Integer, Integer> integersToNumOccurrences = new HashMap<>();
         for (int value : array) {
             if (!integersToNumOccurrences.containsKey(value)) {
@@ -28,6 +20,6 @@ class LonelyInteger {
                 return value;
             }
         }
-        return Integer.MIN_VALUE;
+        return Integer.MIN_VALUE;  // You should never be able to reach here.
     }
 }
