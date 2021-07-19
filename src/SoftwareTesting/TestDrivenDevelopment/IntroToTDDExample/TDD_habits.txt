@@ -1,0 +1,55 @@
+TDD habit 1. write our assertions first, work your way backwards to the required
+objects you need to setUp and construct.
+- this ensures your unittests are as minimalistic as possible.
+- that's powerful: going from describing the "what" the test case does to "how" a test
+case tests what it does
+
+- we could start with the set up and then work our way down to our assertion,
+--> but the problem is that we may miss some details or include extra steps.
+--> e.g. we don't declare a ShoppingBasket, and then write tests for it
+we write a test that uses a ShoppingBasket, then implement it to pass the tests
+
+- it's okay to reference objects that don't exist yet,
+--> IDE will tell you which classes you need to create to pass the tests,
+and can help you create missing classes for you.
+
+- ultimately, a unittest answers the question of whether an object does a specific task correctly.
+--> e.g. if a library receives a donated movie, does the movie appear in the library's catalogue?
+
+TDD habit 2. testing your test before we make it pass, see the test fail so you know the test is reliable.
+- before you write the code to pass the tests, see the test assertion initially fail when the result
+is wrong and you get an assertionError, not because of some unhandled exception (which hides the fact
+that your code is wrong).
+
+- good tests should act like regression tests: if we extend or modify code, existing test cases should
+still pass. unittests should fail if the answer is wrong, so if our changes break our code, the unittests
+will catch broken code by easily and quickly identifying which specific part(s) are broken
+--> you don't want all of the tests to pass, but have hopelessly broken code because our unittests
+aren't meaningful.
+--> test cases are more effective when they only have a single responsibility, because you can
+easily and quickly isolate why the test case fails.
+
+- make your tests specific -- and singly responsible. avoid overloading your tests!
+--> this means now each test case has only 1 reasons to fail.
+--> e.g., in the DonateMovieTest file, when a library tries to receive a donated movie, either:
+--> the library catalogue doesn't contain the movie -- 1st test case fails OR
+--> the movie doesn't increment its copies count in the catalogue -- 2nd test case fails
+
+- if you're stuck with trying to make a test case fail, you can do this by deliberately choosing a
+placeholder or hardcoded value that will definitely fail the unittest.
+
+TDD habit 3: write the simplest code that makes all test cases pass
+
+--> if the implementation is easy or obvious, and it's not worth your time purposefully
+"triangulating" your code and taking extra baby steps to write simple code
+--> as you add more tests, your implementation becomes more general
+--> the more complex the requirement, the more test cases are required for thorough coverage
+e.g., a requirement that is simple to implement (uses mostly basic operations) requires only 1 - 2 tests
+whereas a more complex requirement may require several test cases for completion
+--> writing the simplest possible implementation should come naturally if your test cases and the
+resulting methods you come up with are specific enough
+- golden rule of TDD: we don't write source code, unless a test requires it
+
+(bonus) TDD habit 4: refactor frequently along the way
+
+- a proper refactoring should make subsequent test cases and source code easier to write

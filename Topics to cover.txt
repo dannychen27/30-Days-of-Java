@@ -203,7 +203,8 @@ using the visitor pattern to add new functionality -- DONE FOR NOW
 using the abstract factory pattern to build different types of objects -- DONE FOR NOW
 
 Software Testing
-// todo: JUnit basics, importance of testing
+JUnit basics -- DONE
+// todo: importance of testing
 // todo: development environment vs. production environment
 // todo: setUp, tearDown methods
 // todo: mocks, test doubles, stubs, etc.
@@ -211,8 +212,8 @@ Software Testing
 // todo: unittests
 // todo: UI tests
 // todo: integration tests
-// todo: test driven development
-// todo: behaviour driven development
+test driven development -- DONE FOR NOW
+behaviour driven development -- DONE FOR NOW
 
 
 Algorithms

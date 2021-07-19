@@ -1,0 +1,33 @@
+Customer Requirements -- Sample Use Cases
+
+- Customers can buy CDs, searching on the title and the artist.
+- Record labels send batches of CDs to the warehouse.
+- Customers can only (search for and) order titles that are in stock.
+
+Test cases, sorted by decreasing priority
+
+- Buy/order a CD
+X (happy path) sufficient CD stock -- subtract quantity bought from stock count
+X insufficient stock because try to buy more stock than you have -- throw InsufficientStock exception
+X insufficient stock because CD not in catalogue -- throw CDNotInCatalogueException
+X buy no CDs at all -- no-op
+X buy 0 copies of a single CD -- skip over it?? -- it's fine if this is a no-op.
+X buy negative CDs in stock -- throw BuyNegativeStockException
+X buy all single CD remaining stock becomes 0 -- remove item from catalogue?? -- it's fine to just leave its stock at 0.
+X buy multiple CDs in stock successfully -- update stock counts of all CDs bought
+X buy multiple CDs in stock unsuccessfully because there's not enough of at least one CD -- throw CDNotInCatalogueException
+X buy multiple CDs in stock unsuccessfully because CD is not in catalogue -- throw InsufficientStock exception
+
+- Search for CD
+X (happy path) one match in catalogue -- return a list of single match, and its CD info
+X no match - return empty list of matches
+X multiple matches if I match on CD name only - return list of all matches, and their CD info
+X multiple matches if I match on CD artist only - return list of all matches, and their CD info
+X select all CDs - return list of all CDs in catalogue, and their CD info
+
+- Receive stock from a CD label
+X (happy path) single title in catalogue - add copies received to that CD's stock
+X single title not in the catalogue -- add it to catalogue, and then add copies to stock
+X single title, try to add 0 stock -- skip over it?? -- it's fine if this is a no-op.
+X single title, try to add negative stock -- throw RestockNegativeStockException
+X multiple CDs - any new CDs added to catalogue, and any stock added to each CD.

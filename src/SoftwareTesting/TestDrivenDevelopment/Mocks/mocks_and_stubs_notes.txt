@@ -1,0 +1,25 @@
+- lets you scale up TDD process to multi-layered architectures
+that have external dependencies like web services and so on --
+data from other peoples systems
+- how to test external dependencies like database calls, HTTP requests, etc.
+- use mocks and stubs to simulate the behaviour of a class
+
+STUBS
+- a stub is a test double -- used to stand in for a real object
+- returns whether test data we want it to return (hardcoded test data)
+- stubs allow us to separate our concerns -- in this case, the database connection
+or the HTTP request (the external dependencies)
+- test our logic with other people's data, make the source of the data
+someone else's problem
+
+MOCKS
+- sometimes when we talk to external dependencies, we might not be fetching data
+but rather processing commands (e.g. external queries) using an api
+- a mock object is something that allows us to test that a method on an
+interface was invoked (e.g., a message is sent)
+- an object that implements the interface?? (19:00)
+- use dependency mockito by maven
+
+DUMMY OBJECTS
+- another kind of test double
+- dummy = null object -- a placeholder

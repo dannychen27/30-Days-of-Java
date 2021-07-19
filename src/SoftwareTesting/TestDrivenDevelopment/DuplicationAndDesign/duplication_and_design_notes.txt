@@ -1,0 +1,22 @@
+- duplicate code = opposite of reusable code
+- eliminating duplicate code introduces reusable abstractions.
+
+- by that logic, duplicate code is interesting and noteworthy
+
+- when to remove duplication?
+- don't refactor code to create abstraction prematurely, might introduce wrong abstractions
+--> this happens when we haven't seen enough examples
+--> use rule of 3: popular design principle:
+--> (on average) by the 3rd example of duplicate code, a meaningful pattern in duplicate code arises
+    -- easier to spot pattern, more likely to introduce correct abstraction
+    -- avoid waiting too long (creating too many duplicate code examples) to
+    refactor -- refactoring is less likely because more effort is required to remove
+    duplicate code - refactor as soon as we hit 3 examples!
+    - sometimes the pattern is obvious, if you're beginning TDD, err on the side of
+    caution
+
+- use parameterized tests -- test methods that accepts parameters
+    -- reuse parameters with different test cases, extract out common logic
+    - use Junit params library
+    -- sometimes not removing duplicates makes our code easier to understand
+    -- since easy to understand code > no repeat code

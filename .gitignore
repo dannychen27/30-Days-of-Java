@@ -27,5 +27,10 @@ java.iml
 *.xml
 *.iml
 
-# Output files
-out/production/30-Days-of-Java/
+# Output folders
+out/
+target/
+
+# Config files
+pom.xml
+.idea/
