@@ -26,11 +26,11 @@ public class SinglyCircularLinkedList {
     /**
      * Insert newValue at index targetIndex of this singly circular linked list.
      *
-     * Precondition: 0 <= targetIndex <= length of linked list - 1.
+     * Precondition: 0 <= targetIndex <= length of circular linked list - 1.
      */
     public void insert(int newValue, int targetIndex) {
         if (targetIndex > size) {
-            throw new IndexOutOfBoundsException("This index is out of bounds");
+            throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (isEmpty() || targetIndex == 0) {
@@ -45,15 +45,19 @@ public class SinglyCircularLinkedList {
             currentIndex++;
         }
 
-        insertInMiddle(currentNode, newValue);
+        if (currentNode != null) {
+            insertInMiddle(currentNode, newValue);
+        } else {
+            append(newValue);
+        }
     }
 
     /**
-     * Delete the first occurrence of oldValue from this linked list.
+     * Delete the first occurrence of oldValue from this singly circular linked list.
      */
     public void delete(int oldValue) {
         if (isEmpty()) {
-            throw new IllegalStateException("This value does not exist.");
+            throw new IllegalStateException("This value does not exist in the singly circular linked list.");
         }
 
         if (head.value == oldValue) {
@@ -69,18 +73,18 @@ public class SinglyCircularLinkedList {
         }
 
         if (currentNode == head) {
-            throw new IllegalStateException("This value does not exist.");
+            throw new IllegalStateException("This value does not exist in the singly circular linked list.");
         } else {
             removeFromMiddle(previousNode, currentNode);
         }
     }
 
     /**
-     * Remove and return the item at targetIndex of this linked list.
+     * Remove and return the item at targetIndex of this singly circular linked list.
      */
     public int pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
-            throw new IndexOutOfBoundsException("This index is out of bounds");
+            throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (targetIndex == 0) {
@@ -95,6 +99,7 @@ public class SinglyCircularLinkedList {
             currentNode = currentNode.next;
             currentIndex++;
         }
+
         return removeFromMiddle(previousNode, currentNode);
     }
 
@@ -121,71 +126,9 @@ public class SinglyCircularLinkedList {
         //      singlyLinkedListString.append(" Next ");
         //      currentNode = currentNode.next;
         // }
+
         singlyLinkedListString.append(" Back to " + head.value);
         return singlyLinkedListString.toString();
-    }
-
-    public static void main(String[] args) {
-        SinglyCircularLinkedList circularLinkedList = new SinglyCircularLinkedList();
-        circularLinkedList.append(1);
-        circularLinkedList.append(2);
-        circularLinkedList.append(3);
-        circularLinkedList.append(4);
-        circularLinkedList.append(5);
-        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Back to 1
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 5
-
-        circularLinkedList.insert(6, 0);
-        System.out.println(circularLinkedList);  // 6 Next 1 Next 2 Next 3 Next 4 Next 5 Back to 6
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 6
-
-        circularLinkedList.insert(7, 3);
-        System.out.println(circularLinkedList);  // 6 Next 1 Next 2 Next 7 Next 3 Next 4 Next 5 Back to 6
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 7
-
-        circularLinkedList.insert(8, 7);
-        System.out.println(circularLinkedList);  // 6 Next 1 Next 2 Next 7 Next 3 Next 4 Next 5 Next 8 Back to 6
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 8
-
-        circularLinkedList.delete(6);
-        System.out.println(circularLinkedList);  // 1 Next 2 Next 7 Next 3 Next 4 Next 5 Next 8 Back to 1
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 7
-
-        circularLinkedList.delete(7);
-        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Next 8 Back to 1
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 6
-
-        circularLinkedList.delete(8);
-        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Back to 1
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 5
-
-        //System.out.println(circularLinkedList.pop(4));  // 5
-        //System.out.println(circularLinkedList.pop(0));  // 1
-        //System.out.println(circularLinkedList.pop(2));  // 4
-        //System.out.println(circularLinkedList.pop(1));  // 3
-        //System.out.println(circularLinkedList.pop(0));  // 2
-
-        circularLinkedList.delete(5);
-        System.out.println(circularLinkedList);  // 1 Next 2 Next 3 Next 4 Back to 1
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 4
-
-        circularLinkedList.delete(1);
-        System.out.println(circularLinkedList);  // 2 Next 3 Next 4 Back to 2
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 3
-
-        circularLinkedList.delete(3);
-        System.out.println(circularLinkedList);  // 2 Next 4 Back to 2
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 2
-
-        circularLinkedList.delete(4);
-        System.out.println(circularLinkedList);  // 2 Back to 2
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 1
-
-        circularLinkedList.delete(2);
-        System.out.println(circularLinkedList);  // empty string
-        System.out.println("Size: " + circularLinkedList.getSize());  // Size: 0
-
-        System.out.println(circularLinkedList.isEmpty());  // true
     }
 
     private void prepend(int newValue) {
@@ -217,10 +160,10 @@ public class SinglyCircularLinkedList {
         if (newNode.next == null) {
             newNode.next = head;
         }
-
         if (oldNode.next == null) {
             oldNode.next = head;
         }
+
         size++;
     }
 
@@ -249,14 +192,15 @@ public class SinglyCircularLinkedList {
         head = nextNode;
         if (head.next == head) {
             head = null;
-        } else {
-            Node currentNode = head;
-            while (currentNode != null && currentNode.next != oldHead) {
-                currentNode = currentNode.next;
-            }
-            if (currentNode != null) {
-                currentNode.next = head;
-            }
+            return oldValue;
+        }
+
+        Node currentNode = head;
+        while (currentNode != null && currentNode.next != oldHead) {
+            currentNode = currentNode.next;
+        }
+        if (currentNode != null) {
+            currentNode.next = head;
         }
 
         size--;
