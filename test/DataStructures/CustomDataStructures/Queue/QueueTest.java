@@ -66,13 +66,13 @@ class QueueTest {
 
     @Test
     void testDequeueOnNonEmptyQueue() {
-        fullQueue.dequeue();
+        Assert.assertEquals("A", fullQueue.dequeue());
         Assert.assertEquals("B Next C Size: 2", fullQueue.toString());
 
-        fullQueue.dequeue();
+        Assert.assertEquals("B", fullQueue.dequeue());
         Assert.assertEquals("C Size: 1", fullQueue.toString());
 
-        fullQueue.dequeue();
+        Assert.assertEquals("C", fullQueue.dequeue());
         Assert.assertEquals("Size: 0", fullQueue.toString());
     }
 }
