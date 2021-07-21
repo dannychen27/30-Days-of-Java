@@ -57,7 +57,7 @@ public class MinHeap {
 
         int item = items[0];
         items[0] = items[size - 1]; // move last element to root
-        items[size - 1] = 0; // remove item from last element of array
+        items[size - 1] = -1; // remove item from last element of array
         size--; // shrink array
         heapifyDown();
         return item;
