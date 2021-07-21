@@ -55,13 +55,13 @@ public class Tries {
         // Breaking news hashtags show results
         // Why is no one reading my tweets?
 
-        TrieNode root = new TrieNode(' '); // no such thing as the empty character.
-        String[] words = {"car", "card", "cards", "cot", "cots", "trie", "tried", "tries", "tried"};
+        TrieNode root = new TrieNode();
+        String[] words = {"car", "card", "cards", "cot", "cots", "trie", "tried", "tries", "try"};
         for (String word : words) {
-            root.insert(word);
+            root.add(word);
         }
 
         // how many words with prefix "car"?
-        System.out.println(root.countNumPrefixes("car")); // 3
+        System.out.println(root.countNumWordsWithPrefix("car")); // 3
     }
 }
