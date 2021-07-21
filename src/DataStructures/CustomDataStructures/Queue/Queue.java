@@ -26,7 +26,7 @@ public class Queue<T> {
     }
 
     /**
-     * Return true iff this queue is empty.
+     * Return true iff this queue contains no items.
      */
     public boolean isEmpty() {
         return head == null;
