@@ -28,7 +28,7 @@ public class DoublyLinkedList {
      */
     public void insert(int newValue, int targetIndex) {
         if (targetIndex > size) {
-            throw new IndexOutOfBoundsException("This index is out of bounds");
+            throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (isEmpty() || targetIndex == 0) {
@@ -55,7 +55,7 @@ public class DoublyLinkedList {
      */
     public void delete(int oldValue) {
         if (isEmpty()) {
-            throw new IllegalStateException("This value does not exist.");
+            throw new IllegalStateException("This value does not exist in the doubly linked list.");
         }
 
         if (head.value == oldValue) {
@@ -69,7 +69,7 @@ public class DoublyLinkedList {
         }
 
         if (currentNode == null) {
-            throw new IllegalStateException("This value does not exist.");
+            throw new IllegalStateException("This value does not exist in the doubly linked list.");
         } else {
             removeFromMiddle(currentNode.previous, currentNode);
         }
@@ -80,7 +80,7 @@ public class DoublyLinkedList {
      */
     public int pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
-            throw new IndexOutOfBoundsException("This index is out of bounds");
+            throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (targetIndex == 0) {
@@ -93,11 +93,12 @@ public class DoublyLinkedList {
             currentNode = currentNode.next;
             currentIndex++;
         }
+
         return removeFromMiddle(currentNode.previous, currentNode);
     }
 
     /**
-     * Return the string representation of this singly linked list.
+     * Return the string representation of this doubly linked list.
      */
     public String toString() {
         StringBuilder doublyLinkedListString = new StringBuilder();
