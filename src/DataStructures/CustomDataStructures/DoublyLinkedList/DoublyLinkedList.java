@@ -107,13 +107,16 @@ public class DoublyLinkedList {
             if (currentNode.previous != null) {
                 doublyLinkedListString.append("Previous ");
             }
+
             doublyLinkedListString.append(currentNode.value);
+
             if (currentNode.next != null) {
                 doublyLinkedListString.append(" Next ");
             }
 
             currentNode = currentNode.next;
         }
+
         return doublyLinkedListString.toString();
     }
 
