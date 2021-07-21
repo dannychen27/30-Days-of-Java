@@ -3,16 +3,82 @@ package DataStructures.CustomDataStructures.MaxHeap;
 import java.util.Arrays;
 
 public class MaxHeap {
+
     // source: https://www.youtube.com/watch?v=t0Cq6tVNRBA min heaps
 
     private int size;
     private int capacity;
     private int[] items;
 
+    /**
+     * Create a new max heap.
+     */
     public MaxHeap() {
         size = 0;
         capacity = 10;
         items = new int[capacity];
+        Arrays.fill(items, -1);
+    }
+
+    /**
+     * Return true iff this max heap contains no items.
+     */
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    /**
+     * Add the item to this max heap.
+     */
+    public void add(int item) {
+        ensureExtraCapacity();
+        items[size] = item; // add last element to end of array
+        size++; // expand array
+        heapifyUp();
+    }
+
+    /**
+     * Return the top of this max heap.
+     */
+    public int peek() {
+        if (size == 0) {
+            throw new IllegalStateException("There are no items in this max heap.");
+        }
+        return items[0];
+    }
+
+    /**
+     * Remove and return the top of this max heap.
+     */
+    public int poll() {
+        if (size == 0) {
+            throw new IllegalStateException("You cannot delete from an empty max heap.");
+        }
+
+        int item = items[0];
+        items[0] = items[size - 1]; // move last element to root
+        items[size - 1] = -1; // remove item from last element of array
+        size--; // shrink array
+        heapifyDown();
+        return item;
+    }
+
+    /**
+     * Return a string representation of this max heap.
+     */
+    public String toString() {
+        String maxHeapString = "";
+        for (int i = 0; i < size; i++) {
+            maxHeapString += items[i] + " ";
+        }
+
+        maxHeapString = maxHeapString.trim();
+        if (size >= 1) {
+            maxHeapString += " ";
+        }
+
+        maxHeapString += "Size: " + size;
+        return maxHeapString;
     }
 
     private int getLeftChildIndex(int parentIndex) {
@@ -47,36 +113,10 @@ public class MaxHeap {
 
     private void ensureExtraCapacity() {
         if (size == capacity) {
-            items = Arrays.copyOf(items, capacity * 2); // copy over items into a bigger array
+            // copy over items into a bigger array
+            items = Arrays.copyOf(items, capacity * 2);
             capacity *= 2;
         }
-    }
-
-    public int peek() {
-        if (size == 0) {
-            throw new IllegalStateException();
-        }
-        return items[0];
-    }
-
-    public int poll() {
-        if (size == 0) {
-            throw new IllegalStateException();
-        }
-
-        int item = items[0];
-        items[0] = items[size - 1]; // move last element to root
-        items[size - 1] = 0; // remove item from last element of array
-        size--; // shrink array
-        heapifyDown();
-        return item;
-    }
-
-    public void add(int item) {
-        ensureExtraCapacity();
-        items[size] = item; // add last element to end of array
-        size++; // expand array
-        heapifyUp();
     }
 
     private int getBiggerChildIndex(int index) {
@@ -106,32 +146,5 @@ public class MaxHeap {
             swap(getParentIndex(index), index);
             index = getParentIndex(index);
         }
-    }
-
-    public static void main(String[] args) {
-        MaxHeap heap = new MaxHeap();
-        System.out.println(Arrays.toString(heap.items)); // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        heap.add(25);
-        System.out.println(Arrays.toString(heap.items)); // [25, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        heap.add(17);
-        System.out.println(Arrays.toString(heap.items)); // [25, 17, 0, 0, 0, 0, 0, 0, 0, 0]
-        heap.add(20);
-        System.out.println(Arrays.toString(heap.items)); // [25, 17, 20, 0, 0, 0, 0, 0, 0, 0]
-        heap.add(15);
-        System.out.println(Arrays.toString(heap.items)); // [25, 17, 20, 15, 0, 0, 0, 0, 0, 0]
-        heap.add(10);
-        System.out.println(Arrays.toString(heap.items)); // [25, 17, 20, 15, 10, 0, 0, 0, 0, 0]
-        System.out.println();
-
-        System.out.println(heap.poll()); // 25
-        System.out.println(Arrays.toString(heap.items)); // [20, 17, 10, 15, 0, 0, 0, 0, 0, 0]
-        System.out.println(heap.poll()); // 20
-        System.out.println(Arrays.toString(heap.items)); // [17, 15, 10, 0, 0, 0, 0, 0, 0, 0]
-        System.out.println(heap.poll()); // 17
-        System.out.println(Arrays.toString(heap.items)); // [15, 10, 0, 0, 0, 0, 0, 0, 0, 0]
-        System.out.println(heap.poll()); // 15
-        System.out.println(Arrays.toString(heap.items)); // [10, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        System.out.println(heap.poll()); // 10
-        System.out.println(Arrays.toString(heap.items)); // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
 }
