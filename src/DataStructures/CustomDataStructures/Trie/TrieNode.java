@@ -41,6 +41,11 @@ public class TrieNode {
         return countNumWordsWithPrefix(prefix, 0);
     }
 
+    /**
+     * Return true iff the word exists in this trie.
+     */
+    public boolean search(String word) {
+        return search(word, 0, this);
     }
 
     /**
@@ -90,5 +95,19 @@ public class TrieNode {
         return child.countNumWordsWithPrefix(prefix, index + 1);
     }
 
+    private boolean search(String word, int index, TrieNode currentNode) {
+        if (index == word.length() && currentNode.isCompleteWord) {  // index == word.length() => currentNode.isCompleteWord
+            // we must go up to word.length instead of word.length - 1
+            // because index == 0 represents the root character ' '.
+            return true;  // word is complete
+        }
+
+        char nextLetter = word.charAt(index);
+        if (!currentNode.children.containsKey(nextLetter)) {
+            return false;  // word not found
+        }
+
+        TrieNode childNode = currentNode.getTrieNode(nextLetter);
+        return search(word, index + 1, childNode);
     }
 }

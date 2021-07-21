@@ -63,5 +63,21 @@ public class Tries {
 
         // how many words with prefix "car"?
         System.out.println(root.countNumWordsWithPrefix("car")); // 3
+
+        // does the word "car" exist in the trie?
+        System.out.println(root.search("car"));  // true
+        System.out.println(root.search("card"));  // true
+        System.out.println(root.search("cards"));  // true
+        System.out.println(root.search("cot"));  // true
+        System.out.println(root.search("cots"));  // true
+        System.out.println(root.search("trie"));  // true
+        System.out.println(root.search("tried"));  // true
+        System.out.println(root.search("tries"));  // true
+        System.out.println(root.search("try"));  // true
+        System.out.println(root.search("carve"));  // false
+        System.out.println(root.search("crown"));  // false
+
+        // print all prefixes of "trie" -- use DFS algorithm, base case where isCompletedWord == true
+        // System.out.println(root.getAllPrefixes("trie"));  // ["trie", "tries", "tried"]
     }
 }
