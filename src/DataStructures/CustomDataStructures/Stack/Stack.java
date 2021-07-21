@@ -53,7 +53,7 @@ class Stack<T> {
     }
 
     /**
-     * Remove and return the item at the top of this stacl, or throw an IllegalStateException
+     * Remove and return the item at the top of this stack, or throw an IllegalStateException
      * if the stack is empty.
      */
     public T pop() {
