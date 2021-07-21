@@ -15,18 +15,6 @@ class Stack<T> {
     private Node top;  // top of the stack
     private int size;
 
-    public static void main(String[] args) {
-        Stack<String> stack = new Stack<>();
-        stack.push("A");
-        stack.push("B");
-        stack.push("C");
-        System.out.println(stack.peek());  // C
-        System.out.println(stack.pop());  // C
-        System.out.println(stack.pop());  // B
-        System.out.println(stack.pop());  // A
-        System.out.println(stack.isEmpty());  // true
-    }
-
     /**
      * Create a new stack.
      */
