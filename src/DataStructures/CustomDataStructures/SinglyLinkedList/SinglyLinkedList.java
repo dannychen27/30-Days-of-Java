@@ -24,13 +24,13 @@ public class SinglyLinkedList {
     }
 
     /**
-     * Insert newValue at index targetIndex of this linked list.
+     * Insert newValue at index targetIndex of this singly linked list.
      *
-     * Precondition: 0 <= targetIndex <= length of linked list - 1.
+     * Precondition: 0 <= targetIndex <= length of singly linked list - 1.
      */
     public void insert(int newValue, int targetIndex) {
         if (targetIndex > size) {
-            throw new IndexOutOfBoundsException("This index is out of bounds");
+            throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (isEmpty() || targetIndex == 0) {
@@ -45,15 +45,19 @@ public class SinglyLinkedList {
             currentIndex++;
         }
 
-        insertInMiddle(currentNode, newValue);
+        if (currentNode != null) {
+            insertInMiddle(currentNode, newValue);
+        } else {
+            append(newValue);
+        }
     }
 
     /**
-     * Delete the first occurrence of oldValue from this linked list.
+     * Delete the first occurrence of oldValue from this singly linked list.
      */
     public void delete(int oldValue) {
         if (isEmpty()) {
-            throw new IllegalStateException("This value does not exist.");
+            throw new IllegalStateException("This value does not exist in the singly linked list.");
         }
 
         if (head.value == oldValue) {
@@ -69,18 +73,18 @@ public class SinglyLinkedList {
         }
 
         if (currentNode == null) {
-            throw new IllegalStateException("This value does not exist.");
+            throw new IllegalStateException("This value does not exist in the singly linked list.");
         } else {
             removeFromMiddle(previousNode, currentNode);
         }
     }
 
     /**
-     * Remove and return the item at targetIndex of this linked list.
+     * Remove and return the item at targetIndex of this singly linked list.
      */
     public int pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
-            throw new IndexOutOfBoundsException("This index is out of bounds");
+            throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (targetIndex == 0) {
@@ -95,6 +99,7 @@ public class SinglyLinkedList {
             currentNode = currentNode.next;
             currentIndex++;
         }
+
         return removeFromMiddle(previousNode, currentNode);
     }
 
@@ -106,76 +111,15 @@ public class SinglyLinkedList {
         Node currentNode = head;
         while (currentNode != null) {
             singlyLinkedListString.append(currentNode.value);
+
             if (currentNode.next != null) {
                 singlyLinkedListString.append(" Next ");
             }
 
             currentNode = currentNode.next;
         }
+
         return singlyLinkedListString.toString();
-    }
-
-    public static void main(String[] args) {
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        singlyLinkedList.append(1);
-        singlyLinkedList.append(2);
-        singlyLinkedList.append(3);
-        singlyLinkedList.append(4);
-        singlyLinkedList.append(5);
-        System.out.println(singlyLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 5
-
-        singlyLinkedList.insert(6, 0);
-        System.out.println(singlyLinkedList);  // 6 Next 1 Next 2 Next 3 Next 4 Next 5
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 6
-
-        singlyLinkedList.insert(7, 3);
-        System.out.println(singlyLinkedList);  // 6 Next 1 Next 2 Next 7 Next 3 Next 4 Next 5
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 7
-
-        singlyLinkedList.insert(8, 7);
-        System.out.println(singlyLinkedList);  // 6 Next 1 Next 2 Next 7 Next 3 Next 4 Next 5 Next 8
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 8
-
-        singlyLinkedList.delete(6);
-        System.out.println(singlyLinkedList);  // 1 Next 2 Next 7 Next 3 Next 4 Next 5 Next 8
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 7
-
-        singlyLinkedList.delete(7);
-        System.out.println(singlyLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5 Next 8
-        System.out.println("Size: " + singlyLinkedList.getSize());  // 6
-
-        singlyLinkedList.delete(8);
-        System.out.println(singlyLinkedList);  // 1 Next 2 Next 3 Next 4 Next 5
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 5
-
-        // System.out.println(singlyLinkedList.pop(4));  // 5
-        // System.out.println(singlyLinkedList.pop(0));  // 1
-        // System.out.println(singlyLinkedList.pop(2));  // 4
-        // System.out.println(singlyLinkedList.pop(1));  // 3
-        // System.out.println(singlyLinkedList.pop(0));  // 2
-
-        singlyLinkedList.delete(5);
-        System.out.println(singlyLinkedList);  // 1 Next 2 Next 3 Next 4
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 4
-
-        singlyLinkedList.delete(1);
-        System.out.println(singlyLinkedList);  // 2 Next 3 Next 4
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 3
-
-        singlyLinkedList.delete(3);
-        System.out.println(singlyLinkedList);  // 2 Next 4
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 2
-
-        singlyLinkedList.delete(4);
-        System.out.println(singlyLinkedList);  // 2
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 1
-
-        singlyLinkedList.delete(2);
-        System.out.println(singlyLinkedList);  // empty string
-        System.out.println("Size: " + singlyLinkedList.getSize());  // Size: 0
-
-        System.out.println(singlyLinkedList.isEmpty());  // true
     }
 
     private void prepend(int newValue) {
