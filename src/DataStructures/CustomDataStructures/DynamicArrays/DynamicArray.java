@@ -26,7 +26,14 @@ public class DynamicArray {
     }
 
     /**
-     * Add this item to the end of the dynamic array.
+     * Return the capacity of this dynamic array.
+     */
+    public int getCapacity() {
+        return capacity;
+    }
+
+    /**
+     * Add this item to the end of this dynamic array.
      */
     public void append(int newItem) {
         ensureLargeEnoughCapacity();
@@ -54,58 +61,51 @@ public class DynamicArray {
      */
     public String toString() {
         String dynamicArrayString = "";
-        for (int item : array) {
-            dynamicArrayString += item + " ";
+        for (int i = 0; i < size; i++) {
+            dynamicArrayString += array[i] + " ";
         }
+
         dynamicArrayString = dynamicArrayString.trim();
-        dynamicArrayString += "\n";
+        if (size >= 1) {
+            dynamicArrayString += " ";
+        }
+
         dynamicArrayString += "Size: " + size + "\n";
         return dynamicArrayString;
     }
 
-    public static void main(String[] args) {
-        DynamicArray dynamicArray = new DynamicArray();
-        System.out.println(dynamicArray);  // empty string
-
-        dynamicArray.append(1);
-        System.out.println(dynamicArray);  // 1
-        dynamicArray.append(2);
-        System.out.println(dynamicArray);  // 1 2
-        dynamicArray.append(3);
-        System.out.println(dynamicArray);  // 1 2 3
-        dynamicArray.append(4);
-        System.out.println(dynamicArray);  // 1 2 3 4
-
-        System.out.println("Popped: " + dynamicArray.delete());  // 4
-        System.out.println(dynamicArray);  // 1 2 3
-        System.out.println("Popped: " + dynamicArray.delete());  // 3
-        System.out.println(dynamicArray);  // 1 2
-        System.out.println("Popped: " + dynamicArray.delete());  // 2
-        System.out.println(dynamicArray);  // 1
-        System.out.println("Popped: " + dynamicArray.delete());  // 1
-        System.out.println(dynamicArray);  // empty string
-        System.out.println(dynamicArray.isEmpty());  // true
-        // System.out.println("Popped: " + dynamicArray.delete());  // this throws an IllegalStateException
-    }
-
     private void ensureSmallEnoughCapacity() {
         if (capacity < 4) {
-            return;  // The dynamic array is too small to shrink any further.
+            // The dynamic array is too small to shrink any further.
+            // If we allow the array to shrink to size 0, we can no longer double the array's size.
+            return;
         }
 
         if (size > Math.ceil(capacity / 4)) {
-            return;  // The dynamic array isn't small enough to shrink. we want to shrink when load factor = 1/4.
+            // The dynamic array isn't small enough to shrink.
+            // We want to shrink when load factor = 1 / 4.
+            return;
         }
 
-        array = Arrays.copyOf(array, capacity / 4);
-        capacity /= 4;
+        contract();
     }
 
     private void ensureLargeEnoughCapacity() {
         if (size < capacity) {
-            return;  // the dynamic array isn't big enough to expand. we want to grow when load factor = 1.
+            // The dynamic array isn't big enough to expand.
+            // We want to grow when load factor = 1.
+            return;
         }
 
+        expand();
+    }
+
+    private void contract() {
+        array = Arrays.copyOf(array, capacity / 4);
+        capacity /= 4;
+    }
+
+    private void expand() {
         array = Arrays.copyOf(array, capacity * 2);
         Arrays.fill(array, capacity + 1, 2 * capacity, -1);
         capacity *= 2;
