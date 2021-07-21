@@ -8,23 +8,23 @@ public class DoublyLinkedList {
     public DoublyLinkedList() { head = null; }
 
     /**
-     * Return true iff this singly linked list contains no elements.
+     * Return true iff this doubly linked list contains no elements.
      */
     public boolean isEmpty() {
         return head == null;
     }
 
     /**
-     * Return the number of items in this singly linked list.
+     * Return the number of items in this doubly linked list.
      */
     public int getSize() {
         return size;
     }
 
     /**
-     * Insert newValue at index targetIndex of this linked list.
+     * Insert newValue at index targetIndex of this doubly linked list.
      *
-     * Precondition: 0 <= targetIndex <= length of linked list - 1.
+     * Precondition: 0 <= targetIndex <= length of doubly linked list - 1.
      */
     public void insert(int newValue, int targetIndex) {
         if (targetIndex > size) {
@@ -51,7 +51,7 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Delete the first occurrence of oldValue from this linked list.
+     * Delete the first occurrence of oldValue from this doubly linked list.
      */
     public void delete(int oldValue) {
         if (isEmpty()) {
@@ -76,7 +76,7 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Remove and return the item at targetIndex of this linked list.
+     * Remove and return the item at targetIndex of this doubly linked list.
      */
     public int pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
