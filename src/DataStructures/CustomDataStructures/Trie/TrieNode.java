@@ -35,21 +35,21 @@ public class TrieNode {
     }
 
     /**
-     * Return the number of words with this prefix.
+     * Return the number of words with the given prefix in this trie.
      */
     public int countNumWordsWithPrefix(String prefix) {
         return countNumWordsWithPrefix(prefix, 0);
     }
 
     /**
-     * Return true iff the word exists in this trie.
+     * Return true iff the given word exists in this trie.
      */
     public boolean search(String word) {
         return search(word, 0, this);
     }
 
     /**
-     * Return the trie node corresponding to character c.
+     * Return the trie node corresponding to this character.
      *
      * Precondition: character is in the children hashmap.
      */
