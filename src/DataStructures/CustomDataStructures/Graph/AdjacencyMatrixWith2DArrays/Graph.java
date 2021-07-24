@@ -198,15 +198,21 @@ class Graph {
 
     private void ensureSmallEnoughCapacity() {
         if (capacity < 4) {
-            return;  // the matrix is too small to shrink; it'll simply disappear.
+            // The matrix is too small to shrink.
+            // Shrinking the matrix any further will simply make it permanently disappear.
+            return;
         }
 
         if (numVertices > capacity / 4) {
-            return;  // the matrix isn't small enough to shrink. we want to shrink when load factor = 1/4.
+            // The matrix isn't small enough to shrink.
+            // We want to shrink when load factor = 1 / 4.
+            return;
         }
 
-        // shrink rows
-        adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity / 4);
+        shrinkRows();
+        shrinkColumns();
+        capacity /= 4;
+    }
 
     private void expandRows() {
         adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity * 2);
@@ -223,12 +229,14 @@ class Graph {
         }
     }
 
-        // shrink columns
+    private void shrinkColumns() {
         for (int rowNum = 0; rowNum < adjacencyMatrix.length; rowNum++) {
             adjacencyMatrix[rowNum] = Arrays.copyOf(adjacencyMatrix[rowNum], capacity / 4);
         }
+    }
 
-        capacity /= 4;
+    private void shrinkRows() {
+        adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity / 4);
     }
 
     private void setRowEntries(int columnNumToFill, int newValue) {
