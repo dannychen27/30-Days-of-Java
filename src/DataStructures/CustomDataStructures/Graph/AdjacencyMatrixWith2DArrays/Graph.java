@@ -38,8 +38,8 @@ class Graph {
         int indexOfNewVertex = verticesToIndices.get(newVertex);
 
         numVertices++;
-        fillCurrentColumnWithValue(indexOfNewVertex,0);
         setRowEntries(indexOfNewVertex,0);
+        setColumnEntries(indexOfNewVertex,0);
     }
 
     /**
@@ -231,7 +231,7 @@ class Graph {
         }
     }
 
-    private void fillCurrentColumnWithValue(int rowNumToFill, int newValue) {
+    private void setColumnEntries(int rowNumToFill, int newValue) {
         for (int rowNum = 0; rowNum < numVertices; rowNum++) {
             adjacencyMatrix[rowNum][rowNumToFill] = newValue;
         }
