@@ -10,7 +10,7 @@ import java.util.Map;
 class Graph {
 
     private int[][] adjacencyMatrix;
-    private static Map<Vertex, Integer> verticesToIndices;
+    private Map<Vertex, Integer> verticesToIndices;
     private int numVertices = 0;
     private int capacity = 3;
     public static int EDGE_DISTANCE = 1;
