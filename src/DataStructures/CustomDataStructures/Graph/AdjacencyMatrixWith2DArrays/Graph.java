@@ -114,7 +114,7 @@ class Graph {
         StringBuilder graphString = new StringBuilder();
         graphString.append("verticesToIndices: ").append(verticesToIndices).append("\n");
         for (int[] row : adjacencyMatrix) {
-            graphString.append(Arrays.toString(row)).append("\n");\
+            graphString.append(Arrays.toString(row)).append("\n");
         }
         return graphString.toString();
     }
