@@ -186,22 +186,13 @@ class Graph {
 
     private void ensureLargeEnoughCapacity() {
         if (numVertices < capacity) {
-            return;  // the adjacency matrix isn't big enough to expand. we want to grow when load factor = 1.
+            // The adjacency matrix isn't big enough to expand.
+            // We want to grow when load factor = 1.
+            return;
         }
 
-        // expand columns
-        for (int rowNum = 0; rowNum < capacity; rowNum++) {
-            adjacencyMatrix[rowNum] = Arrays.copyOf(adjacencyMatrix[rowNum], capacity * 2);
-            Arrays.fill(adjacencyMatrix[rowNum], capacity, 2 * capacity, -1);
-        }
-
-        // expand rows
-        adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity * 2);
-        for (int rowNum = capacity; rowNum < 2 * capacity; rowNum++) {
-            adjacencyMatrix[rowNum] = new int[capacity * 2];
-            Arrays.fill(adjacencyMatrix[rowNum], -1);
-        }
-
+        expandColumns();
+        expandRows();
         capacity *= 2;
     }
 
@@ -216,6 +207,21 @@ class Graph {
 
         // shrink rows
         adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity / 4);
+
+    private void expandRows() {
+        adjacencyMatrix = Arrays.copyOf(adjacencyMatrix, capacity * 2);
+        for (int rowNum = capacity; rowNum < 2 * capacity; rowNum++) {
+            adjacencyMatrix[rowNum] = new int[capacity * 2];
+            Arrays.fill(adjacencyMatrix[rowNum], -1);
+        }
+    }
+
+    private void expandColumns() {
+        for (int rowNum = 0; rowNum < capacity; rowNum++) {
+            adjacencyMatrix[rowNum] = Arrays.copyOf(adjacencyMatrix[rowNum], capacity * 2);
+            Arrays.fill(adjacencyMatrix[rowNum], capacity, 2 * capacity, -1);
+        }
+    }
 
         // shrink columns
         for (int rowNum = 0; rowNum < adjacencyMatrix.length; rowNum++) {
