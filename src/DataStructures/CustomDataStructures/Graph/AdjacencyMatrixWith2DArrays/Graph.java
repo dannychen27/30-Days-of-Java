@@ -251,6 +251,11 @@ class Graph {
         }
     }
 
+    private void removeGaps(int indexOfOldVertex) {
+        int firstEmptyRowIndex = removeRowGaps(indexOfOldVertex);
+        removeColumnGaps(indexOfOldVertex, firstEmptyRowIndex);
+    }
+
     private void adjustIndicesOfRemainingVertices(int indexOfOldVertex) {
         for (Map.Entry<Vertex, Integer> entry: verticesToIndices.entrySet()) {
             if (entry.getValue() > indexOfOldVertex) {
