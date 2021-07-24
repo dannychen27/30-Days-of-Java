@@ -112,10 +112,10 @@ class Graph {
      */
     public String toString() {
         StringBuilder graphString = new StringBuilder();
-        for (int[] row : adjacencyMatrix) {
-            graphString.append(Arrays.toString(row)).append("\n");
-        }
         graphString.append("verticesToIndices: ").append(verticesToIndices).append("\n");
+        for (int[] row : adjacencyMatrix) {
+            graphString.append(Arrays.toString(row)).append("\n");\
+        }
         return graphString.toString();
     }
 
