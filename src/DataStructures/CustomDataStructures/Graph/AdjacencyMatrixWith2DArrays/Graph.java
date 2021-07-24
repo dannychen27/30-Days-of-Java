@@ -90,7 +90,8 @@ class Graph {
      */
     public List<List<Vertex>> getEdges() {
         List<List<Vertex>> edgeList = new LinkedList<>();
-        for (Vertex startVertex : getVertices()) {
+        List<Vertex> vertices = getVertices();
+        for (Vertex startVertex : vertices) {
             int indexOfStartVertex = verticesToIndices.get(startVertex);
             for (int indexOfEndVertex = 0; indexOfEndVertex < numVertices; indexOfEndVertex++) {
                 if (adjacencyMatrix[indexOfStartVertex][indexOfEndVertex] == 0) {
