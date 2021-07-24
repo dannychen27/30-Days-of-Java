@@ -67,6 +67,7 @@ class Graph {
      */
     public void addEdge(Vertex vertex1, Vertex vertex2) {
         setEntry(vertex1, vertex2, 1);
+        setEntry(vertex2, vertex1, 1);
     }
 
     /**
@@ -76,6 +77,7 @@ class Graph {
      */
     public void removeEdge(Vertex vertex1, Vertex vertex2) {
         setEntry(vertex1, vertex2, 0);
+        setEntry(vertex2, vertex1, 0);
     }
 
     /**
@@ -340,7 +342,6 @@ class Graph {
         int indexOfVertex1 = verticesToIndices.get(vertex1);
         int indexOfVertex2 = verticesToIndices.get(vertex2);
         adjacencyMatrix[indexOfVertex1][indexOfVertex2] = newValue;
-        adjacencyMatrix[indexOfVertex2][indexOfVertex1] = newValue;
     }
 
     // find vertex with this index.
