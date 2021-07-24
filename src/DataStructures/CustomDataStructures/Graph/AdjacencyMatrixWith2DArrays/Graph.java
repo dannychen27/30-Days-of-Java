@@ -49,17 +49,14 @@ class Graph {
      */
     public void removeVertex(Vertex oldVertex) {
         int indexOfOldVertex = verticesToIndices.get(oldVertex);
-
         verticesToIndices.remove(oldVertex);
+
         adjustIndicesOfRemainingVertices(indexOfOldVertex);
-
-        fillCurrentRowWithValue(indexOfOldVertex,-1);
-        fillCurrentColumnWithValue(indexOfOldVertex,-1);
-
-        int firstEmptyRowIndex = removeRowGaps(indexOfOldVertex);
-        removeColumnGaps(indexOfOldVertex, firstEmptyRowIndex);
-
+        setRowEntries(indexOfOldVertex,-1);
+        setColumnEntries(indexOfOldVertex,-1);
+        removeGaps(indexOfOldVertex);
         numVertices--;
+
         ensureSmallEnoughCapacity();
     }
 
