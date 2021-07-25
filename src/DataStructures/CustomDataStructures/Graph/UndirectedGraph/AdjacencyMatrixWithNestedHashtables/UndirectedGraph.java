@@ -99,68 +99,6 @@ class UndirectedGraph {
         return graphString.toString();
     }
 
-    public static void main(String[] args) {
-        UndirectedGraph undirectedGraph = new UndirectedGraph();
-        Vertex vertex1 = new Vertex(1);
-        Vertex vertex2 = new Vertex(2);
-        Vertex vertex3 = new Vertex(3);
-        Vertex vertex4 = new Vertex(4);
-        Vertex vertex5 = new Vertex(5);
-        Vertex vertex6 = new Vertex(6);
-        Vertex vertex7 = new Vertex(7);
-
-        undirectedGraph.addVertex(vertex1);
-        undirectedGraph.addVertex(vertex2);
-        undirectedGraph.addVertex(vertex3);
-        undirectedGraph.addVertex(vertex4);
-        undirectedGraph.addVertex(vertex5);
-        undirectedGraph.addVertex(vertex6);
-        undirectedGraph.addVertex(vertex7);
-
-        undirectedGraph.addEdge(vertex1, vertex2);
-        undirectedGraph.addEdge(vertex1, vertex3);
-        undirectedGraph.addEdge(vertex2, vertex4);
-        undirectedGraph.addEdge(vertex2, vertex5);
-        undirectedGraph.addEdge(vertex3, vertex6);
-        undirectedGraph.addEdge(vertex3, vertex7);
-
-        System.out.println(undirectedGraph.getEdges());
-        // [[1, 2], [1, 3], [2, 1], [2, 4], [2, 5], [3, 1], [3, 6], [3, 7], [4, 2], [5, 2], [6, 3], [7, 3]]
-        // more or less...
-        System.out.println(undirectedGraph.getVertices());  // [1, 2, 3, 4, 5, 6, 7] more or less...
-        System.out.println(undirectedGraph);
-        // Vertex: 1 Neighbours: [2, 3]
-        // Vertex: 2 Neighbours: [1, 4, 5]
-        // Vertex: 3 Neighbours: [1, 6, 7]
-        // Vertex: 4 Neighbours: [2]
-        // Vertex: 5 Neighbours: [2]
-        // Vertex: 6 Neighbours: [3]
-        // Vertex: 7 Neighbours: [3]
-        // more or less...
-
-        UndirectedGraph undirectedGraph2 = new UndirectedGraph();
-        Vertex vertex8 = new Vertex(8);
-        Vertex vertex9 = new Vertex(9);
-
-        undirectedGraph2.addVertex(vertex8);
-        undirectedGraph2.addVertex(vertex9);
-
-        undirectedGraph2.addEdge(vertex8, vertex9);
-        undirectedGraph2.removeEdge(vertex8, vertex9);
-
-        System.out.println(undirectedGraph2);
-        // Vertex: 9 Neighbours: []
-        // Vertex: 8 Neighbours: []
-
-        undirectedGraph2.removeVertex(vertex8);
-        System.out.println(undirectedGraph2);
-        // Vertex: 9 Neighbours: []
-
-        undirectedGraph2.removeVertex(vertex9);
-        System.out.println(undirectedGraph2);
-        // empty string
-    }
-
     private List<Vertex> createEdgeBetween(Vertex startVertex, Vertex endVertex) {
         List<Vertex> edge = new LinkedList<>();
         edge.add(startVertex);
