@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Graph.AdjacencyMatrixWithNestedHashtables;
+package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWithNestedHashtables;
 
 class Vertex {
 

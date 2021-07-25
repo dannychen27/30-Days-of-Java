@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Graph.AdjacencyMatrixWith2DArrays;
+package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWith2DArrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;

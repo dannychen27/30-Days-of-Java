@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Graph.AdjacencyMatrixWithNestedHashtables;
+package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWithNestedHashtables;
 
 import java.util.ArrayList;
 import java.util.HashMap;

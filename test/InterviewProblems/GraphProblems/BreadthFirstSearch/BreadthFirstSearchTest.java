@@ -1,7 +1,7 @@
 package InterviewProblems.GraphProblems.BreadthFirstSearch;
 
-import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph;
-import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Vertex;
+import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.UndirectedGraph;
+import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.Vertex;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +14,7 @@ class BreadthFirstSearchTest {
 
     private BreadthFirstSearch bfs;
 
-    private Graph tree = new Graph();
+    private UndirectedGraph tree = new UndirectedGraph();
 
     private Vertex vertex1 = new Vertex(1);
     private Vertex vertex2 = new Vertex(2);
