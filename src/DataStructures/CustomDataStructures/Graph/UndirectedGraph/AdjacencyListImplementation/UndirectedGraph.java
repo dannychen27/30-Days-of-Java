@@ -53,7 +53,9 @@ public class UndirectedGraph {
     /**
      * Remove an edge between the given vertices.
      *
-     * Precondition: vertex1 and vertex2 are existing vertices in this graph.
+     * Preconditions:
+     *      - vertex1 and vertex2 are existing vertices in this graph.
+     *      - vertex1 and vertex2 have edges between them in this graph.
      */
     public void removeEdge(Vertex vertex1, Vertex vertex2) {
         vertex1.removeNeighbour(vertex2);
