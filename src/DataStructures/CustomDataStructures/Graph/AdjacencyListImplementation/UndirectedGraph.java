@@ -3,7 +3,7 @@ package DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Graph {
+public class UndirectedGraph {
 
     private List<Vertex> vertices;
     public static int EDGE_DISTANCE = 1;
@@ -11,7 +11,7 @@ public class Graph {
     /**
      * Create a new graph.
      */
-    public Graph() {
+    public UndirectedGraph() {
         vertices = new LinkedList<>();
     }
 
@@ -90,7 +90,7 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph();
+        UndirectedGraph graph = new UndirectedGraph();
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
         Vertex vertex3 = new Vertex(3);
@@ -125,7 +125,7 @@ public class Graph {
         // Vertex: 6 Neighbours: [3]
         // Vertex: 7 Neighbours: [3]
 
-        Graph graph2 = new Graph();
+        UndirectedGraph graph2 = new UndirectedGraph();
         Vertex vertex8 = new Vertex(8);
         Vertex vertex9 = new Vertex(9);
 

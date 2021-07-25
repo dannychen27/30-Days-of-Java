@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-class Graph {
+class UndirectedGraph {
 
     private Map<Vertex, HashSet<Vertex>> vertices;
     public static int EDGE_DISTANCE = 1;
@@ -15,7 +15,7 @@ class Graph {
     /**
      * Create a new graph.
      */
-    public Graph() {
+    public UndirectedGraph() {
         vertices = new HashMap<>();
     }
 
@@ -94,7 +94,7 @@ class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph();
+        UndirectedGraph undirectedGraph = new UndirectedGraph();
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
         Vertex vertex3 = new Vertex(3);
@@ -103,26 +103,26 @@ class Graph {
         Vertex vertex6 = new Vertex(6);
         Vertex vertex7 = new Vertex(7);
 
-        graph.addVertex(vertex1);
-        graph.addVertex(vertex2);
-        graph.addVertex(vertex3);
-        graph.addVertex(vertex4);
-        graph.addVertex(vertex5);
-        graph.addVertex(vertex6);
-        graph.addVertex(vertex7);
+        undirectedGraph.addVertex(vertex1);
+        undirectedGraph.addVertex(vertex2);
+        undirectedGraph.addVertex(vertex3);
+        undirectedGraph.addVertex(vertex4);
+        undirectedGraph.addVertex(vertex5);
+        undirectedGraph.addVertex(vertex6);
+        undirectedGraph.addVertex(vertex7);
 
-        graph.addEdge(vertex1, vertex2);
-        graph.addEdge(vertex1, vertex3);
-        graph.addEdge(vertex2, vertex4);
-        graph.addEdge(vertex2, vertex5);
-        graph.addEdge(vertex3, vertex6);
-        graph.addEdge(vertex3, vertex7);
+        undirectedGraph.addEdge(vertex1, vertex2);
+        undirectedGraph.addEdge(vertex1, vertex3);
+        undirectedGraph.addEdge(vertex2, vertex4);
+        undirectedGraph.addEdge(vertex2, vertex5);
+        undirectedGraph.addEdge(vertex3, vertex6);
+        undirectedGraph.addEdge(vertex3, vertex7);
 
-        System.out.println(graph.getEdges());
+        System.out.println(undirectedGraph.getEdges());
         // [[1, 2], [1, 3], [2, 1], [2, 4], [2, 5], [3, 1], [3, 6], [3, 7], [4, 2], [5, 2], [6, 3], [7, 3]]
         // more or less...
-        System.out.println(graph.getVertices());  // [1, 2, 3, 4, 5, 6, 7] more or less...
-        System.out.println(graph);
+        System.out.println(undirectedGraph.getVertices());  // [1, 2, 3, 4, 5, 6, 7] more or less...
+        System.out.println(undirectedGraph);
         // Vertex: 1 Neighbours: [2, 3]
         // Vertex: 2 Neighbours: [1, 4, 5]
         // Vertex: 3 Neighbours: [1, 6, 7]
@@ -132,26 +132,26 @@ class Graph {
         // Vertex: 7 Neighbours: [3]
         // more or less...
 
-        Graph graph2 = new Graph();
+        UndirectedGraph undirectedGraph2 = new UndirectedGraph();
         Vertex vertex8 = new Vertex(8);
         Vertex vertex9 = new Vertex(9);
 
-        graph2.addVertex(vertex8);
-        graph2.addVertex(vertex9);
+        undirectedGraph2.addVertex(vertex8);
+        undirectedGraph2.addVertex(vertex9);
 
-        graph2.addEdge(vertex8, vertex9);
-        graph2.removeEdge(vertex8, vertex9);
+        undirectedGraph2.addEdge(vertex8, vertex9);
+        undirectedGraph2.removeEdge(vertex8, vertex9);
 
-        System.out.println(graph2);
+        System.out.println(undirectedGraph2);
         // Vertex: 9 Neighbours: []
         // Vertex: 8 Neighbours: []
 
-        graph2.removeVertex(vertex8);
-        System.out.println(graph2);
+        undirectedGraph2.removeVertex(vertex8);
+        System.out.println(undirectedGraph2);
         // Vertex: 9 Neighbours: []
 
-        graph2.removeVertex(vertex9);
-        System.out.println(graph2);
+        undirectedGraph2.removeVertex(vertex9);
+        System.out.println(undirectedGraph2);
         // empty string
     }
 }

@@ -1,6 +1,6 @@
 package InterviewProblems.GraphProblems.FindShortestPath;
 
-import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.UndirectedGraph;
 import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Vertex;
 import DataStructures.CustomDataStructures.Queue.Queue;
 
@@ -9,7 +9,7 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
 
-import static DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph.EDGE_DISTANCE;
+import static DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.UndirectedGraph.EDGE_DISTANCE;
 
 class FindShortestPath {
 
@@ -19,7 +19,7 @@ class FindShortestPath {
         // time: Theta(|V| + |E|)
         // space: Theta(|V| + |E|)
 
-        Graph graph = new Graph();
+        UndirectedGraph graph = new UndirectedGraph();
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
         Vertex vertex3 = new Vertex(3);
@@ -50,7 +50,7 @@ class FindShortestPath {
         System.out.println(getShortestPath(graph, vertex1, vertex8));  // [1, 2, 4, 8]
     }
 
-    private static Deque<Vertex> getShortestPath(Graph graph, Vertex sourceVertex, Vertex destinationVertex) {
+    private static Deque<Vertex> getShortestPath(UndirectedGraph graph, Vertex sourceVertex, Vertex destinationVertex) {
         Map<Vertex, String> verticesToColors = new HashMap<>();
         Map<Vertex, Integer> verticesToDistances = new HashMap<>();
         Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();

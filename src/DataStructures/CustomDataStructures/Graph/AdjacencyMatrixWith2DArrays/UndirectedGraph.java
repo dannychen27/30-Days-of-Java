@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-class Graph {
+class UndirectedGraph {
 
     private int[][] adjacencyMatrix;
     private Map<Vertex, Integer> verticesToIndices;
@@ -18,7 +18,7 @@ class Graph {
     /**
      * Create a new graph.
      */
-    public Graph() {
+    public UndirectedGraph() {
         adjacencyMatrix = new int[capacity][capacity];
         for (int[] row : adjacencyMatrix) {
             Arrays.fill(row, -1);
@@ -120,7 +120,7 @@ class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph();
+        UndirectedGraph graph = new UndirectedGraph();
         System.out.println(graph);
 
         Vertex vertex1 = new Vertex(1);

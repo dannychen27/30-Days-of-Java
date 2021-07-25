@@ -1,6 +1,6 @@
 package InterviewProblems.GraphProblems.DepthFirstSearch;
 
-import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Graph;
+import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.UndirectedGraph;
 import DataStructures.CustomDataStructures.Graph.AdjacencyListImplementation.Vertex;
 
 import java.util.HashMap;
@@ -15,7 +15,7 @@ class DepthFirstSearch {
     // time: Theta(|V| + |E|)
     // space: Theta(longest path in graph)
 
-    List<Vertex> depthFirstSearch(Graph graph) {
+    List<Vertex> depthFirstSearch(UndirectedGraph graph) {
         Map<Vertex, String> verticesToColors = new HashMap<>();
         Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
         for (Vertex vertex : graph.getVertices()) {
