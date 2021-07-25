@@ -71,11 +71,9 @@ class UndirectedGraph {
     public List<List<Vertex>> getEdges() {
         List<List<Vertex>> edgeList = new LinkedList<>();
         for (Vertex startVertex : getVertices()) {
-                List<Vertex> edge = new LinkedList<>();
-                edge.add(startVertex);
-                edge.add(endVertex);
-                edgeList.add(edge);
             for (Vertex endVertex : verticesToNeighbors.get(startVertex)) {
+                List<Vertex> newEdge = createEdgeBetween(startVertex, endVertex);
+                edgeList.add(newEdge);
             }
         }
         return edgeList;
@@ -154,5 +152,12 @@ class UndirectedGraph {
         undirectedGraph2.removeVertex(vertex9);
         System.out.println(undirectedGraph2);
         // empty string
+    }
+
+    private List<Vertex> createEdgeBetween(Vertex startVertex, Vertex endVertex) {
+        List<Vertex> edge = new LinkedList<>();
+        edge.add(startVertex);
+        edge.add(endVertex);
+        return edge;
     }
 }
