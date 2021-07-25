@@ -9,14 +9,13 @@ import java.util.Map;
 
 class UndirectedGraph {
 
-    private Map<Vertex, HashSet<Vertex>> vertices;
-    public static int EDGE_DISTANCE = 1;
+    private Map<Vertex, HashSet<Vertex>> verticesToNeighbors;
 
     /**
      * Create a new graph.
      */
     public UndirectedGraph() {
-        vertices = new HashMap<>();
+        verticesToNeighbors = new HashMap<>();
     }
 
     /**
@@ -25,7 +24,7 @@ class UndirectedGraph {
      * Precondition: newVertex is not an existing vertex in this graph.
      */
     public void addVertex(Vertex newVertex) {
-        vertices.put(newVertex, new HashSet<>());
+        verticesToNeighbors.put(newVertex, new HashSet<>());
     }
 
     /**
@@ -34,7 +33,7 @@ class UndirectedGraph {
      * Precondition: oldVertex is an existing vertex in this graph.
      */
     public void removeVertex(Vertex oldVertex) {
-        vertices.remove(oldVertex);
+        verticesToNeighbors.remove(oldVertex);
     }
 
     /**
@@ -43,8 +42,8 @@ class UndirectedGraph {
      * Precondition: vertex1 and vertex2 are existing vertices in this graph.
      */
     public void addEdge(Vertex vertex1, Vertex vertex2) {
-        vertices.get(vertex1).add(vertex2);
-        vertices.get(vertex2).add(vertex1);
+        verticesToNeighbors.get(vertex1).add(vertex2);
+        verticesToNeighbors.get(vertex2).add(vertex1);
     }
 
     /**
@@ -55,15 +54,15 @@ class UndirectedGraph {
      *      - vertex1 and vertex2 have edges between them in this graph.
      */
     public void removeEdge(Vertex vertex1, Vertex vertex2) {
-        vertices.get(vertex1).remove(vertex2);
-        vertices.get(vertex2).remove(vertex1);
+        verticesToNeighbors.get(vertex1).remove(vertex2);
+        verticesToNeighbors.get(vertex2).remove(vertex1);
     }
 
     /**
      * Return a list of all vertices of this graph.
      */
     public List<Vertex> getVertices() {
-        return new ArrayList<>(vertices.keySet());
+        return new ArrayList<>(verticesToNeighbors.keySet());
     }
 
     /**
@@ -72,11 +71,11 @@ class UndirectedGraph {
     public List<List<Vertex>> getEdges() {
         List<List<Vertex>> edgeList = new LinkedList<>();
         for (Vertex startVertex : getVertices()) {
-            for (Vertex endVertex : vertices.get(startVertex)) {
                 List<Vertex> edge = new LinkedList<>();
                 edge.add(startVertex);
                 edge.add(endVertex);
                 edgeList.add(edge);
+            for (Vertex endVertex : verticesToNeighbors.get(startVertex)) {
             }
         }
         return edgeList;
@@ -89,7 +88,7 @@ class UndirectedGraph {
         StringBuilder graphString = new StringBuilder();
         for (Vertex vertex : getVertices()) {
             graphString.append("Vertex: ").append(vertex).append(" ");
-            graphString.append("Neighbours: ").append(vertices.get(vertex));
+            graphString.append("Neighbours: ").append(verticesToNeighbors.get(vertex));
             graphString.append("\n");
         }
         return graphString.toString();
