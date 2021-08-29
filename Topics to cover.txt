@@ -124,6 +124,7 @@ dynamic arrays -- DONE
 // todo: skip list
 // todo: huffman trees
 // todo: disjoint sets
+// todo: indexed priority queues
 
 
 OOP design principles
