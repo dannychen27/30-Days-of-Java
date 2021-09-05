@@ -4,7 +4,7 @@ class Vertex {
 
     private int value;
 
-    public Vertex(int newValue) {
+    Vertex(int newValue) {
         value = newValue;
     }
 
