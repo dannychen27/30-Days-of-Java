@@ -1,6 +1,8 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWith2DArrays;
 
-class Vertex {
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
+
+class Vertex implements GraphVertex {
 
     private int value;
 

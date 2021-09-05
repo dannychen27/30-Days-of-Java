@@ -1,6 +1,8 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWithNestedHashtables;
 
-class Vertex {
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
+
+class Vertex implements GraphVertex {
 
     private int value;
 

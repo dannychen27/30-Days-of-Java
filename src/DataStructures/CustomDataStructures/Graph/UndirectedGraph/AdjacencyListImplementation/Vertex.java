@@ -1,9 +1,11 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation;
 
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class Vertex {
+public class Vertex implements GraphVertex {
 
     private int value;
     private List<Vertex> neighbors;

@@ -1,6 +1,6 @@
 package DataStructures.CustomDataStructures.Graph;
 
-public interface Vertex {
+public interface GraphVertex {
 
     String toString();
 }
