@@ -27,6 +27,13 @@ class UndirectedGraph {
     }
 
     /**
+     * Return true iff this graph has no vertices.
+     */
+    public boolean isEmpty() {
+        return numVertices == 0;
+    }
+
+    /**
      * Add the given vertex to this graph.
      *
      * Precondition: newVertex is not an existing vertex in this graph.
