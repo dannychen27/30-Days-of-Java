@@ -130,6 +130,12 @@ class UndirectedGraphTest {
     }
 
     @Test
+    void testRemoveEdge() {
+        List<List<Vertex>> expectedEdges = new LinkedList<>();
+        Assert.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
+    }
+
+    @Test
     void testToStringForEmptyUndirectedGraph() {
         String expectedString = "";
         Assert.assertEquals(expectedString, smallUndirectedGraph.toString());
@@ -139,12 +145,6 @@ class UndirectedGraphTest {
     // TODO: because the adjacency hashtable order might be different each time you
     // TODO: create a new instance of an undirected graph.
     // TODO: Therefore, their string representations might differ.
-
-    @Test
-    void testRemoveEdge() {
-        List<List<Vertex>> expectedEdges = new LinkedList<>();
-        Assert.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
-    }
 
     private List<Vertex> createEdgeBetween(Vertex startVertex, Vertex endVertex) {
         List<Vertex> newEdge = new LinkedList<>();

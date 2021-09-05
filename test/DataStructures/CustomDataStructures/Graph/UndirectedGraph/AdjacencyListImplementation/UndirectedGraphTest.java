@@ -124,6 +124,12 @@ class UndirectedGraphTest {
     }
 
     @Test
+    void testRemoveEdge() {
+        List<List<Vertex>> expectedEdges = new LinkedList<>();
+        Assert.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
+    }
+
+    @Test
     void testToStringForEmptyUndirectedGraph() {
         String expectedString = "";
         Assert.assertEquals(expectedString, smallUndirectedGraph.toString());
@@ -140,12 +146,6 @@ class UndirectedGraphTest {
         expectedString += "Vertex: 6 Neighbours: [3]\n";
         expectedString += "Vertex: 7 Neighbours: [3]\n";
         Assert.assertEquals(expectedString, largeUndirectedGraph.toString());
-    }
-
-    @Test
-    void testRemoveEdge() {
-        List<List<Vertex>> expectedEdges = new LinkedList<>();
-        Assert.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
     }
 
     private List<Vertex> createEdgeBetween(Vertex startVertex, Vertex endVertex) {
