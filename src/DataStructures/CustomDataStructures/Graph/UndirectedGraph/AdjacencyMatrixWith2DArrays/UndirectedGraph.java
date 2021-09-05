@@ -119,78 +119,10 @@ class UndirectedGraph {
      */
     public String toString() {
         StringBuilder graphString = new StringBuilder();
-        graphString.append("verticesToIndices: ").append(verticesToIndices).append("\n");
         for (int[] row : adjacencyMatrix) {
             graphString.append(Arrays.toString(row)).append("\n");
         }
         return graphString.toString();
-    }
-
-    public static void main(String[] args) {
-        UndirectedGraph graph = new UndirectedGraph();
-        System.out.println(graph);
-
-        Vertex vertex1 = new Vertex(1);
-        graph.addVertex(vertex1);
-        System.out.println(graph);
-
-        Vertex vertex2 = new Vertex(2);
-        graph.addVertex(vertex2);
-        System.out.println(graph);
-
-        Vertex vertex3 = new Vertex(3);
-        graph.addVertex(vertex3);
-        System.out.println(graph);
-
-        Vertex vertex4 = new Vertex(4);
-        graph.addVertex(vertex4);
-        System.out.println(graph);
-
-        Vertex vertex5 = new Vertex(5);
-        graph.addVertex(vertex5);
-        System.out.println(graph);
-
-        Vertex vertex6 = new Vertex(6);
-        graph.addVertex(vertex6);
-        System.out.println(graph);
-
-        Vertex vertex7 = new Vertex(7);
-        graph.addVertex(vertex7);
-        System.out.println(graph);
-
-        graph.addEdge(vertex1, vertex2);
-        System.out.println(graph);
-        graph.addEdge(vertex1, vertex3);
-        System.out.println(graph);
-        graph.addEdge(vertex2, vertex3);
-        System.out.println(graph);
-
-        System.out.println("Vertices: " + graph.getVertices());
-        // [1, 2, 3, 4, 5, 6, 7] more or less...
-        System.out.println("Edges: " + graph.getEdges() + "\n");
-        // [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]] more or less...
-
-        graph.removeEdge(vertex1, vertex2);
-        System.out.println(graph);
-        graph.removeEdge(vertex1, vertex3);
-        System.out.println(graph);
-        graph.removeEdge(vertex2, vertex3);
-        System.out.println(graph);
-
-        graph.removeVertex(vertex1);
-        System.out.println(graph);
-        graph.removeVertex(vertex2);
-        System.out.println(graph);
-        graph.removeVertex(vertex3);
-        System.out.println(graph);
-        graph.removeVertex(vertex4);
-        System.out.println(graph);
-        graph.removeVertex(vertex5);
-        System.out.println(graph);
-        graph.removeVertex(vertex6);
-        System.out.println(graph);
-        graph.removeVertex(vertex7);
-        System.out.println(graph);
     }
 
     private void ensureLargeEnoughCapacity() {
