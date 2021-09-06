@@ -1,5 +1,6 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation;
 
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,15 +15,15 @@ class UndirectedGraphTest {
     private UndirectedGraph largeUndirectedGraph;
     private UndirectedGraph smallUndirectedGraph;
 
-    private Vertex vertex1;
-    private Vertex vertex2;
-    private Vertex vertex3;
-    private Vertex vertex4;
-    private Vertex vertex5;
-    private Vertex vertex6;
-    private Vertex vertex7;
-    private Vertex vertex8;
-    private Vertex vertex9;
+    private GraphVertex vertex1;
+    private GraphVertex vertex2;
+    private GraphVertex vertex3;
+    private GraphVertex vertex4;
+    private GraphVertex vertex5;
+    private GraphVertex vertex6;
+    private GraphVertex vertex7;
+    private GraphVertex vertex8;
+    private GraphVertex vertex9;
 
     @BeforeEach
     void setUp() {
@@ -82,7 +83,7 @@ class UndirectedGraphTest {
 
     @Test
     void testAddVertex() {
-        List<Vertex> expectedVertices = new LinkedList<>();
+        List<GraphVertex> expectedVertices = new LinkedList<>();
         expectedVertices.addAll(Arrays.asList(vertex1, vertex2, vertex3, vertex4,
                                               vertex5, vertex6, vertex7));
         Assert.assertEquals(expectedVertices, largeUndirectedGraph.getVertices());
@@ -96,24 +97,24 @@ class UndirectedGraphTest {
 
     @Test
     void testAddEdge() {
-        List<List<Vertex>> expectedEdges = new LinkedList<>();
-        List<Vertex> edge1ToEdge2 = createEdgeBetween(vertex1, vertex2);
-        List<Vertex> edge2ToEdge1 = createEdgeBetween(vertex2, vertex1);
+        List<List<GraphVertex>> expectedEdges = new LinkedList<>();
+        List<GraphVertex> edge1ToEdge2 = createEdgeBetween(vertex1, vertex2);
+        List<GraphVertex> edge2ToEdge1 = createEdgeBetween(vertex2, vertex1);
 
-        List<Vertex> edge1ToEdge3 = createEdgeBetween(vertex1, vertex3);
-        List<Vertex> edge3ToEdge1 = createEdgeBetween(vertex3, vertex1);
+        List<GraphVertex> edge1ToEdge3 = createEdgeBetween(vertex1, vertex3);
+        List<GraphVertex> edge3ToEdge1 = createEdgeBetween(vertex3, vertex1);
 
-        List<Vertex> edge2ToEdge4 = createEdgeBetween(vertex2, vertex4);
-        List<Vertex> edge4ToEdge2 = createEdgeBetween(vertex4, vertex2);
+        List<GraphVertex> edge2ToEdge4 = createEdgeBetween(vertex2, vertex4);
+        List<GraphVertex> edge4ToEdge2 = createEdgeBetween(vertex4, vertex2);
 
-        List<Vertex> edge2ToEdge5 = createEdgeBetween(vertex2, vertex5);
-        List<Vertex> edge5ToEdge2 = createEdgeBetween(vertex5, vertex2);
+        List<GraphVertex> edge2ToEdge5 = createEdgeBetween(vertex2, vertex5);
+        List<GraphVertex> edge5ToEdge2 = createEdgeBetween(vertex5, vertex2);
 
-        List<Vertex> edge3ToEdge6 = createEdgeBetween(vertex3, vertex6);
-        List<Vertex> edge6ToEdge3 = createEdgeBetween(vertex6, vertex3);
+        List<GraphVertex> edge3ToEdge6 = createEdgeBetween(vertex3, vertex6);
+        List<GraphVertex> edge6ToEdge3 = createEdgeBetween(vertex6, vertex3);
 
-        List<Vertex> edge3ToEdge7 = createEdgeBetween(vertex3, vertex7);
-        List<Vertex> edge7ToEdge3 = createEdgeBetween(vertex7, vertex3);
+        List<GraphVertex> edge3ToEdge7 = createEdgeBetween(vertex3, vertex7);
+        List<GraphVertex> edge7ToEdge3 = createEdgeBetween(vertex7, vertex3);
 
         expectedEdges.addAll(Arrays.asList(
                 edge1ToEdge2, edge1ToEdge3, edge2ToEdge1,
@@ -125,7 +126,7 @@ class UndirectedGraphTest {
 
     @Test
     void testRemoveEdge() {
-        List<List<Vertex>> expectedEdges = new LinkedList<>();
+        List<List<GraphVertex>> expectedEdges = new LinkedList<>();
         Assert.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
     }
 
@@ -137,19 +138,19 @@ class UndirectedGraphTest {
 
     @Test
     void testToStringForNonEmptyUndirectedGraph() {
-        String expectedString = "";
-        expectedString += "Vertex: 1 Neighbours: [2, 3]\n";
-        expectedString += "Vertex: 2 Neighbours: [1, 4, 5]\n";
-        expectedString += "Vertex: 3 Neighbours: [1, 6, 7]\n";
-        expectedString += "Vertex: 4 Neighbours: [2]\n";
-        expectedString += "Vertex: 5 Neighbours: [2]\n";
-        expectedString += "Vertex: 6 Neighbours: [3]\n";
-        expectedString += "Vertex: 7 Neighbours: [3]\n";
+        String expectedString =
+            "Vertex: 1 Neighbours: [2, 3]\n" +
+            "Vertex: 2 Neighbours: [1, 4, 5]\n" +
+            "Vertex: 3 Neighbours: [1, 6, 7]\n" +
+            "Vertex: 4 Neighbours: [2]\n" +
+            "Vertex: 5 Neighbours: [2]\n" +
+            "Vertex: 6 Neighbours: [3]\n" +
+            "Vertex: 7 Neighbours: [3]\n";
         Assert.assertEquals(expectedString, largeUndirectedGraph.toString());
     }
 
-    private List<Vertex> createEdgeBetween(Vertex startVertex, Vertex endVertex) {
-        List<Vertex> newEdge = new LinkedList<>();
+    private List<GraphVertex> createEdgeBetween(GraphVertex startVertex, GraphVertex endVertex) {
+        List<GraphVertex> newEdge = new LinkedList<>();
         newEdge.add(startVertex);
         newEdge.add(endVertex);
         return newEdge;
