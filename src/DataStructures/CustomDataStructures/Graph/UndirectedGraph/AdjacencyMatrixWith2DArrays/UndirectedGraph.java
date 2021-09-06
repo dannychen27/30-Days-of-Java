@@ -1,5 +1,8 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWith2DArrays;
 
+import DataStructures.CustomDataStructures.Graph.Graph;
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,10 +10,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-class UndirectedGraph {
+class UndirectedGraph implements Graph {
 
     private int[][] adjacencyMatrix;
-    private Map<Vertex, Integer> verticesToIndices;
+    private Map<GraphVertex, Integer> verticesToIndices;
     private int numVertices = 0;
     private int capacity = 3;
     public static int EDGE_DISTANCE = 1;
@@ -38,7 +41,7 @@ class UndirectedGraph {
      *
      * Precondition: newVertex is not an existing vertex in this graph.
      */
-    public void addVertex(Vertex newVertex) {
+    public void addVertex(GraphVertex newVertex) {
         ensureLargeEnoughCapacity();
 
         verticesToIndices.put(newVertex, numVertices);
@@ -54,7 +57,7 @@ class UndirectedGraph {
      *
      * Precondition: oldVertex is an existing vertex in this graph.
      */
-    public void removeVertex(Vertex oldVertex) {
+    public void removeVertex(GraphVertex oldVertex) {
         int indexOfOldVertex = verticesToIndices.get(oldVertex);
         verticesToIndices.remove(oldVertex);
 
@@ -72,7 +75,7 @@ class UndirectedGraph {
      *
      * Precondition: vertex1 and vertex2 are existing adjacencyMatrix in this graph.
      */
-    public void addEdge(Vertex vertex1, Vertex vertex2) {
+    public void addEdge(GraphVertex vertex1, GraphVertex vertex2) {
         setEntry(vertex1, vertex2, 1);
         setEntry(vertex2, vertex1, 1);
     }
@@ -82,7 +85,7 @@ class UndirectedGraph {
      *
      * Precondition: vertex1 and vertex2 are existing adjacencyMatrix in this graph.
      */
-    public void removeEdge(Vertex vertex1, Vertex vertex2) {
+    public void removeEdge(GraphVertex vertex1, GraphVertex vertex2) {
         setEntry(vertex1, vertex2, 0);
         setEntry(vertex2, vertex1, 0);
     }
@@ -90,24 +93,24 @@ class UndirectedGraph {
     /**
      * Return a list of all vertices of this graph.
      */
-    public List<Vertex> getVertices() {
+    public List<GraphVertex> getVertices() {
         return new ArrayList<>(verticesToIndices.keySet());
     }
 
     /**
      * Return a list of all edges of this graph.
      */
-    public List<List<Vertex>> getEdges() {
-        List<List<Vertex>> edgeList = new LinkedList<>();
-        List<Vertex> vertices = getVertices();
-        for (Vertex startVertex : vertices) {
+    public List<List<GraphVertex>> getEdges() {
+        List<List<GraphVertex>> edgeList = new LinkedList<>();
+        List<GraphVertex> vertices = getVertices();
+        for (GraphVertex startVertex : vertices) {
             int indexOfStartVertex = verticesToIndices.get(startVertex);
             for (int indexOfEndVertex = 0; indexOfEndVertex < numVertices; indexOfEndVertex++) {
                 if (adjacencyMatrix[indexOfStartVertex][indexOfEndVertex] == 0) {
                     continue;
                 }
 
-                List<Vertex> edge = getEdge(startVertex, indexOfEndVertex);
+                List<GraphVertex> edge = getEdge(startVertex, indexOfEndVertex);
                 edgeList.add(edge);
             }
         }
@@ -198,7 +201,7 @@ class UndirectedGraph {
     }
 
     private void adjustIndicesOfRemainingVertices(int indexOfOldVertex) {
-        for (Map.Entry<Vertex, Integer> entry: verticesToIndices.entrySet()) {
+        for (Map.Entry<GraphVertex, Integer> entry: verticesToIndices.entrySet()) {
             if (entry.getValue() > indexOfOldVertex) {
                 verticesToIndices.replace(entry.getKey(), entry.getValue(), entry.getValue() - 1);
             }
@@ -277,15 +280,15 @@ class UndirectedGraph {
         return true;
     }
 
-    private void setEntry(Vertex vertex1, Vertex vertex2, int newValue) {
+    private void setEntry(GraphVertex vertex1, GraphVertex vertex2, int newValue) {
         int indexOfVertex1 = verticesToIndices.get(vertex1);
         int indexOfVertex2 = verticesToIndices.get(vertex2);
         adjacencyMatrix[indexOfVertex1][indexOfVertex2] = newValue;
     }
 
     // find vertex with this index.
-    private Vertex findEndVertex(int indexOfEndVertex) {
-        for (Map.Entry<Vertex, Integer> entry : verticesToIndices.entrySet()) {
+    private GraphVertex findEndVertex(int indexOfEndVertex) {
+        for (Map.Entry<GraphVertex, Integer> entry : verticesToIndices.entrySet()) {
             if (entry.getValue() == indexOfEndVertex) {
                 return entry.getKey();
             }
@@ -294,10 +297,10 @@ class UndirectedGraph {
     }
 
     // return an edge between startVertex and endVertex.
-    private List<Vertex> getEdge(Vertex startVertex, int indexOfEndVertex) {
-        List<Vertex> edge = new LinkedList<>();
+    private List<GraphVertex> getEdge(GraphVertex startVertex, int indexOfEndVertex) {
+        List<GraphVertex> edge = new LinkedList<>();
         edge.add(startVertex);  // find corresponding vertex in verticesToIndices
-        Vertex endVertex = findEndVertex(indexOfEndVertex);
+        GraphVertex endVertex = findEndVertex(indexOfEndVertex);
         edge.add(endVertex);
         return edge;
     }
