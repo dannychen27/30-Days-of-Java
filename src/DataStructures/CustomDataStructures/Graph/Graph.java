@@ -5,6 +5,7 @@ import java.util.List;
 public interface Graph {
 
     // basic graph operations
+    boolean isEmpty();
     void addVertex(GraphVertex newVertex);
     void removeVertex(GraphVertex oldVertex);
     void addEdge(GraphVertex vertex1, GraphVertex vertex2);  // TODO: are self-edges allowed?
