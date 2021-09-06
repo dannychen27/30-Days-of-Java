@@ -1,5 +1,6 @@
 package InterviewProblems.GraphProblems.FindShortestPath;
 
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.UndirectedGraph;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.Vertex;
 import DataStructures.CustomDataStructures.Queue.Queue;
@@ -20,14 +21,14 @@ class FindShortestPath {
         // space: Theta(|V| + |E|)
 
         UndirectedGraph graph = new UndirectedGraph();
-        Vertex vertex1 = new Vertex(1);
-        Vertex vertex2 = new Vertex(2);
-        Vertex vertex3 = new Vertex(3);
-        Vertex vertex4 = new Vertex(4);
-        Vertex vertex5 = new Vertex(5);
-        Vertex vertex6 = new Vertex(6);
-        Vertex vertex7 = new Vertex(7);
-        Vertex vertex8 = new Vertex(8);
+        GraphVertex vertex1 = new Vertex(1);
+        GraphVertex vertex2 = new Vertex(2);
+        GraphVertex vertex3 = new Vertex(3);
+        GraphVertex vertex4 = new Vertex(4);
+        GraphVertex vertex5 = new Vertex(5);
+        GraphVertex vertex6 = new Vertex(6);
+        GraphVertex vertex7 = new Vertex(7);
+        GraphVertex vertex8 = new Vertex(8);
 
         graph.addVertex(vertex1);
         graph.addVertex(vertex2);
@@ -50,28 +51,29 @@ class FindShortestPath {
         System.out.println(getShortestPath(graph, vertex1, vertex8));  // [1, 2, 4, 8]
     }
 
-    private static Deque<Vertex> getShortestPath(UndirectedGraph graph, Vertex sourceVertex, Vertex destinationVertex) {
-        Map<Vertex, String> verticesToColors = new HashMap<>();
-        Map<Vertex, Integer> verticesToDistances = new HashMap<>();
-        Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
-        for (Vertex vertex : graph.getVertices()) {
+    private static Deque<GraphVertex> getShortestPath(UndirectedGraph graph,
+                                                      GraphVertex sourceVertex, GraphVertex destinationVertex) {
+        Map<GraphVertex, String> verticesToColors = new HashMap<>();
+        Map<GraphVertex, Integer> verticesToDistances = new HashMap<>();
+        Map<GraphVertex, GraphVertex> verticesToPredecessors = new HashMap<>();
+        for (GraphVertex vertex : graph.getVertices()) {
             verticesToColors.put(vertex, "white");
             verticesToDistances.put(vertex, Integer.MAX_VALUE);
             verticesToPredecessors.put(vertex, null);
         }
 
-        Queue<Vertex> verticesToVisit = new Queue<>();
+        Queue<GraphVertex> verticesToVisit = new Queue<>();
         verticesToVisit.enqueue(sourceVertex);
         verticesToColors.replace(sourceVertex, "gray");
         verticesToDistances.replace(sourceVertex, 0);
 
         while (!verticesToVisit.isEmpty()) {
-            Vertex currentVertex = verticesToVisit.dequeue();
+            GraphVertex currentVertex = verticesToVisit.dequeue();
             if (currentVertex == destinationVertex) {
                 return buildShortestPath(destinationVertex, verticesToPredecessors);
             }
 
-            for (Vertex neighbor : currentVertex.getNeighbors()) {
+            for (GraphVertex neighbor : ((Vertex) currentVertex).getNeighbors()) {
                 if (verticesToColors.get(neighbor).equals("white")) {
                     verticesToColors.replace(neighbor, "gray");
                     verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);
@@ -84,10 +86,10 @@ class FindShortestPath {
         return null;
     }
 
-    private static Deque<Vertex> buildShortestPath(Vertex destinationVertex,
-                                                   Map<Vertex, Vertex> verticesToPredecessors) {
-        Deque<Vertex> shortestPath = new ArrayDeque<>();
-        Vertex currentVertex = destinationVertex;
+    private static Deque<GraphVertex> buildShortestPath(GraphVertex destinationVertex,
+                                                        Map<GraphVertex, GraphVertex> verticesToPredecessors) {
+        Deque<GraphVertex> shortestPath = new ArrayDeque<>();
+        GraphVertex currentVertex = destinationVertex;
         while (currentVertex != null) {
             shortestPath.addFirst(currentVertex);
             currentVertex = verticesToPredecessors.get(currentVertex);

@@ -1,5 +1,6 @@
 package InterviewProblems.GraphProblems.BreadthFirstSearch;
 
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.UndirectedGraph;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.Vertex;
 import DataStructures.CustomDataStructures.Queue.Queue;
@@ -19,24 +20,24 @@ class BreadthFirstSearch {
     // time: Theta(|V| + |E|)
     // space: Theta(|V| + |E|)
 
-    List<Vertex> breadthFirstSearch(UndirectedGraph graph, Vertex sourceVertex) {
-        Map<Vertex, String> verticesToColors = new HashMap<>();
-        Map<Vertex, Integer> verticesToDistances = new HashMap<>();
-        for (Vertex vertex : graph.getVertices()) {
+    List<GraphVertex> breadthFirstSearch(UndirectedGraph graph, Vertex sourceVertex) {
+        Map<GraphVertex, String> verticesToColors = new HashMap<>();
+        Map<GraphVertex, Integer> verticesToDistances = new HashMap<>();
+        for (GraphVertex vertex : graph.getVertices()) {
             verticesToColors.put(vertex, "white");
             verticesToDistances.put(vertex, Integer.MAX_VALUE);
         }
 
-        Queue<Vertex> verticesToVisit = new Queue<>();
+        Queue<GraphVertex> verticesToVisit = new Queue<>();
         verticesToVisit.enqueue(sourceVertex);
         verticesToColors.replace(sourceVertex, "gray");
         verticesToDistances.replace(sourceVertex, 0);
 
-        List<Vertex> verticesVisited = new LinkedList<>();
+        List<GraphVertex> verticesVisited = new LinkedList<>();
         while (!verticesToVisit.isEmpty()) {
-            Vertex currentVertex = verticesToVisit.dequeue();
+            GraphVertex currentVertex = verticesToVisit.dequeue();
             verticesVisited.add(currentVertex);
-            for (Vertex neighbor : currentVertex.getNeighbors()) {
+            for (GraphVertex neighbor : ((Vertex) currentVertex).getNeighbors()) {
                 if (verticesToColors.get(neighbor).equals("white")) {
                     verticesToColors.replace(neighbor, "gray");
                     verticesToDistances.replace(neighbor, verticesToDistances.get(currentVertex) + EDGE_DISTANCE);

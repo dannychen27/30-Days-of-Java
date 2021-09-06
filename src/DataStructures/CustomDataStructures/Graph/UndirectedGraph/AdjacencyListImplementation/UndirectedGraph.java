@@ -1,11 +1,14 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation;
 
+import DataStructures.CustomDataStructures.Graph.Graph;
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class UndirectedGraph {
+public class UndirectedGraph implements Graph {
 
-    private List<Vertex> vertices;
+    private List<GraphVertex> vertices;
     public static int EDGE_DISTANCE = 1;
 
     /**
@@ -27,7 +30,7 @@ public class UndirectedGraph {
      *
      * Precondition: newVertex is not an existing vertex in this graph.
      */
-    public void addVertex(Vertex newVertex) {
+    public void addVertex(GraphVertex newVertex) {
         vertices.add(newVertex);
     }
 
@@ -36,7 +39,7 @@ public class UndirectedGraph {
      *
      * Precondition: oldVertex is an existing vertex in this graph.
      */
-    public void removeVertex(Vertex oldVertex) {
+    public void removeVertex(GraphVertex oldVertex) {
         vertices.remove(oldVertex);
     }
 
@@ -45,9 +48,9 @@ public class UndirectedGraph {
      *
      * Precondition: vertex1 and vertex2 are existing vertices in this graph.
      */
-    public void addEdge(Vertex vertex1, Vertex vertex2) {
-        vertex1.addNeighbour(vertex2);
-        vertex2.addNeighbour(vertex1);
+    public void addEdge(GraphVertex vertex1, GraphVertex vertex2) {
+        ((Vertex) vertex1).addNeighbour(vertex2);
+        ((Vertex) vertex2).addNeighbour(vertex1);
     }
 
     /**
@@ -57,26 +60,26 @@ public class UndirectedGraph {
      *      - vertex1 and vertex2 are existing vertices in this graph.
      *      - vertex1 and vertex2 have edges between them in this graph.
      */
-    public void removeEdge(Vertex vertex1, Vertex vertex2) {
-        vertex1.removeNeighbour(vertex2);
-        vertex2.removeNeighbour(vertex1);
+    public void removeEdge(GraphVertex vertex1, GraphVertex vertex2) {
+        ((Vertex) vertex1).removeNeighbour(vertex2);
+        ((Vertex) vertex1).removeNeighbour(vertex1);
     }
 
     /**
      * Return a list of all vertices of this graph.
      */
-    public List<Vertex> getVertices() {
+    public List<GraphVertex> getVertices() {
         return vertices;
     }
 
     /**
      * Return a list of all edges of this graph.
      */
-    public List<List<Vertex>> getEdges() {
-        List<List<Vertex>> edgeList = new LinkedList<>();
-        for (Vertex startVertex : getVertices()) {
-            for (Vertex endVertex : startVertex.getNeighbors()) {
-                List<Vertex> newEdge = createEdgeBetween(startVertex, endVertex);
+    public List<List<GraphVertex>> getEdges() {
+        List<List<GraphVertex>> edgeList = new LinkedList<>();
+        for (GraphVertex startVertex : getVertices()) {
+            for (GraphVertex endVertex : ((Vertex) startVertex).getNeighbors()) {
+                List<GraphVertex> newEdge = createEdgeBetween(startVertex, endVertex);
                 edgeList.add(newEdge);
             }
         }
@@ -88,16 +91,16 @@ public class UndirectedGraph {
      */
     public String toString() {
         StringBuilder graphString = new StringBuilder();
-        for (Vertex vertex : vertices) {
+        for (GraphVertex vertex : vertices) {
             graphString.append("Vertex: ").append(vertex).append(" ");
-            graphString.append("Neighbours: ").append(vertex.getNeighbors());
+            graphString.append("Neighbours: ").append(((Vertex) vertex).getNeighbors());
             graphString.append("\n");
         }
         return graphString.toString();
     }
 
-    private List<Vertex> createEdgeBetween(Vertex startVertex, Vertex endVertex) {
-        List<Vertex> newEdge = new LinkedList<>();
+    private List<GraphVertex> createEdgeBetween(GraphVertex startVertex, GraphVertex endVertex) {
+        List<GraphVertex> newEdge = new LinkedList<>();
         newEdge.add(startVertex);
         newEdge.add(endVertex);
         return newEdge;

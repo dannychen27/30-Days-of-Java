@@ -1,5 +1,6 @@
 package InterviewProblems.GraphProblems.DepthFirstSearch;
 
+import DataStructures.CustomDataStructures.Graph.GraphVertex;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.UndirectedGraph;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.Vertex;
 
@@ -15,16 +16,16 @@ class DepthFirstSearch {
     // time: Theta(|V| + |E|)
     // space: Theta(longest path in graph)
 
-    List<Vertex> depthFirstSearch(UndirectedGraph graph) {
-        Map<Vertex, String> verticesToColors = new HashMap<>();
-        Map<Vertex, Vertex> verticesToPredecessors = new HashMap<>();
-        for (Vertex vertex : graph.getVertices()) {
+    List<GraphVertex> depthFirstSearch(UndirectedGraph graph) {
+        Map<GraphVertex, String> verticesToColors = new HashMap<>();
+        Map<GraphVertex, GraphVertex> verticesToPredecessors = new HashMap<>();
+        for (GraphVertex vertex : graph.getVertices()) {
             verticesToColors.put(vertex, "white");
             verticesToPredecessors.put(vertex, null);
         }
 
-        List<Vertex> verticesVisited = new LinkedList<>();
-        for (Vertex vertex : graph.getVertices()) {
+        List<GraphVertex> verticesVisited = new LinkedList<>();
+        for (GraphVertex vertex : graph.getVertices()) {
             if (verticesToColors.get(vertex).equals("white")) {
                 depthFirstSearch(vertex, verticesVisited, verticesToColors, verticesToPredecessors);
             }
@@ -32,12 +33,12 @@ class DepthFirstSearch {
         return verticesVisited;
     }
 
-    private void depthFirstSearch(Vertex vertex, List<Vertex> verticesVisited,
-                                  Map<Vertex, String> verticesToColors,
-                                  Map<Vertex, Vertex> verticesToPredecessors) {
+    private void depthFirstSearch(GraphVertex vertex, List<GraphVertex> verticesVisited,
+                                  Map<GraphVertex, String> verticesToColors,
+                                  Map<GraphVertex, GraphVertex> verticesToPredecessors) {
         verticesVisited.add(vertex);
         verticesToColors.replace(vertex, "gray");
-        for (Vertex neighbor : vertex.getNeighbors()) {
+        for (GraphVertex neighbor : ((Vertex) vertex).getNeighbors()) {
             if (verticesToColors.get(neighbor).equals("white")) {
                 verticesToPredecessors.replace(neighbor, vertex);
                 depthFirstSearch(neighbor, verticesVisited, verticesToColors, verticesToPredecessors);

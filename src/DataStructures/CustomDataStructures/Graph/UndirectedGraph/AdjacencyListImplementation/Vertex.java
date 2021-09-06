@@ -8,22 +8,22 @@ import java.util.List;
 public class Vertex implements GraphVertex {
 
     private int value;
-    private List<Vertex> neighbors;
+    private List<GraphVertex> neighbors;
 
     public Vertex(int newValue) {
         value = newValue;
         neighbors = new LinkedList<>();
     }
 
-    public List<Vertex> getNeighbors() {
+    public List<GraphVertex> getNeighbors() {
         return neighbors;
     }
 
-    void addNeighbour(Vertex otherVertex) {
+    void addNeighbour(GraphVertex otherVertex) {
         neighbors.add(otherVertex);
     }
 
-    void removeNeighbour(Vertex otherVertex) {
+    void removeNeighbour(GraphVertex otherVertex) {
         neighbors.remove(otherVertex);
     }
 
