@@ -9,7 +9,7 @@ class Tree<T> {
     // source: https://www.teach.cs.toronto.edu/~csc148h/winter/notes/trees/tree_implementation.html
 
     private T root;  // The item stored at this tree's root, or null if the tree is empty.
-    private List<Tree> subtrees;
+    private List<Tree<T>> subtrees;
 
     // === Representation Invariants ===
     //  - If self._root is None then self._subtrees is an empty list.
@@ -24,7 +24,7 @@ class Tree<T> {
      *
      * If the root is null, then this tree has no subtrees.
      */
-    public Tree(T value, List<Tree> subtrees) {
+    public Tree(T value, List<Tree<T>> subtrees) {
         this.root = value;
         if (isEmpty()) {
             this.subtrees = new LinkedList<>();
@@ -61,16 +61,39 @@ class Tree<T> {
         return toStringIndented(0);
     }
 
+    /**
+     * Return true iff this tree contains the target item.
+     */
+    public boolean contains(T targetItem) {
+        if (isEmpty()) {
+            return false;
+        }
+
+        if (root.equals(targetItem)) {
+            return true;
+        }
+
+        for (Tree<T> subtree : subtrees) {
+            if (subtree.contains(targetItem)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         // empty tree
         Tree<Integer> tree10 = new Tree<>(null, new LinkedList<>());
         System.out.println(tree10.isEmpty());  // true
-        System.out.println(tree10);
+        System.out.println(tree10);  // ""
+        System.out.println(tree10.contains(3));  // false
 
         // single root value, no subtrees
         Tree<Integer> tree20 = new Tree<>(3, new LinkedList<>());
         System.out.println(tree20.isEmpty());  // false
-        System.out.println(tree20);
+        System.out.println(tree20);  // 3
+        System.out.println(tree20.contains(3));  // true
+        System.out.println(tree20.contains(4));  // false
 
         // root and subtrees
         Tree<Integer> tree1 = new Tree<>(1, new LinkedList<>());
@@ -87,6 +110,10 @@ class Tree<T> {
         //		    2
         //		    3
         //	    5
+        System.out.println(tree6.contains(6));  // true
+        System.out.println(tree6.contains(4));  // true
+        System.out.println(tree6.contains(1));  // true
+        System.out.println(tree6.contains(7));  // false
     }
 
     private String toStringIndented(int depth) {
