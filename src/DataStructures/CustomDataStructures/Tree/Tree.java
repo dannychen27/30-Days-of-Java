@@ -81,6 +81,20 @@ class Tree<T> {
         return false;
     }
 
+    /**
+     * Perform pre-order tree traversal.
+     *
+     * That is, visit root -> children (left to right).
+     */
+    public void preOrderTraversal() {
+        System.out.println(root);
+        if (!subtrees.equals(new LinkedList<>())) {
+            for (Tree<T> subtree : subtrees) {
+                subtree.preOrderTraversal();
+            }
+        }
+    }
+
     public static void main(String[] args) {
         // empty tree
         Tree<Integer> tree10 = new Tree<>(null, new LinkedList<>());
@@ -114,6 +128,8 @@ class Tree<T> {
         System.out.println(tree6.contains(4));  // true
         System.out.println(tree6.contains(1));  // true
         System.out.println(tree6.contains(7));  // false
+
+        tree6.preOrderTraversal();
     }
 
     private String toStringIndented(int depth) {
