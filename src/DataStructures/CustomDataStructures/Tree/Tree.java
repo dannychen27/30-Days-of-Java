@@ -41,6 +41,26 @@ class Tree<T> {
     }
 
     /**
+     * Return true iff this tree contains the target item.
+     */
+    public boolean contains(T targetItem) {
+        if (isEmpty()) {
+            return false;
+        }
+
+        if (root.equals(targetItem)) {
+            return true;
+        }
+
+        for (Tree<T> subtree : subtrees) {
+            if (subtree.contains(targetItem)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Insert the item into this tree.
      */
     public void insert(T newItem) {
@@ -59,26 +79,6 @@ class Tree<T> {
      */
     public String toString() {
         return toStringIndented(0);
-    }
-
-    /**
-     * Return true iff this tree contains the target item.
-     */
-    public boolean contains(T targetItem) {
-        if (isEmpty()) {
-            return false;
-        }
-
-        if (root.equals(targetItem)) {
-            return true;
-        }
-
-        for (Tree<T> subtree : subtrees) {
-            if (subtree.contains(targetItem)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
