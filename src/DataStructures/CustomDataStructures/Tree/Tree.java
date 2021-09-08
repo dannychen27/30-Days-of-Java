@@ -61,10 +61,34 @@ class Tree<T> {
     }
 
     /**
-     * Insert the item into this tree.
+     * Insert the item into this tree as a child of parent.
+     *
+     * If parent is not in this tree, do nothing.
+     *
+     * If parent appears more than once in this tree, the item should
+     * only be inserted once (you can pick where to insert it).
      */
-    public void insert(T newItem) {
+    public boolean insert(T newItem, T parentValue) {
+        if (parentValue == null) {
+            root = newItem;
+            subtrees = new LinkedList<>();
+            return true;
+        }
 
+        // If there are multiple occurrences of parent, only insert newItem
+        // underneath the first occurrence of parent
+        if (root.equals(parentValue)) {
+            Tree<T> newTreeNode = new Tree<>(newItem, new LinkedList<>());
+            subtrees.add(newTreeNode);
+            return true;
+        }
+
+        for (Tree<T> subtree : subtrees) {
+            if (subtree.insert(newItem, parentValue)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -116,12 +140,20 @@ class Tree<T> {
         System.out.println(tree10);  // ""
         System.out.println(tree10.contains(3));  // false
 
+        tree10.insert(50, null);
+        System.out.println(tree10);  // 50
+
         // single root value, no subtrees
         Tree<Integer> tree20 = new Tree<>(3, new LinkedList<>());
         System.out.println(tree20.isEmpty());  // false
         System.out.println(tree20);  // 3
         System.out.println(tree20.contains(3));  // true
         System.out.println(tree20.contains(4));  // false
+
+        tree20.insert(50, 3);
+        System.out.println(tree20);
+        // 3
+        //	    50
 
         // root and subtrees
         Tree<Integer> tree1 = new Tree<>(1, new LinkedList<>());
@@ -142,6 +174,26 @@ class Tree<T> {
         System.out.println(tree6.contains(4));  // true
         System.out.println(tree6.contains(1));  // true
         System.out.println(tree6.contains(7));  // false
+
+        tree6.insert(70, 6);
+        System.out.println(tree6);
+        // 6
+        //	    4
+        //		    1
+        //		    2
+        //		    3
+        //	    5
+        //	    70
+
+        tree6.insert(80, 60);
+        System.out.println(tree6);
+        // 6
+        //	    4
+        //		    1
+        //		    2
+        //		    3
+        //	    5
+        //	    70
 
         tree6.preOrderTraversal();
         tree6.postOrderTraversal();
