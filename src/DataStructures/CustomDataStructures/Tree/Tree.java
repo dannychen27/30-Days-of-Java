@@ -98,6 +98,9 @@ class Tree<T> {
 
     }
 
+    // todo: height
+    // todo: equals
+
     /**
      * Return a string representation of this tree.
      */
@@ -112,7 +115,7 @@ class Tree<T> {
      */
     public void preOrderTraversal() {
         System.out.println(root);
-        if (!subtrees.equals(new LinkedList<>())) {
+        if (!isLeaf()) {
             for (Tree<T> subtree : subtrees) {
                 subtree.preOrderTraversal();
             }
@@ -125,7 +128,7 @@ class Tree<T> {
      * That is, visit children (left to right) -> root.
      */
     public void postOrderTraversal() {
-        if (!subtrees.equals(new LinkedList<>())) {
+        if (!isLeaf()) {
             for (Tree<T> subtree : subtrees) {
                 subtree.postOrderTraversal();
             }
@@ -197,6 +200,10 @@ class Tree<T> {
 
         tree6.preOrderTraversal();
         tree6.postOrderTraversal();
+    }
+
+    private boolean isLeaf() {
+        return subtrees.equals(new LinkedList<>());
     }
 
     private String toStringIndented(int depth) {
