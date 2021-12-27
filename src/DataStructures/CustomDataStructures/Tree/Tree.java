@@ -99,7 +99,39 @@ class Tree<T> {
     }
 
     // todo: height
-    // todo: equals
+
+    /**
+     * Return the height of this tree.
+     *
+     * Height is defined as the number of edges between the root node and
+     * the bottommost node in the tree.
+     */
+    public int height() {
+        if (isEmpty()) {
+            return -1;
+        }
+
+        if (isLeaf()) {
+            return 0;
+        }
+
+        int maxSubtreeHeight = -1;
+        for (Tree<T> subtree : subtrees) {
+            int subtreeHeight = subtree.height();
+            if (subtreeHeight > maxSubtreeHeight) {
+                maxSubtreeHeight = subtreeHeight;
+            }
+        }
+        return 1 + maxSubtreeHeight;  // 1 for the root
+    }
+
+    /**
+     * Return true iff this tree is structurally identical and contain identical values.
+     */
+    public boolean equals() {
+        // TODO: Implement this method!
+        return true;
+    }
 
     /**
      * Return a string representation of this tree.
