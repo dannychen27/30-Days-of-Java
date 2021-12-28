@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 class DoublyCircularLinkedListTest {
 
-    private DoublyCircularLinkedList emptyDoublyCircularLinkedList;
-    private DoublyCircularLinkedList simpleDoublyCircularLinkedList;
+    private DoublyCircularLinkedList<Integer> emptyDoublyCircularLinkedList;
+    private DoublyCircularLinkedList<Integer> simpleDoublyCircularLinkedList;
 
     @BeforeEach
     void setUp() {
-        simpleDoublyCircularLinkedList = new DoublyCircularLinkedList();
+        simpleDoublyCircularLinkedList = new DoublyCircularLinkedList<>();
         simpleDoublyCircularLinkedList.insert(1, 0);
         simpleDoublyCircularLinkedList.insert(2, 1);
         simpleDoublyCircularLinkedList.insert(3, 2);
@@ -21,7 +21,7 @@ class DoublyCircularLinkedListTest {
         Assertions.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
                 simpleDoublyCircularLinkedList.toString());
 
-        emptyDoublyCircularLinkedList = new DoublyCircularLinkedList();
+        emptyDoublyCircularLinkedList = new DoublyCircularLinkedList<>();
     }
 
     @AfterEach

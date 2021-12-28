@@ -1,9 +1,9 @@
 package DataStructures.CustomDataStructures.DoublyCircularLinkedList;
 
-public class DoublyCircularLinkedList {
+public class DoublyCircularLinkedList<T> {
 
-    private Node head;
-    private Node tail;
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     public DoublyCircularLinkedList() {
@@ -30,7 +30,7 @@ public class DoublyCircularLinkedList {
      *
      * Precondition: 0 <= targetIndex <= length of doubly circular linked list - 1.
      */
-    public void insert(int newValue, int targetIndex) {
+    public void insert(T newValue, int targetIndex) {
         if (targetIndex > size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -44,7 +44,7 @@ public class DoublyCircularLinkedList {
         }
 
         int currentIndex = 0;
-        Node currentNode = head;
+        Node<T> currentNode = head;
         do {
             currentIndex++;
             currentNode = currentNode.next;
@@ -59,7 +59,7 @@ public class DoublyCircularLinkedList {
     /**
      * Delete the first occurrence of oldValue from this doubly circular linked list.
      */
-    public void delete(int oldValue) {
+    public void delete(T oldValue) {
         if (isEmpty()) {
             throw new IllegalStateException("This doubly circular linked list is empty.");
         }
@@ -72,7 +72,7 @@ public class DoublyCircularLinkedList {
             return;
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         do {
             currentNode = currentNode.next;
         } while (currentNode.next != head && currentNode.value != oldValue);
@@ -87,7 +87,7 @@ public class DoublyCircularLinkedList {
     /**
      * Remove and return the item at targetIndex of this doubly circular linked list.
      */
-    public int pop(int targetIndex) {
+    public T pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -99,7 +99,7 @@ public class DoublyCircularLinkedList {
         }
 
         int currentIndex = 0;
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentIndex < targetIndex) {
             currentNode = currentNode.next;
             currentIndex++;
@@ -122,7 +122,7 @@ public class DoublyCircularLinkedList {
             return doublyCircularLinkedListString.toString();
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         do {
             if (currentNode != head) {
                 doublyCircularLinkedListString.append("PREVIOUS ");
@@ -136,8 +136,8 @@ public class DoublyCircularLinkedList {
         return doublyCircularLinkedListString.toString();
     }
 
-    private void prepend(int newValue) {
-        Node newHead = new Node(newValue);
+    private void prepend(T newValue) {
+        Node<T> newHead = new Node<>(newValue);
         if (isEmpty()) {
             head = newHead;
             tail = newHead;
@@ -153,8 +153,8 @@ public class DoublyCircularLinkedList {
         size++;
     }
 
-    private void insertInMiddle(Node currentNode, int newValue) {
-        Node newNode = new Node(newValue);
+    private void insertInMiddle(Node<T> currentNode, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
         newNode.previous = currentNode;
         newNode.next = currentNode.next;
         currentNode.next = newNode;
@@ -162,8 +162,8 @@ public class DoublyCircularLinkedList {
         size++;
     }
 
-    private void append(int newValue) {
-        Node newTail = new Node(newValue);
+    private void append(T newValue) {
+        Node<T> newTail = new Node<>(newValue);
         if (isEmpty()) {
             head = newTail;
             tail = newTail;
@@ -179,9 +179,9 @@ public class DoublyCircularLinkedList {
         size++;
     }
 
-    private int removeFromBeginning() {
-        Node oldHead = head;
-        Node newHead = head.next;
+    private T removeFromBeginning() {
+        Node<T> oldHead = head;
+        Node<T> newHead = head.next;
         if (head == tail) {
             head = null;
             tail = null;
@@ -196,7 +196,7 @@ public class DoublyCircularLinkedList {
         return oldHead.value;
     }
 
-    private int removeFromMiddle(Node previousNode, Node currentNode) {
+    private T removeFromMiddle(Node<T> previousNode, Node<T> currentNode) {
         previousNode.next = currentNode.next;
         currentNode.next.previous = previousNode;
         currentNode.previous = null;
@@ -205,9 +205,9 @@ public class DoublyCircularLinkedList {
         return currentNode.value;
     }
 
-    private int removeFromEnd() {
-        Node oldTail = tail;
-        Node newTail = tail.previous;
+    private T removeFromEnd() {
+        Node<T> oldTail = tail;
+        Node<T> newTail = tail.previous;
         if (head == tail) {
             head = null;
             tail = null;

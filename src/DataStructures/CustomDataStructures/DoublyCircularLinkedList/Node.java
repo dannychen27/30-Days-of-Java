@@ -1,12 +1,12 @@
 package DataStructures.CustomDataStructures.DoublyCircularLinkedList;
 
-class Node {
+class Node<T> {
 
-    public int value;
-    public Node previous;
-    public Node next;
+    public T value;
+    public Node<T> previous;
+    public Node<T> next;
 
-    public Node(int newValue) {
+    public Node(T newValue) {
         this.value = newValue;
         this.previous = null;
         this.next = null;
