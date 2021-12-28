@@ -28,13 +28,13 @@ public class SinglyCircularLinkedList<T> {
      *
      * Precondition: 0 <= targetIndex <= length of circular linked list - 1.
      */
-    public void insert(T newItem, int targetIndex) {
+    public void insert(T newValue, int targetIndex) {
         if (targetIndex > size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (isEmpty() || targetIndex == 0) {
-            prepend(newItem);
+            prepend(newValue);
             return;
         }
 
@@ -46,28 +46,28 @@ public class SinglyCircularLinkedList<T> {
         }
 
         if (currentNode != null) {
-            insertInMiddle(currentNode, newItem);
+            insertInMiddle(currentNode, newValue);
         } else {
-            append(newItem);
+            append(newValue);
         }
     }
 
     /**
      * Delete the first occurrence of oldValue from this singly circular linked list.
      */
-    public void delete(T oldItem) {
+    public void delete(T oldValue) {
         if (isEmpty()) {
             throw new IllegalStateException("This value does not exist in the singly circular linked list.");
         }
 
-        if (head.value == oldItem) {
+        if (head.value == oldValue) {
             removeFromBeginning();
             return;
         }
 
         Node<T> previousNode = null;
         Node<T> currentNode = head;
-        while (currentNode != null && currentNode.value != oldItem) {
+        while (currentNode != null && currentNode.value != oldValue) {
             previousNode = currentNode;
             currentNode = currentNode.next;
         }
@@ -131,8 +131,8 @@ public class SinglyCircularLinkedList<T> {
         return singlyLinkedListString.toString();
     }
 
-    private void prepend(T newItem) {
-        Node<T> newHead = new Node<>(newItem);
+    private void prepend(T newValue) {
+        Node<T> newHead = new Node<>(newValue);
         if (head == null) {
             head = newHead;
         }
@@ -147,8 +147,8 @@ public class SinglyCircularLinkedList<T> {
         size++;
     }
 
-    private void insertInMiddle(Node<T> currentNode, T newItem) {
-        Node<T> newNode = new Node<>(newItem);
+    private void insertInMiddle(Node<T> currentNode, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
         Node<T> oldNode = currentNode.next;
 
         currentNode.next = newNode;
@@ -167,9 +167,9 @@ public class SinglyCircularLinkedList<T> {
         size++;
     }
 
-    private void append(T newItem) {
+    private void append(T newValue) {
         if (isEmpty()) {
-            prepend(newItem);
+            prepend(newValue);
             return;
         }
 
@@ -178,7 +178,7 @@ public class SinglyCircularLinkedList<T> {
             currentNode = currentNode.next;
         }
 
-        Node<T> newNode = new Node<>(newItem);
+        Node<T> newNode = new Node<>(newValue);
         currentNode.next = newNode;
         newNode.next = head;
         size++;
