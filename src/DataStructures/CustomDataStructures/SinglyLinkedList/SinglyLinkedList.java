@@ -114,7 +114,7 @@ public class SinglyLinkedList<T> {
             singlyLinkedListString.append(currentNode.value);
 
             if (currentNode.next != null) {
-                singlyLinkedListString.append(" Next ");
+                singlyLinkedListString.append(" NEXT ");
             }
 
             currentNode = currentNode.next;
