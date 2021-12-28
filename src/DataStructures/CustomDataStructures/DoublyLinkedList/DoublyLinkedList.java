@@ -1,8 +1,8 @@
 package DataStructures.CustomDataStructures.DoublyLinkedList;
 
-public class DoublyLinkedList {
+public class DoublyLinkedList<T> {
 
-    private Node head;
+    private Node<T> head;
     private int size;
 
     public DoublyLinkedList() { head = null; }
@@ -26,7 +26,7 @@ public class DoublyLinkedList {
      *
      * Precondition: 0 <= targetIndex <= length of doubly linked list - 1.
      */
-    public void insert(int newValue, int targetIndex) {
+    public void insert(T newValue, int targetIndex) {
         if (targetIndex > size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -37,7 +37,7 @@ public class DoublyLinkedList {
         }
 
         int currentIndex = 0;
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null && currentIndex < targetIndex - 1) {
             currentNode = currentNode.next;
             currentIndex++;
@@ -53,7 +53,7 @@ public class DoublyLinkedList {
     /**
      * Delete the first occurrence of oldValue from this doubly linked list.
      */
-    public void delete(int oldValue) {
+    public void delete(T oldValue) {
         if (isEmpty()) {
             throw new IllegalStateException("This value does not exist in the doubly linked list.");
         }
@@ -63,7 +63,7 @@ public class DoublyLinkedList {
             return;
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null && currentNode.value != oldValue) {
             currentNode = currentNode.next;
         }
@@ -78,7 +78,7 @@ public class DoublyLinkedList {
     /**
      * Remove and return the item at targetIndex of this doubly linked list.
      */
-    public int pop(int targetIndex) {
+    public T pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -88,7 +88,7 @@ public class DoublyLinkedList {
         }
 
         int currentIndex = 0;
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentIndex < targetIndex) {
             currentNode = currentNode.next;
             currentIndex++;
@@ -102,7 +102,7 @@ public class DoublyLinkedList {
      */
     public String toString() {
         StringBuilder doublyLinkedListString = new StringBuilder();
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null) {
             if (currentNode.previous != null) {
                 doublyLinkedListString.append("Previous ");
@@ -120,8 +120,8 @@ public class DoublyLinkedList {
         return doublyLinkedListString.toString();
     }
 
-    private void prepend(int newValue) {
-        Node newHead = new Node(newValue);
+    private void prepend(T newValue) {
+        Node<T> newHead = new Node<>(newValue);
         if (head != null) {
             head.previous = newHead;
         }
@@ -130,9 +130,9 @@ public class DoublyLinkedList {
         size++;
     }
 
-    private void insertInMiddle(Node currentNode, int newValue) {
-        Node newNode = new Node(newValue);
-        Node oldNode = currentNode.next;
+    private void insertInMiddle(Node<T> currentNode, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
+        Node<T> oldNode = currentNode.next;
         currentNode.next = newNode;
         newNode.next = oldNode;
         if (oldNode != null) {
@@ -142,26 +142,26 @@ public class DoublyLinkedList {
         size++;
     }
 
-    private void append(int newValue) {
+    private void append(T newValue) {
         if (isEmpty()) {
             prepend(newValue);
             return;
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
 
-        Node newNode = new Node(newValue);
+        Node<T> newNode = new Node<>(newValue);
         currentNode.next = newNode;
         newNode.previous = currentNode;
         size++;
     }
 
-    private int removeFromBeginning() {
-        int oldValue = head.value;
-        Node nextNode = head.next;
+    private T removeFromBeginning() {
+        T oldValue = head.value;
+        Node<T> nextNode = head.next;
         if (nextNode != null) {
             nextNode.previous = null;
         }
@@ -170,9 +170,9 @@ public class DoublyLinkedList {
         return oldValue;
     }
 
-    private int removeFromMiddle(Node previousNode, Node currentNode) {
-        int oldValue = currentNode.value;
-        Node nextNode = currentNode.next;
+    private T removeFromMiddle(Node<T> previousNode, Node<T> currentNode) {
+        T oldValue = currentNode.value;
+        Node<T> nextNode = currentNode.next;
         previousNode.next = nextNode;
         if (nextNode != null) {
             nextNode.previous = previousNode;

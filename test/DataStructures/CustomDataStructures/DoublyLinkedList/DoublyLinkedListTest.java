@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Assertions;
 
 class DoublyLinkedListTest {
 
-    private DoublyLinkedList emptyDoublyLinkedList;
-    private DoublyLinkedList simpleDoublyLinkedList;
+    private DoublyLinkedList<Integer> emptyDoublyLinkedList;
+    private DoublyLinkedList<Integer> simpleDoublyLinkedList;
 
     @BeforeEach
     void setUp() {
-        simpleDoublyLinkedList = new DoublyLinkedList();
+        simpleDoublyLinkedList = new DoublyLinkedList<>();
         simpleDoublyLinkedList.insert(1, 0);
         simpleDoublyLinkedList.insert(2, 1);
         simpleDoublyLinkedList.insert(3, 2);
@@ -23,7 +23,7 @@ class DoublyLinkedListTest {
         Assert.assertEquals("1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5",
                             simpleDoublyLinkedList.toString());
 
-        emptyDoublyLinkedList = new DoublyLinkedList();
+        emptyDoublyLinkedList = new DoublyLinkedList<>();
     }
 
     @AfterEach
