@@ -116,7 +116,7 @@ public class SinglyCircularLinkedList<T> {
         do {
             singlyLinkedListString.append(currentNode.value);
             if (currentNode.next != head) {
-                singlyLinkedListString.append(" Next ");
+                singlyLinkedListString.append(" NEXT ");
             }
             currentNode = currentNode.next;
         } while (currentNode != head);
@@ -127,7 +127,7 @@ public class SinglyCircularLinkedList<T> {
         //      currentNode = currentNode.next;
         // }
 
-        singlyLinkedListString.append(" Back to " + head.value);
+        singlyLinkedListString.append(" BACK TO " + head.value);
         return singlyLinkedListString.toString();
     }
 
