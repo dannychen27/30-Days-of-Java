@@ -1,8 +1,8 @@
 package DataStructures.CustomDataStructures.SinglyLinkedList;
 
-public class SinglyLinkedList {
+public class SinglyLinkedList<T> {
 
-    public Node head;
+    public Node<T> head;
     private int size;
 
     public SinglyLinkedList() {
@@ -28,7 +28,7 @@ public class SinglyLinkedList {
      *
      * Precondition: 0 <= targetIndex <= length of singly linked list - 1.
      */
-    public void insert(int newValue, int targetIndex) {
+    public void insert(T newValue, int targetIndex) {
         if (targetIndex > size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -39,7 +39,7 @@ public class SinglyLinkedList {
         }
 
         int currentIndex = 0;
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null && currentIndex < targetIndex - 1) {
             currentNode = currentNode.next;
             currentIndex++;
@@ -54,8 +54,9 @@ public class SinglyLinkedList {
 
     /**
      * Delete the first occurrence of oldValue from this singly linked list.
+     * @param oldValue
      */
-    public void delete(int oldValue) {
+    public void delete(T oldValue) {
         if (isEmpty()) {
             throw new IllegalStateException("This value does not exist in the singly linked list.");
         }
@@ -65,8 +66,8 @@ public class SinglyLinkedList {
             return;
         }
 
-        Node previousNode = null;
-        Node currentNode = head;
+        Node<T> previousNode = null;
+        Node<T> currentNode = head;
         while (currentNode != null && currentNode.value != oldValue) {
             previousNode = currentNode;
             currentNode = currentNode.next;
@@ -82,7 +83,7 @@ public class SinglyLinkedList {
     /**
      * Remove and return the item at targetIndex of this singly linked list.
      */
-    public int pop(int targetIndex) {
+    public T pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -92,8 +93,8 @@ public class SinglyLinkedList {
         }
 
         int currentIndex = 0;
-        Node previousNode = null;
-        Node currentNode = head;
+        Node<T> previousNode = null;
+        Node<T> currentNode = head;
         while (currentIndex < targetIndex) {
             previousNode = currentNode;
             currentNode = currentNode.next;
@@ -108,7 +109,7 @@ public class SinglyLinkedList {
      */
     public String toString() {
         StringBuilder singlyLinkedListString = new StringBuilder();
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null) {
             singlyLinkedListString.append(currentNode.value);
 
@@ -122,48 +123,48 @@ public class SinglyLinkedList {
         return singlyLinkedListString.toString();
     }
 
-    private void prepend(int newValue) {
-        Node newHead = new Node(newValue);
+    private void prepend(T newValue) {
+        Node<T> newHead = new Node<>(newValue);
         newHead.next = head;
         head = newHead;
         size++;
     }
 
-    private void insertInMiddle(Node currentNode, int newValue) {
-        Node newNode = new Node(newValue);
-        Node oldNode = currentNode.next;
+    private void insertInMiddle(Node<T> currentNode, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
+        Node<T> oldNode = currentNode.next;
         currentNode.next = newNode;
         newNode.next = oldNode;
         size++;
     }
 
-    private void append(int newValue) {
+    private void append(T newValue) {
         if (isEmpty()) {
             prepend(newValue);
             return;
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
 
-        Node newNode = new Node(newValue);
+        Node<T> newNode = new Node<>(newValue);
         currentNode.next = newNode;
         size++;
     }
 
-    private int removeFromBeginning() {
-        int oldValue = head.value;
-        Node nextNode = head.next;
+    private T removeFromBeginning() {
+        T oldValue = head.value;
+        Node<T> nextNode = head.next;
         head = nextNode;
         size--;
         return oldValue;
     }
 
-    private int removeFromMiddle(Node previousNode, Node currentNode) {
-        int oldValue = currentNode.value;
-        Node nextNode = currentNode.next;
+    private T removeFromMiddle(Node<T> previousNode, Node<T> currentNode) {
+        T oldValue = currentNode.value;
+        Node<T> nextNode = currentNode.next;
         previousNode.next = nextNode;
         size--;
         return oldValue;

@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 
 class SinglyLinkedListTest {
 
-    private SinglyLinkedList emptySinglyLinkedList;
-    private SinglyLinkedList simpleSinglyLinkedList;
+    private SinglyLinkedList<Integer> emptySinglyLinkedList;
+    private SinglyLinkedList<Integer> simpleSinglyLinkedList;
 
     @BeforeEach
     void setUp() {
-        simpleSinglyLinkedList = new SinglyLinkedList();
+        simpleSinglyLinkedList = new SinglyLinkedList<>();
         simpleSinglyLinkedList.insert(1, 0);
         simpleSinglyLinkedList.insert(2, 1);
         simpleSinglyLinkedList.insert(3, 2);
@@ -22,7 +22,7 @@ class SinglyLinkedListTest {
         Assert.assertEquals("1 Next 2 Next 3 Next 4 Next 5",
                             simpleSinglyLinkedList.toString());
 
-        emptySinglyLinkedList = new SinglyLinkedList();
+        emptySinglyLinkedList = new SinglyLinkedList<>();
     }
 
     @AfterEach
