@@ -1,11 +1,11 @@
 package DataStructures.CustomDataStructures.SinglyCircularLinkedList;
 
-class Node {
+class Node<T> {
 
-    public int value;
-    public Node next;
+    public T value;
+    public Node<T> next;
 
-    public Node(int newValue) {
+    public Node(T newValue) {
         this.value = newValue;
         this.next = null;
     }

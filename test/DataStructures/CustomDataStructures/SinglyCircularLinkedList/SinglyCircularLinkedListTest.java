@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 
 class SinglyCircularLinkedListTest {
 
-    private SinglyCircularLinkedList emptySinglyCircularLinkedList;
-    private SinglyCircularLinkedList simpleSinglyCircularLinkedList;
+    private SinglyCircularLinkedList<Integer> emptySinglyCircularLinkedList;
+    private SinglyCircularLinkedList<Integer> simpleSinglyCircularLinkedList;
 
     @BeforeEach
     void setUp() {
-        simpleSinglyCircularLinkedList = new SinglyCircularLinkedList();
+        simpleSinglyCircularLinkedList = new SinglyCircularLinkedList<>();
         simpleSinglyCircularLinkedList.insert(1, 0);
         simpleSinglyCircularLinkedList.insert(2, 1);
         simpleSinglyCircularLinkedList.insert(3, 2);
@@ -22,7 +22,7 @@ class SinglyCircularLinkedListTest {
         Assert.assertEquals("1 Next 2 Next 3 Next 4 Next 5 Back to 1",
                             simpleSinglyCircularLinkedList.toString());
 
-        emptySinglyCircularLinkedList = new SinglyCircularLinkedList();
+        emptySinglyCircularLinkedList = new SinglyCircularLinkedList<>();
     }
 
     @AfterEach

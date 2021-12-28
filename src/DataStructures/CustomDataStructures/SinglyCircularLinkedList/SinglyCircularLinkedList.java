@@ -1,8 +1,8 @@
 package DataStructures.CustomDataStructures.SinglyCircularLinkedList;
 
-public class SinglyCircularLinkedList {
+public class SinglyCircularLinkedList<T> {
 
-    public Node head;
+    public Node<T> head;
     private int size;
 
     public SinglyCircularLinkedList() {
@@ -28,46 +28,46 @@ public class SinglyCircularLinkedList {
      *
      * Precondition: 0 <= targetIndex <= length of circular linked list - 1.
      */
-    public void insert(int newValue, int targetIndex) {
+    public void insert(T newItem, int targetIndex) {
         if (targetIndex > size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
 
         if (isEmpty() || targetIndex == 0) {
-            prepend(newValue);
+            prepend(newItem);
             return;
         }
 
         int currentIndex = 0;
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null && currentIndex < targetIndex - 1) {
             currentNode = currentNode.next;
             currentIndex++;
         }
 
         if (currentNode != null) {
-            insertInMiddle(currentNode, newValue);
+            insertInMiddle(currentNode, newItem);
         } else {
-            append(newValue);
+            append(newItem);
         }
     }
 
     /**
      * Delete the first occurrence of oldValue from this singly circular linked list.
      */
-    public void delete(int oldValue) {
+    public void delete(T oldItem) {
         if (isEmpty()) {
             throw new IllegalStateException("This value does not exist in the singly circular linked list.");
         }
 
-        if (head.value == oldValue) {
+        if (head.value == oldItem) {
             removeFromBeginning();
             return;
         }
 
-        Node previousNode = null;
-        Node currentNode = head;
-        while (currentNode != null && currentNode.value != oldValue) {
+        Node<T> previousNode = null;
+        Node<T> currentNode = head;
+        while (currentNode != null && currentNode.value != oldItem) {
             previousNode = currentNode;
             currentNode = currentNode.next;
         }
@@ -82,7 +82,7 @@ public class SinglyCircularLinkedList {
     /**
      * Remove and return the item at targetIndex of this singly circular linked list.
      */
-    public int pop(int targetIndex) {
+    public T pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
             throw new IndexOutOfBoundsException("This index is out of bounds.");
         }
@@ -92,8 +92,8 @@ public class SinglyCircularLinkedList {
         }
 
         int currentIndex = 0;
-        Node previousNode = null;
-        Node currentNode = head;
+        Node<T> previousNode = null;
+        Node<T> currentNode = head;
         while (currentIndex < targetIndex) {
             previousNode = currentNode;
             currentNode = currentNode.next;
@@ -112,7 +112,7 @@ public class SinglyCircularLinkedList {
             return singlyLinkedListString.toString();
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         do {
             singlyLinkedListString.append(currentNode.value);
             if (currentNode.next != head) {
@@ -131,14 +131,14 @@ public class SinglyCircularLinkedList {
         return singlyLinkedListString.toString();
     }
 
-    private void prepend(int newValue) {
-        Node newHead = new Node(newValue);
+    private void prepend(T newItem) {
+        Node<T> newHead = new Node<>(newItem);
         if (head == null) {
             head = newHead;
         }
         newHead.next = head;
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode.next != head) {
             currentNode = currentNode.next;
         }
@@ -147,9 +147,9 @@ public class SinglyCircularLinkedList {
         size++;
     }
 
-    private void insertInMiddle(Node currentNode, int newValue) {
-        Node newNode = new Node(newValue);
-        Node oldNode = currentNode.next;
+    private void insertInMiddle(Node<T> currentNode, T newItem) {
+        Node<T> newNode = new Node<>(newItem);
+        Node<T> oldNode = currentNode.next;
 
         currentNode.next = newNode;
         if (currentNode.next == null) {
@@ -167,35 +167,35 @@ public class SinglyCircularLinkedList {
         size++;
     }
 
-    private void append(int newValue) {
+    private void append(T newItem) {
         if (isEmpty()) {
-            prepend(newValue);
+            prepend(newItem);
             return;
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode.next != head) {
             currentNode = currentNode.next;
         }
 
-        Node newNode = new Node(newValue);
+        Node<T> newNode = new Node<>(newItem);
         currentNode.next = newNode;
         newNode.next = head;
         size++;
     }
 
-    private int removeFromBeginning() {
-        int oldValue = head.value;
+    private T removeFromBeginning() {
+        T oldValue = head.value;
 
-        Node oldHead = head;
-        Node nextNode = head.next;
+        Node<T> oldHead = head;
+        Node<T> nextNode = head.next;
         head = nextNode;
         if (head.next == head) {
             head = null;
             return oldValue;
         }
 
-        Node currentNode = head;
+        Node<T> currentNode = head;
         while (currentNode != null && currentNode.next != oldHead) {
             currentNode = currentNode.next;
         }
@@ -207,10 +207,10 @@ public class SinglyCircularLinkedList {
         return oldValue;
     }
 
-    private int removeFromMiddle(Node previousNode, Node currentNode) {
-        int oldValue = currentNode.value;
+    private T removeFromMiddle(Node<T> previousNode, Node<T> currentNode) {
+        T oldValue = currentNode.value;
 
-        Node nextNode = currentNode.next;
+        Node<T> nextNode = currentNode.next;
         if (nextNode.next == null) {
             nextNode.next = head;
         }
