@@ -105,13 +105,13 @@ public class DoublyLinkedList<T> {
         Node<T> currentNode = head;
         while (currentNode != null) {
             if (currentNode.previous != null) {
-                doublyLinkedListString.append("Previous ");
+                doublyLinkedListString.append("PREVIOUS ");
             }
 
             doublyLinkedListString.append(currentNode.value);
 
             if (currentNode.next != null) {
-                doublyLinkedListString.append(" Next ");
+                doublyLinkedListString.append(" NEXT ");
             }
 
             currentNode = currentNode.next;

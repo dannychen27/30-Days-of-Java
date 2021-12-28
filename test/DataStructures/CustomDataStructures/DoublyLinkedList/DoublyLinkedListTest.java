@@ -20,7 +20,7 @@ class DoublyLinkedListTest {
         simpleDoublyLinkedList.insert(3, 2);
         simpleDoublyLinkedList.insert(4, 3);
         simpleDoublyLinkedList.insert(5, 4);
-        Assert.assertEquals("1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5",
+        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
                             simpleDoublyLinkedList.toString());
 
         emptyDoublyLinkedList = new DoublyLinkedList<>();
@@ -34,42 +34,42 @@ class DoublyLinkedListTest {
     @Test
     void testInsertAtBeginningOfDoublyLinkedList() {
         simpleDoublyLinkedList.insert(6, 0);
-        Assert.assertEquals("6 Next Previous 1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5",
+        Assert.assertEquals("6 NEXT PREVIOUS 1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
                             simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testInsertInMiddleOfDoublyLinkedList() {
         simpleDoublyLinkedList.insert(7,3);
-        Assert.assertEquals("1 Next Previous 2 Next Previous 3 Next Previous 7 Next Previous 4 Next Previous 5",
+        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 7 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
                             simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testInsertAtEndOfDoublyLinkedList() {
         simpleDoublyLinkedList.insert(8, 5);
-        Assert.assertEquals("1 Next Previous 2 Next Previous 3 Next Previous 4 Next Previous 5 Next Previous 8",
+        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5 NEXT PREVIOUS 8",
                             simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromBeginningOfDoublyLinkedList() {
         simpleDoublyLinkedList.delete(1);
-        Assert.assertEquals("2 Next Previous 3 Next Previous 4 Next Previous 5",
+        Assert.assertEquals("2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
                             simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromMiddleOfDoublyLinkedList() {
         simpleDoublyLinkedList.delete(3);
-        Assert.assertEquals("1 Next Previous 2 Next Previous 4 Next Previous 5",
+        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
                             simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromEndOfDoublyLinkedList() {
         simpleDoublyLinkedList.delete(5);
-        Assert.assertEquals("1 Next Previous 2 Next Previous 3 Next Previous 4",
+        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4",
                             simpleDoublyLinkedList.toString());
     }
 
