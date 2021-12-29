@@ -57,8 +57,8 @@ public class Tree<T> {
 
         Tree<T> newChild = new Tree<>(newValue);
         newParent.children.add(newChild);
-        updateAncestorHeights(newParent);
         newChild.parent = newParent;
+        updateAncestorHeights(newChild);
         return newChild;
     }
 
@@ -89,12 +89,11 @@ public class Tree<T> {
         return treeString;
     }
 
-    private void updateAncestorHeights(Tree<T> newParent) {
-        Tree<T> currentTree = newParent;
-        currentTree.rank++;
-        while (currentTree != this) {
-            currentTree.rank++;
+    private void updateAncestorHeights(Tree<T> newChild) {
+        Tree<T> currentTree = newChild;
+        while (currentTree.parent.root != currentTree.root) {
             currentTree = currentTree.parent;
+            currentTree.rank++;
         }
     }
 
@@ -135,5 +134,23 @@ public class Tree<T> {
         System.out.println(tree2);
         tree6.setParent(tree6, tree2);
         System.out.println(tree2);
+
+        // TODO: Make sure that the ranks are correct!
+
+        Tree<String> harper = new Tree<>( "Harper");
+        System.out.println(harper);
+        Tree<String> bieber = harper.addChild(harper, "Bieber");
+        System.out.println(harper);
+        Tree<String> ford = harper.addChild(harper, "Ford");
+        System.out.println(harper);
+        Tree<String> regehr = harper.addChild(ford, "Regehr");
+        System.out.println(harper);
+
+        Tree<String> obama = new Tree<>( "Obama");
+        System.out.println(obama);
+        Tree<String> gaga = obama.addChild(obama, "Gaga");
+        System.out.println(obama);
+        Tree<String> oprah = obama.addChild(gaga, "Oprah");
+        System.out.println(obama);
     }
 }
