@@ -22,6 +22,7 @@ public class DisjointSet<T> implements UnionFind<T> {
         return items.isEmpty();
     }
 
+    // time: O(1) to make a singleton linked list.
     @Override
     public void makeSet(T newItem) {
         if (items.contains(newItem)) {
@@ -33,6 +34,9 @@ public class DisjointSet<T> implements UnionFind<T> {
         items.add(newItem);
     }
 
+    // time: O(L), where L is the length of all the disjoint sets.
+    // It's possible that we must traverse every disjoint set to find the target item, or determine
+    // that the target item is not found.
     @Override
     public T findSet(T targetItem) {
         if (!items.contains(targetItem)) {
@@ -48,6 +52,9 @@ public class DisjointSet<T> implements UnionFind<T> {
         return null;  // this should never happen because we handle the "not found" case above
     }
 
+    // time: O(L), where L is the length of all the disjoint sets.
+    // - it takes O(L) time to locate the heads of both linked lists to link them together,
+    // - however, it takes O(1) time to append the two linked lists, since we have access to their tails.
     @Override
     public void union(T targetItem1, T targetItem2) {
         if (!items.contains(targetItem1)) {
