@@ -64,10 +64,8 @@ public class Tree<T> {
 
     public void setParent(Tree<T> targetTree, Tree<T> newParent) {
         targetTree.parent.children.remove(targetTree);
-        targetTree.parent.rank--;
-        newParent.children.add(targetTree);
-        newParent.rank++;
         targetTree.parent = newParent;
+        newParent.children.add(targetTree);
     }
 
     public String toString() {
@@ -152,5 +150,10 @@ public class Tree<T> {
         System.out.println(obama);
         Tree<String> oprah = obama.addChild(gaga, "Oprah");
         System.out.println(obama);
+
+        obama.setParent(oprah, obama);
+        System.out.println(obama);
+        harper.setParent(obama, harper);
+        System.out.println(harper);
     }
 }
