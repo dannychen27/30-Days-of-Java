@@ -66,6 +66,12 @@ public class Tree<T> {
         targetTree.parent.children.remove(targetTree);
         targetTree.parent = newParent;
         newParent.children.add(targetTree);
+        if (newParent.parent.children.size() == 1) {
+            newParent.rank = Math.max(newParent.rank + 1, newParent.children.size());
+        } else {  // newParent.parent.children.size() >= 2
+            // prefer not to increase the rank of a parent tree with >= 2 children
+            newParent.rank = Math.min(newParent.rank + 1, newParent.children.size());
+        }
     }
 
     public String toString() {
@@ -91,7 +97,12 @@ public class Tree<T> {
         Tree<T> currentTree = newChild;
         while (currentTree.parent.root != currentTree.root) {
             currentTree = currentTree.parent;
-            currentTree.rank++;
+            if (currentTree.parent.children.size() == 1) {
+                currentTree.rank = Math.max(currentTree.rank + 1, currentTree.children.size());
+            } else {  // currentTree.parent.children.size() >= 2
+                // prefer not to increase the rank of a parent tree with >= 2 children
+                currentTree.rank = Math.min(currentTree.rank + 1, currentTree.children.size());
+            }
         }
     }
 
@@ -155,5 +166,22 @@ public class Tree<T> {
         System.out.println(obama);
         harper.setParent(obama, harper);
         System.out.println(harper);
+
+        Tree<String> treeA = new Tree<>("A");
+        Tree<String> treeB = treeA.addChild(treeA, "B");
+        Tree<String> treeC = treeA.addChild(treeB, "C");
+        Tree<String> treeD = treeA.addChild(treeC, "D");
+        Tree<String> treeE = treeA.addChild(treeD, "E");
+        System.out.println(treeA);
+
+        // path compression
+        treeA.setParent(treeE, treeA);
+        System.out.println(treeA);
+
+        treeA.setParent(treeD, treeA);
+        System.out.println(treeA);
+
+        treeA.setParent(treeC, treeA);
+        System.out.println(treeA);
     }
 }
