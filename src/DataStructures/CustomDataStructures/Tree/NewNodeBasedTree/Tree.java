@@ -80,7 +80,7 @@ public class Tree<T> {
         }
 
         String treeString = addIndentation(depth);
-        treeString += root + ", height: " + rank + "\n";
+        treeString += root + ", rank: " + rank + "\n";
         for (Tree<T> child : children) {
             treeString += child.toStringIndented(depth + 1);
         }
