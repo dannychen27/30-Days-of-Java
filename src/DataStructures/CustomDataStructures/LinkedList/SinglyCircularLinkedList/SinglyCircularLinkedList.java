@@ -11,6 +11,10 @@ public class SinglyCircularLinkedList<T> implements LinkedList<T> {
         head = null;
     }
 
+    public SinglyCircularLinkedList(T newValue) {
+        insert(newValue, 0);
+    }
+
     /**
      * Return true iff this singly circular linked list contains no elements.
      */
@@ -23,6 +27,20 @@ public class SinglyCircularLinkedList<T> implements LinkedList<T> {
      */
     public int getSize() {
         return size;
+    }
+
+    /**
+     * Return true iff this singly circular linked list contains the value targetItem.
+     */
+    public boolean contains(T targetItem) {
+        Node<T> currentNode = head;
+        do {
+            if (currentNode.value.equals(targetItem)) {
+                return true;
+            }
+            currentNode = currentNode.next;
+        } while (currentNode != head);
+        return false;
     }
 
     /**
@@ -103,6 +121,27 @@ public class SinglyCircularLinkedList<T> implements LinkedList<T> {
         }
 
         return removeFromMiddle(previousNode, currentNode);
+    }
+
+    /**
+     * Attach the tail of this singly circular linked list with the head of another linked list.
+     */
+    public void concatenate(SinglyCircularLinkedList<T> otherLinkedList) {
+        // find the tail of this linked list
+        Node<T> linkedList1Position = head;
+        while (linkedList1Position.next != head) {
+            linkedList1Position = linkedList1Position.next;
+        }
+
+        // find the tail of the other linked list
+        Node<T> linkedList2Position = otherLinkedList.head;
+        while (linkedList2Position.next != otherLinkedList.head) {
+            linkedList2Position = linkedList2Position.next;
+        }
+
+        linkedList1Position.next = otherLinkedList.head;
+        linkedList2Position.next = head;
+        size += otherLinkedList.size;
     }
 
     /**
