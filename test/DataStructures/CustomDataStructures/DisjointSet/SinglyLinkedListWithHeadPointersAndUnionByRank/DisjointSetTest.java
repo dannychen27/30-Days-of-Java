@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.DisjointSet.SinglyLinkedListWithHeadPointersAndUnionByWeight;
+package DataStructures.CustomDataStructures.DisjointSet.SinglyLinkedListWithHeadPointersAndUnionByRank;
 
 import DataStructures.CustomDataStructures.DisjointSet.UnionFind;
 import org.junit.jupiter.api.AfterEach;
