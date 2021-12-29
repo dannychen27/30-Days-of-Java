@@ -1,6 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedList;
 
-class Node<T> {
+public class Node<T> {
 
     public T value;
     public Node<T> previous;

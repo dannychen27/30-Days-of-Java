@@ -4,13 +4,17 @@ import DataStructures.CustomDataStructures.LinkedList.LinkedList;
 
 public class DoublyCircularLinkedList<T> implements LinkedList<T> {
 
-    private Node<T> head;
-    private Node<T> tail;
+    public Node<T> head;
+    public Node<T> tail;
     private int size;
 
     public DoublyCircularLinkedList() {
         head = null;
         tail = null;
+    }
+
+    public DoublyCircularLinkedList(T newValue) {
+        insert(newValue, 0);
     }
 
     /**
@@ -25,6 +29,20 @@ public class DoublyCircularLinkedList<T> implements LinkedList<T> {
      */
     public int getSize() {
         return size;
+    }
+
+    /**
+     * Return true iff this singly circular linked list contains the value targetItem.
+     */
+    public boolean contains(T targetItem) {
+        Node<T> currentNode = head;
+        do {
+            if (currentNode.value.equals(targetItem)) {
+                return true;
+            }
+            currentNode = currentNode.next;
+        } while (currentNode != head);
+        return false;
     }
 
     /**
@@ -107,6 +125,18 @@ public class DoublyCircularLinkedList<T> implements LinkedList<T> {
             currentIndex++;
         }
         return removeFromMiddle(currentNode.previous, currentNode);
+    }
+
+    /**
+     * Attach the tail of this singly circular linked list with the head of another linked list.
+     */
+    public void concatenate(DoublyCircularLinkedList<T> otherLinkedList) {
+        head.previous = otherLinkedList.tail;
+        tail.next = otherLinkedList.head;
+        otherLinkedList.head.previous = tail;
+        otherLinkedList.tail.next = head;
+        tail = otherLinkedList.tail;
+        size += otherLinkedList.size;
     }
 
     /**
