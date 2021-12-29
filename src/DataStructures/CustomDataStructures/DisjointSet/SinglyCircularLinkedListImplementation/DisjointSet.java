@@ -55,7 +55,8 @@ public class DisjointSet<T> implements UnionFind<T> {
     }
 
     // time: O(L), where L is the length of all the disjoint sets.
-    // we must locate the heads of both linked lists to link them together.
+    // - it takes O(L) time to locate the heads of both linked lists to link them together.
+    // - it takes O(L) time to append the two linked lists together, since we don't have access to their tails.
     @Override
     public void union(T targetItem1, T targetItem2) {
         if (!items.contains(targetItem1)) {
