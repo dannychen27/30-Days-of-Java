@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.Tree;
+package DataStructures.CustomDataStructures.Tree.OldNodeBasedTree;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -128,7 +128,7 @@ class Tree<T> {
     /**
      * Return true iff this tree is structurally identical and contain identical values.
      */
-    public boolean equals() {
+    public boolean equals(Tree<T> otherTree) {
         // TODO: Implement this method!
         return true;
     }
@@ -230,8 +230,8 @@ class Tree<T> {
         //	    5
         //	    70
 
-        tree6.preOrderTraversal();
-        tree6.postOrderTraversal();
+        // tree6.preOrderTraversal();
+        // tree6.postOrderTraversal();
     }
 
     private boolean isLeaf() {
@@ -245,7 +245,7 @@ class Tree<T> {
 
         StringBuilder treeString = addIndentation(depth);
         treeString.append(root).append("\n");
-        for (Tree subtree : subtrees) {
+        for (Tree<T> subtree : subtrees) {
             treeString.append(subtree.toStringIndented(depth + 1));
         }
         return treeString.toString();
