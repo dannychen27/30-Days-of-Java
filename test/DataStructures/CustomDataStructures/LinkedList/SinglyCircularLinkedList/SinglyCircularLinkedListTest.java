@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.SinglyCircularLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;

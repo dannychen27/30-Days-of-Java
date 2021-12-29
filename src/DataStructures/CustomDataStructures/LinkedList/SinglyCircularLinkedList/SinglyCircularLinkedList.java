@@ -1,32 +1,32 @@
-package DataStructures.CustomDataStructures.SinglyLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList;
 
-public class SinglyLinkedList<T> {
+public class SinglyCircularLinkedList<T> {
 
     public Node<T> head;
     private int size;
 
-    public SinglyLinkedList() {
+    public SinglyCircularLinkedList() {
         head = null;
     }
 
     /**
-     * Return true iff this singly linked list contains no elements.
+     * Return true iff this singly circular linked list contains no elements.
      */
     public boolean isEmpty() {
         return head == null;
     }
 
     /**
-     * Return the number of items in this singly linked list.
+     * Return the number of items in this singly circular linked list.
      */
     public int getSize() {
         return size;
     }
 
     /**
-     * Insert newValue at index targetIndex of this singly linked list.
+     * Insert newValue at index targetIndex of this singly circular linked list.
      *
-     * Precondition: 0 <= targetIndex <= length of singly linked list - 1.
+     * Precondition: 0 <= targetIndex <= length of circular linked list - 1.
      */
     public void insert(T newValue, int targetIndex) {
         if (targetIndex > size) {
@@ -53,12 +53,11 @@ public class SinglyLinkedList<T> {
     }
 
     /**
-     * Delete the first occurrence of oldValue from this singly linked list.
-     * @param oldValue
+     * Delete the first occurrence of oldValue from this singly circular linked list.
      */
     public void delete(T oldValue) {
         if (isEmpty()) {
-            throw new IllegalStateException("This value does not exist in the singly linked list.");
+            throw new IllegalStateException("This value does not exist in the singly circular linked list.");
         }
 
         if (head.value == oldValue) {
@@ -73,15 +72,15 @@ public class SinglyLinkedList<T> {
             currentNode = currentNode.next;
         }
 
-        if (currentNode == null) {
-            throw new IllegalStateException("This value does not exist in the singly linked list.");
+        if (currentNode == head) {
+            throw new IllegalStateException("This value does not exist in the singly circular linked list.");
         } else {
             removeFromMiddle(previousNode, currentNode);
         }
     }
 
     /**
-     * Remove and return the item at targetIndex of this singly linked list.
+     * Remove and return the item at targetIndex of this singly circular linked list.
      */
     public T pop(int targetIndex) {
         if (isEmpty() || targetIndex >= size) {
@@ -105,27 +104,45 @@ public class SinglyLinkedList<T> {
     }
 
     /**
-     * Return the string representation of this singly linked list.
+     * Return the string representation of this singly circular linked list.
      */
     public String toString() {
         StringBuilder singlyLinkedListString = new StringBuilder();
-        Node<T> currentNode = head;
-        while (currentNode != null) {
-            singlyLinkedListString.append(currentNode.value);
-
-            if (currentNode.next != null) {
-                singlyLinkedListString.append(" NEXT ");
-            }
-
-            currentNode = currentNode.next;
+        if (isEmpty()) {
+            return singlyLinkedListString.toString();
         }
 
+        Node<T> currentNode = head;
+        do {
+            singlyLinkedListString.append(currentNode.value);
+            if (currentNode.next != head) {
+                singlyLinkedListString.append(" NEXT ");
+            }
+            currentNode = currentNode.next;
+        } while (currentNode != head);
+        // Node currentNode = head;
+        // while (currentNode != null && currentNode.next != head) {
+        //      singlyLinkedListString.append(currentNode.value);
+        //      singlyLinkedListString.append(" Next ");
+        //      currentNode = currentNode.next;
+        // }
+
+        singlyLinkedListString.append(" BACK TO " + head.value);
         return singlyLinkedListString.toString();
     }
 
     private void prepend(T newValue) {
         Node<T> newHead = new Node<>(newValue);
+        if (head == null) {
+            head = newHead;
+        }
         newHead.next = head;
+
+        Node<T> currentNode = head;
+        while (currentNode.next != head) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newHead;
         head = newHead;
         size++;
     }
@@ -133,8 +150,20 @@ public class SinglyLinkedList<T> {
     private void insertInMiddle(Node<T> currentNode, T newValue) {
         Node<T> newNode = new Node<>(newValue);
         Node<T> oldNode = currentNode.next;
+
         currentNode.next = newNode;
+        if (currentNode.next == null) {
+            currentNode.next = head;  // this case is impossible.
+        }
+
         newNode.next = oldNode;
+        if (newNode.next == null) {
+            newNode.next = head;
+        }
+        if (oldNode.next == null) {
+            oldNode.next = head;
+        }
+
         size++;
     }
 
@@ -145,26 +174,47 @@ public class SinglyLinkedList<T> {
         }
 
         Node<T> currentNode = head;
-        while (currentNode.next != null) {
+        while (currentNode.next != head) {
             currentNode = currentNode.next;
         }
 
         Node<T> newNode = new Node<>(newValue);
         currentNode.next = newNode;
+        newNode.next = head;
         size++;
     }
 
     private T removeFromBeginning() {
         T oldValue = head.value;
+
+        Node<T> oldHead = head;
         Node<T> nextNode = head.next;
         head = nextNode;
+        if (head.next == head) {
+            head = null;
+            return oldValue;
+        }
+
+        Node<T> currentNode = head;
+        while (currentNode != null && currentNode.next != oldHead) {
+            currentNode = currentNode.next;
+        }
+        if (currentNode != null) {
+            currentNode.next = head;
+        }
+
         size--;
         return oldValue;
     }
 
     private T removeFromMiddle(Node<T> previousNode, Node<T> currentNode) {
         T oldValue = currentNode.value;
+
         Node<T> nextNode = currentNode.next;
+        if (nextNode.next == null) {
+            nextNode.next = head;
+        }
+
         previousNode.next = nextNode;
         size--;
         return oldValue;

@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.DoublyLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedList;
 
 class Node<T> {
 

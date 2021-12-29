@@ -1,6 +1,6 @@
 package InterviewProblems.LinkedListProblems.HasCycle;
 
-import DataStructures.CustomDataStructures.SinglyLinkedList.Node;
+import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList.Node;
 import java.util.HashSet;
 
 /**

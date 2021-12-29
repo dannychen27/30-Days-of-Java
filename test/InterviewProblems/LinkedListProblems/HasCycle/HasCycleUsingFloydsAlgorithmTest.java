@@ -1,7 +1,7 @@
 package InterviewProblems.LinkedListProblems.HasCycle;
 
-import DataStructures.CustomDataStructures.SinglyLinkedList.Node;
-import DataStructures.CustomDataStructures.SinglyLinkedList.SinglyLinkedList;
+import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList.Node;
+import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList.SinglyLinkedList;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

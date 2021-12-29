@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.DoublyCircularLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

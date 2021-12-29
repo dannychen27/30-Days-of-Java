@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.DoublyLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.DoublyLinkedList;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;

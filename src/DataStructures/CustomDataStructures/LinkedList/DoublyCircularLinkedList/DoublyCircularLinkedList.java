@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.DoublyCircularLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedList;
 
 public class DoublyCircularLinkedList<T> {
 

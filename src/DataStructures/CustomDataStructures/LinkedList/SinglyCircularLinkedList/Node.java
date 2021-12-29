@@ -1,6 +1,7 @@
-package DataStructures.CustomDataStructures.SinglyLinkedList;
+package DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList;
 
-public class Node<T> {
+class Node<T> {
+
     public T value;
     public Node<T> next;
 
