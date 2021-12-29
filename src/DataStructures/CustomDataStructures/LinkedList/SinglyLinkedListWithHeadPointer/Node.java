@@ -1,6 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListWithHeadPointer;
 
-class Node<T> {
+public class Node<T> {
 
     public T value;
     public Node<T> next;

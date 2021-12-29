@@ -5,15 +5,21 @@ import DataStructures.CustomDataStructures.LinkedList.LinkedList;
 public class SinglyLinkedListWithHeadPointer<T> implements LinkedList<T> {
 
     public Node<T> head;
+    public Node<T> tail;
     private int size;
 
     public SinglyLinkedListWithHeadPointer() {
         head = null;
+        tail = null;
+    }
+
+    public SinglyLinkedListWithHeadPointer(T newValue) {
+        insert(newValue, 0);
     }
 
     @Override
     public boolean isEmpty() {
-        return head == null;
+        return head == null && tail == null;
     }
 
     @Override
@@ -55,6 +61,9 @@ public class SinglyLinkedListWithHeadPointer<T> implements LinkedList<T> {
         if (head.value == oldValue) {
             removeFromBeginning();
             return;
+        } else if (tail.value == oldValue) {
+            removeFromEnd();
+            return;
         }
 
         Node<T> previousNode = null;
@@ -94,6 +103,28 @@ public class SinglyLinkedListWithHeadPointer<T> implements LinkedList<T> {
     }
 
     /**
+     * Attach the tail of this singly circular linked list with the head of another linked list.
+     */
+    public void concatenate(SinglyLinkedListWithHeadPointer<T> otherLinkedList) {
+        // find the tail of this linked list
+        // Node<T> linkedList1Tail = tail;
+
+        // find the tail of the other linked list
+        // Node<T> linkedList2Tail = otherLinkedList.tail;
+
+        tail.next = otherLinkedList.head;
+        tail = otherLinkedList.tail;
+
+        // update all head pointers of the other linked list.
+        Node<T> currentNode = otherLinkedList.head;
+        while (currentNode != null) {
+            currentNode.head = head;
+            currentNode = currentNode.next;
+        }
+        size += otherLinkedList.size;
+    }
+
+    /**
      * Return the string representation of this singly linked list.
      */
     public String toString() {
@@ -114,8 +145,13 @@ public class SinglyLinkedListWithHeadPointer<T> implements LinkedList<T> {
 
     private void prepend(T newValue) {
         Node<T> newHead = new Node<>(newValue);
-        newHead.next = head;
-        head = newHead;
+        if (isEmpty()) {
+            head = newHead;
+            tail = newHead;
+        } else {
+            newHead.next = head;
+            head = newHead;
+        }
         newHead.head = head;
         size++;
     }
@@ -135,21 +171,22 @@ public class SinglyLinkedListWithHeadPointer<T> implements LinkedList<T> {
             return;
         }
 
-        Node<T> currentNode = head;
-        while (currentNode.next != null) {
-            currentNode = currentNode.next;
-        }
-
         Node<T> newNode = new Node<>(newValue);
-        currentNode.next = newNode;
+        tail.next = newNode;
         newNode.head = head;
+        tail = newNode;
         size++;
     }
 
     private T removeFromBeginning() {
         T oldValue = head.value;
         Node<T> nextNode = head.next;
-        head = nextNode;
+        if (isEmpty()) {
+            head = null;
+            tail = null;
+        } else {
+            head = nextNode;
+        }
         size--;
         return oldValue;
     }
@@ -160,5 +197,25 @@ public class SinglyLinkedListWithHeadPointer<T> implements LinkedList<T> {
         previousNode.next = nextNode;
         size--;
         return oldValue;
+    }
+
+    private T removeFromEnd() {
+        Node<T> oldTail = tail;
+
+        Node<T> currentNode = head;
+        while (currentNode.next != tail) {
+            currentNode = currentNode.next;
+        }
+        Node<T> newTail = currentNode;
+
+        if (head == tail) {
+            head = null;
+            tail = null;
+        } else {
+            newTail.next = null;
+            tail = newTail;
+        }
+        size--;
+        return oldTail.value;
     }
 }
