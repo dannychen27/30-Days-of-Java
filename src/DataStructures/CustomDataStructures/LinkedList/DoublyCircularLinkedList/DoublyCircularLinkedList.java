@@ -1,6 +1,8 @@
 package DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedList;
 
-public class DoublyCircularLinkedList<T> {
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
+
+public class DoublyCircularLinkedList<T> implements LinkedList<T> {
 
     private Node<T> head;
     private Node<T> tail;

@@ -1,6 +1,8 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList;
 
-public class SinglyCircularLinkedList<T> {
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
+
+public class SinglyCircularLinkedList<T> implements LinkedList<T> {
 
     public Node<T> head;
     private int size;

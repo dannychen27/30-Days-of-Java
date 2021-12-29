@@ -1,5 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedList;
 
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,8 +8,8 @@ import org.junit.jupiter.api.Test;
 
 class DoublyCircularLinkedListTest {
 
-    private DoublyCircularLinkedList<Integer> emptyDoublyCircularLinkedList;
-    private DoublyCircularLinkedList<Integer> simpleDoublyCircularLinkedList;
+    private LinkedList<Integer> emptyDoublyCircularLinkedList;
+    private LinkedList<Integer> simpleDoublyCircularLinkedList;
 
     @BeforeEach
     void setUp() {

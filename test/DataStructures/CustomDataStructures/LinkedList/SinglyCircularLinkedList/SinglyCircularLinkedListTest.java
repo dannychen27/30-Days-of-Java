@@ -1,5 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList;
 
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -8,8 +9,8 @@ import org.junit.jupiter.api.Test;
 
 class SinglyCircularLinkedListTest {
 
-    private SinglyCircularLinkedList<Integer> emptySinglyCircularLinkedList;
-    private SinglyCircularLinkedList<Integer> simpleSinglyCircularLinkedList;
+    private LinkedList<Integer> emptySinglyCircularLinkedList;
+    private LinkedList<Integer> simpleSinglyCircularLinkedList;
 
     @BeforeEach
     void setUp() {

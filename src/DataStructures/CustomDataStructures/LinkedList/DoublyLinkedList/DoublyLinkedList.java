@@ -1,6 +1,8 @@
 package DataStructures.CustomDataStructures.LinkedList.DoublyLinkedList;
 
-public class DoublyLinkedList<T> {
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
+
+public class DoublyLinkedList<T> implements LinkedList<T> {
 
     private Node<T> head;
     private int size;

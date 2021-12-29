@@ -1,6 +1,8 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList;
 
-public class SinglyLinkedList<T> {
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
+
+public class SinglyLinkedList<T> implements LinkedList<T> {
 
     public Node<T> head;
     private int size;
@@ -54,7 +56,6 @@ public class SinglyLinkedList<T> {
 
     /**
      * Delete the first occurrence of oldValue from this singly linked list.
-     * @param oldValue
      */
     public void delete(T oldValue) {
         if (isEmpty()) {

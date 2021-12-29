@@ -1,5 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList;
 
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -8,8 +9,8 @@ import org.junit.jupiter.api.Test;
 
 class SinglyLinkedListTest {
 
-    private SinglyLinkedList<Integer> emptySinglyLinkedList;
-    private SinglyLinkedList<Integer> simpleSinglyLinkedList;
+    private LinkedList<Integer> emptySinglyLinkedList;
+    private LinkedList<Integer> simpleSinglyLinkedList;
 
     @BeforeEach
     void setUp() {

@@ -1,16 +1,16 @@
 package DataStructures.CustomDataStructures.LinkedList.DoublyLinkedList;
 
+import DataStructures.CustomDataStructures.LinkedList.LinkedList;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import org.junit.jupiter.api.Assertions;
-
 class DoublyLinkedListTest {
 
-    private DoublyLinkedList<Integer> emptyDoublyLinkedList;
-    private DoublyLinkedList<Integer> simpleDoublyLinkedList;
+    private LinkedList<Integer> emptyDoublyLinkedList;
+    private LinkedList<Integer> simpleDoublyLinkedList;
 
     @BeforeEach
     void setUp() {
