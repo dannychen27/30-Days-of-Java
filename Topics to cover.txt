@@ -125,7 +125,7 @@ dynamic arrays -- DONE
 // todo: huffman trees
 disjoint sets with singly circular linked list -- DONE FOR NOW
 disjoint sets with doubly circular linked list -- DONE FOR NOW
-// todo: disjoint sets with singly linked list with extra pointers to head
+disjoint sets with singly linked list with extra pointers to head -- DONE FOR NOW
 // todo: disjoint sets with trees
 // todo: disjoint sets with trees and union by rank
 // todo: disjoint sets with trees and path compression
