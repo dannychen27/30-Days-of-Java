@@ -8,21 +8,28 @@ public class Tree<T> {
     private final T root;
     private Tree<T> parent;
     private final List<Tree<T>> children;
+    private int height;
 
     public Tree() {
         root = null;
         parent = this;
         children = new LinkedList<>();
+        height = 0;
     }
 
     public Tree(T newValue) {
         root = newValue;
         parent = this;
         children = new LinkedList<>();
+        height = 0;
     }
 
     public boolean isEmpty() {
         return root == null;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public Tree<T> search(T targetValue) {
@@ -50,13 +57,16 @@ public class Tree<T> {
 
         Tree<T> newChild = new Tree<>(newValue);
         newParent.children.add(newChild);
+        updateAncestorHeights(newParent);
         newChild.parent = newParent;
         return newChild;
     }
 
     public void setParent(Tree<T> targetTree, Tree<T> newParent) {
         targetTree.parent.children.remove(targetTree);
+        targetTree.parent.height--;
         newParent.children.add(targetTree);
+        newParent.height++;
         targetTree.parent = newParent;
     }
 
@@ -72,11 +82,20 @@ public class Tree<T> {
         }
 
         String treeString = addIndentation(depth);
-        treeString += root + "\n";
+        treeString += root + ", height: " + height + "\n";
         for (Tree<T> child : children) {
             treeString += child.toStringIndented(depth + 1);
         }
         return treeString;
+    }
+
+    private void updateAncestorHeights(Tree<T> newParent) {
+        Tree<T> currentTree = newParent;
+        currentTree.height++;
+        while (currentTree != this) {
+            currentTree.height++;
+            currentTree = currentTree.parent;
+        }
     }
 
     private String addIndentation(int depth) {
