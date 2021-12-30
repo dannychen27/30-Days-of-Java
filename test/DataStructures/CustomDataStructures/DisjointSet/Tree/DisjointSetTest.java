@@ -15,9 +15,10 @@ public class DisjointSetTest {
     @BeforeEach
     void setUp() {
         nonemptyDisjointSet = new DisjointSet<>();
-        nonemptyDisjointSet.makeSet("Shawn Mendes");
-        nonemptyDisjointSet.makeSet("Grant Gustin");
-        nonemptyDisjointSet.makeSet("Riker Lynch");
+        String[] celebrities = {"Shawn Mendes", "Grant Gustin", "Riker Lynch"};
+        for (String celebrity : celebrities) {
+            nonemptyDisjointSet.makeSet(celebrity);
+        }
 
         emptyDisjointSet = new DisjointSet<>();
     }
