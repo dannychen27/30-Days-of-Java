@@ -59,9 +59,23 @@ public class DisjointSetTest {
     }
 
     @Test
-    void testFindSetOnExistingItem() {
+    void testFindSetOnExistingRepresentativeItem() {
+        nonemptyDisjointSet.union("Shawn Mendes", "Grant Gustin");
+        nonemptyDisjointSet.union("Shawn Mendes", "Riker Lynch");
+
+        // representative item in a disjoint set
+        String shawnMendes = nonemptyDisjointSet.findSet("Shawn Mendes");
+        Assertions.assertEquals("Shawn Mendes", shawnMendes);
+    }
+
+    @Test
+    void testFindSetOnExistingNonRepresentativeItem() {
+        nonemptyDisjointSet.union("Shawn Mendes", "Grant Gustin");
+        nonemptyDisjointSet.union("Shawn Mendes", "Riker Lynch");
+
+        // non-representative item in a disjoint set
         String grantGustin = nonemptyDisjointSet.findSet("Grant Gustin");
-        Assertions.assertEquals("Grant Gustin", grantGustin);
+        Assertions.assertEquals("Shawn Mendes", grantGustin);
     }
 
     @Test
