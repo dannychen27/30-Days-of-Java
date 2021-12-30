@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Tree<T> {
 
-    private final T root;
-    private Tree<T> parent;
-    private final List<Tree<T>> children;
-    private int rank;
+    public final T root;
+    public Tree<T> parent;
+    public final List<Tree<T>> children;
+    public int rank;
 
     public Tree() {
         root = null;
