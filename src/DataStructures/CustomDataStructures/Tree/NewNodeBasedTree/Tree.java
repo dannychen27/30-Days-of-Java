@@ -91,7 +91,7 @@ public class Tree<T> {
 
     private void updateAncestorHeights(Tree<T> newChild) {
         Tree<T> currentTree = newChild;
-        while (currentTree.parent.root != currentTree.root) {
+        while (currentTree.parent != currentTree) {
             currentTree = currentTree.parent;
             if (currentTree.parent.children.size() == 1) {
                 currentTree.rank = Math.max(currentTree.rank + 1, currentTree.children.size());
