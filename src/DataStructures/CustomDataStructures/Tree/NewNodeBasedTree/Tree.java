@@ -49,7 +49,6 @@ public class Tree<T> {
     public Tree<T> addChild(Tree<T> newParent, T newValue) {
         if (root == null) {
             throw new IllegalStateException("You cannot add child to an empty tree.");
-            // return null;  // we must first add a root node before adding any children nodes
         }
 
         Tree<T> newChild = new Tree<>(newValue);
