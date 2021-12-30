@@ -75,12 +75,6 @@ public class TreeTest {
 
     }
 
-    // todo: test is empty -- DONE
-    // todo: test add child -- DONE
-    // todo: --> test edge cases that cause exceptions DONE!
-    // todo: test set parent (in the context of path compression) -- DONE
-    // todo: test search? -- DONE
-
     @Test
     void testIsEmptyOnAnEmptyTree() {
         Assertions.assertTrue(emptyTree.isEmpty());
