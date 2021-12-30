@@ -46,6 +46,10 @@ public class Tree<T> {
         return null;
     }
 
+    public boolean contains(T targetItem) {
+        return search(targetItem) != null;
+    }
+
     public Tree<T> addChild(Tree<T> newParent, T newValue) {
         if (root == null) {
             throw new IllegalStateException("You cannot add the child " + newValue + " to an empty tree.");
