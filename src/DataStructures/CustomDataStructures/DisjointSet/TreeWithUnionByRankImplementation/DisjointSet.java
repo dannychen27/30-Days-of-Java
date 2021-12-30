@@ -158,7 +158,10 @@ public class DisjointSet<T> implements UnionFind<T> {
         disjointSet2.union("Oprah", "Regehr");
         System.out.println(disjointSet2);
 
-        // TODO: - Fix this representative problem in the previous 3 disjoint set implementations.
+        // TODO: - Fix this representative problem in the previous 4 disjoint set implementations.
+        // TODO: (i.e., singly circular LL, doubly circular LL, singly LL with head pointers, and
+        // TODO: singly LL with head pointers and union by rank) where you must delete the representative
+        // TODO: key from the "itemsToDisjointSets" hashmap after a union() operation.
         // TODO: - It's possible that some of my ranks are incorrect after a union() operation.
         // TODO: - When I union two items, I always seem to attach the item to a root tree node,
         // TODO: and not necessarily to a non-root tree node
