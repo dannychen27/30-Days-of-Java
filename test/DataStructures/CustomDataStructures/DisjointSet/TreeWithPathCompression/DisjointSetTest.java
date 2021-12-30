@@ -109,7 +109,7 @@ public class DisjointSetTest {
     }
 
     @Test
-    void testUnionOnItemsInDifferentDisjointSetsFirstDisjointSetIsBigger() {
+    void testUnionOnItemsInDifferentDisjointSetsWhereFirstDisjointSetIsBigger() {
         // disjoint set 1's rank >= disjoint set 2's rank
         nonemptyDisjointSet.union("Bieber", "Oprah");
         String representativeOfLargerDisjointSet = nonemptyDisjointSet.findSet("Bieber");
@@ -129,7 +129,7 @@ public class DisjointSetTest {
     }
 
     @Test
-    void testUnionOnItemsInDifferentDisjointSetsSecondDisjointSetIsBigger() {
+    void testUnionOnItemsInDifferentDisjointSetsWhereSecondDisjointSetIsBigger() {
         // disjoint set 1's rank < disjoint set 2's rank
         nonemptyDisjointSet.union("Oprah", "Regehr");
         String representativeOfLargerDisjointSet = nonemptyDisjointSet.findSet("Oprah");
