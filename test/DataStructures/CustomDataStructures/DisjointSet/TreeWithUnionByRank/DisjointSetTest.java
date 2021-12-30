@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.DisjointSet.TreeWithPathCompression;
+package DataStructures.CustomDataStructures.DisjointSet.TreeWithUnionByRank;
 
 import DataStructures.CustomDataStructures.DisjointSet.TreeWithUnionByRankImplementation.DisjointSet;
 import DataStructures.CustomDataStructures.DisjointSet.UnionFind;
