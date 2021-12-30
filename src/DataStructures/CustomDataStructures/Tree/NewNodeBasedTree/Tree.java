@@ -28,10 +28,6 @@ public class Tree<T> {
         return root == null;
     }
 
-    public int getRank() {
-        return rank;
-    }
-
     public Tree<T> search(T targetValue) {
         if (root == null) {
             return null;
