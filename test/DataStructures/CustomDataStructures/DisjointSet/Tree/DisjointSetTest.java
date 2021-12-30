@@ -40,6 +40,9 @@ public class DisjointSetTest {
     @Test
     void testMakeSetOnUniqueItem() {
         nonemptyDisjointSet.makeSet("Curt Mega");
+        String curt = nonemptyDisjointSet.findSet("Curt Mega");
+        Assertions.assertEquals("Curt Mega", curt);
+
         String expectedString = "DisjointSet:\n" +
             "TREE:\n" +
             "Shawn Mendes, rank: 0\n" +
