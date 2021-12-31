@@ -10,8 +10,8 @@ import java.util.Set;
 
 public class DisjointSet<T> implements UnionFind<T> {
 
-    private final Set<SinglyLinkedListWithHeadPointer<T>> disjointSets;
-    private final Map<T, SinglyLinkedListWithHeadPointer<T>> itemsToDisjointSets;
+    final Set<SinglyLinkedListWithHeadPointer<T>> disjointSets;
+    final Map<T, SinglyLinkedListWithHeadPointer<T>> itemsToDisjointSets;
 
     public DisjointSet() {
         disjointSets = new HashSet<>();
