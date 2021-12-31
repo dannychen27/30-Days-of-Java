@@ -81,7 +81,12 @@ public class DisjointSet<T> implements UnionFind<T> {
         assert disjointSet1 != null && disjointSet2 != null;
 
         // let disjointSet2's root point to disjointSet1's root.
-        disjointSet1.setParent(disjointSet2, disjointSet1);
+        // note that targetItem1Node doesn't have to be the root of disjointSet1,
+        // so the tree can become as tall as possible.
+        // Path compression or union by rank uses smarter re-parenting techniques.
+        Tree<T> targetItem1Node = disjointSet1.search(targetItem1);
+        Tree<T> targetItem2Node = disjointSet2.search(targetItem2);
+        disjointSet1.setParent(targetItem2Node, targetItem1Node);
         itemsToDisjointSets.remove(targetItem2, disjointSet2);
     }
 

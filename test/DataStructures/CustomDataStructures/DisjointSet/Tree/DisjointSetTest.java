@@ -120,8 +120,8 @@ public class DisjointSetTest {
         expectedString = "DisjointSet:\n" +
             "TREE:\n" +
             "Shawn Mendes, rank: 2\n" +
-            "\tGrant Gustin, rank: 0\n" +
-            "\tRiker Lynch, rank: 0\n";
+            "\tGrant Gustin, rank: 1\n" +
+            "\t\tRiker Lynch, rank: 0\n";
         Assertions.assertEquals(expectedString, nonemptyDisjointSet.toString());
     }
 

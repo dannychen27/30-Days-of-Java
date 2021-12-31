@@ -66,12 +66,7 @@ public class Tree<T> {
         targetTree.parent.children.remove(targetTree);
         targetTree.parent = newParent;
         newParent.children.add(targetTree);
-        if (newParent.parent.children.size() == 1) {
-            newParent.rank = Math.max(newParent.rank + 1, newParent.children.size());
-        } else {  // newParent.parent.children.size() >= 2
-            // prefer not to increase the rank of a parent tree with >= 2 children
-            newParent.rank = Math.min(newParent.rank + 1, newParent.children.size());
-        }
+        updateAncestorHeights(targetTree);
     }
 
     public String toString() {
