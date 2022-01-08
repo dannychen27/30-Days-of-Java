@@ -1,9 +1,8 @@
 package SoftwareTesting.DuplicationAndDesign;
 
 import SoftwareTesting.TestDrivenDevelopment.DuplicationAndDesign.Rover;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 //import junitparams.Parameters;
 //import org.junit.runner.RunWith;
 
@@ -14,56 +13,56 @@ class RoverTest {
     void turnsRightNorthToEast() {
         Rover rover = new Rover("N");
         rover.go("R");
-        assertEquals("E", rover.getFacing());
+        Assertions.assertEquals("E", rover.getFacing());
     }
 
     @Test
     void turnsRightEastToSouth() {
         Rover rover = new Rover("E");
         rover.go("R");
-        assertEquals("S", rover.getFacing());
+        Assertions.assertEquals("S", rover.getFacing());
     }
 
     @Test
     void turnsRightSouthToWest() {
         Rover rover = new Rover("S");
         rover.go("R");
-        assertEquals("W", rover.getFacing());
+        Assertions.assertEquals("W", rover.getFacing());
     }
 
     @Test
     void turnsRightWestToNorth() {
         Rover rover = new Rover("W");
         rover.go("R");
-        assertEquals("N", rover.getFacing());
+        Assertions.assertEquals("N", rover.getFacing());
     }
 
     @Test
     void turnsLeftNorthToWest() {
         Rover rover = new Rover("N");
         rover.go("L");
-        assertEquals("W", rover.getFacing());
+        Assertions.assertEquals("W", rover.getFacing());
     }
 
     @Test
     void turnsLeftEastToWest() {
         Rover rover = new Rover("E");
         rover.go("L");
-        assertEquals("N", rover.getFacing());
+        Assertions.assertEquals("N", rover.getFacing());
     }
 
     @Test
     void turnsLeftSouthToEast() {
         Rover rover = new Rover("S");
         rover.go("L");
-        assertEquals("E", rover.getFacing());
+        Assertions.assertEquals("E", rover.getFacing());
     }
 
     @Test
     void turnsLeftWestToSouth() {
         Rover rover = new Rover("W");
         rover.go("L");
-        assertEquals("S", rover.getFacing());
+        Assertions.assertEquals("S", rover.getFacing());
     }
 
 //    @Test
@@ -76,7 +75,7 @@ class RoverTest {
 //    public void turnsRightClockwise(String startsFacing, String endsFacing) {
 //        Rover rover = new Rover(startsFacing);
 //        rover.go("R");
-//        assertEquals(endsFacing, rover.getFacing());
+//        Assertions.assertEquals(endsFacing, rover.getFacing());
 //    }
 //
 //    @Test
@@ -89,6 +88,6 @@ class RoverTest {
 //    public void turnsLeftCounterclockwise(String startsFacing, String endsFacing) {
 //        Rover rover = new Rover(startsFacing);
 //        rover.go("L");
-//        assertEquals(endsFacing, rover.getFacing());
+//        Assertions.assertEquals(endsFacing, rover.getFacing());
 //    }
 }

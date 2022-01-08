@@ -2,22 +2,20 @@ package SoftwareTesting.GatheringRequirements;
 
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CompactDisc;
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.Library;
-
 import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.RestockNegativeStockException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 class SearchCDTest {
 
-    private Library library = new Library();
+    private final Library library = new Library();
 
-    private CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-    private CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
-    private CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
-    private CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
+    private final CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+    private final CompactDisc soulManDrake = new CompactDisc("Soul Man", "Drake Bell");
+    private final CompactDisc soulManCody = new CompactDisc("Soul Man", "Cody Simpson");
+    private final CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
 
     private HashMap<CompactDisc, Integer> singleCD() {
         HashMap<CompactDisc, Integer> cdsToStock = new HashMap<>();
@@ -41,7 +39,7 @@ class SearchCDTest {
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         searchResults.put(highwayToNowhere, 10);
-        assertEquals(searchResults, library.searchCatalogue("Highway to Nowhere", "Drake Bell"));
+        Assertions.assertEquals(searchResults, library.searchCatalogue("Highway to Nowhere", "Drake Bell"));
     }
 
     @Test
@@ -50,7 +48,7 @@ class SearchCDTest {
         library.receiveCDStock(newStock);
 
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
-        assertEquals(searchResults, library.searchCatalogue("La Da Dee", "Cody Simpson"));
+        Assertions.assertEquals(searchResults, library.searchCatalogue("La Da Dee", "Cody Simpson"));
     }
 
     @Test
@@ -61,7 +59,7 @@ class SearchCDTest {
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         searchResults.put(soulManDrake, 10);
         searchResults.put(soulManCody, 10);
-        assertEquals(searchResults, library.searchCatalogue("Soul Man", null));
+        Assertions.assertEquals(searchResults, library.searchCatalogue("Soul Man", null));
     }
 
     @Test
@@ -72,7 +70,7 @@ class SearchCDTest {
         HashMap<CompactDisc, Integer> searchResults = new HashMap<>();
         searchResults.put(highwayToNowhere, 10);
         searchResults.put(soulManDrake, 10);
-        assertEquals(searchResults, library.searchCatalogue(null, "Drake Bell"));
+        Assertions.assertEquals(searchResults, library.searchCatalogue(null, "Drake Bell"));
     }
 
     @Test
@@ -85,6 +83,6 @@ class SearchCDTest {
         searchResults.put(soulManDrake, 10);
         searchResults.put(soulManCody, 10);
         searchResults.put(laDaDee, 10);
-        assertEquals(searchResults, library.searchCatalogue(null, null));
+        Assertions.assertEquals(searchResults, library.searchCatalogue(null, null));
     }
 }

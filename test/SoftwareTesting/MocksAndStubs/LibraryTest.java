@@ -4,11 +4,9 @@ import SoftwareTesting.TestDrivenDevelopment.Mocks.Library;
 import SoftwareTesting.TestDrivenDevelopment.Mocks.Movie;
 import SoftwareTesting.TestDrivenDevelopment.Mocks.MovieInfo;
 import SoftwareTesting.TestDrivenDevelopment.Stubs.EmailServer;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import org.mockito.Mockito;
 
 class LibraryTest {
 
@@ -17,7 +15,7 @@ class LibraryTest {
 
     @Test
     void donateMovieAddedToCatalogueWithIMDBInfo() {
-        EmailServer emailServer = mock(EmailServer.class);
+        EmailServer emailServer = Mockito.mock(EmailServer.class);
         String imdbID = "tt12345";
         String title = "The Abyss";
         int year = 1989;
@@ -26,19 +24,19 @@ class LibraryTest {
 
         library.donate(imdbID);
         Movie movie = library.findMovie(imdbID);
-        Assert.assertEquals(title, movie.getTitle());
-        Assert.assertEquals(year, movie.getYear());
+        Assertions.assertEquals(title, movie.getTitle());
+        Assertions.assertEquals(year, movie.getYear());
     }
 
     @Test
     void membersEmailAboutDonatedTitle() {
-        EmailServer emailServer = mock(EmailServer.class);
+        EmailServer emailServer = Mockito.mock(EmailServer.class);
         String title = "The Abyss";
         String year = "1989";
         MovieInfo movieInfo = new StubMovieInfo(title, Integer.parseInt(year));
         Library library = new Library(movieInfo, emailServer);
 
         library.donate("");
-        verify(emailServer).send("New Movie", "All Members", new String[] {title, year});
+        Mockito.verify(emailServer).send("New Movie", "All Members", new String[] {title, year});
     }
 }
