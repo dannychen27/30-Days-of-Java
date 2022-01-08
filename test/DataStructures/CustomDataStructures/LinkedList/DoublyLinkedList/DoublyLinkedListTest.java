@@ -1,7 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.DoublyLinkedList;
 
 import DataStructures.CustomDataStructures.LinkedList.LinkedList;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,8 +19,7 @@ class DoublyLinkedListTest {
         simpleDoublyLinkedList.insert(3, 2);
         simpleDoublyLinkedList.insert(4, 3);
         simpleDoublyLinkedList.insert(5, 4);
-        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5", simpleDoublyLinkedList.toString());
 
         emptyDoublyLinkedList = new DoublyLinkedList<>();
     }
@@ -34,43 +32,37 @@ class DoublyLinkedListTest {
     @Test
     void testInsertAtBeginningOfDoublyLinkedList() {
         simpleDoublyLinkedList.insert(6, 0);
-        Assert.assertEquals("6 NEXT PREVIOUS 1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("6 NEXT PREVIOUS 1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5", simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testInsertInMiddleOfDoublyLinkedList() {
         simpleDoublyLinkedList.insert(7,3);
-        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 7 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 7 NEXT PREVIOUS 4 NEXT PREVIOUS 5", simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testInsertAtEndOfDoublyLinkedList() {
         simpleDoublyLinkedList.insert(8, 5);
-        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5 NEXT PREVIOUS 8",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5 NEXT PREVIOUS 8", simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromBeginningOfDoublyLinkedList() {
         simpleDoublyLinkedList.delete(1);
-        Assert.assertEquals("2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("2 NEXT PREVIOUS 3 NEXT PREVIOUS 4 NEXT PREVIOUS 5", simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromMiddleOfDoublyLinkedList() {
         simpleDoublyLinkedList.delete(3);
-        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 4 NEXT PREVIOUS 5",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 4 NEXT PREVIOUS 5", simpleDoublyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromEndOfDoublyLinkedList() {
         simpleDoublyLinkedList.delete(5);
-        Assert.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4",
-                            simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT PREVIOUS 2 NEXT PREVIOUS 3 NEXT PREVIOUS 4", simpleDoublyLinkedList.toString());
     }
 
     @Test
@@ -80,7 +72,7 @@ class DoublyLinkedListTest {
         simpleDoublyLinkedList.delete(3);
         simpleDoublyLinkedList.delete(4);
         simpleDoublyLinkedList.delete(5);
-        Assert.assertEquals("", simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("", simpleDoublyLinkedList.toString());
     }
 
     @Test
@@ -91,19 +83,19 @@ class DoublyLinkedListTest {
     @Test
     void testPopFromBeginningOfDoublyLinkedList() {
         int poppedValue = simpleDoublyLinkedList.pop(0);
-        Assert.assertEquals(1, poppedValue);
+        Assertions.assertEquals(1, poppedValue);
     }
 
     @Test
     void testPopFromMiddleOfDoublyLinkedList() {
         int poppedValue = simpleDoublyLinkedList.pop(2);
-        Assert.assertEquals(3, poppedValue);
+        Assertions.assertEquals(3, poppedValue);
     }
 
     @Test
     void testPopFromEndOfDoublyLinkedList() {
         int poppedValue = simpleDoublyLinkedList.pop(4);
-        Assert.assertEquals(5, poppedValue);
+        Assertions.assertEquals(5, poppedValue);
     }
 
     @Test
@@ -113,7 +105,7 @@ class DoublyLinkedListTest {
         simpleDoublyLinkedList.pop(0);
         simpleDoublyLinkedList.pop(0);
         simpleDoublyLinkedList.pop(0);
-        Assert.assertEquals("", simpleDoublyLinkedList.toString());
+        Assertions.assertEquals("", simpleDoublyLinkedList.toString());
     }
 
     @Test
@@ -123,21 +115,21 @@ class DoublyLinkedListTest {
 
     @Test
     void testIsEmptyOnEmptyDoublyLinkedList() {
-        Assert.assertFalse(simpleDoublyLinkedList.isEmpty());
+        Assertions.assertFalse(simpleDoublyLinkedList.isEmpty());
     }
 
     @Test
     void testIsEmptyOnNonEmptyDoublyLinkedList() {
-        Assert.assertTrue(emptyDoublyLinkedList.isEmpty());
+        Assertions.assertTrue(emptyDoublyLinkedList.isEmpty());
     }
 
     @Test
     void testSizeOnEmptyDoublyLinkedList() {
-        Assert.assertEquals(0, emptyDoublyLinkedList.getSize());
+        Assertions.assertEquals(0, emptyDoublyLinkedList.getSize());
     }
 
     @Test
     void testSizeOnNonEmptyDoublyLinkedList() {
-        Assert.assertEquals(5, simpleDoublyLinkedList.getSize());
+        Assertions.assertEquals(5, simpleDoublyLinkedList.getSize());
     }
 }

@@ -1,6 +1,5 @@
 package DataStructures.CustomDataStructures.Queue;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,24 +27,24 @@ class QueueTest {
 
     @Test
     void testIsEmptyOnEmptyQueue() {
-        Assert.assertTrue(emptyQueue.isEmpty());
+        Assertions.assertTrue(emptyQueue.isEmpty());
     }
 
     @Test
     void testIsEmptyOnNonEmptyQueue() {
-        Assert.assertFalse(fullQueue.isEmpty());
+        Assertions.assertFalse(fullQueue.isEmpty());
     }
 
     @Test
     void testEnqueue() {
         emptyQueue.enqueue("A");
-        Assert.assertEquals("A Size: 1", emptyQueue.toString());
+        Assertions.assertEquals("A Size: 1", emptyQueue.toString());
 
         emptyQueue.enqueue("B");
-        Assert.assertEquals("A Next B Size: 2", emptyQueue.toString());
+        Assertions.assertEquals("A Next B Size: 2", emptyQueue.toString());
 
         emptyQueue.enqueue("C");
-        Assert.assertEquals("A Next B Next C Size: 3", emptyQueue.toString());
+        Assertions.assertEquals("A Next B Next C Size: 3", emptyQueue.toString());
     }
 
     @Test
@@ -55,8 +54,8 @@ class QueueTest {
 
     @Test
     void testPeekOnNonEmptyQueue() {
-        Assert.assertEquals("A", fullQueue.peek());
-        Assert.assertEquals("A Next B Next C Size: 3", fullQueue.toString());
+        Assertions.assertEquals("A", fullQueue.peek());
+        Assertions.assertEquals("A Next B Next C Size: 3", fullQueue.toString());
     }
 
     @Test
@@ -66,13 +65,13 @@ class QueueTest {
 
     @Test
     void testDequeueOnNonEmptyQueue() {
-        Assert.assertEquals("A", fullQueue.dequeue());
-        Assert.assertEquals("B Next C Size: 2", fullQueue.toString());
+        Assertions.assertEquals("A", fullQueue.dequeue());
+        Assertions.assertEquals("B Next C Size: 2", fullQueue.toString());
 
-        Assert.assertEquals("B", fullQueue.dequeue());
-        Assert.assertEquals("C Size: 1", fullQueue.toString());
+        Assertions.assertEquals("B", fullQueue.dequeue());
+        Assertions.assertEquals("C Size: 1", fullQueue.toString());
 
-        Assert.assertEquals("C", fullQueue.dequeue());
-        Assert.assertEquals("Size: 0", fullQueue.toString());
+        Assertions.assertEquals("C", fullQueue.dequeue());
+        Assertions.assertEquals("Size: 0", fullQueue.toString());
     }
 }

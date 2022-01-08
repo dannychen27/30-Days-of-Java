@@ -1,7 +1,6 @@
 package DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyMatrixWith2DArrays;
 
 import DataStructures.CustomDataStructures.Graph.GraphVertex;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -86,25 +85,21 @@ class UndirectedGraphTest {
 
     @Test
     void testAddVertex() {
-        Set<GraphVertex> expectedVertices = new HashSet<>();
-        expectedVertices.addAll(Arrays.asList(vertex1, vertex2, vertex3, vertex4,
-                                              vertex5, vertex6, vertex7));
-
-        HashSet<GraphVertex> actualVertices = new HashSet<>();
-        actualVertices.addAll(largeUndirectedGraph.getVertices());
-
-        Assert.assertEquals(expectedVertices, actualVertices);
+        Set<GraphVertex> expectedVertices = new HashSet<>(Arrays.asList(
+            vertex1, vertex2, vertex3, vertex4,
+            vertex5, vertex6, vertex7));
+        HashSet<GraphVertex> actualVertices = new HashSet<>(largeUndirectedGraph.getVertices());
+        Assertions.assertEquals(expectedVertices, actualVertices);
     }
 
     @Test
     void testRemoveVertex() {
         List<GraphVertex> expectedVertices = new LinkedList<>();
-        Assert.assertEquals(expectedVertices, smallUndirectedGraph.getVertices());
+        Assertions.assertEquals(expectedVertices, smallUndirectedGraph.getVertices());
     }
 
     @Test
     void testAddEdge() {
-        Set<List<GraphVertex>> expectedEdges = new HashSet<>();
         List<GraphVertex> edge1ToEdge2 = createEdgeBetween(vertex1, vertex2);
         List<GraphVertex> edge2ToEdge1 = createEdgeBetween(vertex2, vertex1);
 
@@ -123,49 +118,46 @@ class UndirectedGraphTest {
         List<GraphVertex> edge3ToEdge7 = createEdgeBetween(vertex3, vertex7);
         List<GraphVertex> edge7ToEdge3 = createEdgeBetween(vertex7, vertex3);
 
-        expectedEdges.addAll(Arrays.asList(
-                edge1ToEdge2, edge1ToEdge3, edge2ToEdge1,
-                edge2ToEdge4, edge2ToEdge5, edge3ToEdge1,
-                edge3ToEdge6, edge3ToEdge7, edge4ToEdge2,
-                edge5ToEdge2, edge6ToEdge3, edge7ToEdge3));
-
-        HashSet<List<GraphVertex>> actualEdges = new HashSet<>();
-        actualEdges.addAll(largeUndirectedGraph.getEdges());
-
-        Assert.assertEquals(expectedEdges, actualEdges);
+        Set<List<GraphVertex>> expectedEdges = new HashSet<>(Arrays.asList(
+            edge1ToEdge2, edge1ToEdge3, edge2ToEdge1,
+            edge2ToEdge4, edge2ToEdge5, edge3ToEdge1,
+            edge3ToEdge6, edge3ToEdge7, edge4ToEdge2,
+            edge5ToEdge2, edge6ToEdge3, edge7ToEdge3));
+        HashSet<List<GraphVertex>> actualEdges = new HashSet<>(largeUndirectedGraph.getEdges());
+        Assertions.assertEquals(expectedEdges, actualEdges);
     }
 
     @Test
     void testRemoveEdge() {
         List<List<GraphVertex>> expectedEdges = new LinkedList<>();
-        Assert.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
+        Assertions.assertEquals(expectedEdges, smallUndirectedGraph.getEdges());
     }
 
     @Test
     void testToStringForEmptyUndirectedGraph() {
         String expectedString =
-                "[-1, -1, -1]\n" +
-                "[-1, -1, -1]\n" +
-                "[-1, -1, -1]\n";
-        Assert.assertEquals(expectedString, smallUndirectedGraph.toString());
+            "[-1, -1, -1]\n" +
+            "[-1, -1, -1]\n" +
+            "[-1, -1, -1]\n";
+        Assertions.assertEquals(expectedString, smallUndirectedGraph.toString());
     }
 
     @Test
     void testToStringForNonEmptyUndirectedGraph() {
         String expectedString =
-                "[0, 1, 1, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
-                "[1, 0, 0, 1, 1, 0, 0, -1, -1, -1, -1, -1]\n" +
-                "[1, 0, 0, 0, 0, 1, 1, -1, -1, -1, -1, -1]\n" +
-                "[0, 1, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
-                "[0, 1, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
-                "[0, 0, 1, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
-                "[0, 0, 1, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
-                "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
-                "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
-                "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
-                "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
-                "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n";
-        Assert.assertEquals(expectedString, largeUndirectedGraph.toString());
+            "[0, 1, 1, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
+            "[1, 0, 0, 1, 1, 0, 0, -1, -1, -1, -1, -1]\n" +
+            "[1, 0, 0, 0, 0, 1, 1, -1, -1, -1, -1, -1]\n" +
+            "[0, 1, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
+            "[0, 1, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
+            "[0, 0, 1, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
+            "[0, 0, 1, 0, 0, 0, 0, -1, -1, -1, -1, -1]\n" +
+            "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
+            "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
+            "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
+            "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n" +
+            "[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]\n";
+        Assertions.assertEquals(expectedString, largeUndirectedGraph.toString());
     }
 
     private List<GraphVertex> createEdgeBetween(GraphVertex startVertex, GraphVertex endVertex) {

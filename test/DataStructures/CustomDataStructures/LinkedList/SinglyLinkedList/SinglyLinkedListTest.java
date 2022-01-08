@@ -1,7 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList;
 
 import DataStructures.CustomDataStructures.LinkedList.LinkedList;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,8 +19,7 @@ class SinglyLinkedListTest {
         simpleSinglyLinkedList.insert(3, 2);
         simpleSinglyLinkedList.insert(4, 3);
         simpleSinglyLinkedList.insert(5, 4);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5", simpleSinglyLinkedList.toString());
 
         emptySinglyLinkedList = new SinglyLinkedList<>();
     }
@@ -34,43 +32,37 @@ class SinglyLinkedListTest {
     @Test
     void testInsertAtBeginningOfDoublyLinkedList() {
         simpleSinglyLinkedList.insert(6, 0);
-        Assert.assertEquals("6 NEXT 1 NEXT 2 NEXT 3 NEXT 4 NEXT 5",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("6 NEXT 1 NEXT 2 NEXT 3 NEXT 4 NEXT 5", simpleSinglyLinkedList.toString());
     }
 
     @Test
     void testInsertInMiddleOfDoublyLinkedList() {
         simpleSinglyLinkedList.insert(7, 3);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 7 NEXT 4 NEXT 5",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 7 NEXT 4 NEXT 5", simpleSinglyLinkedList.toString());
     }
 
     @Test
     void testInsertAtEndOfDoublyLinkedList() {
         simpleSinglyLinkedList.insert(8, 5);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 NEXT 8",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 NEXT 8", simpleSinglyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromBeginningOfDoublyLinkedList() {
         simpleSinglyLinkedList.delete(1);
-        Assert.assertEquals("2 NEXT 3 NEXT 4 NEXT 5",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("2 NEXT 3 NEXT 4 NEXT 5", simpleSinglyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromMiddleOfDoublyLinkedList() {
         simpleSinglyLinkedList.delete(3);
-        Assert.assertEquals("1 NEXT 2 NEXT 4 NEXT 5",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 4 NEXT 5", simpleSinglyLinkedList.toString());
     }
 
     @Test
     void testDeleteFromEndOfDoublyLinkedList() {
         simpleSinglyLinkedList.delete(5);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 4",
-                            simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 4", simpleSinglyLinkedList.toString());
     }
 
     @Test
@@ -80,7 +72,7 @@ class SinglyLinkedListTest {
         simpleSinglyLinkedList.delete(3);
         simpleSinglyLinkedList.delete(4);
         simpleSinglyLinkedList.delete(5);
-        Assert.assertEquals("", simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("", simpleSinglyLinkedList.toString());
     }
 
     @Test
@@ -91,19 +83,19 @@ class SinglyLinkedListTest {
     @Test
     void testPopFromBeginningOfDoublyLinkedList() {
         int poppedValue = simpleSinglyLinkedList.pop(0);
-        Assert.assertEquals(1, poppedValue);
+        Assertions.assertEquals(1, poppedValue);
     }
 
     @Test
     void testPopFromMiddleOfDoublyLinkedList() {
         int poppedValue = simpleSinglyLinkedList.pop(2);
-        Assert.assertEquals(3, poppedValue);
+        Assertions.assertEquals(3, poppedValue);
     }
 
     @Test
     void testPopFromEndOfDoublyLinkedList() {
         int poppedValue = simpleSinglyLinkedList.pop(4);
-        Assert.assertEquals(5, poppedValue);
+        Assertions.assertEquals(5, poppedValue);
     }
 
     @Test
@@ -113,7 +105,7 @@ class SinglyLinkedListTest {
         simpleSinglyLinkedList.pop(0);
         simpleSinglyLinkedList.pop(0);
         simpleSinglyLinkedList.pop(0);
-        Assert.assertEquals("", simpleSinglyLinkedList.toString());
+        Assertions.assertEquals("", simpleSinglyLinkedList.toString());
     }
 
     @Test
@@ -123,21 +115,21 @@ class SinglyLinkedListTest {
 
     @Test
     void testIsEmptyOnEmptyDoublyLinkedList() {
-        Assert.assertFalse(simpleSinglyLinkedList.isEmpty());
+        Assertions.assertFalse(simpleSinglyLinkedList.isEmpty());
     }
 
     @Test
     void testIsEmptyOnNonEmptyDoublyLinkedList() {
-        Assert.assertTrue(emptySinglyLinkedList.isEmpty());
+        Assertions.assertTrue(emptySinglyLinkedList.isEmpty());
     }
 
     @Test
     void testSizeOnEmptyDoublyLinkedList() {
-        Assert.assertEquals(0, emptySinglyLinkedList.getSize());
+        Assertions.assertEquals(0, emptySinglyLinkedList.getSize());
     }
 
     @Test
     void testSizeOnNonEmptyDoublyLinkedList() {
-        Assert.assertEquals(5, simpleSinglyLinkedList.getSize());
+        Assertions.assertEquals(5, simpleSinglyLinkedList.getSize());
     }
 }

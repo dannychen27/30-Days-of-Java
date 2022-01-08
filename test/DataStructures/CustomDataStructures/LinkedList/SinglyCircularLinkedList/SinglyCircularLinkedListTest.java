@@ -1,7 +1,6 @@
 package DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList;
 
 import DataStructures.CustomDataStructures.LinkedList.LinkedList;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,9 +19,7 @@ class SinglyCircularLinkedListTest {
         simpleSinglyCircularLinkedList.insert(3, 2);
         simpleSinglyCircularLinkedList.insert(4, 3);
         simpleSinglyCircularLinkedList.insert(5, 4);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 BACK TO 1",
-                            simpleSinglyCircularLinkedList.toString());
-
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 BACK TO 1", simpleSinglyCircularLinkedList.toString());
         emptySinglyCircularLinkedList = new SinglyCircularLinkedList<>();
     }
 
@@ -34,43 +31,37 @@ class SinglyCircularLinkedListTest {
     @Test
     void testInsertAtBeginningOfDoublyLinkedList() {
         simpleSinglyCircularLinkedList.insert(6, 0);
-        Assert.assertEquals("6 NEXT 1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 BACK TO 6",
-                            simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("6 NEXT 1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 BACK TO 6", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
     void testInsertInMiddleOfDoublyLinkedList() {
         simpleSinglyCircularLinkedList.insert(7,3);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 7 NEXT 4 NEXT 5 BACK TO 1",
-                            simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 7 NEXT 4 NEXT 5 BACK TO 1", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
     void testInsertAtEndOfDoublyLinkedList() {
         simpleSinglyCircularLinkedList.insert(8, 5);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 NEXT 8 BACK TO 1",
-                            simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 NEXT 5 NEXT 8 BACK TO 1", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
     void testDeleteFromBeginningOfDoublyLinkedList() {
         simpleSinglyCircularLinkedList.delete(1);
-        Assert.assertEquals("2 NEXT 3 NEXT 4 NEXT 5 BACK TO 2",
-                            simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("2 NEXT 3 NEXT 4 NEXT 5 BACK TO 2", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
     void testDeleteFromMiddleOfDoublyLinkedList() {
         simpleSinglyCircularLinkedList.delete(3);
-        Assert.assertEquals("1 NEXT 2 NEXT 4 NEXT 5 BACK TO 1",
-                            simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 4 NEXT 5 BACK TO 1", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
     void testDeleteFromEndOfDoublyLinkedList() {
         simpleSinglyCircularLinkedList.delete(5);
-        Assert.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 BACK TO 1",
-                            simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("1 NEXT 2 NEXT 3 NEXT 4 BACK TO 1", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
@@ -80,7 +71,7 @@ class SinglyCircularLinkedListTest {
         simpleSinglyCircularLinkedList.delete(3);
         simpleSinglyCircularLinkedList.delete(4);
         simpleSinglyCircularLinkedList.delete(5);
-        Assert.assertEquals("", simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
@@ -91,19 +82,19 @@ class SinglyCircularLinkedListTest {
     @Test
     void testPopFromBeginningOfDoublyLinkedList() {
         int poppedValue = simpleSinglyCircularLinkedList.pop(0);
-        Assert.assertEquals(1, poppedValue);
+        Assertions.assertEquals(1, poppedValue);
     }
 
     @Test
     void testPopFromMiddleOfDoublyLinkedList() {
         int poppedValue = simpleSinglyCircularLinkedList.pop(2);
-        Assert.assertEquals(3, poppedValue);
+        Assertions.assertEquals(3, poppedValue);
     }
 
     @Test
     void testPopFromEndOfDoublyLinkedList() {
         int poppedValue = simpleSinglyCircularLinkedList.pop(4);
-        Assert.assertEquals(5, poppedValue);
+        Assertions.assertEquals(5, poppedValue);
     }
 
     @Test
@@ -113,7 +104,7 @@ class SinglyCircularLinkedListTest {
         simpleSinglyCircularLinkedList.pop(0);
         simpleSinglyCircularLinkedList.pop(0);
         simpleSinglyCircularLinkedList.pop(0);
-        Assert.assertEquals("", simpleSinglyCircularLinkedList.toString());
+        Assertions.assertEquals("", simpleSinglyCircularLinkedList.toString());
     }
 
     @Test
@@ -123,21 +114,21 @@ class SinglyCircularLinkedListTest {
 
     @Test
     void testIsEmptyOnEmptyDoublyLinkedList() {
-        Assert.assertFalse(simpleSinglyCircularLinkedList.isEmpty());
+        Assertions.assertFalse(simpleSinglyCircularLinkedList.isEmpty());
     }
 
     @Test
     void testIsEmptyOnNonEmptyDoublyLinkedList() {
-        Assert.assertTrue(emptySinglyCircularLinkedList.isEmpty());
+        Assertions.assertTrue(emptySinglyCircularLinkedList.isEmpty());
     }
 
     @Test
     void testSizeOnEmptyDoublyLinkedList() {
-        Assert.assertEquals(0, emptySinglyCircularLinkedList.getSize());
+        Assertions.assertEquals(0, emptySinglyCircularLinkedList.getSize());
     }
 
     @Test
     void testSizeOnNonEmptyDoublyLinkedList() {
-        Assert.assertEquals(5, simpleSinglyCircularLinkedList.getSize());
+        Assertions.assertEquals(5, simpleSinglyCircularLinkedList.getSize());
     }
 }

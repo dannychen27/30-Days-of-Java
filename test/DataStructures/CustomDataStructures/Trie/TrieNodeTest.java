@@ -1,16 +1,15 @@
 package DataStructures.CustomDataStructures.Trie;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TrieNodeTest {
 
     private TrieNode trieRoot;
-    private String[] wordsInTrie = {"car", "card", "cards", "cot", "cots", "trie", "tried", "tries", "try"};
-    private String[] wordsNotInTrie = {"carve", "crown"};
-
+    private final String[] wordsInTrie = {"car", "card", "cards", "cot", "cots", "trie", "tried", "tries", "try"};
+    private final String[] wordsNotInTrie = {"carve", "crown"};
 
     @BeforeEach
     void setUp() {
@@ -37,35 +36,34 @@ class TrieNodeTest {
     @Test
     void testAdd() {
         trieRoot.add("diffuser");
-        Assert.assertTrue(trieRoot.search("diffuser"));
+        Assertions.assertTrue(trieRoot.search("diffuser"));
 
         trieRoot.add("cart");
-        Assert.assertTrue(trieRoot.search("cart"));
-        Assert.assertTrue(trieRoot.search("card"));
-
+        Assertions.assertTrue(trieRoot.search("cart"));
+        Assertions.assertTrue(trieRoot.search("card"));
     }
 
     @Test
     void testCountWordsWithPrefixIfPrefixNotPartOfTrie() {
-        Assert.assertEquals(0, trieRoot.countNumWordsWithPrefix("dog"));
+        Assertions.assertEquals(0, trieRoot.countNumWordsWithPrefix("dog"));
     }
 
     @Test
     void testCountWordsWithPrefixIfPrefixPartOfTrie() {
-        Assert.assertEquals(3, trieRoot.countNumWordsWithPrefix("car"));
+        Assertions.assertEquals(3, trieRoot.countNumWordsWithPrefix("car"));
     }
 
     @Test
     void testSearchIfWordNotInTrie() {
         for (String word : wordsNotInTrie) {
-            Assert.assertFalse(trieRoot.search(word));
+            Assertions.assertFalse(trieRoot.search(word));
         }
     }
 
     @Test
     void testSearchIfWordInTrie() {
         for (String word : wordsInTrie) {
-            Assert.assertTrue(trieRoot.search(word));
+            Assertions.assertTrue(trieRoot.search(word));
         }
     }
 

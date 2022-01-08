@@ -1,6 +1,5 @@
 package DataStructures.CustomDataStructures.MinHeap;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,30 +29,30 @@ class MinHeapTest {
 
     @Test
     void testIsEmptyOnEmptyMinHeap() {
-        Assert.assertTrue(emptyMinHeap.isEmpty());
+        Assertions.assertTrue(emptyMinHeap.isEmpty());
     }
 
     @Test
     void testIsEmptyOnNonEmptyMinHeap() {
-        Assert.assertFalse(fullMinHeap.isEmpty());
+        Assertions.assertFalse(fullMinHeap.isEmpty());
     }
 
     @Test
     void testAdd() {
         emptyMinHeap.add(25);
-        Assert.assertEquals("25 Size: 1", emptyMinHeap.toString());
+        Assertions.assertEquals("25 Size: 1", emptyMinHeap.toString());
 
         emptyMinHeap.add(17);
-        Assert.assertEquals("17 25 Size: 2", emptyMinHeap.toString());
+        Assertions.assertEquals("17 25 Size: 2", emptyMinHeap.toString());
 
         emptyMinHeap.add(20);
-        Assert.assertEquals("17 25 20 Size: 3", emptyMinHeap.toString());
+        Assertions.assertEquals("17 25 20 Size: 3", emptyMinHeap.toString());
 
         emptyMinHeap.add(15);
-        Assert.assertEquals("15 17 20 25 Size: 4", emptyMinHeap.toString());
+        Assertions.assertEquals("15 17 20 25 Size: 4", emptyMinHeap.toString());
 
         emptyMinHeap.add(10);
-        Assert.assertEquals("10 15 20 25 17 Size: 5", emptyMinHeap.toString());
+        Assertions.assertEquals("10 15 20 25 17 Size: 5", emptyMinHeap.toString());
     }
 
     @Test
@@ -64,7 +63,7 @@ class MinHeapTest {
     @Test
     void testPeekFromNonEmptyMinHeap() {
         Assertions.assertEquals(10, fullMinHeap.peek());
-        Assert.assertEquals("10 15 20 25 17 Size: 5", fullMinHeap.toString());
+        Assertions.assertEquals("10 15 20 25 17 Size: 5", fullMinHeap.toString());
     }
 
     @Test
@@ -74,19 +73,19 @@ class MinHeapTest {
 
     @Test
     void testPollFromNonEmptyMinHeap() {
-        Assert.assertEquals(10, fullMinHeap.poll());
-        Assert.assertEquals("15 17 20 25 Size: 4", fullMinHeap.toString());
+        Assertions.assertEquals(10, fullMinHeap.poll());
+        Assertions.assertEquals("15 17 20 25 Size: 4", fullMinHeap.toString());
 
-        Assert.assertEquals(15, fullMinHeap.poll());
-        Assert.assertEquals("17 25 20 Size: 3", fullMinHeap.toString());
+        Assertions.assertEquals(15, fullMinHeap.poll());
+        Assertions.assertEquals("17 25 20 Size: 3", fullMinHeap.toString());
 
-        Assert.assertEquals(17, fullMinHeap.poll());
-        Assert.assertEquals("20 25 Size: 2", fullMinHeap.toString());
+        Assertions.assertEquals(17, fullMinHeap.poll());
+        Assertions.assertEquals("20 25 Size: 2", fullMinHeap.toString());
 
-        Assert.assertEquals(20, fullMinHeap.poll());
-        Assert.assertEquals("25 Size: 1", fullMinHeap.toString());
+        Assertions.assertEquals(20, fullMinHeap.poll());
+        Assertions.assertEquals("25 Size: 1", fullMinHeap.toString());
 
-        Assert.assertEquals(25, fullMinHeap.poll());
-        Assert.assertEquals("Size: 0", fullMinHeap.toString());
+        Assertions.assertEquals(25, fullMinHeap.poll());
+        Assertions.assertEquals("Size: 0", fullMinHeap.toString());
     }
 }
