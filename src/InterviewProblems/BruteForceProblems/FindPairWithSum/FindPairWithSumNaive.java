@@ -1,4 +1,4 @@
-package InterviewProblems.HashMapProblems.FindPairWithSum;
+package InterviewProblems.BruteForceProblems.FindPairWithSum;
 
 public class FindPairWithSumNaive {
 

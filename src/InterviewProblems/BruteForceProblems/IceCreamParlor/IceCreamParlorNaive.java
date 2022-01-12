@@ -1,4 +1,4 @@
-package InterviewProblems.HashMapProblems.IceCreamParlor;
+package InterviewProblems.BruteForceProblems.IceCreamParlor;
 
 public class IceCreamParlorNaive {
 
