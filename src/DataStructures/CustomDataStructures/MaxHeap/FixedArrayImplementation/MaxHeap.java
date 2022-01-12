@@ -1,8 +1,8 @@
-package DataStructures.CustomDataStructures.MinHeap;
+package DataStructures.CustomDataStructures.MaxHeap.FixedArrayImplementation;
 
 import java.util.Arrays;
 
-public class MinHeap {
+public class MaxHeap {
 
     // source: https://www.youtube.com/watch?v=t0Cq6tVNRBA min heaps
 
@@ -11,9 +11,9 @@ public class MinHeap {
     private int[] items;
 
     /**
-     * Create a new min heap.
+     * Create a new max heap.
      */
-    public MinHeap() {
+    public MaxHeap() {
         size = 0;
         capacity = 10;
         items = new int[capacity];
@@ -21,14 +21,14 @@ public class MinHeap {
     }
 
     /**
-     * Return true iff this min heap contains no items.
+     * Return true iff this max heap contains no items.
      */
     public boolean isEmpty() {
         return size == 0;
     }
 
     /**
-     * Add the item to this min heap.
+     * Add the item to this max heap.
      */
     public void add(int item) {
         ensureExtraCapacity();
@@ -38,21 +38,21 @@ public class MinHeap {
     }
 
     /**
-     * Return the top of this min heap.
+     * Return the top of this max heap.
      */
     public int peek() {
         if (size == 0) {
-            throw new IllegalStateException("There are no items in this min heap.");
+            throw new IllegalStateException("There are no items in this max heap.");
         }
         return items[0];
     }
 
     /**
-     * Remove and return the top of this min heap.
+     * Remove and return the top of this max heap.
      */
     public int poll() {
         if (size == 0) {
-            throw new IllegalStateException("You cannot delete from an empty min heap.");
+            throw new IllegalStateException("You cannot delete from an empty max heap.");
         }
 
         int item = items[0];
@@ -64,21 +64,21 @@ public class MinHeap {
     }
 
     /**
-     * Return a string representation of this min heap.
+     * Return a string representation of this max heap.
      */
     public String toString() {
-        String minHeapString = "";
+        String maxHeapString = "";
         for (int i = 0; i < size; i++) {
-            minHeapString += items[i] + " ";
+            maxHeapString += items[i] + " ";
         }
 
-        minHeapString = minHeapString.trim();
+        maxHeapString = maxHeapString.trim();
         if (size >= 1) {
-            minHeapString += " ";
+            maxHeapString += " ";
         }
 
-        minHeapString += "Size: " + size;
-        return minHeapString;
+        maxHeapString += "Size: " + size;
+        return maxHeapString;
     }
 
     private int getLeftChildIndex(int parentIndex) {
@@ -114,35 +114,35 @@ public class MinHeap {
     private void ensureExtraCapacity() {
         if (size == capacity) {
             // copy over items into a bigger array
-            items = Arrays.copyOf(items, capacity * 2); // copy over items into a bigger array
+            items = Arrays.copyOf(items, capacity * 2);
             capacity *= 2;
         }
     }
 
-    private int getSmallerChildIndex(int index) {
-        int smallerChildIndex = getLeftChildIndex(index);
-        if (hasRightChild(index) && rightChild(index) < leftChild(index)) {
-            smallerChildIndex = getRightChildIndex(index);
+    private int getBiggerChildIndex(int index) {
+        int biggerChildIndex = getLeftChildIndex(index);
+        if (hasRightChild(index) && rightChild(index) > leftChild(index)) {
+            biggerChildIndex = getRightChildIndex(index);
         }
-        return smallerChildIndex;
+        return biggerChildIndex;
     }
 
     private void heapifyDown() {
         int index = 0; // start with root
         while (hasLeftChild(index)) {  // no left child => no right child
-            int smallerChildIndex = getSmallerChildIndex(index);
-            if (items[index] < items[smallerChildIndex]) {
+            int biggerChildIndex = getBiggerChildIndex(index);
+            if (items[index] > items[biggerChildIndex]) {
                 break; // heap elements now in order
             } else {
-                swap(index, smallerChildIndex);
+                swap(index, biggerChildIndex);
             }
-            index = smallerChildIndex;
+            index = biggerChildIndex;
         }
     }
 
     private void heapifyUp() {
         int index = size - 1; // start with last element
-        while (hasParent(index) && parent(index) > items[index]) {
+        while (hasParent(index) && parent(index) < items[index]) {
             swap(getParentIndex(index), index);
             index = getParentIndex(index);
         }
