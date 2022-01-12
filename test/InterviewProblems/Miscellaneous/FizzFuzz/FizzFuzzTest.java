@@ -1,6 +1,5 @@
 package InterviewProblems.Miscellaneous.FizzFuzz;
 
-import InterviewProblems.Miscellaneous.FizzFuzzConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package InterviewProblems.Miscellaneous;
+package InterviewProblems.Miscellaneous.FizzFuzz;
 
 public class FizzFuzzConverter {
 
