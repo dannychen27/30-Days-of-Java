@@ -1,16 +1,14 @@
-package SoftwareTesting.MocksAndStubs;
-
-import SoftwareTesting.TestDrivenDevelopment.Mocks.MovieInfo;
+package SoftwareTesting.TestDrivenDevelopment.Mocks;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class StubMovieInfo implements MovieInfo {
+public class StubMovieInfo implements MovieInfo {
 
     private final String title;
     private final int year;
 
-    StubMovieInfo(String title, int year) {
+    public StubMovieInfo(String title, int year) {
         this.title = title;
         this.year = year;
     }

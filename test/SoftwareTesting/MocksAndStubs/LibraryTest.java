@@ -3,6 +3,7 @@ package SoftwareTesting.MocksAndStubs;
 import SoftwareTesting.TestDrivenDevelopment.Mocks.Library;
 import SoftwareTesting.TestDrivenDevelopment.Mocks.Movie;
 import SoftwareTesting.TestDrivenDevelopment.Mocks.MovieInfo;
+import SoftwareTesting.TestDrivenDevelopment.Mocks.StubMovieInfo;
 import SoftwareTesting.TestDrivenDevelopment.Stubs.EmailServer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
