@@ -11,7 +11,7 @@ public class IceCreamParlorHashmap {
 
     public int[] findChoices(int[] menuPrices, int budget) {
         int[] choices = {-1, -1};
-        HashMap<Integer, Integer> indicesToPricesSeen = new HashMap<>();
+        Map<Integer, Integer> indicesToPricesSeen = new HashMap<>();
         for (int i = 0; i < menuPrices.length; i++) {
             int complement = budget - menuPrices[i];
             if (!indicesToPricesSeen.containsValue(complement)) {

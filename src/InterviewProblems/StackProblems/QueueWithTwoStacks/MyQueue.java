@@ -8,8 +8,8 @@ class MyQueue<T> {
 
     // Tip: for challenging problems: make sure you understand the problem specifications
 
-    private Stack<T> stackNewestOnTop;
-    private Stack<T> stackOldestOnTop;
+    private final Stack<T> stackNewestOnTop;
+    private final Stack<T> stackOldestOnTop;
 
     MyQueue() {
         stackNewestOnTop = new Stack<>();

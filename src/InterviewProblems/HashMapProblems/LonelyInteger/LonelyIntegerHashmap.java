@@ -1,11 +1,12 @@
 package InterviewProblems.HashMapProblems.LonelyInteger;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class LonelyIntegerHashmap {
 
     public int findLonelyInteger(int[] array) {
-        HashMap<Integer, Integer> integersToNumOccurrences = new HashMap<>();
+        Map<Integer, Integer> integersToNumOccurrences = new HashMap<>();
         for (int value : array) {
             if (!integersToNumOccurrences.containsKey(value)) {
                 integersToNumOccurrences.put(value, 1);

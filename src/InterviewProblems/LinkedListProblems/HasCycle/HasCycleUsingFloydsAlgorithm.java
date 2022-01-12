@@ -14,19 +14,19 @@ import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList.Node;
  * }
  */
 
-class HasCycleUsingFloydsAlgorithm {
+class HasCycleUsingFloydsAlgorithm<T> {
 
     // Fast and slow pointer method:
     // time: O(n)
     // space: O(1)
 
-    boolean hasCycle(Node head) {
+    boolean hasCycle(Node<T> head) {
         if (head == null) {
             return false;
         }
 
-        Node fast = head.next;
-        Node slow = head;
+        Node<T> fast = head.next;
+        Node<T> slow = head;
         // slow != null is an optional condition:
         // it doesn't cause a problem either way...
         while (fast != null && fast.next != null && slow != null) {

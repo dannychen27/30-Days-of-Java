@@ -1,6 +1,9 @@
 package InterviewProblems.HashMapProblems.CharactersAwayFromAnagram;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class CharactersAwayFromAnagram {
 
@@ -11,8 +14,8 @@ public class CharactersAwayFromAnagram {
     // space: O(n) because of the hashmaps
 
     public int charsAwayFromAnagram(String word1, String word2) {
-        HashMap<Character, Integer> charCountsOfFirstWord = getCharCounts(word1);
-        HashMap<Character, Integer> charCountsOfSecondWord = getCharCounts(word2);
+        Map<Character, Integer> charCountsOfFirstWord = getCharCounts(word1);
+        Map<Character, Integer> charCountsOfSecondWord = getCharCounts(word2);
         return getDelta(charCountsOfFirstWord, charCountsOfSecondWord);
 
     }
@@ -31,8 +34,8 @@ public class CharactersAwayFromAnagram {
     }
 
 
-    private int getDelta(HashMap<Character, Integer> charCountsOfWord1,
-                         HashMap<Character, Integer> charCountsOfWord2) {
+    private int getDelta(Map<Character, Integer> charCountsOfWord1,
+                         Map<Character, Integer> charCountsOfWord2) {
         Set<Character> lettersInBothWords = new HashSet<>();
         lettersInBothWords.addAll(charCountsOfWord1.keySet());
         lettersInBothWords.addAll(charCountsOfWord2.keySet());

@@ -1,6 +1,7 @@
 package InterviewProblems.HashMapProblems.IsAnagram;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class IsAnagramHashmap {
 
@@ -15,8 +16,8 @@ public class IsAnagramHashmap {
     public boolean isAnagram(String word1, String word2) {
         // count the number of occurrences of each letter in word1 and word2,
         // and check if they are all equal.
-        HashMap<Character, Integer> letterCountsOfWord1 = countLettersInWord(word1);
-        HashMap<Character, Integer> letterCountsOfWord2 = countLettersInWord(word2);
+        Map<Character, Integer> letterCountsOfWord1 = countLettersInWord(word1);
+        Map<Character, Integer> letterCountsOfWord2 = countLettersInWord(word2);
         return letterCountsOfWord1.equals(letterCountsOfWord2);
     }
 

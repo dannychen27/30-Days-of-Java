@@ -1,11 +1,12 @@
 package InterviewProblems.StackProblems.BalancedParentheses;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 class BalancedParentheses {
 
-    private static HashMap<Character, Character> tokens;
+    private static Map<Character, Character> tokens;
 
     // source: https://www.youtube.com/watch?v=IhJGJG-9Dx8&t=7s
 
