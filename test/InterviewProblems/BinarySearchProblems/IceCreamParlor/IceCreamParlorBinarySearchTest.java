@@ -1,6 +1,5 @@
 package InterviewProblems.BinarySearchProblems.IceCreamParlor;
 
-import InterviewProblems.HashMapProblems.IceCreamParlor.IceCreamParlorBinarySearch;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
