@@ -1,7 +1,7 @@
 package InterviewProblems.StackProblems.QueueWithTwoStacks;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,14 +24,13 @@ class QueueWithTwoStacksTest {
 
     @Test
     void testPeek() {
-        Assert.assertEquals("A", myQueue.peek());
-
+        Assertions.assertEquals("A", myQueue.peek());
     }
 
     @Test
     void testDequeue() {
-        Assert.assertEquals("A", myQueue.dequeue());
-        Assert.assertEquals("B", myQueue.dequeue());
-        Assert.assertEquals("C", myQueue.dequeue());
+        Assertions.assertEquals("A", myQueue.dequeue());
+        Assertions.assertEquals("B", myQueue.dequeue());
+        Assertions.assertEquals("C", myQueue.dequeue());
     }
 }

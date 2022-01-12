@@ -2,8 +2,8 @@ package InterviewProblems.LinkedListProblems.HasCycle;
 
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList.Node;
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedList.SinglyLinkedList;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,8 +11,8 @@ class HasCycleUsingFloydsAlgorithmTest {
 
     private HasCycleUsingFloydsAlgorithm hasCycleUsingFloydsAlgorithm;
 
-    private SinglyLinkedList linkedListNoCycles = new SinglyLinkedList();
-    private SinglyLinkedList linkedListWithCycles = new SinglyLinkedList();
+    private final SinglyLinkedList<Integer> linkedListNoCycles = new SinglyLinkedList<>();
+    private final SinglyLinkedList<Integer> linkedListWithCycles = new SinglyLinkedList<>();
 
     @BeforeEach
     void setUp() {
@@ -22,15 +22,15 @@ class HasCycleUsingFloydsAlgorithmTest {
     }
 
     private void setUpLinkedListWithCycles() {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
-        Node node7 = new Node(7);
-        Node node8 = new Node(8);
-        Node node9 = new Node(9);
+        Node<Integer> node1 = new Node<>(1);
+        Node<Integer> node2 = new Node<>(2);
+        Node<Integer> node3 = new Node<>(3);
+        Node<Integer> node4 = new Node<>(4);
+        Node<Integer> node5 = new Node<>(5);
+        Node<Integer> node6 = new Node<>(6);
+        Node<Integer> node7 = new Node<>(7);
+        Node<Integer> node8 = new Node<>(8);
+        Node<Integer> node9 = new Node<>(9);
 
         linkedListWithCycles.head = node1;
         node1.next = node2;
@@ -59,11 +59,11 @@ class HasCycleUsingFloydsAlgorithmTest {
 
     @Test
     void testWithAcyclicLinkedList() {
-        Assert.assertFalse(hasCycleUsingFloydsAlgorithm.hasCycle(linkedListNoCycles.head));
+        Assertions.assertFalse(hasCycleUsingFloydsAlgorithm.hasCycle(linkedListNoCycles.head));
     }
 
     @Test
     void testWithCyclicLinkedList() {
-        Assert.assertTrue(hasCycleUsingFloydsAlgorithm.hasCycle(linkedListWithCycles.head));
+        Assertions.assertTrue(hasCycleUsingFloydsAlgorithm.hasCycle(linkedListWithCycles.head));
     }
 }

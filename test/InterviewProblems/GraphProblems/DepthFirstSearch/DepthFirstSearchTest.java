@@ -2,8 +2,8 @@ package InterviewProblems.GraphProblems.DepthFirstSearch;
 
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.UndirectedGraph;
 import DataStructures.CustomDataStructures.Graph.UndirectedGraph.AdjacencyListImplementation.Vertex;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,15 +14,15 @@ class DepthFirstSearchTest {
 
     private DepthFirstSearch dfs;
 
-    private UndirectedGraph tree = new UndirectedGraph();
+    private final UndirectedGraph tree = new UndirectedGraph();
 
-    private Vertex vertex1 = new Vertex(1);
-    private Vertex vertex2 = new Vertex(2);
-    private Vertex vertex3 = new Vertex(3);
-    private Vertex vertex4 = new Vertex(4);
-    private Vertex vertex5 = new Vertex(5);
-    private Vertex vertex6 = new Vertex(6);
-    private Vertex vertex7 = new Vertex(7);
+    private final Vertex vertex1 = new Vertex(1);
+    private final Vertex vertex2 = new Vertex(2);
+    private final Vertex vertex3 = new Vertex(3);
+    private final Vertex vertex4 = new Vertex(4);
+    private final Vertex vertex5 = new Vertex(5);
+    private final Vertex vertex6 = new Vertex(6);
+    private final Vertex vertex7 = new Vertex(7);
 
     @BeforeEach
     void setUp() {
@@ -55,6 +55,6 @@ class DepthFirstSearchTest {
     @Test
     void testOnTree() {
         List<Vertex> expectedValues = Arrays.asList(vertex1, vertex2, vertex4, vertex5, vertex3, vertex6, vertex7);
-        Assert.assertEquals(expectedValues, dfs.depthFirstSearch(tree));
+        Assertions.assertEquals(expectedValues, dfs.depthFirstSearch(tree));
     }
 }
