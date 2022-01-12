@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 
 class HasCycleUsingFloydsAlgorithmTest {
 
-    private HasCycleUsingFloydsAlgorithm hasCycleUsingFloydsAlgorithm;
+    private HasCycleUsingFloydsAlgorithm<Integer> hasCycleUsingFloydsAlgorithm;
 
     private final SinglyLinkedList<Integer> linkedListNoCycles = new SinglyLinkedList<>();
     private final SinglyLinkedList<Integer> linkedListWithCycles = new SinglyLinkedList<>();
 
     @BeforeEach
     void setUp() {
-        hasCycleUsingFloydsAlgorithm = new HasCycleUsingFloydsAlgorithm();
+        hasCycleUsingFloydsAlgorithm = new HasCycleUsingFloydsAlgorithm<>();
         setUpLinkedListNoCycles();
         setUpLinkedListWithCycles();
     }

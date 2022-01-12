@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 
 class HasCycleUsingHashSetTest {
 
-    private HasCycleUsingHashSet hasCycleUsingHashSet;
+    private HasCycleUsingHashSet<Integer> hasCycleUsingHashSet;
 
     private final SinglyLinkedList<Integer> linkedListNoCycles = new SinglyLinkedList<>();
     private final SinglyLinkedList<Integer> linkedListWithCycles = new SinglyLinkedList<>();
 
     @BeforeEach
     void setUp() {
-        hasCycleUsingHashSet = new HasCycleUsingHashSet();
+        hasCycleUsingHashSet = new HasCycleUsingHashSet<>();
         setUpLinkedListNoCycles();
         setUpLinkedListWithCycles();
     }
