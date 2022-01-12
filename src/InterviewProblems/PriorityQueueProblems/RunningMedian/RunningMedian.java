@@ -8,15 +8,14 @@ public class RunningMedian {
 
     // Find the running median of an array of numbers
 
-    public double[] getRunningMedians(int[] array) {
-        PriorityQueue<Integer> lowerHalf = new PriorityQueue<>(new SortByDescendingOrder());  // max heap
-        PriorityQueue<Integer> upperHalf = new PriorityQueue<>();  // min heap
-        double[] medians = new double[array.length];
-        for (int i = 0; i < array.length; i++) {
-            int number = array[i];
-            addNumber(number, lowerHalf, upperHalf);
-            rebalanceHeaps(lowerHalf, upperHalf);
-            medians[i] = getMedian(lowerHalf, upperHalf);
+    public double[] getRunningMedians(int[] numbers) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new SortByDescendingOrder());
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        double[] medians = new double[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            addNumber(numbers[i], maxHeap, minHeap);
+            rebalanceHeaps(maxHeap, minHeap);
+            medians[i] = getMedian(maxHeap, minHeap);
         }
         return medians;
     }
@@ -33,19 +32,8 @@ public class RunningMedian {
 
     private void rebalanceHeaps(PriorityQueue<Integer> lowerHalf,
                                 PriorityQueue<Integer> upperHalf) {
-        PriorityQueue<Integer> biggerHeap;
-        if (lowerHalf.size() > upperHalf.size()) {
-            biggerHeap = lowerHalf;
-        } else {
-            biggerHeap = upperHalf;
-        }
-
-        PriorityQueue<Integer> smallerHeap;
-        if (lowerHalf.size() > upperHalf.size()) {
-            smallerHeap = upperHalf;
-        } else {
-            smallerHeap = lowerHalf;
-        }
+        PriorityQueue<Integer> biggerHeap = getBiggerHeap(lowerHalf, upperHalf);
+        PriorityQueue<Integer> smallerHeap = getSmallerHeap(lowerHalf, upperHalf);
 
         // biggerHeap.size() - smallerHeap.size() will never be > 2.
         if (biggerHeap.size() - smallerHeap.size() >= 2) {
@@ -55,24 +43,33 @@ public class RunningMedian {
 
     private double getMedian(PriorityQueue<Integer> lowerHalf,
                              PriorityQueue<Integer> upperHalf) {
-        PriorityQueue<Integer> biggerHeap;
-        if (lowerHalf.size() > upperHalf.size()) {
-            biggerHeap = lowerHalf;
-        } else {
-            biggerHeap = upperHalf;
-        }
-
-        PriorityQueue<Integer> smallerHeap;
-        if (lowerHalf.size() > upperHalf.size()) {
-            smallerHeap = upperHalf;
-        } else {
-            smallerHeap = lowerHalf;
-        }
+        PriorityQueue<Integer> biggerHeap = getBiggerHeap(lowerHalf, upperHalf);
+        PriorityQueue<Integer> smallerHeap = getSmallerHeap(lowerHalf, upperHalf);
 
         if (biggerHeap.size() == smallerHeap.size()) {
             return (biggerHeap.peek() + smallerHeap.peek()) / 2.0;
         } else {
             return biggerHeap.peek();
         }
+    }
+
+    private PriorityQueue<Integer> getSmallerHeap(PriorityQueue<Integer> lowerHalf, PriorityQueue<Integer> upperHalf) {
+        PriorityQueue<Integer> smallerHeap;
+        if (lowerHalf.size() > upperHalf.size()) {
+            smallerHeap = upperHalf;
+        } else {
+            smallerHeap = lowerHalf;
+        }
+        return smallerHeap;
+    }
+
+    private PriorityQueue<Integer> getBiggerHeap(PriorityQueue<Integer> lowerHalf, PriorityQueue<Integer> upperHalf) {
+        PriorityQueue<Integer> biggerHeap;
+        if (lowerHalf.size() > upperHalf.size()) {
+            biggerHeap = lowerHalf;
+        } else {
+            biggerHeap = upperHalf;
+        }
+        return biggerHeap;
     }
 }
