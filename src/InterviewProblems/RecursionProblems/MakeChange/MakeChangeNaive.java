@@ -17,11 +17,11 @@ public class MakeChangeNaive {
 
     private long makeChange(int targetChange, int[] coins, int index) {
         if (targetChange == 0) {
-            return 1; // out of money
+            return 1;  // out of money
         }
 
         if (index >= coins.length) {
-            return 0; // run out of coins, but not money
+            return 0;  // run out of coins, but not money
         }
 
         int amountWithCoin = 0;
