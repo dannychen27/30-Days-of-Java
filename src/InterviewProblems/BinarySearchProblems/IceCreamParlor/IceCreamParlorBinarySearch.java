@@ -1,4 +1,4 @@
-package InterviewProblems.HashMapProblems.IceCreamParlor;
+package InterviewProblems.BinarySearchProblems.IceCreamParlor;
 
 import java.util.Arrays;
 
