@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.MinHeap;
+package DataStructures.CustomDataStructures.MinHeap.FixedArrayImplementation;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

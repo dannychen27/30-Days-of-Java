@@ -1,4 +1,4 @@
-package DataStructures.CustomDataStructures.MaxHeap;
+package DataStructures.CustomDataStructures.MaxHeap.FixedArrayImplementation;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
