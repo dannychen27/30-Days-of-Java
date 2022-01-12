@@ -120,11 +120,11 @@ public class MaxHeap {
     }
 
     private int getBiggerChildIndex(int index) {
-        int getBiggerChildIndex = getLeftChildIndex(index);
+        int biggerChildIndex = getLeftChildIndex(index);
         if (hasRightChild(index) && rightChild(index) > leftChild(index)) {
-            getBiggerChildIndex = getRightChildIndex(index);
+            biggerChildIndex = getRightChildIndex(index);
         }
-        return getBiggerChildIndex;
+        return biggerChildIndex;
     }
 
     private void heapifyDown() {
