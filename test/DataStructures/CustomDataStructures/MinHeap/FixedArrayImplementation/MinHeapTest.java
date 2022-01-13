@@ -40,19 +40,19 @@ class MinHeapTest {
     @Test
     void testAdd() {
         emptyMinHeap.add(25);
-        Assertions.assertEquals("25 Size: 1", emptyMinHeap.toString());
+        Assertions.assertEquals("25", emptyMinHeap.toString());
 
         emptyMinHeap.add(17);
-        Assertions.assertEquals("17 25 Size: 2", emptyMinHeap.toString());
+        Assertions.assertEquals("17 25", emptyMinHeap.toString());
 
         emptyMinHeap.add(20);
-        Assertions.assertEquals("17 25 20 Size: 3", emptyMinHeap.toString());
+        Assertions.assertEquals("17 25 20", emptyMinHeap.toString());
 
         emptyMinHeap.add(15);
-        Assertions.assertEquals("15 17 20 25 Size: 4", emptyMinHeap.toString());
+        Assertions.assertEquals("15 17 20 25", emptyMinHeap.toString());
 
         emptyMinHeap.add(10);
-        Assertions.assertEquals("10 15 20 25 17 Size: 5", emptyMinHeap.toString());
+        Assertions.assertEquals("10 15 20 25 17", emptyMinHeap.toString());
     }
 
     @Test
@@ -63,7 +63,7 @@ class MinHeapTest {
     @Test
     void testPeekFromNonEmptyMinHeap() {
         Assertions.assertEquals(10, fullMinHeap.peek());
-        Assertions.assertEquals("10 15 20 25 17 Size: 5", fullMinHeap.toString());
+        Assertions.assertEquals("10 15 20 25 17", fullMinHeap.toString());
     }
 
     @Test
@@ -74,18 +74,18 @@ class MinHeapTest {
     @Test
     void testPollFromNonEmptyMinHeap() {
         Assertions.assertEquals(10, fullMinHeap.poll());
-        Assertions.assertEquals("15 17 20 25 Size: 4", fullMinHeap.toString());
+        Assertions.assertEquals("15 17 20 25", fullMinHeap.toString());
 
         Assertions.assertEquals(15, fullMinHeap.poll());
-        Assertions.assertEquals("17 25 20 Size: 3", fullMinHeap.toString());
+        Assertions.assertEquals("17 25 20", fullMinHeap.toString());
 
         Assertions.assertEquals(17, fullMinHeap.poll());
-        Assertions.assertEquals("20 25 Size: 2", fullMinHeap.toString());
+        Assertions.assertEquals("20 25", fullMinHeap.toString());
 
         Assertions.assertEquals(20, fullMinHeap.poll());
-        Assertions.assertEquals("25 Size: 1", fullMinHeap.toString());
+        Assertions.assertEquals("25", fullMinHeap.toString());
 
         Assertions.assertEquals(25, fullMinHeap.poll());
-        Assertions.assertEquals("Size: 0", fullMinHeap.toString());
+        Assertions.assertEquals("EMPTY MIN HEAP", fullMinHeap.toString());
     }
 }

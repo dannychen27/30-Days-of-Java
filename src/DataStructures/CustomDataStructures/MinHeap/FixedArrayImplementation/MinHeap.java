@@ -75,14 +75,7 @@ public class MinHeap {
         for (int i = 0; i < size; i++) {
             minHeapString += items[i] + " ";
         }
-
-        minHeapString = minHeapString.trim();
-        if (size >= 1) {
-            minHeapString += " ";
-        }
-
-        minHeapString += "Size: " + size;
-        return minHeapString;
+        return minHeapString.trim();
     }
 
     private int getLeftChildIndex(int parentIndex) {

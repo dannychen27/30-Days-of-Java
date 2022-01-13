@@ -40,19 +40,19 @@ class MaxHeapTest {
     @Test
     void testAdd() {
         emptyMaxHeap.add(25);
-        Assertions.assertEquals("25 Size: 1", emptyMaxHeap.toString());
+        Assertions.assertEquals("25", emptyMaxHeap.toString());
 
         emptyMaxHeap.add(17);
-        Assertions.assertEquals("25 17 Size: 2", emptyMaxHeap.toString());
+        Assertions.assertEquals("25 17", emptyMaxHeap.toString());
 
         emptyMaxHeap.add(20);
-        Assertions.assertEquals("25 17 20 Size: 3", emptyMaxHeap.toString());
+        Assertions.assertEquals("25 17 20", emptyMaxHeap.toString());
 
         emptyMaxHeap.add(15);
-        Assertions.assertEquals("25 17 20 15 Size: 4", emptyMaxHeap.toString());
+        Assertions.assertEquals("25 17 20 15", emptyMaxHeap.toString());
 
         emptyMaxHeap.add(10);
-        Assertions.assertEquals("25 17 20 15 10 Size: 5", emptyMaxHeap.toString());
+        Assertions.assertEquals("25 17 20 15 10", emptyMaxHeap.toString());
     }
 
     @Test
@@ -63,7 +63,7 @@ class MaxHeapTest {
     @Test
     void testPeekFromNonEmptyMaxHeap() {
         Assertions.assertEquals(25, fullMaxHeap.peek());
-        Assertions.assertEquals("25 17 20 15 10 Size: 5", fullMaxHeap.toString());
+        Assertions.assertEquals("25 17 20 15 10", fullMaxHeap.toString());
     }
 
     @Test
@@ -74,18 +74,18 @@ class MaxHeapTest {
     @Test
     void testPollFromNonEmptyMaxHeap() {
         Assertions.assertEquals(25, fullMaxHeap.poll());
-        Assertions.assertEquals("20 17 10 15 Size: 4", fullMaxHeap.toString());
+        Assertions.assertEquals("20 17 10 15", fullMaxHeap.toString());
 
         Assertions.assertEquals(20, fullMaxHeap.poll());
-        Assertions.assertEquals("17 15 10 Size: 3", fullMaxHeap.toString());
+        Assertions.assertEquals("17 15 10", fullMaxHeap.toString());
 
         Assertions.assertEquals(17, fullMaxHeap.poll());
-        Assertions.assertEquals("15 10 Size: 2", fullMaxHeap.toString());
+        Assertions.assertEquals("15 10", fullMaxHeap.toString());
 
         Assertions.assertEquals(15, fullMaxHeap.poll());
-        Assertions.assertEquals("10 Size: 1", fullMaxHeap.toString());
+        Assertions.assertEquals("10", fullMaxHeap.toString());
 
         Assertions.assertEquals(10, fullMaxHeap.poll());
-        Assertions.assertEquals("Size: 0", fullMaxHeap.toString());
+        Assertions.assertEquals("EMPTY MAX HEAP", fullMaxHeap.toString());
     }
 }

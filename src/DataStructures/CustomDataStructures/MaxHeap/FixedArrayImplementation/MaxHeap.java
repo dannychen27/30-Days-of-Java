@@ -75,14 +75,7 @@ public class MaxHeap {
         for (int i = 0; i < size; i++) {
             maxHeapString += items[i] + " ";
         }
-
-        maxHeapString = maxHeapString.trim();
-        if (size >= 1) {
-            maxHeapString += " ";
-        }
-
-        maxHeapString += "Size: " + size;
-        return maxHeapString;
+        return maxHeapString.trim();
     }
 
     private int getLeftChildIndex(int parentIndex) {
