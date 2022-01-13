@@ -67,6 +67,10 @@ public class MinHeap {
      * Return a string representation of this min heap.
      */
     public String toString() {
+        if (isEmpty()) {
+            return "EMPTY MIN HEAP";
+        }
+
         String minHeapString = "";
         for (int i = 0; i < size; i++) {
             minHeapString += items[i] + " ";

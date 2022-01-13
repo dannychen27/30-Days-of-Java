@@ -67,6 +67,10 @@ public class MaxHeap {
      * Return a string representation of this max heap.
      */
     public String toString() {
+        if (isEmpty()) {
+            return "EMPTY MAX HEAP";
+        }
+
         String maxHeapString = "";
         for (int i = 0; i < size; i++) {
             maxHeapString += items[i] + " ";
