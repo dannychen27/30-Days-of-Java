@@ -129,8 +129,8 @@ disjoint sets with singly linked list with extra pointers to head -- DONE FOR NO
 disjoint sets with singly linked list with extra pointers to head and union by rank -- DONE FOR NOW
 disjoint sets with trees -- DONE FOR NOW
 disjoint sets with trees and union by rank -- DONE FOR NOW
-// todo: disjoint sets with trees and path compression
-// todo: disjoint sets with trees and both union by rank and path compression
+disjoint sets with trees and path compression -- DONE FOR NOW
+disjoint sets with trees and both union by rank and path compression -- DONE FOR NOW
 // todo: indexed priority queues
 
 
