@@ -3,6 +3,7 @@ package InterviewProblems.RecursionProblems.CountMazePaths;
 class CountMazePathsNaive {
 
     // you can only move in two directions: right or down
+    // true represents empty spaces, false represents walls
     //
     // Example Grid:
     // boolean[][] grid1 = {
