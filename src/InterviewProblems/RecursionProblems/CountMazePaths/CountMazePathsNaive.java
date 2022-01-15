@@ -37,6 +37,8 @@ class CountMazePathsNaive {
 
     /** Return true iff you hit the bottom right of the grid. **/
     private boolean isAtGoal(boolean[][] grid, int row, int column) {
-        return row >= grid.length - 1 && column >= grid[row].length - 1;
+        // return row >= grid.length - 1 && column >= grid[row].length - 1; is also okay
+        // but the isInBounds() function makes sure you can't go out of bounds in the maze.
+        return row == grid.length - 1 && column == grid[row].length - 1;
     }
 }
