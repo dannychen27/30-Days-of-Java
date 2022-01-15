@@ -19,6 +19,15 @@ class CountUniqueMazePaths {
 
     // source: https://www.youtube.com/watch?v=P8Xa2BitN3I&t=258s
 
+    // Time: O(2 ^ (rows + columns))
+    // --> the recurrence relation has an exponential closed form
+    // --> OR the recursion tree is a binary tree of visited spaces
+    // Space: O(rows + columns)
+    // note: not all 2 ^ (rows + columns) cells are stored in the call stack at once
+    // --> there are at most max(rows, columns) = (rows + columns) cells stored in the
+    // call stack at once, since you can only move towards the goal until you reach the
+    // bottom or far right on the grid before you hit a boundary or wall.
+
     int countPaths(boolean[][] grid, int row, int column) {
         if (!isInBounds(grid, row, column)) {
             return 0;
