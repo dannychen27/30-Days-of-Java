@@ -17,7 +17,7 @@ class CountMazePathsNaive {
     // };
 
     int countPaths(boolean[][] grid, int row, int column) {
-        if (!isOutOfBounds(grid, row, column)) {
+        if (!isInBounds(grid, row, column)) {
             return 0;
         }
 
@@ -29,7 +29,7 @@ class CountMazePathsNaive {
     }
 
     /** Return true iff you haven't reached an edge/boundary and are not blocked by a wall. **/
-    private boolean isOutOfBounds(boolean[][] grid, int row, int column) {
+    private boolean isInBounds(boolean[][] grid, int row, int column) {
         return  (0 <= row && row <= grid.length - 1) &&
                 (0 <= column && column <= grid[row].length - 1) &&
                 grid[row][column];
