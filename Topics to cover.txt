@@ -240,7 +240,7 @@ in-place recursive mergesort -- DONE
 out-of-place recursive mergesort -- DONE
 iterative mergesort -- DONE
 // todo: timsort
-// todo: heapsort (e.g. O(nlogn) build heap version vs. O(n) build heap version)
+heapsort (e.g. O(nlogn) build heap version vs. O(n) build heap version) -- DONE FOR NOW
 // todo: treesort (e.g. using n insertions into BST and then inorder traversal)
 
 Other Comparison-Based Sorting Algorithms
