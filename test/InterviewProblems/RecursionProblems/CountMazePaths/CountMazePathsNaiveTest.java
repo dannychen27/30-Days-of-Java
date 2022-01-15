@@ -9,13 +9,13 @@ class CountMazePathsNaiveTest {
 
     private CountMazePathsNaive countMazePathsNaive;
 
-    private final boolean[][] smallGrid = {
+    private final boolean[][] smallSquareGrid = {
         {true, true, true},
         {false, false, true},
         {false, false, true}
     };
 
-    private final boolean[][] largeGrid = {
+    private final boolean[][] largeSquareGrid = {
         {true,  true,  true,  true,  true,  true,  true,  true},
         {true,  true,  false, true,  true,  true,  false, true},
         {true,  true,  true,  true,  false, true,  true,  true},
@@ -24,6 +24,12 @@ class CountMazePathsNaiveTest {
         {true,  true,  true,  false, false, true,  false, true},
         {true,  false, true,  true,  true,  false, true,  true},
         {true,  true,  true,  true,  true,  true,  true,  true}
+    };
+
+    private final boolean[][] exampleRectangularGrid = {
+        {true, true, true, true, true, true, true},
+        {true, true, true, true, true, true, true},
+        {true, true, true, true, true, true, true},
     };
 
     @BeforeEach
@@ -38,12 +44,17 @@ class CountMazePathsNaiveTest {
 
     @Test
     void testCountMazePathsStartingFromOrigin() {
-        Assertions.assertEquals(1, countMazePathsNaive.countPaths(smallGrid, 0, 0));
-        Assertions.assertEquals(27, countMazePathsNaive.countPaths(largeGrid, 0, 0));
+        Assertions.assertEquals(1, countMazePathsNaive.countPaths(smallSquareGrid, 0, 0));
+        Assertions.assertEquals(27, countMazePathsNaive.countPaths(largeSquareGrid, 0, 0));
+    }
+
+    @Test
+    void testCountMazePathsWithRectangularGrid() {
+        Assertions.assertEquals(28, countMazePathsNaive.countPaths(exampleRectangularGrid, 0, 0));
     }
 
     @Test
     void testCountMazePathsAwayFromOrigin() {
-        Assertions.assertEquals(5, countMazePathsNaive.countPaths(largeGrid, 2, 0));
+        Assertions.assertEquals(5, countMazePathsNaive.countPaths(largeSquareGrid, 2, 0));
     }
 }
