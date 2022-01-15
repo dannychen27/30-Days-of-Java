@@ -1,6 +1,5 @@
-package DataStructures.CustomDataStructures.DisjointSet.TreeWithUnionByRank;
+package DataStructures.CustomDataStructures.DisjointSet.TreeWithUnionByRankImplementation;
 
-import DataStructures.CustomDataStructures.DisjointSet.TreeWithUnionByRankImplementation.DisjointSet;
 import DataStructures.CustomDataStructures.DisjointSet.UnionFind;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
