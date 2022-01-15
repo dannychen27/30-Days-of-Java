@@ -1,7 +1,7 @@
 package DataStructures.CustomDataStructures.DisjointSet.SinglyCircularLinkedListImplementation;
 
 import DataStructures.CustomDataStructures.DisjointSet.UnionFind;
-import DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedList.SinglyCircularLinkedList;
+import DataStructures.CustomDataStructures.LinkedList.SinglyCircularLinkedListImplementation.SinglyCircularLinkedList;
 
 import java.util.HashSet;
 import java.util.LinkedList;

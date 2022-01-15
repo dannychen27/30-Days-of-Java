@@ -1,65 +1,57 @@
-package DataStructures.CustomDataStructures.DisjointSet.DoublyCircularLinkedListImplementation;
+package DataStructures.CustomDataStructures.DisjointSet.SinglyLinkedListWithHeadPointerImplementation;
 
 import DataStructures.CustomDataStructures.DisjointSet.UnionFind;
-import DataStructures.CustomDataStructures.LinkedList.DoublyCircularLinkedListImplementation.DoublyCircularLinkedList;
+import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListWithHeadPointerImplementation.SinglyLinkedListWithHeadPointer;
 
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Set;
+import java.util.Map;
 
 public class DisjointSet<T> implements UnionFind<T> {
 
-    private final LinkedList<DoublyCircularLinkedList<T>> disjointSets;
-    private final Set<T> items;
+    private final LinkedList<SinglyLinkedListWithHeadPointer<T>> disjointSets;
+    private final Map<T, SinglyLinkedListWithHeadPointer<T>> itemsToDisjointSets;
 
     public DisjointSet() {
-        disjointSets = new LinkedList<>();
-        items = new HashSet<>();
+        this.disjointSets = new LinkedList<>();
+        this.itemsToDisjointSets = new HashMap<>();
     }
 
     @Override
     public boolean isEmpty() {
-        return items.isEmpty();
+        return itemsToDisjointSets.isEmpty();
     }
 
     // time: O(1) to make a singleton linked list.
     @Override
     public void makeSet(T newItem) {
-        if (items.contains(newItem)) {
+        if (itemsToDisjointSets.containsKey(newItem)) {
             throw new IllegalArgumentException(newItem + " already exists in this disjoint set.");
         }
 
-        DoublyCircularLinkedList<T> newDisjointSet = new DoublyCircularLinkedList<>(newItem);
+        SinglyLinkedListWithHeadPointer<T> newDisjointSet = new SinglyLinkedListWithHeadPointer<>(newItem);
         disjointSets.add(newDisjointSet);
-        items.add(newItem);
+        itemsToDisjointSets.put(newItem, newDisjointSet);
     }
 
-    // time: O(L), where L is the length of all the disjoint sets.
-    // It's possible that we must traverse every disjoint set to find the target item, or determine
-    // that the target item is not found.
+    // time: O(1) since we can follow the head pointer to find the representative.
     @Override
     public T findSet(T targetItem) {
-        if (!items.contains(targetItem)) {
+        if (!itemsToDisjointSets.containsKey(targetItem)) {
             return null;
         }
 
-        for (DoublyCircularLinkedList<T> disjointSet : disjointSets) {
-            if (disjointSet.contains(targetItem)) {
-                // the representative of the disjoint set containing targetItem.
-                return disjointSet.head.value;
-            }
-        }
-        return null;  // this should never happen because we handle the "not found" case above
+        SinglyLinkedListWithHeadPointer<T> disjointSet = itemsToDisjointSets.get(targetItem);
+        return disjointSet.head.value;
     }
 
-    // time: O(L), where L is the length of all the disjoint sets.
-    // - it takes O(L) time to locate the heads of both linked lists to link them together,
-    // - however, it takes O(1) time to append the two linked lists, since we have access to their tails.
+    // time: O(L) where L is the length of all the disjoint sets.
+    // we have to update the head pointers of the other disjoint set.
     @Override
     public void union(T targetItem1, T targetItem2) {
-        if (!items.contains(targetItem1)) {
+        if (!itemsToDisjointSets.containsKey(targetItem1)) {
             throw new IllegalArgumentException(targetItem1 + " is not in any of the disjoint sets.");
-        } else if (!items.contains(targetItem2)) {
+        } else if (!itemsToDisjointSets.containsKey(targetItem2)) {
             throw new IllegalArgumentException(targetItem2 + " is not in any of the disjoint sets.");
         }
 
@@ -69,20 +61,13 @@ public class DisjointSet<T> implements UnionFind<T> {
         }
 
         // find the two different disjoint sets targetItem1 and targetItem2 belong to.
-        DoublyCircularLinkedList<T> disjointSet1 = null;
-        DoublyCircularLinkedList<T> disjointSet2 = null;
-        for (DoublyCircularLinkedList<T> disjointSet : disjointSets) {
-            if (disjointSet.contains(targetItem1)) {
-                disjointSet1 = disjointSet;
-            } else if (disjointSet.contains(targetItem2)) {
-                disjointSet2 = disjointSet;
-            }
-        }
-        assert disjointSet1 != null && disjointSet2 != null;
+        SinglyLinkedListWithHeadPointer<T> disjointSet1 = itemsToDisjointSets.get(targetItem1);
+        SinglyLinkedListWithHeadPointer<T> disjointSet2 = itemsToDisjointSets.get(targetItem2);
 
         // join the tail of one linked list with the head of the other linked list.
         disjointSet1.concatenate(disjointSet2);
         disjointSets.remove(disjointSet2);
+        itemsToDisjointSets.replace(targetItem2, disjointSet1);
     }
 
     public String toString() {
@@ -92,7 +77,7 @@ public class DisjointSet<T> implements UnionFind<T> {
             return disjointSetString;
         }
 
-        for (DoublyCircularLinkedList<T> disjointSet : disjointSets) {
+        for (SinglyLinkedListWithHeadPointer<T> disjointSet : disjointSets) {
             disjointSetString += disjointSet.toString() + "\n";
         }
         return disjointSetString.trim() + "\n";
