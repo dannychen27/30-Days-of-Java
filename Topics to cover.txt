@@ -293,8 +293,8 @@ fizzfuzz -- DONE
 is BST -- DONE!
 cycle detection -- fast and slow pointer/floyd's algorithm -- DONE!
 cycle detection -- hashset -- DONE!
-// todo: reversing a linked list -- iterative
-// todo: reversing a linked list -- recursive
+reversing a linked list -- iterative -- DONE FOR NOW
+reversing a linked list -- DONE FOR NOW
 recursive staircase problem -- recursive -- DONE!
 recursive staircase problem -- using DP -- DONE!
 recursive staircase problem -- iterative -- DONE!
