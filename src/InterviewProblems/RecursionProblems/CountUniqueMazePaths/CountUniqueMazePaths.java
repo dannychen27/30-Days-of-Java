@@ -17,6 +17,8 @@ class CountUniqueMazePaths {
     //     {true,  true,  true,  true,  true,  true,  true,  true}
     // };
 
+    // source: https://www.youtube.com/watch?v=P8Xa2BitN3I&t=258s
+
     int countPaths(boolean[][] grid, int row, int column) {
         if (!isInBounds(grid, row, column)) {
             return 0;
