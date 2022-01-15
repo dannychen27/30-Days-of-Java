@@ -1,13 +1,13 @@
-package InterviewProblems.RecursionProblems.CountMazePaths;
+package InterviewProblems.RecursionProblems.CountUniqueMazePaths;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CountMazePathsNaiveTest {
+class CountUniqueMazePathsTest {
 
-    private CountMazePathsNaive countMazePathsNaive;
+    private CountUniqueMazePaths countMazePathsNaive;
 
     private final boolean[][] smallSquareGrid = {
         {true, true, true},
@@ -34,7 +34,7 @@ class CountMazePathsNaiveTest {
 
     @BeforeEach
     void setUp() {
-        countMazePathsNaive = new CountMazePathsNaive();
+        countMazePathsNaive = new CountUniqueMazePaths();
     }
 
     @AfterEach

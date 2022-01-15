@@ -1,6 +1,6 @@
-package InterviewProblems.RecursionProblems.CountMazePaths;
+package InterviewProblems.RecursionProblems.CountUniqueMazePaths;
 
-class CountMazePathsNaive {
+class CountUniqueMazePaths {
 
     // you can only move in two directions: right or down
     // true represents empty spaces, false represents walls
