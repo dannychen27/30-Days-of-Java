@@ -48,6 +48,8 @@ public class ReverseLinkedListRecursiveTest {
     @Test
     void testReverseLinkedListRecursiveOnLongerLinkedList() {
         Node<Integer> expectedNewHead = longerLinkedList.head.next.next;  // 3
+        // TODO: if you want to avoid mutating your linked list, create a clone of it.
+        // TODO: do not use aliasing!
         Node<Integer> actualNewHead = reverseLinkedListRecursive.reverseLinkedListRecursive(longerLinkedList.head); // 3 NEXT 2 NEXT 1
 
         Assertions.assertEquals(expectedNewHead.value, actualNewHead.value);
