@@ -334,7 +334,8 @@ find anagram -- using hashtable -- DONE!
 running median -- using heaps/priority queues -- DONE!
 // todo: count inversions -- using mergesort
 // todo: lossless file compression/decompression -- using huffman trees
-
+// todo: convex hull -- using jarvis march
+// todo: convex hull -- using graham scan
 
 Other Topics:
 // todo: GUI design
