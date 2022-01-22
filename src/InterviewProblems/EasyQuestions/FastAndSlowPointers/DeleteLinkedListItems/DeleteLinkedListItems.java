@@ -49,29 +49,22 @@ public class DeleteLinkedListItems<T> {
     }
 
     public Node<T> removeElements(Node<T> head, int val) {
-        if (head == null) {
-            return null;
-        }
+        Node<T> dummyNode = new Node<>(null);
+        dummyNode.next = head;
 
-        Node<T> previousNode = null;
+        Node<T> previousNode = dummyNode;
         Node<T> currentNode = head;
+
         while (currentNode != null) {
-            if (!currentNode.value.equals(val)) {
+            Node<T> nextNode = currentNode.next;
+            if (currentNode.value.equals(val)) {
+                previousNode.next = nextNode;
+            } else {
                 previousNode = currentNode;
-            } else if (previousNode == null) {  // but currentNode.value.equals(val)
-                head = head.next;
-                if (currentNode.next == null) {
-                    return head;
-                }
-            } else {  // but previousNode != null
-                previousNode.next = currentNode.next;
-                if (currentNode.next == null) {
-                    return head;
-                }
             }
-            currentNode = currentNode.next;
+            currentNode = nextNode;
         }
-        return head;
+        return dummyNode.next;
     }
 
     public void print(Node<T> head) {
