@@ -56,13 +56,12 @@ public class DeleteLinkedListItems<T> {
         Node<T> currentNode = head;
 
         while (currentNode != null) {
-            Node<T> nextNode = currentNode.next;
             if (currentNode.value.equals(val)) {
-                previousNode.next = nextNode;
+                previousNode.next = currentNode.next;
             } else {
                 previousNode = currentNode;
             }
-            currentNode = nextNode;
+            currentNode = currentNode.next;
         }
         return dummyNode.next;
     }
