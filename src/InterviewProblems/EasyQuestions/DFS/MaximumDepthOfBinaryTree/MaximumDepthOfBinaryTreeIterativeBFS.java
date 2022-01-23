@@ -1,4 +1,4 @@
-package InterviewProblems.EasyQuestions.BFS.MaximumDepthOfBinaryTree;
+package InterviewProblems.EasyQuestions.DFS.MaximumDepthOfBinaryTree;
 
 import DataStructures.CustomDataStructures.BinaryTree.BinaryTree;
 
