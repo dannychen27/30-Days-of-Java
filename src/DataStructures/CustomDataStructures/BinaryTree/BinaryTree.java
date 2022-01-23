@@ -1,28 +1,28 @@
 package DataStructures.CustomDataStructures.BinaryTree;
 
-public class BinaryTreeNode {
+public class BinaryTree {
 
     public int value;
-    public BinaryTreeNode leftChild;
-    public BinaryTreeNode rightChild;
+    public BinaryTree leftChild;
+    public BinaryTree rightChild;
 
-    public BinaryTreeNode(int newValue) {
+    public BinaryTree(int newValue) {
         this.value = newValue;
         this.leftChild = null;
         this.rightChild = null;
     }
 
-    public BinaryTreeNode(int newValue, BinaryTreeNode leftChild, BinaryTreeNode rightChild) {
+    public BinaryTree(int newValue, BinaryTree leftChild, BinaryTree rightChild) {
         this.value = newValue;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
 
-    public void levelOrderTraversal(BinaryTreeNode root) {
+    public void levelOrderTraversal(BinaryTree root) {
         levelOrderTraversal(root, 0);
     }
 
-    private void levelOrderTraversal(BinaryTreeNode root, int depth) {
+    private void levelOrderTraversal(BinaryTree root, int depth) {
         if (root == null) {
             return;
         }

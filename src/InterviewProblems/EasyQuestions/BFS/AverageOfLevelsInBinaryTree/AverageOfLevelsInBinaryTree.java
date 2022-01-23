@@ -1,6 +1,6 @@
 package InterviewProblems.EasyQuestions.BFS.AverageOfLevelsInBinaryTree;
 
-import DataStructures.CustomDataStructures.BinaryTree.BinaryTreeNode;
+import DataStructures.CustomDataStructures.BinaryTree.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,11 +13,11 @@ public class AverageOfLevelsInBinaryTree {
         AverageOfLevelsInBinaryTree averageLevels = new AverageOfLevelsInBinaryTree();
 
         // Example 1
-        BinaryTreeNode root1 = new BinaryTreeNode(3);
-        root1.leftChild = new BinaryTreeNode(9);
-        root1.rightChild = new BinaryTreeNode(20);
-        root1.rightChild.leftChild = new BinaryTreeNode(15);
-        root1.rightChild.rightChild = new BinaryTreeNode(7);
+        BinaryTree root1 = new BinaryTree(3);
+        root1.leftChild = new BinaryTree(9);
+        root1.rightChild = new BinaryTree(20);
+        root1.rightChild.leftChild = new BinaryTree(15);
+        root1.rightChild.rightChild = new BinaryTree(7);
         // root1.levelOrderTraversal(root1);
         // 3
         //     9
@@ -27,13 +27,13 @@ public class AverageOfLevelsInBinaryTree {
         System.out.println(averageLevels.averageOfLevels(root1));  // [3.0, 14.5, 11.0]
 
         // Example 2
-        BinaryTreeNode root2 = new BinaryTreeNode(1);
-        root2.leftChild = new BinaryTreeNode(2);
-        root2.rightChild = new BinaryTreeNode(3);
-        root2.leftChild.leftChild = new BinaryTreeNode(4);
-        root2.leftChild.rightChild = new BinaryTreeNode(5);
-        root2.rightChild.leftChild = new BinaryTreeNode(6);
-        root2.rightChild.rightChild = new BinaryTreeNode(7);
+        BinaryTree root2 = new BinaryTree(1);
+        root2.leftChild = new BinaryTree(2);
+        root2.rightChild = new BinaryTree(3);
+        root2.leftChild.leftChild = new BinaryTree(4);
+        root2.leftChild.rightChild = new BinaryTree(5);
+        root2.rightChild.leftChild = new BinaryTree(6);
+        root2.rightChild.rightChild = new BinaryTree(7);
         // root2.levelOrderTraversal(root2);
         // 1
         //     2
@@ -45,14 +45,14 @@ public class AverageOfLevelsInBinaryTree {
         System.out.println(averageLevels.averageOfLevels(root2));  // [1.0, 2.5, 5.5]
     }
 
-    public List<Double> averageOfLevels(BinaryTreeNode root) {
+    public List<Double> averageOfLevels(BinaryTree root) {
         List<Double> averageAtEachLevel = new ArrayList<>();
 
         if (root == null) {
             return averageAtEachLevel;
         }
 
-        Queue<BinaryTreeNode> nodesToVisit = new LinkedList<>();
+        Queue<BinaryTree> nodesToVisit = new LinkedList<>();
         double levelSum = 0;
         nodesToVisit.add(root);
 
@@ -61,7 +61,7 @@ public class AverageOfLevelsInBinaryTree {
             int numNodesAtCurrentLevel = nodesToVisit.size();
 
             for (int i = 0; i < numNodesAtCurrentLevel; i++) {
-                BinaryTreeNode currentNode = nodesToVisit.poll();
+                BinaryTree currentNode = nodesToVisit.poll();
                 assert currentNode != null;
                 levelSum += currentNode.value;
 
