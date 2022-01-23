@@ -1,10 +1,10 @@
-package InterviewProblems.EasyQuestions.BFS.AverageOfLevelsInBinaryTree;
+package DataStructures.CustomDataStructures.BinaryTree;
 
 public class BinaryTreeNode {
 
-    int value;
-    BinaryTreeNode leftChild;
-    BinaryTreeNode rightChild;
+    public int value;
+    public BinaryTreeNode leftChild;
+    public BinaryTreeNode rightChild;
 
     public BinaryTreeNode(int newValue) {
         this.value = newValue;
