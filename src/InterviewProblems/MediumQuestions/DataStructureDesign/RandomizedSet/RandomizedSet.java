@@ -1,4 +1,4 @@
-package InterviewProblems.MediumQuestions.DataStructureDesign;
+package InterviewProblems.MediumQuestions.DataStructureDesign.RandomizedSet;
 
 import java.util.ArrayList;
 import java.util.HashMap;
