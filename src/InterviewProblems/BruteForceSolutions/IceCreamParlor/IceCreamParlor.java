@@ -1,6 +1,6 @@
 package InterviewProblems.BruteForceSolutions.IceCreamParlor;
 
-public class IceCreamParlorNaive {
+public class IceCreamParlor {
 
     // source: https://www.youtube.com/watch?v=Ifwf3DBN1sc&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&index=2
 

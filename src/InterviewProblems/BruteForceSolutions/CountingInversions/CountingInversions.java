@@ -1,6 +1,6 @@
 package InterviewProblems.BruteForceSolutions.CountingInversions;
 
-public class CountingInversionsNaive {
+public class CountingInversions {
 
     // time: O(n^2) -- check all (n choose 2) = n(n - 1) / 2 pairs
     // space: O(1) -- no additional data structures required

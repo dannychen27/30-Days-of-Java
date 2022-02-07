@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CountingInversionsNaiveTest {
+public class CountingInversionsTest {
 
-    private CountingInversionsNaive countingInversionsNaive;
+    private CountingInversions countingInversions;
 
     private final int[] alreadySorted = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     private final int[] almostSorted = {2, 3, 5, 4};
@@ -16,7 +16,7 @@ public class CountingInversionsNaiveTest {
 
     @BeforeEach
     void setUp() {
-        countingInversionsNaive = new CountingInversionsNaive();
+        countingInversions = new CountingInversions();
     }
 
     @AfterEach
@@ -26,21 +26,21 @@ public class CountingInversionsNaiveTest {
 
     @Test
     void testCountingInversionsReverseSorted() {
-        Assertions.assertEquals(45, countingInversionsNaive.countInversions(reverseSorted));
+        Assertions.assertEquals(45, countingInversions.countInversions(reverseSorted));
     }
 
     @Test
     void testCountingInversionsPartiallySorted() {
-        Assertions.assertEquals(17, countingInversionsNaive.countInversions(partiallySorted));
+        Assertions.assertEquals(17, countingInversions.countInversions(partiallySorted));
     }
 
     @Test
     void testCountingInversionsAlmostSorted() {
-        Assertions.assertEquals(1, countingInversionsNaive.countInversions(almostSorted));
+        Assertions.assertEquals(1, countingInversions.countInversions(almostSorted));
     }
 
     @Test
     void testCountingInversionsSorted() {
-        Assertions.assertEquals(0, countingInversionsNaive.countInversions(alreadySorted));
+        Assertions.assertEquals(0, countingInversions.countInversions(alreadySorted));
     }
 }
