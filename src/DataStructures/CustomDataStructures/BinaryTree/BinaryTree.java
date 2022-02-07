@@ -20,6 +20,7 @@ public class BinaryTree {
 
     public void levelOrderTraversal(BinaryTree root) {
         levelOrderTraversal(root, 0);
+        System.out.println();
     }
 
     private void levelOrderTraversal(BinaryTree root, int depth) {
