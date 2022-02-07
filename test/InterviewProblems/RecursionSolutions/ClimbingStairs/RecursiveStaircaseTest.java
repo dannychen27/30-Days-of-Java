@@ -1,4 +1,4 @@
-package InterviewProblems.RecursionSolutions.RecursiveStaircase;
+package InterviewProblems.RecursionSolutions.ClimbingStairs;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

@@ -1,10 +1,10 @@
-package InterviewProblems.DynamicProgramming.RecursiveStaircase;
+package InterviewProblems.IterativeSolutions.ClimbingStairs;
 
 public class RecursiveStaircase {
 
-    // With dynamic programming approach:
+    // With iterative approach:
     // time: O(n) since we only compute each value once
-    // space: O(n) for the paths array
+    // space: O(1) since we only store the last two values we found so far.
 
     public int countPaths(int numSteps) {
         if (numSteps < 0) {
@@ -13,13 +13,16 @@ public class RecursiveStaircase {
             return 1;
         }
 
-        int[] paths = new int[numSteps + 1];
+        int[] paths = new int[3];
         paths[0] = 1;
         paths[1] = 1;
         paths[2] = 2;
         for (int i = 3; i <= numSteps; i++) {
-            paths[i] = paths[i - 1] + paths[i - 2] + paths[i - 3];
+            int count = paths[2] + paths[1] + paths[0];
+            paths[0] = paths[1];
+            paths[1] = paths[2];
+            paths[2] = count;
         }
-        return paths[numSteps];
+        return paths[2];
     }
 }

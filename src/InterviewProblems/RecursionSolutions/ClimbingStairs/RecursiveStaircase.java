@@ -1,4 +1,4 @@
-package InterviewProblems.RecursionSolutions.RecursiveStaircase;
+package InterviewProblems.RecursionSolutions.ClimbingStairs;
 
 class RecursiveStaircase {
 

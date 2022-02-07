@@ -1,4 +1,4 @@
-package InterviewProblems.MemoizationSolutions.RecursiveStaircase;
+package InterviewProblems.MemoizationSolutions.ClimbingStairs;
 
 public class RecursiveStaircaseMemoization {
 
