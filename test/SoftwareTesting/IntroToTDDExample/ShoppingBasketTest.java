@@ -2,13 +2,13 @@ package SoftwareTesting.IntroToTDDExample;
 
 import SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample.Item;
 import SoftwareTesting.TestDrivenDevelopment.IntroToTDDExample.ShoppingBasket;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 
 class ShoppingBasketTest {
 
@@ -20,13 +20,13 @@ class ShoppingBasketTest {
     @Test
     void totalOfEmptyBasket() {
         ShoppingBasket basket = buildBasketWithItems(new ArrayList<>());
-        assertEquals(0.0, basket.getTotal(), 0.0);
+        Assertions.assertEquals(0.0, basket.getTotal(), 0.0);
     }
 
     @Test
     void totalOfSingleItem() {
-        ShoppingBasket basket = buildBasketWithItems(Arrays.asList(new Item(100.0, 1)));
-        assertEquals(100.0, basket.getTotal(), 0.0);
+        ShoppingBasket basket = buildBasketWithItems(Collections.singletonList(new Item(100.0, 1)));
+        Assertions.assertEquals(100.0, basket.getTotal(), 0.0);
     }
 
     @Test
@@ -35,12 +35,12 @@ class ShoppingBasketTest {
                 new Item(100.0, 1),
                 new Item(200.0, 1)
         ));
-        assertEquals(300.0, basket.getTotal(), 0.0);
+        Assertions.assertEquals(300.0, basket.getTotal(), 0.0);
     }
 
     @Test
     void totalOfItemWithQuantityTwo() {
-        ShoppingBasket basket = buildBasketWithItems(Arrays.asList(new Item(100.0, 2)));
-        assertEquals(200.0, basket.getTotal(), 0.0);
+        ShoppingBasket basket = buildBasketWithItems(Collections.singletonList(new Item(100.0, 2)));
+        Assertions.assertEquals(200.0, basket.getTotal(), 0.0);
     }
 }

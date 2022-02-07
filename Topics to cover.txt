@@ -111,7 +111,7 @@ heaps -- DONE FOR NOW
 singly linked list -- DONE FOR NOW
 doubly linked list -- DONE FOR NOW
 singly circular linked list -- DONE FOR NOW
-// todo: doubly circular linked list
+doubly circular linked list -- DONE FOR NOW
 // todo: hashtables with closed addressing -- chaining
 // todo: hashtables with open addressing -- linear probing, quadratic probing, double hashing
 // todo: binomial heaps
@@ -123,7 +123,14 @@ singly circular linked list -- DONE FOR NOW
 dynamic arrays -- DONE
 // todo: skip list
 // todo: huffman trees
-// todo: disjoint sets
+disjoint sets with singly circular linked list -- DONE FOR NOW
+disjoint sets with doubly circular linked list -- DONE FOR NOW
+disjoint sets with singly linked list with extra pointers to head -- DONE FOR NOW
+disjoint sets with singly linked list with extra pointers to head and union by rank -- DONE FOR NOW
+disjoint sets with trees -- DONE FOR NOW
+disjoint sets with trees and union by rank -- DONE FOR NOW
+disjoint sets with trees and path compression -- DONE FOR NOW
+disjoint sets with trees and both union by rank and path compression -- DONE FOR NOW
 // todo: indexed priority queues
 
 

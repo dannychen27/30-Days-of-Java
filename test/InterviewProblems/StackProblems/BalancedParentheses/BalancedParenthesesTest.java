@@ -1,10 +1,10 @@
 package InterviewProblems.StackProblems.BalancedParentheses;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BalancedParenthesesTest {
@@ -36,21 +36,21 @@ class BalancedParenthesesTest {
 
     @Test
     void testWhetherExpressionWithOpenTermAndNoClosedTermIsBalanced() {
-        assertFalse(bp.isBalanced("({)"));
+        Assertions.assertFalse(bp.isBalanced("({)"));
     }
 
     @Test
     void testWhetherExpressionWithOpenTermsLeftoverIsBalanced() {
-        assertFalse(bp.isBalanced("("));
+        Assertions.assertFalse(bp.isBalanced("("));
     }
 
     @Test
     void testWhetherExpressionOpenTermWithNoMatchingClosedTermIsBalanced() {
-        assertFalse(bp.isBalanced("(}"));
+        Assertions.assertFalse(bp.isBalanced("(}"));
     }
 
     @Test
     void testWhetherGenericExpressionIsBalanced() {
-        assertTrue(bp.isBalanced("{()[{({})[]()}]}([])"));
+        Assertions.assertTrue(bp.isBalanced("{()[{({})[]()}]}([])"));
     }
 }

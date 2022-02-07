@@ -6,14 +6,14 @@ class CountMazePathsNaive {
     //
     // Example Grid:
     // boolean[][] grid1 = {
-    //         {true,  true,  true,  true,  true,  true,  true,  true},
-    //         {true,  true,  false, true,  true,  true,  false, true},
-    //         {true,  true,  true,  true,  false, true,  true,  true},
-    //         {false, true,  false, true,  true,  false, true,  true},
-    //         {true,  true,  false, true,  true,  true,  true,  true},
-    //         {true,  true,  true,  false, false, true,  false, true},
-    //         {true,  false, true,  true,  true,  false, true,  true},
-    //         {true,  true,  true,  true,  true,  true,  true,  true}
+    //     {true,  true,  true,  true,  true,  true,  true,  true},
+    //     {true,  true,  false, true,  true,  true,  false, true},
+    //     {true,  true,  true,  true,  false, true,  true,  true},
+    //     {false, true,  false, true,  true,  false, true,  true},
+    //     {true,  true,  false, true,  true,  true,  true,  true},
+    //     {true,  true,  true,  false, false, true,  false, true},
+    //     {true,  false, true,  true,  true,  false, true,  true},
+    //     {true,  true,  true,  true,  true,  true,  true,  true}
     // };
 
     int countPaths(boolean[][] grid, int row, int column) {

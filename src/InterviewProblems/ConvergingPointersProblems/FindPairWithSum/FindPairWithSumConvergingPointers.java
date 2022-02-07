@@ -1,4 +1,4 @@
-package InterviewProblems.HashMapProblems.FindPairWithSum;
+package InterviewProblems.ConvergingPointersProblems.FindPairWithSum;
 
 import java.util.Arrays;
 

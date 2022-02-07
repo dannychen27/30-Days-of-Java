@@ -1,8 +1,7 @@
-package InterviewProblems.RecursionProblems.RecursiveStaircase;
+package InterviewProblems.DynamicProgrammingProblems.RecursiveStaircase;
 
-import InterviewProblems.DynamicProgrammingProblems.RecursiveStaircase.RecursiveStaircaseDP;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,21 +21,21 @@ class RecursiveStaircaseDPTest {
 
     @Test
     void testRecursiveStaircasePathsDPNegativeSteps() {
-        Assert.assertEquals(0, recursiveStaircaseDP.countPaths(-1));
+        Assertions.assertEquals(0, recursiveStaircaseDP.countPaths(-1));
     }
 
     @Test
     void testRecursiveStaircasePathsDP0Steps() {
-        Assert.assertEquals(1, recursiveStaircaseDP.countPaths(0));
+        Assertions.assertEquals(1, recursiveStaircaseDP.countPaths(0));
     }
 
     @Test
     void testRecursiveStaircasePathsDP1Step() {
-        Assert.assertEquals(1, recursiveStaircaseDP.countPaths(1));
+        Assertions.assertEquals(1, recursiveStaircaseDP.countPaths(1));
     }
 
     @Test
     void testRecursiveStaircasePathsDPManySteps() {
-        Assert.assertEquals(4, recursiveStaircaseDP.countPaths(3));
+        Assertions.assertEquals(4, recursiveStaircaseDP.countPaths(3));
     }
 }

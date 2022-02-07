@@ -1,8 +1,7 @@
-package InterviewProblems.HashmapProblems.FindPairWithSum;
+package InterviewProblems.BruteForceProblems.FindPairWithSum;
 
-import InterviewProblems.HashMapProblems.FindPairWithSum.FindPairWithSumNaive;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,11 +9,11 @@ class FindPairWithSumNaiveTest {
 
     private FindPairWithSumNaive findPairWithSumNaive;
 
-    private int[] emptyArray = {};
-    private int[] oneElementArray = {1};
-    private int[] arrayWithUniqueElements = {1, 2, 3, 9};
-    private int[] arrayWithDuplicateElements = {1, 2, 4, 4};
-    private int[] unsortedArray = {4, 1, 2, 4};
+    private final int[] emptyArray = {};
+    private final int[] oneElementArray = {1};
+    private final int[] arrayWithUniqueElements = {1, 2, 3, 9};
+    private final int[] arrayWithDuplicateElements = {1, 2, 4, 4};
+    private final int[] unsortedArray = {4, 1, 2, 4};
 
     @BeforeEach
     void setUp() {
@@ -28,26 +27,26 @@ class FindPairWithSumNaiveTest {
 
     @Test
     void testEmptyArray() {
-        Assert.assertFalse(findPairWithSumNaive.findPairWithSum(emptyArray, 8));
+        Assertions.assertFalse(findPairWithSumNaive.findPairWithSum(emptyArray, 8));
     }
 
     @Test
     void testOneElementArray() {
-        Assert.assertFalse(findPairWithSumNaive.findPairWithSum(oneElementArray, 8));
+        Assertions.assertFalse(findPairWithSumNaive.findPairWithSum(oneElementArray, 8));
     }
 
     @Test
     void testArrayWithUniqueElements() {
-        Assert.assertFalse(findPairWithSumNaive.findPairWithSum(arrayWithUniqueElements, 8));
+        Assertions.assertFalse(findPairWithSumNaive.findPairWithSum(arrayWithUniqueElements, 8));
     }
 
     @Test
     void testArrayWithDuplicateElements() {
-        Assert.assertTrue(findPairWithSumNaive.findPairWithSum(arrayWithDuplicateElements, 8));
+        Assertions.assertTrue(findPairWithSumNaive.findPairWithSum(arrayWithDuplicateElements, 8));
     }
 
     @Test
     void testUnsortedArray() {
-        Assert.assertTrue(findPairWithSumNaive.findPairWithSum(unsortedArray, 8));
+        Assertions.assertTrue(findPairWithSumNaive.findPairWithSum(unsortedArray, 8));
     }
 }

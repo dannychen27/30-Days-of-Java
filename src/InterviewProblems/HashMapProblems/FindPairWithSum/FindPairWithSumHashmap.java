@@ -1,6 +1,7 @@
 package InterviewProblems.HashMapProblems.FindPairWithSum;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class FindPairWithSumHashmap {
 
@@ -11,7 +12,7 @@ public class FindPairWithSumHashmap {
      * Return true iff there exist two integers whose sum is targetSum.
      */
     public boolean findPairWithSum(int[] array, int targetSum) {
-        HashSet<Integer> complements = new HashSet<>();
+        Set<Integer> complements = new HashSet<>();
         for (int value : array) {
             int complement = targetSum - value;
             if (complements.contains(complement)) {

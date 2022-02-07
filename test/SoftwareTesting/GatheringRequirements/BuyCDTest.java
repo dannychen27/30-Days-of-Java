@@ -1,21 +1,23 @@
 package SoftwareTesting.GatheringRequirements;
 
-import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.*;
-
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.BuyNegativeStockException;
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CDNotInCatalogueException;
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.CompactDisc;
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.InsufficientStockException;
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.Library;
+import SoftwareTesting.TestDrivenDevelopment.GatheringRequirements.RestockNegativeStockException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 class BuyCDTest {
 
-    private Library library = new Library();
+    private final Library library = new Library();
 
-    private CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
-    private CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
-    private CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
+    private final CompactDisc highwayToNowhere = new CompactDisc("Highway to Nowhere", "Drake Bell");
+    private final CompactDisc soulMan = new CompactDisc("Soul Man", "Drake Bell");
+    private final CompactDisc laDaDee = new CompactDisc("La Da Dee", "Cody Simpson");
 
     private HashMap<CompactDisc, Integer> singleCD() {
         HashMap<CompactDisc, Integer> cdsToStock = new HashMap<>();
@@ -41,7 +43,7 @@ class BuyCDTest {
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         shoppingCartItems.put(highwayToNowhere, 1);
         library.buy(shoppingCartItems);
-        assertEquals(9, library.getStock(highwayToNowhere));
+        Assertions.assertEquals(9, library.getStock(highwayToNowhere));
     }
 
     @Test
@@ -51,7 +53,7 @@ class BuyCDTest {
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         shoppingCartItems.put(highwayToNowhere, 11);
-        assertThrows(InsufficientStockException.class, () -> library.buy(shoppingCartItems));
+        Assertions.assertThrows(InsufficientStockException.class, () -> library.buy(shoppingCartItems));
     }
 
     @Test
@@ -61,7 +63,7 @@ class BuyCDTest {
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         shoppingCartItems.put(laDaDee, 1);
-        assertThrows(CDNotInCatalogueException.class, () -> library.buy(shoppingCartItems));
+        Assertions.assertThrows(CDNotInCatalogueException.class, () -> library.buy(shoppingCartItems));
     }
 
     @Test
@@ -73,7 +75,7 @@ class BuyCDTest {
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         library.buy(shoppingCartItems);
-        assertEquals(10, library.getStock(highwayToNowhere));
+        Assertions.assertEquals(10, library.getStock(highwayToNowhere));
     }
 
     @Test
@@ -86,7 +88,7 @@ class BuyCDTest {
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         shoppingCartItems.put(highwayToNowhere, 0);
         library.buy(shoppingCartItems);
-        assertEquals(10, library.getStock(highwayToNowhere));
+        Assertions.assertEquals(10, library.getStock(highwayToNowhere));
     }
 
     @Test
@@ -96,7 +98,7 @@ class BuyCDTest {
 
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         shoppingCartItems.put(highwayToNowhere, -2);
-        assertThrows(BuyNegativeStockException.class, () -> library.buy(shoppingCartItems));
+        Assertions.assertThrows(BuyNegativeStockException.class, () -> library.buy(shoppingCartItems));
     }
 
     @Test
@@ -109,7 +111,7 @@ class BuyCDTest {
         HashMap<CompactDisc, Integer> shoppingCartItems = new HashMap<>();
         shoppingCartItems.put(highwayToNowhere, 10);
         library.buy(shoppingCartItems);
-        assertEquals(0, library.getStock(highwayToNowhere));
+        Assertions.assertEquals(0, library.getStock(highwayToNowhere));
     }
 
     @Test
@@ -124,9 +126,9 @@ class BuyCDTest {
         shoppingCartItems.put(soulMan, 5);
         shoppingCartItems.put(laDaDee, 5);
         library.buy(shoppingCartItems);
-        assertEquals(5, library.getStock(highwayToNowhere));
-        assertEquals(5, library.getStock(soulMan));
-        assertEquals(5, library.getStock(laDaDee));
+        Assertions.assertEquals(5, library.getStock(highwayToNowhere));
+        Assertions.assertEquals(5, library.getStock(soulMan));
+        Assertions.assertEquals(5, library.getStock(laDaDee));
     }
 
     @Test
@@ -139,6 +141,6 @@ class BuyCDTest {
         shoppingCartItems.put(highwayToNowhere, 10);
         shoppingCartItems.put(soulMan, 11);
         shoppingCartItems.put(laDaDee, 11);
-        assertThrows(InsufficientStockException.class, () -> library.buy(shoppingCartItems));
+        Assertions.assertThrows(InsufficientStockException.class, () -> library.buy(shoppingCartItems));
     }
 }

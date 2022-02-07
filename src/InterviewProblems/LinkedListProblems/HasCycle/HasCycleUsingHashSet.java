@@ -1,7 +1,9 @@
 package InterviewProblems.LinkedListProblems.HasCycle;
 
-import DataStructures.CustomDataStructures.SinglyLinkedList.Node;
+import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.Node;
+
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Detect a cycle in a linked list.
@@ -15,15 +17,15 @@ import java.util.HashSet;
  * }
  */
 
-class HasCycleUsingHashSet {
+class HasCycleUsingHashSet<T> {
 
     // Hashset method
     // time: O(n)
     // space: O(n) because of the hashset
 
-    boolean hasCycle(Node head) {
-        Node current = head;
-        HashSet<Node> nodesVisited = new HashSet<>();
+    boolean hasCycle(Node<T> head) {
+        Node<T> current = head;
+        Set<Node<T>> nodesVisited = new HashSet<>();
         while (current.next != null) {
             if (nodesVisited.contains(current)) {
                 return true;

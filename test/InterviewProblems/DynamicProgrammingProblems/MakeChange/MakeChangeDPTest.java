@@ -1,8 +1,7 @@
-package InterviewProblems.DynamicProgrammingProblems;
+package InterviewProblems.DynamicProgrammingProblems.MakeChange;
 
-import InterviewProblems.DynamicProgrammingProblems.MakeChange.MakeChangeDP;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +9,8 @@ class MakeChangeDPTest {
 
     private MakeChangeDP makeChangeDP;
 
-    private int[] coins = {25, 10, 5, 1};
-    private int[] simpleCashRegister = {4};
+    private final int[] coins = {25, 10, 5, 1};
+    private final int[] simpleCashRegister = {4};
 
     @BeforeEach
     void setUp() {
@@ -25,16 +24,16 @@ class MakeChangeDPTest {
 
     @Test
     void testMakeChangeWitNotEnoughCoinsAndMoney() {
-        Assert.assertEquals(1, makeChangeDP.makeChange(0, coins));
+        Assertions.assertEquals(1, makeChangeDP.makeChange(0, coins));
     }
 
     @Test
     void testMakeChangeWitEnoughCoinsButNotEnoughMoney() {
-        Assert.assertEquals(0, makeChangeDP.makeChange(3, simpleCashRegister));
+        Assertions.assertEquals(0, makeChangeDP.makeChange(3, simpleCashRegister));
     }
 
     @Test
     void testMakeChangeWithEnoughCoinsAndMoney() {
-        Assert.assertEquals(13, makeChangeDP.makeChange(27, coins));
+        Assertions.assertEquals(13, makeChangeDP.makeChange(27, coins));
     }
 }

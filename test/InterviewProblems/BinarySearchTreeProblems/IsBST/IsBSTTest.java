@@ -1,8 +1,8 @@
 package InterviewProblems.BinarySearchTreeProblems.IsBST;
 
 import DataStructures.CustomDataStructures.BinarySearchTree.BinarySearchTree;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -63,21 +63,21 @@ class IsBSTTest {
 
     @Test
     void testEmptyBST() {
-        Assert.assertTrue(isBST.isBST(emptyBST));
+        Assertions.assertTrue(isBST.isBST(emptyBST));
     }
 
     @Test
     void testSmallBST() {
-        Assert.assertTrue(isBST.isBST(smallBST));
+        Assertions.assertTrue(isBST.isBST(smallBST));
     }
 
     @Test
     void testLargeBST() {
-        Assert.assertTrue(isBST.isBST(largeBST));
+        Assertions.assertTrue(isBST.isBST(largeBST));
     }
 
     @Test
     void testBalancedLargeBST() {
-        Assert.assertTrue(isBST.isBST(balancedBST));
+        Assertions.assertTrue(isBST.isBST(balancedBST));
     }
 }

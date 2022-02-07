@@ -1,15 +1,15 @@
 package InterviewProblems.HashmapProblems.LonelyInteger;
 
 import InterviewProblems.HashMapProblems.LonelyInteger.LonelyIntegerHashmap;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class LonelyIntegerTest {
+class LonelyIntegerHashmapTest {
 
-    private int[] unsortedArray = {9, 1, 2, 3, 2, 9, 1, 7, 7};
-    private int[] sortedArray = {1, 1, 2, 2, 3, 3, 9};
+    private final int[] unsortedArray = {9, 1, 2, 3, 2, 9, 1, 7, 7};
+    private final int[] sortedArray = {1, 1, 2, 2, 3, 3, 9};
 
     private LonelyIntegerHashmap lonelyInteger;
 
@@ -25,11 +25,11 @@ class LonelyIntegerTest {
 
     @Test
     void testUnsortedArray() {
-        Assert.assertEquals(3, lonelyInteger.findLonelyInteger(unsortedArray));
+        Assertions.assertEquals(3, lonelyInteger.findLonelyInteger(unsortedArray));
     }
 
     @Test
     void testSortedArray() {
-        Assert.assertEquals(9, lonelyInteger.findLonelyInteger(sortedArray));
+        Assertions.assertEquals(9, lonelyInteger.findLonelyInteger(sortedArray));
     }
 }
