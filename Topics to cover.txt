@@ -240,7 +240,7 @@ in-place recursive mergesort -- DONE
 out-of-place recursive mergesort -- DONE
 iterative mergesort -- DONE
 // todo: timsort
-// todo: heapsort (e.g. O(nlogn) build heap version vs. O(n) build heap version)
+heapsort (e.g. O(nlogn) build heap version vs. O(n) build heap version) -- DONE FOR NOW
 // todo: treesort (e.g. using n insertions into BST and then inorder traversal)
 
 Other Comparison-Based Sorting Algorithms
@@ -293,8 +293,8 @@ fizzfuzz -- DONE
 is BST -- DONE!
 cycle detection -- fast and slow pointer/floyd's algorithm -- DONE!
 cycle detection -- hashset -- DONE!
-// todo: reversing a linked list -- iterative
-// todo: reversing a linked list -- recursive
+reversing a linked list -- iterative -- DONE FOR NOW
+reversing a linked list -- DONE FOR NOW
 recursive staircase problem -- recursive -- DONE!
 recursive staircase problem -- using DP -- DONE!
 recursive staircase problem -- iterative -- DONE!
@@ -308,9 +308,9 @@ ice cream parlour problem -- using hashtable -- DONE!
 lonely integer -- using bit manipulation -- DONE!
 balanced parentheses -- using stacks -- DONE!
 queue using two stacks problem -- DONE!
-number of paths in a maze -- recursive -- DONE!
-number of paths in a maze -- using DP -- DONE!
-// todo: number of paths in a maze -- iterative
+number of paths in a maze -- recursive -- DONE FOR NOW
+number of paths in a maze -- using DP/memoization -- DONE FOR NOW
+number of paths in a maze -- iterative -- DONE FOR NOW
 shortest path between two vertices in a graph -- using BFS -- DONE!
 how to make change -- recursive -- DONE!
 how to make change -- using DP -- DONE!
@@ -334,7 +334,8 @@ find anagram -- using hashtable -- DONE!
 running median -- using heaps/priority queues -- DONE!
 // todo: count inversions -- using mergesort
 // todo: lossless file compression/decompression -- using huffman trees
-
+// todo: convex hull -- using jarvis march
+// todo: convex hull -- using graham scan
 
 Other Topics:
 // todo: GUI design

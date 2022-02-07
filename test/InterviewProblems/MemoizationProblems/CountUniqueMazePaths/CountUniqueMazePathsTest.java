@@ -1,21 +1,21 @@
-package InterviewProblems.RecursionProblems.CountMazePaths;
+package InterviewProblems.MemoizationProblems.CountUniqueMazePaths;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CountMazePathsNaiveTest {
+class CountUniqueMazePathsTest {
 
-    private CountMazePathsNaive countMazePathsNaive;
+    private CountUniqueMazePaths countMazePathsMemoized;
 
-    private final boolean[][] smallGrid = {
+    private final boolean[][] smallSquareGrid = {
         {true, true, true},
         {false, false, true},
         {false, false, true}
     };
 
-    private final boolean[][] largeGrid = {
+    private final boolean[][] largeSquareGrid = {
         {true,  true,  true,  true,  true,  true,  true,  true},
         {true,  true,  false, true,  true,  true,  false, true},
         {true,  true,  true,  true,  false, true,  true,  true},
@@ -26,9 +26,15 @@ class CountMazePathsNaiveTest {
         {true,  true,  true,  true,  true,  true,  true,  true}
     };
 
+    private final boolean[][] exampleRectangularGrid = {
+        {true, true, true, true, true, true, true},
+        {true, true, true, true, true, true, true},
+        {true, true, true, true, true, true, true},
+    };
+
     @BeforeEach
     void setUp() {
-        countMazePathsNaive = new CountMazePathsNaive();
+        countMazePathsMemoized = new CountUniqueMazePaths();
     }
 
     @AfterEach
@@ -38,12 +44,17 @@ class CountMazePathsNaiveTest {
 
     @Test
     void testCountMazePathsStartingFromOrigin() {
-        Assertions.assertEquals(1, countMazePathsNaive.countPaths(smallGrid, 0, 0));
-        Assertions.assertEquals(27, countMazePathsNaive.countPaths(largeGrid, 0, 0));
+        Assertions.assertEquals(1, countMazePathsMemoized.countPaths(smallSquareGrid, 0, 0));
+        Assertions.assertEquals(27, countMazePathsMemoized.countPaths(largeSquareGrid, 0, 0));
+    }
+
+    @Test
+    void testCountMazePathsWithRectangularGrid() {
+        Assertions.assertEquals(28, countMazePathsMemoized.countPaths(exampleRectangularGrid, 0, 0));
     }
 
     @Test
     void testCountMazePathsAwayFromOrigin() {
-        Assertions.assertEquals(5, countMazePathsNaive.countPaths(largeGrid, 2, 0));
+        Assertions.assertEquals(5, countMazePathsMemoized.countPaths(largeSquareGrid, 2, 0));
     }
 }
