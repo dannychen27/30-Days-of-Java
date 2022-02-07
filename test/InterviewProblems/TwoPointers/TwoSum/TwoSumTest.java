@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class FindPairWithSumConvergingPointersTest {
+class TwoSumTest {
 
-    private FindPairWithSumConvergingPointers findPairWithSumConvergingPointers;
+    private TwoSum twoSum;
 
     private final int[] emptyArray = {};
     private final int[] oneElementArray = {1};
@@ -17,7 +17,7 @@ class FindPairWithSumConvergingPointersTest {
 
     @BeforeEach
     void setUp() {
-        findPairWithSumConvergingPointers = new FindPairWithSumConvergingPointers();
+        twoSum = new TwoSum();
     }
 
     @AfterEach
@@ -27,26 +27,26 @@ class FindPairWithSumConvergingPointersTest {
 
     @Test
     void testEmptyArray() {
-        Assertions.assertFalse(findPairWithSumConvergingPointers.findPairWithSum(emptyArray, 8));
+        Assertions.assertFalse(twoSum.twoSum(emptyArray, 8));
     }
 
     @Test
     void testOneElementArray() {
-        Assertions.assertFalse(findPairWithSumConvergingPointers.findPairWithSum(oneElementArray, 8));
+        Assertions.assertFalse(twoSum.twoSum(oneElementArray, 8));
     }
 
     @Test
     void testArrayWithUniqueElements() {
-        Assertions.assertFalse(findPairWithSumConvergingPointers.findPairWithSum(arrayWithUniqueElements, 8));
+        Assertions.assertFalse(twoSum.twoSum(arrayWithUniqueElements, 8));
     }
 
     @Test
     void testArrayWithDuplicateElements() {
-        Assertions.assertTrue(findPairWithSumConvergingPointers.findPairWithSum(arrayWithDuplicateElements, 8));
+        Assertions.assertTrue(twoSum.twoSum(arrayWithDuplicateElements, 8));
     }
 
     @Test
     void testUnsortedArray() {
-        Assertions.assertTrue(findPairWithSumConvergingPointers.findPairWithSum(unsortedArray, 8));
+        Assertions.assertTrue(twoSum.twoSum(unsortedArray, 8));
     }
 }

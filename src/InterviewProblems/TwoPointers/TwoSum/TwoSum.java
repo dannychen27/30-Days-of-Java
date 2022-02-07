@@ -2,7 +2,7 @@ package InterviewProblems.TwoPointers.TwoSum;
 
 import java.util.Arrays;
 
-public class FindPairWithSumConvergingPointers {
+public class TwoSum {
 
     // time: O(n) if presorted, O(n log n) if unsorted
     // space: O(1)
@@ -10,7 +10,7 @@ public class FindPairWithSumConvergingPointers {
     /**
      * Return true iff there exist two integers whose sum is targetSum.
      */
-    public boolean findPairWithSum(int[] array, int targetSum) {
+    public boolean twoSum(int[] array, int targetSum) {
         int start = 0;
         int end = array.length - 1;
 
