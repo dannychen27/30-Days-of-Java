@@ -1,4 +1,4 @@
-package InterviewProblems.EasyQuestions.DFS.MaxDiameter;
+package InterviewProblems.EasyQuestions.DFS.MaxDiameterOfBinaryTree;
 
 import DataStructures.CustomDataStructures.BinaryTree.BinaryTree;
 

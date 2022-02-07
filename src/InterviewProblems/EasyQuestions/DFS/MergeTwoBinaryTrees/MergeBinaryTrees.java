@@ -1,4 +1,4 @@
-package InterviewProblems.EasyQuestions.DFS.MergeBinaryTrees;
+package InterviewProblems.EasyQuestions.DFS.MergeTwoBinaryTrees;
 
 import DataStructures.CustomDataStructures.BinaryTree.BinaryTree;
 

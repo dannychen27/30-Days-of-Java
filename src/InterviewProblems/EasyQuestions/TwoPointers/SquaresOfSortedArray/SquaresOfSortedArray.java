@@ -1,4 +1,4 @@
-package InterviewProblems.EasyQuestions.ArrayQuestions.SquaresOfSortedArray;
+package InterviewProblems.EasyQuestions.TwoPointers.SquaresOfSortedArray;
 
 import java.util.Arrays;
 
