@@ -1,6 +1,6 @@
 package InterviewProblems.RecursionSolutions.MakeChange;
 
-public class MakeChangeNaive {
+public class MakeChange {
 
     // source: https://www.youtube.com/watch?v=sn0DWI-JdNA&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL&index=10
 

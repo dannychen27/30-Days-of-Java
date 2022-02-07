@@ -1,6 +1,6 @@
 package InterviewProblems.RecursionSolutions.RecursiveStaircase;
 
-class RecursiveStaircaseNaive {
+class RecursiveStaircase {
 
     // How many possible ways are there to reach the top of
     // a recursive staircase?
