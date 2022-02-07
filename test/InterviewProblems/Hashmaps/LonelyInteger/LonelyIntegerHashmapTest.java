@@ -1,20 +1,20 @@
-package InterviewProblems.BitManipulation.LonelyInteger;
+package InterviewProblems.Hashmaps.LonelyInteger;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class LonelyIntegerTest {
+class LonelyIntegerHashmapTest {
 
     private final int[] unsortedArray = {9, 1, 2, 3, 2, 9, 1, 7, 7};
     private final int[] sortedArray = {1, 1, 2, 2, 3, 3, 9};
 
-    private LonelyInteger lonelyInteger;
+    private LonelyIntegerHashmap lonelyInteger;
 
     @BeforeEach
     void setUp() {
-        lonelyInteger = new LonelyInteger();
+        lonelyInteger = new LonelyIntegerHashmap();
     }
 
     @AfterEach
