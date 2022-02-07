@@ -2,7 +2,7 @@ package InterviewProblems.DynamicProgramming.MakeChange;
 
 import java.util.HashMap;
 
-public class MakeChangeDP {
+public class MakeChange {
 
     // dynamic programming approach:
     // time: O(n), where n = number of denominations, but slightly faster than naive

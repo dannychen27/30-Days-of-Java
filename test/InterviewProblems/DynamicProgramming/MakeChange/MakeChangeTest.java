@@ -5,16 +5,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class MakeChangeDPTest {
+class MakeChangeTest {
 
-    private MakeChangeDP makeChangeDP;
+    private MakeChange makeChange;
 
     private final int[] coins = {25, 10, 5, 1};
     private final int[] simpleCashRegister = {4};
 
     @BeforeEach
     void setUp() {
-        makeChangeDP = new MakeChangeDP();
+        makeChange = new MakeChange();
     }
 
     @AfterEach
@@ -24,16 +24,16 @@ class MakeChangeDPTest {
 
     @Test
     void testMakeChangeWitNotEnoughCoinsAndMoney() {
-        Assertions.assertEquals(1, makeChangeDP.makeChange(0, coins));
+        Assertions.assertEquals(1, makeChange.makeChange(0, coins));
     }
 
     @Test
     void testMakeChangeWitEnoughCoinsButNotEnoughMoney() {
-        Assertions.assertEquals(0, makeChangeDP.makeChange(3, simpleCashRegister));
+        Assertions.assertEquals(0, makeChange.makeChange(3, simpleCashRegister));
     }
 
     @Test
     void testMakeChangeWithEnoughCoinsAndMoney() {
-        Assertions.assertEquals(13, makeChangeDP.makeChange(27, coins));
+        Assertions.assertEquals(13, makeChange.makeChange(27, coins));
     }
 }

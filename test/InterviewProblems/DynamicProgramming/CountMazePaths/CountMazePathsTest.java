@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CountMazePathsDPTest {
+class CountMazePathsTest {
 
-    private CountMazePathsDP countMazePathsDP;
+    private CountMazePaths countMazePaths;
 
     private final boolean[][] smallGrid = {
         {true, true, true},
@@ -28,7 +28,7 @@ class CountMazePathsDPTest {
 
     @BeforeEach
     void setUp() {
-        countMazePathsDP = new CountMazePathsDP();
+        countMazePaths = new CountMazePaths();
     }
 
     @AfterEach
@@ -38,12 +38,12 @@ class CountMazePathsDPTest {
 
     @Test
     void testCountMazePathsStartingFromOrigin() {
-        Assertions.assertEquals(1, countMazePathsDP.countPaths(smallGrid, 0, 0));
-        Assertions.assertEquals(27, countMazePathsDP.countPaths(largeGrid, 0, 0));
+        Assertions.assertEquals(1, countMazePaths.countPaths(smallGrid, 0, 0));
+        Assertions.assertEquals(27, countMazePaths.countPaths(largeGrid, 0, 0));
     }
 
     @Test
     void testCountMazePathsAwayFromOrigin() {
-        Assertions.assertEquals(5, countMazePathsDP.countPaths(largeGrid, 2, 0));
+        Assertions.assertEquals(5, countMazePaths.countPaths(largeGrid, 2, 0));
     }
 }
