@@ -1,6 +1,6 @@
-package InterviewProblems.DynamicProgramming.CountMazePaths;
+package InterviewProblems.DynamicProgramming.CountUniqueMazePaths;
 
-public class CountMazePaths {
+public class CountUniqueMazePaths {
 
     // you can only move in two directions: right or down
     //

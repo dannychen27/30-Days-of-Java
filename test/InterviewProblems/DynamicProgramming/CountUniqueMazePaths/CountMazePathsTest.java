@@ -1,4 +1,4 @@
-package InterviewProblems.DynamicProgramming.CountMazePaths;
+package InterviewProblems.DynamicProgramming.CountUniqueMazePaths;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class CountMazePathsTest {
 
-    private CountMazePaths countMazePaths;
+    private CountUniqueMazePaths countMazePaths;
 
     private final boolean[][] smallGrid = {
         {true, true, true},
@@ -28,7 +28,7 @@ class CountMazePathsTest {
 
     @BeforeEach
     void setUp() {
-        countMazePaths = new CountMazePaths();
+        countMazePaths = new CountUniqueMazePaths();
     }
 
     @AfterEach
