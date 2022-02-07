@@ -1,12 +1,12 @@
-package InterviewProblems.Sorting.MajorityElement;
+package InterviewProblems.Hashmaps.MajorityElement;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MajorityElementHashmap {
+public class MajorityElement {
 
     public static void main(String[] args) {
-        MajorityElementHashmap majorityElement = new MajorityElementHashmap();
+        MajorityElement majorityElement = new MajorityElement();
 
         int[] nums1 = {3, 2, 3};
         System.out.println(majorityElement.majorityElement(nums1));  // 3
