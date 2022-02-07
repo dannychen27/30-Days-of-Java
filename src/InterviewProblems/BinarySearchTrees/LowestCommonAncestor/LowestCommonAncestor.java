@@ -1,4 +1,4 @@
-package InterviewProblems.DFS.LowestCommonAncestor;
+package InterviewProblems.BinarySearchTrees.LowestCommonAncestor;
 
 import DataStructures.CustomDataStructures.BinaryTree.BinaryTree;
 
