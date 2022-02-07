@@ -1,6 +1,6 @@
-package InterviewProblems.BruteForceSolutions.FindPairWithSum;
+package InterviewProblems.BruteForceSolutions.TwoSum;
 
-public class FindPairWithSumNaive {
+public class TwoSum {
 
     // source: https://www.youtube.com/watch?v=XKu_SEDAykw
 
@@ -12,7 +12,7 @@ public class FindPairWithSumNaive {
     /**
      * Return true iff there exist two integers whose sum is targetSum.
      */
-    public boolean findPairWithSum(int[] array, int targetSum) {
+    public boolean twoSum(int[] array, int targetSum) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 int sum = array[i] + array[j];

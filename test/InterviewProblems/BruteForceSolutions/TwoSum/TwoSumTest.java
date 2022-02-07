@@ -1,13 +1,13 @@
-package InterviewProblems.BruteForceSolutions.FindPairWithSum;
+package InterviewProblems.BruteForceSolutions.TwoSum;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class FindPairWithSumNaiveTest {
+class TwoSumTest {
 
-    private FindPairWithSumNaive findPairWithSumNaive;
+    private TwoSum twoSum;
 
     private final int[] emptyArray = {};
     private final int[] oneElementArray = {1};
@@ -17,7 +17,7 @@ class FindPairWithSumNaiveTest {
 
     @BeforeEach
     void setUp() {
-        findPairWithSumNaive = new FindPairWithSumNaive();
+        twoSum = new TwoSum();
     }
 
     @AfterEach
@@ -27,26 +27,26 @@ class FindPairWithSumNaiveTest {
 
     @Test
     void testEmptyArray() {
-        Assertions.assertFalse(findPairWithSumNaive.findPairWithSum(emptyArray, 8));
+        Assertions.assertFalse(twoSum.twoSum(emptyArray, 8));
     }
 
     @Test
     void testOneElementArray() {
-        Assertions.assertFalse(findPairWithSumNaive.findPairWithSum(oneElementArray, 8));
+        Assertions.assertFalse(twoSum.twoSum(oneElementArray, 8));
     }
 
     @Test
     void testArrayWithUniqueElements() {
-        Assertions.assertFalse(findPairWithSumNaive.findPairWithSum(arrayWithUniqueElements, 8));
+        Assertions.assertFalse(twoSum.twoSum(arrayWithUniqueElements, 8));
     }
 
     @Test
     void testArrayWithDuplicateElements() {
-        Assertions.assertTrue(findPairWithSumNaive.findPairWithSum(arrayWithDuplicateElements, 8));
+        Assertions.assertTrue(twoSum.twoSum(arrayWithDuplicateElements, 8));
     }
 
     @Test
     void testUnsortedArray() {
-        Assertions.assertTrue(findPairWithSumNaive.findPairWithSum(unsortedArray, 8));
+        Assertions.assertTrue(twoSum.twoSum(unsortedArray, 8));
     }
 }
