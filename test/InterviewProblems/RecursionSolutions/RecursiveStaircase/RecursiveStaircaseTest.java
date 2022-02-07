@@ -1,17 +1,17 @@
-package InterviewProblems.DynamicProgramming.RecursiveStaircase;
+package InterviewProblems.RecursionSolutions.RecursiveStaircase;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class RecursiveStaircaseDPTest {
+class RecursiveStaircaseTest {
 
-    private RecursiveStaircaseDP recursiveStaircaseDP;
+    private RecursiveStaircase recursiveStaircase;
 
     @BeforeEach
     void setUp() {
-        recursiveStaircaseDP = new RecursiveStaircaseDP();
+        recursiveStaircase = new RecursiveStaircase();
     }
 
     @AfterEach
@@ -21,21 +21,21 @@ class RecursiveStaircaseDPTest {
 
     @Test
     void testRecursiveStaircasePathsDPNegativeSteps() {
-        Assertions.assertEquals(0, recursiveStaircaseDP.countPaths(-1));
+        Assertions.assertEquals(0, recursiveStaircase.countPaths(-1));
     }
 
     @Test
     void testRecursiveStaircasePathsDP0Steps() {
-        Assertions.assertEquals(1, recursiveStaircaseDP.countPaths(0));
+        Assertions.assertEquals(1, recursiveStaircase.countPaths(0));
     }
 
     @Test
     void testRecursiveStaircasePathsDP1Step() {
-        Assertions.assertEquals(1, recursiveStaircaseDP.countPaths(1));
+        Assertions.assertEquals(1, recursiveStaircase.countPaths(1));
     }
 
     @Test
     void testRecursiveStaircasePathsDPManySteps() {
-        Assertions.assertEquals(4, recursiveStaircaseDP.countPaths(3));
+        Assertions.assertEquals(4, recursiveStaircase.countPaths(3));
     }
 }

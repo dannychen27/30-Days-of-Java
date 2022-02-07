@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class RecursiveStaircaseIterativeTest {
+class RecursiveStaircaseTest {
 
-    private RecursiveStaircaseIterative recursiveStaircaseIterative;
+    private RecursiveStaircase recursiveStaircase;
 
     @BeforeEach
     void setUp() {
-        recursiveStaircaseIterative = new RecursiveStaircaseIterative();
+        recursiveStaircase = new RecursiveStaircase();
     }
 
     @AfterEach
@@ -21,21 +21,21 @@ class RecursiveStaircaseIterativeTest {
 
     @Test
     void testRecursiveStaircasePathsDPNegativeSteps() {
-        Assertions.assertEquals(0, recursiveStaircaseIterative.countPaths(-1));
+        Assertions.assertEquals(0, recursiveStaircase.countPaths(-1));
     }
 
     @Test
     void testRecursiveStaircasePathsDP0Steps() {
-        Assertions.assertEquals(1, recursiveStaircaseIterative.countPaths(0));
+        Assertions.assertEquals(1, recursiveStaircase.countPaths(0));
     }
 
     @Test
     void testRecursiveStaircasePathsDP1Step() {
-        Assertions.assertEquals(1, recursiveStaircaseIterative.countPaths(1));
+        Assertions.assertEquals(1, recursiveStaircase.countPaths(1));
     }
 
     @Test
     void testRecursiveStaircasePathsDPManySteps() {
-        Assertions.assertEquals(4, recursiveStaircaseIterative.countPaths(3));
+        Assertions.assertEquals(4, recursiveStaircase.countPaths(3));
     }
 }

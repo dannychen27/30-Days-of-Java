@@ -1,6 +1,6 @@
 package InterviewProblems.DynamicProgramming.RecursiveStaircase;
 
-public class RecursiveStaircaseDP {
+public class RecursiveStaircase {
 
     // With dynamic programming approach:
     // time: O(n) since we only compute each value once

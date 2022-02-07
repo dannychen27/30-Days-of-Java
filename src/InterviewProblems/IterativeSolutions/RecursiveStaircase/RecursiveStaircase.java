@@ -1,6 +1,6 @@
 package InterviewProblems.IterativeSolutions.RecursiveStaircase;
 
-public class RecursiveStaircaseIterative {
+public class RecursiveStaircase {
 
     // With iterative approach:
     // time: O(n) since we only compute each value once
