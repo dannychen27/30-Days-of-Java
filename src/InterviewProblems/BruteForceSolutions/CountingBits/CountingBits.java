@@ -1,4 +1,4 @@
-package InterviewProblems.DynamicProgramming.CountingBits;
+package InterviewProblems.BruteForceSolutions.CountingBits;
 
 import java.util.Arrays;
 
@@ -13,17 +13,13 @@ public class CountingBits {
 
     public int[] countBits(int n) {
         int[] numOnes = new int[n + 1];
-        for (int number = 0; number <= n; number++) {
-            numOnes[number] = countOnes(number);
-        }
-        return numOnes;
-    }
-
-    private int countOnes(int number) {
-        int numOnes = 0;
-        while (number > 0) {
-            numOnes += number % 2;
-            number /= 2;
+        int highestPowerOf2 = 1;  // the highest power of 2 reached so far
+        numOnes[0] = 0;  // base case
+        for (int num = 1; num <= n; num++) {
+            if (num == 2 * highestPowerOf2) {
+                highestPowerOf2 = num;
+            }
+            numOnes[num] = 1 + numOnes[num - highestPowerOf2];
         }
         return numOnes;
     }
