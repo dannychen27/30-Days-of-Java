@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ReverseLinkedListIterativeTest {
+public class ReverseLinkedListTest {
 
-    private ReverseLinkedListIterative<Integer> reverseLinkedListIterative;
+    private ReverseLinkedList<Integer> reverseLinkedList;
 
     private SinglyLinkedList<Integer> emptyLinkedList;
     private SinglyLinkedList<Integer> shortLinkedList;
@@ -17,7 +17,7 @@ public class ReverseLinkedListIterativeTest {
 
     @BeforeEach
     void setUp() {
-        reverseLinkedListIterative = new ReverseLinkedListIterative<>();
+        reverseLinkedList = new ReverseLinkedList<>();
 
         emptyLinkedList = new SinglyLinkedList<>();
 
@@ -37,12 +37,12 @@ public class ReverseLinkedListIterativeTest {
 
     @Test
     void testReverseLinkedListIterativeOnEmptyLinkedList() {
-        Assertions.assertEquals(emptyLinkedList.head, reverseLinkedListIterative.reverseLinkedListIterative(emptyLinkedList.head));
+        Assertions.assertEquals(emptyLinkedList.head, reverseLinkedList.reverseLinkedList(emptyLinkedList.head));
     }
 
     @Test
     void testReverseLinkedListIterativeOnSingletonLinkedList() {
-        Assertions.assertEquals(shortLinkedList.head, reverseLinkedListIterative.reverseLinkedListIterative(shortLinkedList.head));
+        Assertions.assertEquals(shortLinkedList.head, reverseLinkedList.reverseLinkedList(shortLinkedList.head));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class ReverseLinkedListIterativeTest {
         Node<Integer> expectedNewHead = longerLinkedList.head.next.next;  // 3
         // TODO: if you want to avoid mutating your linked list, create a clone of it.
         // TODO: do not use aliasing!
-        Node<Integer> actualNewHead = reverseLinkedListIterative.reverseLinkedListIterative(longerLinkedList.head); // 3 NEXT 2 NEXT 1
+        Node<Integer> actualNewHead = reverseLinkedList.reverseLinkedList(longerLinkedList.head); // 3 NEXT 2 NEXT 1
 
         Assertions.assertEquals(expectedNewHead.value, actualNewHead.value);
         Assertions.assertEquals(expectedNewHead.next.value, actualNewHead.next.value);

@@ -1,4 +1,4 @@
-package InterviewProblems.LinkedLists.ReverseLinkedList;
+package InterviewProblems.RecursionSolutions.ReverseLinkedList;
 
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.Node;
 
@@ -14,7 +14,7 @@ import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementa
  * }
  */
 
-public class ReverseLinkedListRecursive<T> {
+public class ReverseLinkedList<T> {
 
     // Time Complexity: O(n)
     // Space Complexity: O(n) -- the max number of calls found in call stack at a time
@@ -23,14 +23,14 @@ public class ReverseLinkedListRecursive<T> {
      *
      * @param head The head of the linked list.
      */
-    public Node<T> reverseLinkedListRecursive(Node<T> head) {
+    public Node<T> reverseLinkedList(Node<T> head) {
         // base cases
         if (head == null || head.next == null) {
             return head;
         }
 
         // recursive case
-        Node<T> tail = reverseLinkedListRecursive(head.next);
+        Node<T> tail = reverseLinkedList(head.next);
         // head.next is the tail of the reverseList (i.e. head.next == reverseList),
         // so we make head the tail of the reverseList
         head.next.next = head;

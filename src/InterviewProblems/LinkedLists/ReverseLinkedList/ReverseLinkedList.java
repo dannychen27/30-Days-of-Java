@@ -14,11 +14,11 @@ import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementa
  * }
  */
 
-public class ReverseLinkedListIterative<T> {
+public class ReverseLinkedList<T> {
 
     // Time: O(n)
     // Space: O(1) -- we only need to store 3 pointers (prev, current, and next)
-    public Node<T> reverseLinkedListIterative(Node<T> head) {
+    public Node<T> reverseLinkedList(Node<T> head) {
         if (head == null || head.next == null) {
             return head;
         }

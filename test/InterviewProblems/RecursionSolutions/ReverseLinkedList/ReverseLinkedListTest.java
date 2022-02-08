@@ -1,4 +1,4 @@
-package InterviewProblems.LinkedLists.ReverseLinkedList;
+package InterviewProblems.RecursionSolutions.ReverseLinkedList;
 
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.Node;
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.SinglyLinkedList;
@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ReverseLinkedListRecursiveTest {
+public class ReverseLinkedListTest {
 
-    private ReverseLinkedListRecursive<Integer> reverseLinkedListRecursive;
+    private ReverseLinkedList<Integer> reverseLinkedList;
 
     private SinglyLinkedList<Integer> emptyLinkedList;
     private SinglyLinkedList<Integer> shortLinkedList;
@@ -17,7 +17,7 @@ public class ReverseLinkedListRecursiveTest {
 
     @BeforeEach
     void setUp() {
-        reverseLinkedListRecursive = new ReverseLinkedListRecursive<>();
+        reverseLinkedList = new ReverseLinkedList<>();
 
         emptyLinkedList = new SinglyLinkedList<>();
 
@@ -37,12 +37,12 @@ public class ReverseLinkedListRecursiveTest {
 
     @Test
     void testReverseLinkedListRecursiveOnEmptyLinkedList() {
-        Assertions.assertEquals(emptyLinkedList.head, reverseLinkedListRecursive.reverseLinkedListRecursive(emptyLinkedList.head));
+        Assertions.assertEquals(emptyLinkedList.head, reverseLinkedList.reverseLinkedList(emptyLinkedList.head));
     }
 
     @Test
     void testReverseLinkedListRecursiveOnSingletonLinkedList() {
-        Assertions.assertEquals(shortLinkedList.head, reverseLinkedListRecursive.reverseLinkedListRecursive(shortLinkedList.head));
+        Assertions.assertEquals(shortLinkedList.head, reverseLinkedList.reverseLinkedList(shortLinkedList.head));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class ReverseLinkedListRecursiveTest {
         Node<Integer> expectedNewHead = longerLinkedList.head.next.next;  // 3
         // TODO: if you want to avoid mutating your linked list, create a clone of it.
         // TODO: do not use aliasing!
-        Node<Integer> actualNewHead = reverseLinkedListRecursive.reverseLinkedListRecursive(longerLinkedList.head); // 3 NEXT 2 NEXT 1
+        Node<Integer> actualNewHead = reverseLinkedList.reverseLinkedList(longerLinkedList.head); // 3 NEXT 2 NEXT 1
 
         Assertions.assertEquals(expectedNewHead.value, actualNewHead.value);
         Assertions.assertEquals(expectedNewHead.next.value, actualNewHead.next.value);
