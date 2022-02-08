@@ -17,7 +17,7 @@ import java.util.Set;
  * }
  */
 
-public class HasCycleUsingHashSet<T> {
+public class HasCycle<T> {
 
     // Hashset method
     // time: O(n)

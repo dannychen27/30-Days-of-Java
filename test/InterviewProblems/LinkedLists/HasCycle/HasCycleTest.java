@@ -2,22 +2,22 @@ package InterviewProblems.LinkedLists.HasCycle;
 
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.Node;
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.SinglyLinkedList;
-import InterviewProblems.LinkedLists.LinkedListHasCycle.HasCycleUsingHashSet;
+import InterviewProblems.LinkedLists.LinkedListHasCycle.HasCycle;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class HasCycleUsingHashSetTest {
+class HasCycleTest {
 
-    private HasCycleUsingHashSet<Integer> hasCycleUsingHashSet;
+    private HasCycle<Integer> hasCycle;
 
     private final SinglyLinkedList<Integer> linkedListNoCycles = new SinglyLinkedList<>();
     private final SinglyLinkedList<Integer> linkedListWithCycles = new SinglyLinkedList<>();
 
     @BeforeEach
     void setUp() {
-        hasCycleUsingHashSet = new HasCycleUsingHashSet<>();
+        hasCycle = new HasCycle<>();
         setUpLinkedListNoCycles();
         setUpLinkedListWithCycles();
     }
@@ -60,11 +60,11 @@ class HasCycleUsingHashSetTest {
 
     @Test
     void testWithAcyclicLinkedList() {
-        Assertions.assertFalse(hasCycleUsingHashSet.hasCycle(linkedListNoCycles.head));
+        Assertions.assertFalse(hasCycle.hasCycle(linkedListNoCycles.head));
     }
 
     @Test
     void testWithCyclicLinkedList() {
-        Assertions.assertTrue(hasCycleUsingHashSet.hasCycle(linkedListWithCycles.head));
+        Assertions.assertTrue(hasCycle.hasCycle(linkedListWithCycles.head));
     }
 }

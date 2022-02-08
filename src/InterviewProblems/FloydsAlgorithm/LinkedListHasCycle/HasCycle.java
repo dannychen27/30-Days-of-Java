@@ -1,4 +1,4 @@
-package InterviewProblems.LinkedLists.LinkedListHasCycle;
+package InterviewProblems.FloydsAlgorithm.LinkedListHasCycle;
 
 import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementation.Node;
 
@@ -14,7 +14,7 @@ import DataStructures.CustomDataStructures.LinkedList.SinglyLinkedListImplementa
  * }
  */
 
-public class HasCycleUsingFloydsAlgorithm<T> {
+public class HasCycle<T> {
 
     // Fast and slow pointer method:
     // time: O(n)
