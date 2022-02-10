@@ -1,13 +1,13 @@
-package InterviewProblems.Hashmaps.FindPairWithSum;
+package InterviewProblems.Hashmaps.TwoSum;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class FindPairWithSumHashmapTest {
+class TwoSumTest {
 
-    private FindPairWithSumHashmap findPairWithSumConvergingPointers;
+    private TwoSum findPairWithSumConvergingPointers;
 
     private final int[] emptyArray = {};
     private final int[] oneElementArray = {1};
@@ -17,7 +17,7 @@ class FindPairWithSumHashmapTest {
 
     @BeforeEach
     void setUp() {
-        findPairWithSumConvergingPointers = new FindPairWithSumHashmap();
+        findPairWithSumConvergingPointers = new TwoSum();
     }
 
     @AfterEach

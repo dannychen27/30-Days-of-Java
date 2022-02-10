@@ -1,9 +1,9 @@
-package InterviewProblems.Hashmaps.FindPairWithSum;
+package InterviewProblems.Hashmaps.TwoSum;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class FindPairWithSumHashmap {
+public class TwoSum {
 
     // time: O(n)
     // space: O(n) because we use a hashmap
