@@ -1,4 +1,4 @@
-package InterviewProblems.BinarySearchTrees.IsBST;
+package InterviewProblems.BinaryTrees.IsBST;
 
 import DataStructures.CustomDataStructures.BinarySearchTree.BinarySearchTree;
 
