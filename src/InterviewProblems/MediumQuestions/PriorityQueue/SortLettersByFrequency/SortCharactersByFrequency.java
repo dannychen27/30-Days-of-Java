@@ -8,7 +8,7 @@ public class SortCharactersByFrequency {
 
     // Let n = the number of characters in the string s.
     // Time: O(n) + O(n log n) + O(n log n) + O(n) = O(n log n)
-    // --> O(n) for building the max heap.
+    // --> O(n) for building the hashmap.
     // --> O(n log n) for populating the max heap.
     // --> O(n log n) for performing the Extract-Map operation n times.
     // --> O(n) for building the string builder.
