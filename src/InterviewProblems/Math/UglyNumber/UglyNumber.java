@@ -4,7 +4,7 @@ public class UglyNumber {
 
     // Let n = the value of number
     // Time: O(log n)
-    // --> n shrinks by at most a factor of 2.
+    // --> n shrinks by at least a factor of 2.
     // Space: O(1)
     // --> We don't need to store any auxiliary data structures.
 
