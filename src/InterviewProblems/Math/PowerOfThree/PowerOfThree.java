@@ -1,4 +1,4 @@
-package InterviewProblems.Math.PowerOfThree.Iterative;
+package InterviewProblems.Math.PowerOfThree;
 
 public class PowerOfThree {
 
