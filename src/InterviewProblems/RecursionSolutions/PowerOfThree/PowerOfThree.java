@@ -1,12 +1,12 @@
-package InterviewProblems.Math.PowerOfThree.Iterative;
+package InterviewProblems.RecursionSolutions.PowerOfThree;
 
 public class PowerOfThree {
 
     // Let n = the value of the number.
     //
     // Time: O(log_2 n)
-    // --> We increase i by at most a factor of 3, so we run at most
-    // log_3 n in O(log_2 n) iterations.
+    // --> We increase i by at most a factor of 3, so we create at most
+    // log_3 n in O(log_2 n) recursive calls.
     // Space: O(1)
     // --> We don't need any additional data structures.
 
@@ -44,11 +44,24 @@ public class PowerOfThree {
         System.out.println(isPowerOfThree6);  // false
     }
 
+    /**
+     * Given an integer n, return true iff it is a power of four.
+     *
+     * An integer n is a power of four, if there exists an integer x
+     * such that n == 4 ^ x.
+     *
+     * Preconditions:
+     * - -2 ^ 31 <= n <= 2 ^ 31 - 1.
+     */
     public boolean isPowerOfThree(int n) {
-        long i = 1;
-        while (i < n) {
-            i *= 3;
+        if (n <= 0) {
+            return false;
+        } else if (n == 1) {
+            return true;
+        } else if (n % 3 != 0) {
+            return false;
+        } else {
+            return isPowerOfThree(n / 3);
         }
-        return i == n;  // This should also catch the n < 1 case.
     }
 }
