@@ -1,4 +1,4 @@
-package InterviewProblems.Stacks.BalancedParentheses;
+package InterviewProblems.Stacks.BalancedParentheses.RefactoredSolution;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,23 +21,20 @@ class BalancedParentheses {
      * Return true iff all terms in this expression are balanced.
      * That is, every open term has a corresponding closed term.
      */
-    boolean isBalanced(String expression) {
+    public boolean isValid(String expression) {
         Stack<Character> stack = new Stack<>();
         for (char currentCharacter : expression.toCharArray()) {
-            if (isOpenTerm(currentCharacter)) {
+            if (isOpenBracket(currentCharacter)) {
                 stack.push(currentCharacter);
-                continue;
-            }
-
-            // You cannot pop from an empty stack.
-            if (stack.isEmpty()) {
+            } else if (stack.isEmpty()) {
+                // You cannot pop from an empty stack.
                 return false;
-            }
-
-            // currentCharacter must match its corresponding closing term
-            char topCharacter = stack.pop();
-            if (!matches(topCharacter, currentCharacter)) {
+            } else if (!matches(stack.peek(), currentCharacter)) {
+                // the currentCharacter must match its corresponding closing term
                 return false;
+            } else {
+                // The top of the stack is a matching term.
+                stack.pop();
             }
         }
         return stack.isEmpty();
@@ -46,7 +43,7 @@ class BalancedParentheses {
     /**
      * Return true iff currentCharacter is an open term in the tokens dictionary.
      */
-    private static boolean isOpenTerm(char currentCharacter) {
+    private static boolean isOpenBracket(char currentCharacter) {
         return tokens.containsKey(currentCharacter);
     }
 

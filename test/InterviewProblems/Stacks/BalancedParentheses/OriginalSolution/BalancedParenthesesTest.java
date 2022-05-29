@@ -1,11 +1,9 @@
-package InterviewProblems.Stacks.BalancedParentheses;
+package InterviewProblems.Stacks.BalancedParentheses.OriginalSolution;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BalancedParenthesesTest {
 
@@ -23,20 +21,30 @@ class BalancedParenthesesTest {
 
     @Test
     void testWhetherEmptyExpressionIsBalanced() {
-        assertTrue(bp.isBalanced(""));
+        Assertions.assertTrue(bp.isBalanced(""));
     }
 
     // TODO: Replace this with a parameterized test.
     @Test
     void testWhetherExpressionWithAnOpenTermThenAClosedTermIsBalanced() {
-        assertTrue(bp.isBalanced("{}"));
-        assertTrue(bp.isBalanced("[]"));
-        assertTrue(bp.isBalanced("()"));
+        Assertions.assertTrue(bp.isBalanced("{}"));
+        Assertions.assertTrue(bp.isBalanced("[]"));
+        Assertions.assertTrue(bp.isBalanced("()"));
     }
 
     @Test
-    void testWhetherExpressionWithOpenTermAndNoClosedTermIsBalanced() {
-        Assertions.assertFalse(bp.isBalanced("({)"));
+    void testWhetherConsecutivePairsOfMatchingBracketsIsBalanced() {
+        Assertions.assertTrue(bp.isBalanced("{}[]()"));
+    }
+
+    @Test
+    void testWhetherNestedBracketsAreBalanced() {
+        Assertions.assertTrue(bp.isBalanced("[{()}]"));
+    }
+
+    @Test
+    void testWhetherExpressionOpenTermWithNoMatchingClosedTermIsBalanced() {
+        Assertions.assertFalse(bp.isBalanced("(}"));
     }
 
     @Test
@@ -45,8 +53,8 @@ class BalancedParenthesesTest {
     }
 
     @Test
-    void testWhetherExpressionOpenTermWithNoMatchingClosedTermIsBalanced() {
-        Assertions.assertFalse(bp.isBalanced("(}"));
+    void testWhetherExpressionWithClosedTermBeforeOpenTermIsBalanced() {
+        Assertions.assertFalse(bp.isBalanced(")"));
     }
 
     @Test
