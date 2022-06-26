@@ -18,6 +18,22 @@ public class BinaryTree {
         this.rightChild = rightChild;
     }
 
+    public void inorderTraversal(BinaryTree root) {
+        inorderTraversal(root, 0);
+        System.out.println();
+    }
+
+    private void inorderTraversal(BinaryTree root, int depth) {
+        if (root == null) {
+            return;
+        }
+
+        String spaces = getIndentation(depth);
+        inorderTraversal(root.leftChild, depth + 1);
+        System.out.println(spaces + root.value);
+        inorderTraversal(root.rightChild, depth + 1);
+    }
+
     public void levelOrderTraversal(BinaryTree root) {
         levelOrderTraversal(root, 0);
         System.out.println();
